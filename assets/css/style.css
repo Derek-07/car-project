@@ -27402,3 +27402,78 @@ body {
 }
 
 
+/* CONTACT SECTION BLACK BG FIX */
+.contact-form-area {
+    background: #000 !important;
+}
+
+/* INNER WRAPPER FIX */
+.contact-all-wrapper {
+    background: #000 !important;
+}
+
+/* REMOVE WHITE CARD EFFECT */
+.contact-form-wrap {
+    background: #000 !important;
+    box-shadow: none !important;
+}
+
+/* IMAGE SIDE FIX */
+.contact-form-thumb {
+    background: #000 !important;
+}
+
+/* INPUTS DARK THEME */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+}
+
+/* TEXT COLOR FIX */
+.contact-form .form-title {
+    color: #fff;
+}
+
+
+
+/* CONTACT FEATURE BOX FIX */
+.contact-feature {
+    background: #000 !important;   /* white hatao */
+    border: 1px solid #222;        /* subtle border */
+    box-shadow: none !important;   /* glow hatao */
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* REMOVE EXTRA GLOW FROM WRAPPER */
+.contact-feature-wrap {
+    box-shadow: none !important;
+}
+
+/* ICON BOX FIX */
+.contact-feature-icon {
+    background: #111 !important;
+    border: 1px solid #333;
+}
+
+.contact-feature-icon i {
+    color: #D4AF37 !important;
+}
+
+/* TEXT COLOR */
+.contact-feature_label {
+    color: #aaa !important;
+}
+
+.contact-feature_link {
+    color: #fff !important;
+}
+
+/* HOVER EFFECT (PREMIUM) */
+.contact-feature:hover {
+    border-color: #D4AF37;
+    box-shadow: 0 0 15px rgba(212,175,55,0.2);
+}
