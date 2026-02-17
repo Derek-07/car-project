@@ -1440,3 +1440,4 @@ function toggleAuth() {
   login.classList.toggle('active');
   register.classList.toggle('active');
 }
+
