@@ -27388,3 +27388,17 @@ body {
 }
 
 
+/* SUB TITLE FIX */
+.sub-title.style-2 {
+    font-size: 40px;   /* increase size */
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .sub-title.style-2 {
+        font-size: 16px;
+    }
+}
+
+
