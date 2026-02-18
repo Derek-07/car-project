@@ -117,6 +117,7 @@
                     <li>
                         <a href="contact.html">Contact Us</a>
                     </li>
+                    <li><a href="login.html">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -219,6 +220,7 @@
                                     <li><a href="blog.html">Blog</a></li>
 
                                     <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="login.html">Login</a></li>
                                 </ul>
                             </nav>
 
@@ -290,7 +292,7 @@ Hero Area
     </div>
 
     </div>
-    
+
 
     </div>
     <!--======== / Hero Section ========--><!--==============================
@@ -3770,57 +3772,58 @@ Blog Area
     <!--==============================
 Feedback Section
 ==============================-->
-   <!-- FEEDBACK SECTION (REPLACING FAQ) -->
+    <!-- FEEDBACK SECTION (REPLACING FAQ) -->
     <section class="th-blog-wrapper blog-details space">
         <div class="container">
-                    <div class="th-feedback-wrapper">
-                        <h5 class="mb-3">Leave Your Feedback</h5>
-                        <p class="sec-text mb-4">We value your opinion! Share your experience with us.</p>
-                        
-                        <!-- Feedback Form -->
-                        <form action="submit-feedback.php" method="POST" class="feedback-form">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label for="rating">Rating:</label>
-                                        <select name="rating" id="rating" class="form-select nice-select" required>
-                                            <option value="" disabled selected hidden>Select Rating</option>
-                                            <option value="5">5 Stars</option>
-                                            <option value="4">4 Stars</option>
-                                            <option value="3">3 Stars</option>
-                                            <option value="2">2 Stars</option>
-                                            <option value="1">1 Star</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea name="feedback" rows="5" class="form-control" placeholder="Your Feedback" required></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="th-btn w-100">Submit Feedback</button>
-                                </div>
+            <div class="th-feedback-wrapper">
+                <h5 class="mb-3">Leave Your Feedback</h5>
+                <p class="sec-text mb-4">We value your opinion! Share your experience with us.</p>
+
+                <!-- Feedback Form -->
+                <form action="submit-feedback.php" method="POST" class="feedback-form">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                             </div>
-                        </form>
-                        
-                        <!-- Success Message (Hidden by default) -->
-                        <div class="feedback-success mt-3" style="display: none; color: green;">
-                            Thank you for your feedback!
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="rating">Rating:</label>
+                                <select name="rating" id="rating" class="form-select nice-select" required>
+                                    <option value="" disabled selected hidden>Select Rating</option>
+                                    <option value="5">5 Stars</option>
+                                    <option value="4">4 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                    <option value="2">2 Stars</option>
+                                    <option value="1">1 Star</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <textarea name="feedback" rows="5" class="form-control" placeholder="Your Feedback"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="th-btn w-100">Submit Feedback</button>
                         </div>
                     </div>
+                </form>
+
+                <!-- Success Message (Hidden by default) -->
+                <div class="feedback-success mt-3" style="display: none; color: green;">
+                    Thank you for your feedback!
                 </div>
             </div>
+        </div>
+        </div>
         </div>
     </section>
 

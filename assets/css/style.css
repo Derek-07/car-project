@@ -27845,3 +27845,49 @@ body {
   color: #fff;
 }
   
+
+
+/* ===============================
+   SEARCH BUTTON FIX
+   =============================== */
+
+/* Header search icon */
+.simple-icon.searchBoxToggler {
+  color: #ffffff !important;
+  font-size: 18px;
+}
+
+/* Hover effect */
+.simple-icon.searchBoxToggler:hover {
+  color: #D4AF37 !important; /* golden touch */
+}
+
+/* Search popup button */
+.popup-search-box button {
+  color: #ffffff !important;
+}
+
+/* Search input icon */
+.popup-search-box button i {
+  color: #ffffff !important;
+}
+
+/* Close icon */
+.popup-search-box .searchClose {
+  color: #ffffff !important;
+}
+
+/* Input text */
+.popup-search-box input {
+  color: #ffffff !important;
+  background: #000 !important;
+}
+
+
+.simple-icon.searchBoxToggler::before,
+.simple-icon.searchBoxToggler::after,
+.header-button::before,
+.header-button::after {
+  display: none !important;
+  content: none !important;
+}
