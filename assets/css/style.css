@@ -27477,3 +27477,371 @@ body {
     border-color: #D4AF37;
     box-shadow: 0 0 15px rgba(212,175,55,0.2);
 }
+
+
+
+/* ===============================
+   TESTIMONIAL PREMIUM BLACK THEME
+   =============================== */
+
+#testi-sec {
+  background-color: #000000;
+  padding: 100px 0;
+}
+
+/* Section Title */
+#testi-sec .sec-title {
+  color: #ffffff;
+}
+
+#testi-sec p {
+  color: #cccccc;
+}
+
+/* Testimonial Card */
+.testi-block {
+  background: #0a0a0a;
+  border-radius: 15px;
+  padding: 25px;
+  transition: 0.4s;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Hover effect */
+.testi-block:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  border-color: #D4AF37;
+}
+
+/* Image */
+.testi-block .box-img img {
+  border-radius: 50%;
+  border: 2px solid #D4AF37;
+}
+
+/* Stars */
+.testi-block .box-review i {
+  color: #D4AF37 !important;
+}
+
+/* Rating Text */
+.testi-block .rating span {
+  color: #aaaaaa;
+}
+
+/* Title */
+.testi-block .box-title {
+  color: #ffffff;
+}
+
+/* Feedback Text */
+.testi-block .box-text {
+  color: #cccccc;
+}
+
+/* Name */
+.testi-block .name-title {
+  color: #D4AF37;
+}
+
+/* Designation */
+.testi-block .box-desig {
+  color: #bbbbbb;
+}
+
+/* Quote Icon */
+.testi-block .right img {
+  filter: brightness(0) saturate(100%) invert(77%) sepia(52%) saturate(451%) hue-rotate(4deg) brightness(95%) contrast(92%);
+}
+
+/* Smooth spacing */
+.testi-block-top {
+  gap: 15px;
+}
+
+
+
+
+
+
+
+/* ===============================
+   BLOG DETAILS PREMIUM DESIGN
+   =============================== */
+
+.blog-dark {
+  background: #000;
+}
+
+/* Main Section */
+.blog-dark .th-blog-wrapper {
+  background: #000;
+  color: #fff;
+}
+
+/* Blog Card */
+.blog-dark .th-blog {
+  background: #0a0a0a;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.2);
+  transition: 0.4s;
+}
+
+/* Hover effect */
+.blog-dark .th-blog:hover {
+  box-shadow: 0 0 30px rgba(212,175,55,0.3);
+}
+
+/* Image */
+.blog-dark .blog-img img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Content spacing */
+.blog-dark .blog-content {
+  padding: 30px;
+}
+
+/* Title */
+.blog-dark .blog-title {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.blog-dark p {
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* Meta */
+.blog-dark .blog-meta a {
+  color: #D4AF37;
+  font-size: 14px;
+}
+
+/* Blockquote */
+.blog-dark blockquote {
+  background: #111;
+  border-left: 4px solid #D4AF37;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.blog-dark blockquote cite {
+  color: #D4AF37;
+}
+
+/* Images inside blog */
+.blog-dark .row img {
+  border-radius: 10px;
+}
+
+/* Tags */
+.blog-dark .tagcloud a {
+  background: #111;
+  color: #D4AF37;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 5px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.blog-dark .tagcloud a:hover {
+  background: #D4AF37;
+  color: #000;
+}
+
+/* Social icons */
+.blog-dark .th-social a {
+  background: #111;
+  color: #D4AF37;
+  border-radius: 50%;
+}
+
+.blog-dark .th-social a:hover {
+  background: #D4AF37;
+  color: #000;
+}
+
+/* ===============================
+   SIDEBAR FIX
+   =============================== */
+
+.blog-dark .sidebar-area .widget {
+  background: #0a0a0a;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(212,175,55,0.2);
+}
+
+/* Sidebar title */
+.blog-dark .widget_title {
+  color: #D4AF37;
+  margin-bottom: 20px;
+}
+
+/* Sidebar links */
+.blog-dark .widget a {
+  color: #ccc;
+}
+
+.blog-dark .widget a:hover {
+  color: #D4AF37;
+}
+
+/* Search */
+.blog-dark .search-form input {
+  background: #111;
+  border: none;
+  color: #fff;
+}
+
+.blog-dark .search-form button {
+  background: #D4AF37;
+  color: #000;
+}
+
+/* Recent posts */
+.blog-dark .recent-post {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.blog-dark .recent-post img {
+  border-radius: 8px;
+}
+
+/* ===============================
+   COMMENTS SECTION
+   =============================== */
+
+.blog-dark .th-comments-wrap {
+  margin-top: 40px;
+}
+
+.blog-dark .th-post-comment {
+  background: #0a0a0a;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(212,175,55,0.2);
+}
+
+.blog-dark .comment-content .name {
+  color: #D4AF37;
+}
+
+.blog-dark .comment-content p {
+  color: #ccc;
+}
+
+/* Reply button */
+.blog-dark .reply-btn {
+  color: #D4AF37;
+}
+
+/* ===============================
+   COMMENT FORM
+   =============================== */
+
+.blog-dark .th-comment-form {
+  background: #0a0a0a;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.2);
+}
+
+/* Inputs */
+.blog-dark input,
+.blog-dark textarea {
+  background: #111;
+  border: none;
+  color: #fff;
+}
+
+.blog-dark input::placeholder,
+.blog-dark textarea::placeholder {
+  color: #888;
+}
+
+/* Button */
+.blog-dark .th-btn {
+  background: #D4AF37;
+  color: #000;
+  border-radius: 30px;
+}
+
+.blog-dark .th-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ===============================
+   RESPONSIVE FIX
+   =============================== */
+
+@media (max-width: 768px) {
+  .blog-dark .blog-title {
+    font-size: 24px;
+  }
+
+  .blog-dark .blog-content {
+    padding: 20px;
+  }
+}
+
+
+
+/* ===============================
+   BREADCUMB IMG BACKGROUND FIX
+   =============================== */
+
+.breadcumb-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Image */
+.bread-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Overlay */
+.breadcumb-wrapper .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* dark effect */
+  z-index: 2;
+}
+
+/* Content */
+.breadcumb-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Text color */
+.breadcumb-title,
+.breadcumb-menu li,
+.breadcumb-menu a {
+  color: #fff;
+}
+  
