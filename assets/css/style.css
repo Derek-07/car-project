@@ -7731,9 +7731,13 @@ ol.wp-block-rss {
 
 .header-top {
   padding: 8px 0;
-  background-color: var(--black-color2);
-  position: relative;
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
+
 .header-top a:hover {
   color: var(--theme-color);
   text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);
