@@ -7496,7 +7496,7 @@ ol.wp-block-rss {
 .main-menu ul li:first-child {
   margin-left: 0 !important;
 }
-.main-menu ul li:hover > ul.sub-menu {
+.main-menu ul li:hover > .sub-menu {
   visibility: visible;
   opacity: 1;
   -webkit-transform: scaleY(1);
@@ -7504,7 +7504,7 @@ ol.wp-block-rss {
           transform: scaleY(1);
   z-index: 9;
 }
-.main-menu ul.sub-menu {
+.main-menu .sub-menu {
   position: absolute;
   text-align: left;
   top: 100%;
@@ -27987,26 +27987,85 @@ button, a, .th-btn {
   border-radius: 12px !important;
   box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(212, 175, 55, 0.2) !important;
-  padding: 12px 0 !important;
+  padding: 12px !important;
+  display: grid !important;
+}
+
+.main-menu .premium-dropdown.dropdown-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 8px !important;
+  width: 280px !important;
+}
+
+.main-menu .premium-dropdown.dropdown-brands-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px !important;
+  width: 360px !important;
 }
 
 .main-menu .premium-dropdown li {
   padding: 0 !important;
   margin: 0 !important;
+  display: none !important;
 }
 
-.main-menu .premium-dropdown li a {
-  padding: 14px 24px !important;
+.main-menu .premium-dropdown .grid-item,
+.main-menu .premium-dropdown .brand-item {
+  padding: 12px !important;
   color: #ffffff !important;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   border-radius: 8px;
-  margin: 4px 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  text-decoration: none;
+}
+
+.main-menu .premium-dropdown .grid-item:hover,
+.main-menu .premium-dropdown .brand-item:hover {
+  background: rgba(212, 175, 55, 0.15) !important;
+  color: #FFD700 !important;
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.3) !important;
+}
+
+.main-menu .premium-dropdown .grid-item img,
+.main-menu .premium-dropdown .brand-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0.9);
+  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-menu .premium-dropdown .grid-item:hover img,
+.main-menu .premium-dropdown .brand-item:hover img {
+  filter: brightness(1.2);
+}
+
+.main-menu .premium-dropdown .grid-item i {
+  font-size: 16px;
+  color: #D4AF37;
+  flex-shrink: 0;
+}
+
+.main-menu .premium-dropdown .brand-item img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0.9);
+  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-menu .premium-dropdown .brand-item:hover img {
+  filter: brightness(1.2);
 }
 
 .main-menu .premium-dropdown li a::before {
@@ -28028,6 +28087,77 @@ button, a, .th-btn {
   color: #FFD700;
 }
 
+/* Responsive Grid Layout for Dropdowns */
+@media (max-width: 1024px) {
+  .main-menu .premium-dropdown.dropdown-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 240px !important;
+  }
+  
+  .main-menu .premium-dropdown.dropdown-brands-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 280px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-menu .premium-dropdown.dropdown-grid,
+  .main-menu .premium-dropdown.dropdown-brands-grid {
+    grid-template-columns: 1fr !important;
+    width: auto !important;
+    max-width: 200px !important;
+  }
+}
+
+/* Mobile Menu Dropdown Grid Styling */
+.mobile-dropdown-grid,
+.mobile-dropdown-brands {
+  display: grid !important;
+  gap: 8px;
+  padding: 12px !important;
+}
+
+.mobile-dropdown-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.mobile-dropdown-brands {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.mobile-dropdown-grid li,
+.mobile-dropdown-brands li {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.mobile-dropdown-grid li a,
+.mobile-dropdown-brands li a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 12px !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-dropdown-grid li a:hover,
+.mobile-dropdown-brands li a:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: #FFD700 !important;
+}
+
+@media (max-width: 576px) {
+  .mobile-dropdown-grid,
+  .mobile-dropdown-brands {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 .inventory-menu {
   display: flex;
   align-items: center;
@@ -28037,6 +28167,27 @@ button, a, .th-btn {
 .inventory-menu i {
   font-size: 15px;
   transition: all 0.3s ease;
+}
+
+/* Car Brands Menu Styling */
+.car-brands-menu li a img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.car-brands-menu li a {
+  padding: 12px 20px !important;
+}
+
+.car-brands-menu li a:hover {
+  padding-left: 28px !important;
+}
+
+.car-brands-menu li a:hover img {
+  filter: brightness(1.2);
+  transform: scale(1.1);
 }
 
 .inventory-menu:hover i {
@@ -28076,67 +28227,69 @@ button, a, .th-btn {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-radius: 16px;
-  overflow: hidden;
   background: transparent;
   text-decoration: none;
-  box-shadow: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
 .category-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(212, 175, 55, 0.3);
+  transform: none;
+  box-shadow: none;
 }
 
 .category-img {
   width: 100%;
   height: 250px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
-  border-radius: 16px 16px 0 0;
+  border-radius: 0;
+  margin-bottom: 20px;
 }
 
 .category-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 16px 16px 0 0;
+  object-fit: contain;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0;
+  filter: brightness(1);
 }
 
 .category-card:hover .category-img img {
-  transform: scale(1.12) rotate(2deg);
+  transform: none;
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.15));
 }
 
 .category-info {
-  padding: 24px;
+  padding: 0;
   text-align: center;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  justify-content: flex-start;
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .category-name {
-  font-size: 22px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 8px 0;
-  font-family: var(--title-font);
+  font-size: 16px;
+  font-weight: 500;
+  color: #999999;
+  margin: 0;
+  font-family: inherit;
   letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
 .category-count {
-  font-size: 14px;
+  font-size: 12px;
   color: #D4AF37;
   margin: 0;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: none;
 }
 
 .category-card:hover .category-name {
