@@ -18699,7 +18699,7 @@ input {
 }
 
 .brand-box {
-  background: var(--smoke-color);
+  background: #2b2626a6;
   border: 1px solid var(--th-border-color);
   text-align: center;
   min-height: 170px;
