@@ -7262,7 +7262,11 @@ ol.wp-block-rss {
 
 /*------------------- 4.2. Header  -------------------*/
 .th-header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 41;
 }
 
@@ -7274,7 +7278,7 @@ ol.wp-block-rss {
 .th-header .menu-area {
   position: relative;
   z-index: 2;
-  background-color: #000000;
+  background-color: transparent;
 }
 
 }
@@ -7851,7 +7855,7 @@ ol.wp-block-rss {
   opacity: 0.1;
 }
 .header-default .menu-area {
-  background-color: #000000;
+  background-color: transparent;
   position: relative;
 }
 
@@ -7868,7 +7872,7 @@ ol.wp-block-rss {
   top: 0;
   left: 0px;
   bottom: 0;
-  background-color: #000000;   /* ← yahin change */
+  background-color: transparent;   /* ← yahin change */
   z-index: -1;
   height: 100%;
   width: 465px;
