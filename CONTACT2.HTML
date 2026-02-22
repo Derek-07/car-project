@@ -3,169 +3,155 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carent — Contact</title>
+    <title>Apex Contact</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Manrope", sans-serif;
-        background: #0a0a0d;
-      }
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-      .gold-gradient {
-        background: linear-gradient(135deg, #f9de74 0%, #e8ba2a 45%, #b88414 100%);
-      }
+    <style>
+      body { font-family: 'Manrope', sans-serif; background: #090909; }
+      .gold-gradient { background: linear-gradient(135deg, #f9de74 0%, #e8ba2a 45%, #b88414 100%); }
     </style>
   </head>
   <body class="text-zinc-100">
-    <div class="mx-auto max-w-7xl px-6 pb-14 pt-8 lg:px-10">
+    <div class="mx-auto max-w-7xl px-6 py-8 lg:px-10">
       <header class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <a href="#" class="flex items-center gap-3">
-          <span class="flex h-9 w-9 items-center justify-center rounded-full border border-yellow-400/70 bg-yellow-300/10 text-sm">🚘</span>
-          <span class="text-3xl font-semibold tracking-tight text-yellow-300">Carent</span>
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/img/apexlogo.png" alt="Apex Logo" class="h-10 w-auto" />
         </a>
 
-        <nav class="w-full rounded-2xl border border-yellow-500/20 bg-zinc-900/90 p-2 md:w-auto">
+        <nav class="w-full rounded-2xl border border-yellow-500/30 bg-zinc-900/90 p-2 md:w-auto">
           <ul class="flex flex-wrap items-center justify-center gap-1 text-sm font-semibold md:text-base">
-            <li><a href="#" class="rounded-xl px-5 py-2.5 text-zinc-200 transition hover:text-yellow-300">Home</a></li>
-            <li><a href="#" class="rounded-xl px-5 py-2.5 text-zinc-200 transition hover:text-yellow-300">About</a></li>
-            <li><a href="#" class="rounded-xl px-5 py-2.5 text-zinc-200 transition hover:text-yellow-300">Pages ▾</a></li>
-            <li><a href="#" class="rounded-xl px-5 py-2.5 text-zinc-200 transition hover:text-yellow-300">Cars</a></li>
-            <li><a href="#" class="rounded-xl px-5 py-2.5 text-yellow-300">Contact</a></li>
+            <li><a href="index.html" class="rounded-xl px-4 py-2.5 text-zinc-200 hover:text-yellow-300">Home</a></li>
+            <li><a href="about.html" class="rounded-xl px-4 py-2.5 text-zinc-200 hover:text-yellow-300">About Us</a></li>
+            <li><a href="service.html" class="rounded-xl px-4 py-2.5 text-zinc-200 hover:text-yellow-300">Services</a></li>
+
+            <li class="group relative">
+              <button type="button" class="inline-flex items-center gap-1 rounded-xl px-4 py-2.5 text-zinc-200 hover:text-yellow-300">
+                Car Brand <span class="text-xs">▾</span>
+              </button>
+              <ul class="invisible absolute left-0 top-full z-20 mt-2 min-w-[180px] rounded-xl border border-yellow-500/20 bg-zinc-950 p-2 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
+                <li><a href="inventory-grid.html" class="block rounded-lg px-3 py-2 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-300">Audi</a></li>
+                <li><a href="inventory-grid.html" class="block rounded-lg px-3 py-2 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-300">BMW</a></li>
+                <li><a href="inventory-grid.html" class="block rounded-lg px-3 py-2 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-300">Mercedes Benz</a></li>
+                <li><a href="inventory-grid.html" class="block rounded-lg px-3 py-2 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-300">Lamborghini</a></li>
+              </ul>
+            </li>
+
+            <li class="group relative">
+              <button type="button" class="inline-flex items-center gap-1 rounded-xl px-4 py-2.5 text-zinc-200 hover:text-yellow-300">
+                Car Type <span class="text-xs">▾</span>
+              </button>
+              <ul class="invisible absolute left-0 top-full z-20 mt-2 min-w-[180px] rounded-xl border border-yellow-500/20 bg-zinc-950 p-2 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
+                <li><a href="inventory-grid.html" class="block rounded-lg px-3 py-2 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-300">Sports Car</a></li>
+                <li><a href="inventory-grid.html" class="block rounded-lg px-3 py-2 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-300">Supercar</a></li>
+                <li><a href="inventory-grid.html" class="block rounded-lg px-3 py-2 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-300">SUV</a></li>
+                <li><a href="inventory-grid.html" class="block rounded-lg px-3 py-2 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-300">Convertible</a></li>
+              </ul>
+            </li>
+
+            <li><a href="blog.html" class="rounded-xl px-4 py-2.5 text-zinc-200 hover:text-yellow-300">Blog</a></li>
           </ul>
         </nav>
       </header>
 
-      <main class="mt-14 lg:mt-20">
+      <main class="mt-16">
         <section class="max-w-3xl">
           <h1 class="text-5xl font-extrabold tracking-tight text-yellow-300 sm:text-6xl">Contact us!</h1>
-          <p class="mt-5 text-lg leading-8 text-zinc-300">
-            Whether you have questions, feedback, or need assistance, our team is here to help. Reach out through
-            any channel below, and we’ll get back to you as soon as possible.
-          </p>
+          <p class="mt-5 text-lg leading-8 text-zinc-300">Have a question about your next luxury ride in Dubai? Reach out and our team will help you quickly.</p>
         </section>
 
         <section class="mt-14 grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 class="text-3xl font-bold tracking-tight text-zinc-100">Our contact details</h2>
-
-            <div class="mt-8 grid gap-8 sm:grid-cols-2">
-              <article class="rounded-2xl border border-yellow-500/20 bg-zinc-900/70 p-5">
-                <p class="text-xl">🎧</p>
-                <h3 class="mt-2 text-2xl font-semibold text-yellow-300">Support</h3>
-                <p class="mt-2 text-zinc-300">example@gmail.com</p>
-                <p class="text-zinc-300">(+91) 125 888 666</p>
+            <h2 class="text-3xl font-bold">Our contact details</h2>
+            <div class="mt-8 space-y-5">
+              <article class="rounded-2xl border border-yellow-500/20 bg-zinc-900/80 p-5">
+                <h3 class="text-xl font-semibold text-yellow-300">Phone</h3>
+                <p class="mt-2 text-zinc-300">+971 54 492 3609</p>
               </article>
-
-              <article class="rounded-2xl border border-yellow-500/20 bg-zinc-900/70 p-5">
-                <p class="text-xl">📍</p>
-                <h3 class="mt-2 text-2xl font-semibold text-yellow-300">Address</h3>
-                <p class="mt-2 text-zinc-300">Chicago HQ Estica Cop.<br />Maconm, MI 48042</p>
+              <article class="rounded-2xl border border-yellow-500/20 bg-zinc-900/80 p-5">
+                <h3 class="text-xl font-semibold text-yellow-300">Email</h3>
+                <p class="mt-2 break-all text-zinc-300">info.apexperformancecarrental@gmail.com</p>
               </article>
-
-              <article class="rounded-2xl border border-yellow-500/20 bg-zinc-900/70 p-5 sm:col-span-2">
-                <p class="text-xl">⏱</p>
-                <h3 class="mt-2 text-2xl font-semibold text-yellow-300">Working hours</h3>
-                <p class="mt-2 text-zinc-300">Mon - Thu: 11am - 7pm<br />Sat: 11am - 2pm</p>
+              <article class="rounded-2xl border border-yellow-500/20 bg-zinc-900/80 p-5">
+                <h3 class="text-xl font-semibold text-yellow-300">Address</h3>
+                <p class="mt-2 text-zinc-300">ONTARIO TOWER C 1801, BUSINESS BAY, DUBAI, UAE</p>
               </article>
             </div>
           </div>
 
-          <form class="rounded-3xl border border-yellow-500/25 bg-zinc-900/85 p-6 shadow-xl shadow-black/40 sm:p-8">
+          <form class="rounded-3xl border border-yellow-500/25 bg-zinc-900/85 p-6 sm:p-8">
             <div class="grid gap-5 sm:grid-cols-2">
-              <label class="block text-sm font-semibold text-zinc-200">
-                Name
-                <input
-                  type="text"
-                  class="mt-2 h-11 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3 text-sm text-zinc-100 outline-none transition focus:border-yellow-400"
-                />
+              <label class="text-sm font-semibold">Name<input type="text" class="mt-2 h-11 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3" /></label>
+              <label class="text-sm font-semibold">Email<input type="email" class="mt-2 h-11 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3" /></label>
+            </div>
+            <label class="mt-5 block text-sm font-semibold">Phone number<input type="tel" class="mt-2 h-11 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3" /></label>
+            <div class="mt-5 grid gap-5 sm:grid-cols-2">
+              <label class="text-sm font-semibold">Car Brand
+                <select class="mt-2 h-11 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3">
+                  <option>Audi</option><option>BMW</option><option>Mercedes Benz</option><option>Lamborghini</option><option>Ferrari</option><option>Porsche</option>
+                </select>
               </label>
-              <label class="block text-sm font-semibold text-zinc-200">
-                Email
-                <input
-                  type="email"
-                  class="mt-2 h-11 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3 text-sm text-zinc-100 outline-none transition focus:border-yellow-400"
-                />
+              <label class="text-sm font-semibold">Car Type
+                <select class="mt-2 h-11 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3">
+                  <option>Sports Car</option><option>Supercar</option><option>SUV</option><option>Convertible</option><option>Luxury Sedan</option>
+                </select>
               </label>
             </div>
-
-            <label class="mt-5 block text-sm font-semibold text-zinc-200">
-              Phone number
-              <input
-                type="tel"
-                class="mt-2 h-11 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3 text-sm text-zinc-100 outline-none transition focus:border-yellow-400"
-              />
-            </label>
-
-            <label class="mt-5 block text-sm font-semibold text-zinc-200">
-              Message
-              <textarea
-                rows="4"
-                class="mt-2 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3 py-2.5 text-sm text-zinc-100 outline-none transition focus:border-yellow-400"
-              ></textarea>
-            </label>
-
-            <button
-              type="submit"
-              class="gold-gradient mt-6 inline-flex rounded-lg px-6 py-2.5 text-sm font-bold text-black shadow-lg shadow-yellow-500/20 transition hover:brightness-105"
-            >
-              Submit
-            </button>
+            <label class="mt-5 block text-sm font-semibold">Message<textarea rows="4" class="mt-2 w-full rounded-lg border border-yellow-500/25 bg-zinc-950/70 px-3 py-2"></textarea></label>
+            <button type="submit" class="gold-gradient mt-6 rounded-lg px-6 py-2.5 text-sm font-bold text-black">Submit</button>
           </form>
         </section>
       </main>
     </div>
 
-    <footer class="border-t border-yellow-500/20 bg-zinc-950">
-      <div class="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[1.2fr_1fr_1fr_1fr] lg:px-10">
+    <footer class="mt-12 border-t border-yellow-500/20 bg-zinc-950">
+      <div class="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr] lg:px-10">
         <div>
-          <div class="flex items-center gap-2 text-3xl font-semibold text-yellow-300"><span>🚘</span><span>Carent</span></div>
-          <p class="mt-6 text-sm font-semibold text-zinc-100">Subscribe to our newsletter</p>
-          <div class="mt-3 flex max-w-md overflow-hidden rounded-lg border border-yellow-500/25">
-            <input
-              class="h-10 flex-1 bg-zinc-900 px-3 text-sm text-zinc-200 outline-none"
-              placeholder="Enter your email address"
-            />
-            <button class="gold-gradient px-4 text-sm font-bold text-black">Subscribe!</button>
-          </div>
+          <a href="index.html" class="inline-flex items-center gap-2"><img src="assets/img/apexlogo.png" alt="Apex Logo" class="h-9 w-auto" /><span class="text-xl font-semibold text-yellow-300"></span></a>
+          <p class="mt-5 text-sm leading-6 text-zinc-300">If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all.</p>
         </div>
 
         <div>
-          <h4 class="text-sm font-semibold uppercase tracking-wide text-yellow-300">Pages</h4>
+          <h4 class="text-sm font-semibold uppercase tracking-wide text-yellow-300">Car Brands</h4>
           <ul class="mt-4 space-y-2 text-sm text-zinc-300">
-            <li>Home</li>
-            <li>About</li>
-            <li>Cars</li>
-            <li class="text-yellow-300">Contact</li>
-            <li>Blog</li>
+            <li><a href="inventory-grid.html">Audi</a></li><li><a href="inventory-grid.html">BMW</a></li><li><a href="inventory-grid.html">Mercedes Benz</a></li><li><a href="inventory-grid.html">Lamborghini</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-sm font-semibold uppercase tracking-wide text-yellow-300">Utility Pages</h4>
+          <h4 class="text-sm font-semibold uppercase tracking-wide text-yellow-300">Useful Links</h4>
           <ul class="mt-4 space-y-2 text-sm text-zinc-300">
-            <li>Style Guide</li>
-            <li>Instructions</li>
-            <li>Licenses</li>
-            <li>Changelog</li>
-            <li>Link in Bio</li>
+            <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="inventory-grid.html">Our Fleet</a></li><li><a href="service.html">Services</a></li><li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wide text-yellow-300">Car Type</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+            <li><a href="inventory-grid.html">Sports Car</a></li>
+            <li><a href="inventory-grid.html">Supercar</a></li>
+            <li><a href="inventory-grid.html">SUV</a></li>
+            <li><a href="inventory-grid.html">Convertible</a></li>
+            <li><a href="inventory-grid.html">Luxury Sedan</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-sm font-semibold uppercase tracking-wide text-yellow-300">Others</h4>
+          <h4 class="text-sm font-semibold uppercase tracking-wide text-yellow-300">Contact Us</h4>
           <ul class="mt-4 space-y-2 text-sm text-zinc-300">
-            <li>Coming Soon</li>
-            <li>Password Protected</li>
-            <li>Error 404</li>
+            <li><a href="tel:+971544923609">+971 54 492 3609</a></li>
+            <li><a href="mailto:info.apexperformancecarrental@gmail.com" class="break-all">info.apexperformancecarrental@gmail.com</a></li>
+            <li>ONTARIO TOWER C 1801, BUSINESS BAY, DUBAI, UAE</li>
           </ul>
         </div>
       </div>
+      <div class="border-t border-yellow-500/15 py-4 text-center text-xs text-zinc-400">© 2026 Luxury Super Car Rentals. All rights reserved.</div>
     </footer>
   </body>
 </html>
+<!-- suno bhai index file se kuch cheeje isme link krdo sathi hi car brand and brand type usme link kro bus nav ki style mt badlna theek h ab kro sara kaam fotter bhi theek krdo -->
