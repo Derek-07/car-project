@@ -27999,7 +27999,7 @@ button, a, .th-btn {
   border-radius: 12px !important;
   box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(212, 175, 55, 0.2) !important;
-  padding: 12px !important;
+  padding: 28px !important;
   display: grid !important;
 }
 
@@ -28011,8 +28011,8 @@ button, a, .th-btn {
 
 .main-menu .premium-dropdown.dropdown-brands-grid {
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 12px !important;
-  width: 360px !important;
+  gap: 16px !important;
+  width: 420px !important;
 }
 
 .main-menu .premium-dropdown li {

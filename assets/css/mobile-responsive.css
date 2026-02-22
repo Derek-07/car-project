@@ -1,0 +1,305 @@
+/* Mobile-first responsive overrides for Apex Performance Car Rental
+   - Loaded after style.css
+   - Focus: mobile UX, hamburger menu, 2-up cards on small screens,
+     no horizontal scroll, smooth transitions, performance tweaks
+*/
+:root{--mobile-gap:16px;--mobile-bg:#0b0b0b;--mobile-contrast:#ffffff;}
+/* Basic mobile defaults */
+html,body{overflow-x:hidden; -webkit-overflow-scrolling:touch;}
+html{scroll-behavior:smooth}
+body{background-clip:padding-box}
+/* Header/nav adjustments (mobile-first) */
+.header-logo img{max-width:140px;height:auto}
+
+/* Show hamburger toggle only on small screens and hide desktop extras there.
+   Keep desktop navbar unchanged. */
+@media (max-width:991.98px) {
+  .th-header .header-top{display:none}
+  .main-menu{display:none !important}
+  .th-menu-toggle{display:inline-block !important}
+}
+
+/* Mobile menu wrapper overrides: dark background and clear text */
+.th-menu-wrapper{background:rgba(0,0,0,0.85);}
+.th-menu-wrapper .th-menu-area{
+  max-width:320px;
+  width:calc(100% - 48px);
+  background:var(--mobile-bg);
+  color:var(--mobile-contrast);
+  left:0; /* take full width inside overlay but visually slide in */
+  transform:translateX(-110%);
+  transition:transform .32s cubic-bezier(.2,.9,.2,1), opacity .32s ease;
+  border-right:none;
+  box-shadow:0 12px 30px rgba(0,0,0,.6);
+}
+/* When visible, slide in */
+.th-menu-wrapper.th-body-visible .th-menu-area{
+  transform:translateX(0);
+  opacity:1;
+}
+/* Remove unwanted black box behind logo */
+.th-menu-wrapper .mobile-logo{background:transparent;padding:20px 16px}
+.th-menu-wrapper .mobile-logo img{filter:none;display:inline-block}
+
+/* Mobile menu links */
+.th-menu-wrapper .th-mobile-menu{padding:8px 12px 40px}
+.th-menu-wrapper .th-mobile-menu ul{margin:0;padding:0;list-style:none}
+.th-menu-wrapper .th-mobile-menu li{border-bottom:1px solid rgba(255,255,255,0.04)}
+.th-menu-wrapper .th-mobile-menu a{
+  display:block;padding:14px 10px;color:var(--mobile-contrast);font-size:18px;font-weight:600}
+.th-menu-wrapper .th-mobile-menu a:hover{color:var(--theme-color2)}
+/* Submenu caret and open state readability */
+.th-mean-expand{float:right;color:rgba(255,255,255,.5);margin-left:8px}
+.th-menu-wrapper .th-submenu{background:transparent;padding-left:12px}
+.th-menu-wrapper .th-submenu li a{font-weight:500;font-size:16px}
+
+/* Prevent background scrolling when menu open */
+.no-scroll{overflow:hidden;height:100%}
+
+/* Cards: ensure 2-up layout on all mobile widths (<576px) */
+@media (max-width:575.98px){
+  .col-sm-6{flex:0 0 50%;max-width:50%;}
+  .feature-list-1{margin:8px;padding:10px}
+  .feature-list-1 .box-icon{height:180px;overflow:hidden}
+  .feature-list-1 .box-icon img{width:100%;height:100%;object-fit:cover}
+  .feature-list-1 .car-content{padding:10px}
+}
+
+/* Small devices touch targets and declutter */
+@media (max-width:768px){
+  /* hide extra top links and social icons to declutter */
+  .header-top{display:none}
+  .th-container .social-links{display:none}
+  .inventory-top-filer-wrap .left-content p{font-size:14px}
+  .filter-search{margin-top:8px}
+}
+
+/* Smooth hover & transitions */
+.feature-list-1{transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s ease;will-change:transform}
+.feature-list-1:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,.08)}
+.feature-list-1 .actions .icon-btn{transition:transform .18s ease,opacity .18s ease}
+.feature-list-1 .actions .icon-btn:hover{transform:translateY(-3px);opacity:1}
+
+/* Better tap targets */
+.th-btn, .th-menu-wrapper .th-mobile-menu a{border-radius:8px}
+
+/* High-performance scrolling hints */
+/* Apply will-change sparingly to elements that animate or transform */
+.scroll-top, .feature-list-1, .box-icon img{will-change:transform}
+.box-icon img{transform:translateZ(0);backface-visibility:hidden}
+
+/* Hide 4-step process on mobile */
+@media (max-width:767.98px){
+  .how-it-works, .how-steps, .how-buttons{display:none!important}
+}
+
+/* Show only 2 car cards per row on mobile (was 4) */
+@media (max-width:767.98px){
+  .car-rental-section .row.g-4 > .col-lg-3{
+    flex:0 0 calc(50% - 8px);
+    max-width:calc(50% - 8px);
+  }
+  .luxury-car-card{padding:12px}
+  .luxury-car-card .car-image img{max-height:140px;object-fit:cover}
+  .luxury-car-card .car-title{font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
+
+/* Compress footer on mobile */
+@media (max-width:767.98px){
+  .footer-wrapper{padding:30px 0!important}
+  .footer-top, .widget-area{padding:16px 12px!important}
+  .widget h3{font-size:18px;margin-bottom:12px}
+  .widget .menu{columns:2;-webkit-columns:2;font-size:14px}
+  .footer-top-border{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .logo-top{margin-bottom:12px}
+  .payment-wrap{flex-direction:column;gap:12px}
+  .payment-wrap .info h4{font-size:16px;margin-bottom:4px}
+  .payment-wrap .info h6{font-size:12px}
+  .card-thumb-card img{max-width:120px;height:auto}
+  .footer-call-wrap{gap:8px}
+  .info-box{margin-bottom:8px}
+  .footer-info-title{font-size:14px;margin-bottom:4px}
+  .info-box_text{font-size:12px;margin:0}
+  .th-social{gap:8px;margin-top:12px}
+  .th-social a{width:32px;height:32px;font-size:14px}
+  .copyright-wrap{padding:12px 0}
+  .copyright-text{font-size:12px}
+}
+
+/* Make browse-by-type images even smaller on mobile */
+@media (max-width:767.98px){
+  .browse-by-type .category-img{min-height:140px}
+  .browse-by-type .category-img img{width:100px;height:auto;max-height:120px}
+  .browse-by-type .category-info h3{font-size:16px;margin-top:12px}
+  .browse-by-type .category-card{padding:8px}
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* Override base dropdown styles for brands - make background bigger */
+.main-menu .premium-dropdown{
+  overflow:visible!important;
+  position:relative!important;
+}
+
+.main-menu .premium-dropdown.dropdown-brands-grid{
+  width:650px!important;
+  min-width:650px!important;
+  max-width:95vw!important;
+  grid-template-columns:repeat(4, 1fr)!important;
+  gap:28px!important;
+  padding:40px!important;
+  display:grid!important;
+  background:rgba(0,0,0,0.94)!important;
+  border-radius:18px!important;
+  box-shadow:0 16px 56px rgba(0,0,0,0.8)!important;
+  border:1px solid rgba(212,175,55,0.2)!important;
+}
+
+.main-menu .premium-dropdown .brand-item{
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:14px!important;
+  padding:18px!important;
+  min-height:140px!important;
+  word-wrap:break-word;
+  text-align:center;
+  font-size:13px!important;
+  border-radius:12px!important;
+  background:rgba(212,175,55,0.05)!important;
+  border:1px solid rgba(212,175,55,0.1)!important;
+  display:flex!important;
+}
+
+.main-menu .premium-dropdown .brand-item img{
+  width:70px!important;
+  height:70px!important;
+  object-fit:contain!important;
+  flex-shrink:0!important;
+}
+
+@media (max-width:1024px){
+  .main-menu .premium-dropdown.dropdown-brands-grid{
+    width:550px!important;
+    min-width:550px!important;
+    grid-template-columns:repeat(4, 1fr)!important;
+    gap:24px!important;
+    padding:34px!important;
+  }
+  .main-menu .premium-dropdown .brand-item{
+    min-height:135px!important;
+  }
+}
+
+@media (max-width:768px){
+  .main-menu .premium-dropdown.dropdown-brands-grid{
+    width:100%!important;
+    min-width:auto!important;
+    max-width:420px!important;
+    grid-template-columns:repeat(3, 1fr)!important;
+    gap:20px!important;
+    padding:28px!important;
+  }
+  .main-menu .premium-dropdown .brand-item{
+    min-height:120px!important;
+    padding:14px!important;
+  }
+  .main-menu .premium-dropdown .brand-item img{
+    width:56px!important;
+    height:56px!important;
+  }
+}
+
+/* Desktop safety: do not modify layouts for medium+ screens (leave defaults) */
+@media (min-width:576px){
+  /* restore default bootstrap behavior where needed */
+  .col-sm-6{flex:0 0 auto;max-width:100%}
+}
+
+/* Fix minor layout glitches: ensure no overflow from big images */
+img{max-width:100%;height:auto;display:block}
+
+/* Keep car model/title on a single line on larger screens (ellipsis if too long).
+   On small screens (mobile) allow normal wrapping so users can read multiple lines. */
+.feature-list-1 .box-title a{
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+@media (max-width:767.98px){
+  .feature-list-1 .box-title a{
+    white-space:normal;
+  }
+}
+
+/* Footer adjustments: compress on mobile */
+@media (max-width:575.98px){
+  .footer-top, .widget-area{padding:24px 12px}
+  .widget .menu{columns:2;-webkit-columns:2}
+}
+
+/* Utility: improved contrast for links on dark menu */
+.th-menu-wrapper .th-mobile-menu a,.th-menu-wrapper .mobile-logo a{color:#fff}
+
+/* Browse-by-Type: single horizontal row on tablet+desktop, stacked on mobile */
+/* Mobile-first: stacked by default */
+.browse-by-type .row.g-4{display:block}
+.browse-by-type .category-card{display:block;padding:12px;border-radius:8px;text-align:center}
+
+/* Make Browse-by-Type images large and prominent */
+.browse-by-type .category-img{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:260px;
+  width:100%;
+  background:transparent;
+}
+.browse-by-type .category-img img{
+  width:200px;
+  height:auto;
+  max-height:240px;
+  object-fit:contain;
+}
+.browse-by-type .category-info h3{
+  font-size:26px;
+  font-weight:700;
+  margin-top:20px;
+  color:#fff;
+}
+
+@media (min-width:768px){
+  .browse-by-type .row.g-4{
+    display:flex;
+    flex-wrap:nowrap;
+    gap:16px;
+    justify-content:center;
+    align-items:stretch;
+    overflow:visible;
+  }
+  .browse-by-type .row.g-4 > div{
+    flex:0 0 calc(25% - 12px);
+    max-width:calc(25% - 12px);
+    box-sizing:border-box;
+    padding:0;
+  }
+  .browse-by-type .category-card{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .browse-by-type .category-info{margin-top:16px}
+}
+
+@media (max-width:767.98px){
+  .browse-by-type .row.g-4 > div{width:100%;max-width:100%;padding:0;margin-bottom:16px}
+  .browse-by-type .category-card{display:flex;align-items:center;gap:16px;text-align:left;padding:16px}
+  .browse-by-type .category-img{min-height:120px;flex:0 0 auto}
+  .browse-by-type .category-img img{width:120px;height:100px}
+  .browse-by-type .category-info{margin-top:0;flex:1}
+  .browse-by-type .category-info h3{margin-top:0;font-size:20px}
+}
+
+/* End of mobile-responsive.css */
