@@ -2901,15 +2901,11 @@ textarea.is-invalid {
       -ms-transform: rotate(0deg);
           transform: rotate(0deg);
 }
-.th-btn.style2 {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  border: 1px solid #333333;
-}
 .th-btn.style2:hover {
-  background-color: #D4AF37;
-  color: #000000;
-  border-color: #D4AF37;
+  color: var(--title-color);
+}
+.th-btn.style2:hover:before, .th-btn.style2:hover:after {
+  background-color: var(--white-color);
 }
 .th-btn.style3 {
   background-color: transparent;
@@ -7318,8 +7314,7 @@ ol.wp-block-rss {
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 9999;
-  background: transparent !important;
+  z-index: 41;
 }
 
 .th-header .icon-btn {
@@ -7338,8 +7333,6 @@ ol.wp-block-rss {
 .sticky-wrapper {
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
-  background: transparent !important;
-  z-index: 9999;
 }
 .sticky-wrapper.sticky {
   position: fixed;
@@ -7900,13 +7893,13 @@ ol.wp-block-rss {
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: transparent;
+  background-color: var(--white-color);
   z-index: 1;
   -webkit-clip-path: polygon(9% 0%, 104% 0%, 100% 97%, 0% 100%);
   clip-path: polygon(9% 0%, 104% 0%, 100% 97%, 0% 100%);
   height: 100%;
   width: 645px;
-  opacity: 0;
+  opacity: 0.1;
 }
 .header-default .menu-area {
   background-color: transparent;
@@ -7926,19 +7919,18 @@ ol.wp-block-rss {
   top: 0;
   left: 0px;
   bottom: 0;
-  background-color: transparent;
+  background-color: transparent;   /* ← yahin change */
   z-index: -1;
   height: 100%;
   width: 465px;
   -webkit-clip-path: polygon(0px 0%, 100% 0%, 88% 100%, 0 100%);
           clip-path: polygon(0px 0%, 100% 0%, 88% 100%, 0 100%);
-  opacity: 0;
 }
 
 .header-default .th-header .menu-area {
   position: relative;
   z-index: 2;
-  background: transparent;
+  background: var(--smoke-color);
 }
 .header-default .main-menu > ul > li > a {
   padding: 22px 0;
@@ -18707,10 +18699,10 @@ input {
 }
 
 .brand-box {
-  background: transparent;
-  border: none;
+  background: var(--smoke-color);
+  border: 1px solid var(--th-border-color);
   text-align: center;
-  min-height: 180px;
+  min-height: 170px;
   display: grid !important;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -18723,18 +18715,13 @@ input {
 }
 .brand-box img {
   padding: 5px 15px;
-  width: 160px;
+  width: 140px;
   max-width: 100%;
   -webkit-filter: none;
           filter: none;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
-}
-/* White filter for dark logos like McLaren */
-.brand-box img[alt*="claren"],
-.brand-box img[alt*="Maserati"] {
-  filter: brightness(0) invert(1);
 }
 .brand-box:hover img {
   -webkit-transform: scale(1.2);
@@ -28013,7 +28000,7 @@ button, a, .th-btn {
 .main-menu .premium-dropdown.dropdown-brands-grid {
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 12px !important;
-  width: 420px !important;
+  width: 360px !important;
 }
 
 .main-menu .premium-dropdown li {
@@ -28049,8 +28036,8 @@ button, a, .th-btn {
 
 .main-menu .premium-dropdown .grid-item img,
 .main-menu .premium-dropdown .brand-item img {
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   flex-shrink: 0;
   filter: brightness(0.9);
@@ -28148,7 +28135,7 @@ button, a, .th-btn {
 .mobile-dropdown-brands li a {
   display: flex !important;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 12px !important;
   font-size: 13px !important;
   font-weight: 600;
@@ -28156,28 +28143,12 @@ button, a, .th-btn {
   border: 1px solid rgba(212, 175, 55, 0.1);
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: 8px;
-}
-
-.mobile-dropdown-grid li a img,
-.mobile-dropdown-brands li a img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  flex-shrink: 0;
-  filter: brightness(0.9);
-  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-dropdown-grid li a:hover,
 .mobile-dropdown-brands li a:hover {
   background: rgba(212, 175, 55, 0.15);
   color: #FFD700 !important;
-}
-
-.mobile-dropdown-grid li a:hover img,
-.mobile-dropdown-brands li a:hover img {
-  filter: brightness(1.2);
 }
 
 @media (max-width: 576px) {
@@ -28269,19 +28240,16 @@ button, a, .th-btn {
 
 .category-img {
   width: 100%;
-  height: 100px;
+  height: 250px;
   overflow: visible;
   position: relative;
   border-radius: 0;
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .category-img img {
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0;
@@ -29020,7 +28988,7 @@ button, a, .th-btn {
 
 .car-image {
   width: 100%;
-  height: 280px;
+  height: 380px;
   overflow: hidden;
   background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
   display: flex;
@@ -29040,133 +29008,6 @@ button, a, .th-btn {
 }
 
 .car-card-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-  gap: 12px;
-}
-
-.car-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.car-category {
-  font-size: 13px;
-  color: #999;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.car-category .separator {
-  margin: 0 6px;
-  color: #D4AF37;
-}
-
-.car-price-box {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  margin: 10px 0;
-}
-
-.car-price-box .price {
-  font-size: 24px;
-  font-weight: 700;
-  color: #D4AF37;
-}
-
-.car-price-box .price-unit {
-  font-size: 12px;
-  color: #999;
-}
-
-.currency-selector {
-  margin: 12px 0;
-  width: 100%;
-}
-
-.currency-selector .currency-dropdown {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #333;
-  background-color: #0b0b0b;
-  color: #D4AF37;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  appearance: none;
-  padding-right: 30px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4AF37'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  background-size: 18px;
-}
-
-.currency-selector .currency-dropdown option {
-  background-color: #0b0b0b;
-  color: #D4AF37;
-  padding: 8px;
-}
-
-.currency-selector .currency-dropdown:hover {
-  border-color: #D4AF37;
-}
-
-.car-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: auto;
-}
-
-.btn-call,
-.btn-whatsapp {
-  flex: 1;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-call {
-  background: #333;
-  color: #fff;
-  border: 1px solid #555;
-}
-
-.btn-call:hover {
-  background: #444;
-  border-color: #666;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.btn-whatsapp {
-  background: #25D366;
-  color: #fff;
-}
-
-.btn-whatsapp:hover {
-  background: #1ead50;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-}
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -29711,11 +29552,10 @@ button, a, .th-btn {
 
 /* Car card sizing and mobile tweaks */
 .luxury-car-card { display: flex; flex-direction: column; height: 100%; background: #fff; border-radius: 12px; overflow: hidden; }
-.luxury-car-card { display: flex; flex-direction: column; height: 100%; background: #0b0b0b; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(3,6,12,0.6); border: 1px solid rgba(255,255,255,0.04); }
-.luxury-car-card .car-image { height: 180px; overflow: hidden; }
+.luxury-car-card .car-image { height: 220px; overflow: hidden; }
 .luxury-car-card .car-image img { width:100%; height:100%; object-fit:cover; display:block; }
-.luxury-car-card .car-card-content { padding: 12px; display:flex; flex-direction:column; gap:8px; }
-.car-description { color: #d9d9d9; font-size: 14px; margin: 0; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+.luxury-car-card .car-card-content { padding: 14px; display:flex; flex-direction:column; gap:10px; }
+.car-description { color: var(--body-color); font-size: 14px; margin: 0; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
 .car-specs { display:flex; flex-wrap:wrap; gap:8px; font-size:13px; }
 .car-specs .spec-item { flex: 1 1 45%; display:flex; align-items:center; gap:8px; }
 .car-price-section { display:flex; align-items:center; justify-content:space-between; gap:8px; }
@@ -29723,12 +29563,12 @@ button, a, .th-btn {
 .car-actions { display:flex; gap:8px; }
 
 @media (max-width: 1199px) {
-  .luxury-car-card .car-image { height: 160px; }
+  .luxury-car-card .car-image { height: 200px; }
 }
 
 @media (max-width: 991px) {
   /* Make car cards shorter on mobile */
-  .luxury-car-card .car-image { height: 140px; }
+  .luxury-car-card .car-image { height: 160px; }
   .car-description { -webkit-line-clamp: 2; font-size: 13px; }
   .car-specs .spec-item { flex: 1 1 50%; font-size:13px; }
   .car-card-content { padding: 10px; }
@@ -29758,376 +29598,4 @@ button, a, .th-btn {
   .rent-bar .form-control { width: 100%; }
 }
 .header-contacts .th-btn { padding: 10px 16px; border-radius: 30px; }
-
-/*==============================
-    CUSTOM RESPONSIVE & MOBILE FIXES
-==============================*/
-
-/* Sticky Navbar - Premium Scroll Behavior */
-.sticky-wrapper {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: #0b0b0b;
-  transition: all 0.3s ease;
-}
-
-.th-header {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.th-header.header-hidden {
-  transform: translateY(-100%);
-  box-shadow: none;
-}
-
-.th-header.header-visible {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.15);
-}
-
-/* Mobile Menu Responsive */
-.th-menu-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #0b0b0b;
-  z-index: 9999;
-  overflow-y: auto;
-  transform: translateX(-100%);
-  transition: transform 0.35s ease;
-}
-
-.th-menu-wrapper.active {
-  transform: translateX(0);
-}
-
-.th-menu-toggle {
-  background: none;
-  border: none;
-  color: #D4AF37;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 5px 10px;
-  transition: all 0.3s ease;
-}
-
-.th-menu-toggle:hover {
-  color: #FFD700;
-  transform: scaleX(1.1);
-}
-
-.mobile-logo {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.mobile-logo img {
-  max-width: 160px;
-  height: auto;
-}
-
-.th-mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.th-mobile-menu > ul > li {
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-  padding: 15px 0;
-}
-
-.th-mobile-menu > ul > li > a {
-  color: #fff;
-  display: block;
-  padding: 8px 0;
-  font-size: 15px;
-  transition: color 0.3s ease;
-}
-
-.th-mobile-menu > ul > li > a:hover {
-  color: #D4AF37;
-}
-
-.th-mobile-menu .sub-menu {
-  display: none;
-  padding-left: 15px;
-  margin-top: 8px;
-  border-left: 2px solid #D4AF37;
-}
-
-.th-mobile-menu .menu-item-has-children.th-active .sub-menu {
-  display: block;
-}
-
-.th-mobile-menu .sub-menu li {
-  padding: 8px 0;
-}
-
-.th-mobile-menu .sub-menu a {
-  color: #999;
-  font-size: 13px;
-  transition: color 0.3s ease;
-}
-
-.th-mobile-menu .sub-menu a:hover {
-  color: #D4AF37;
-}
-
-/* Responsive Grid Columns */
-@media (min-width: 1200px) {
-  .col-lg-3 { flex: 0 0 25% !important; max-width: 25% !important; }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .col-lg-3 { flex: 0 0 50% !important; max-width: 50% !important; }
-}
-
-@media (max-width: 767px) {
-  .col-lg-3,
-  .col-md-6,
-  .col-sm-12 { flex: 0 0 100% !important; max-width: 100% !important; }
-  
-  .g-4 { gap: 1.2rem !important; }
-  .g-3 { gap: 0.8rem !important; }
-}
-
-/* Car Card Responsive */
-.luxury-car-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.car-image {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .car-image {
-    height: 240px;
-  }
-}
-
-@media (max-width: 576px) {
-  .car-image {
-    height: 200px;
-  }
-  
-  .car-title {
-    font-size: 14px;
-  }
-  
-  .car-description {
-    font-size: 12px;
-  }
-}
-
-/* Floating Contact Buttons */
-.floating-contact-buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-}
-
-.fab-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.fab-btn:hover {
-  transform: scale(1.15) translateY(-3px);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
-}
-
-.whatsapp-fab {
-  background: #25D366;
-}
-
-.whatsapp-fab:hover {
-  background: #1ead50;
-}
-
-.phone-fab {
-  background: #D4AF37;
-  color: #000;
-  font-weight: bold;
-}
-
-.phone-fab:hover {
-  background: #FFD700;
-}
-
-@media (max-width: 768px) {
-  .floating-contact-buttons {
-    bottom: 12px;
-    right: 12px;
-    gap: 8px;
-  }
-  
-  .fab-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
-}
-
-/* Section Title Responsive */
-.sec-title {
-  font-size: 32px;
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .sec-title {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-}
-
-@media (max-width: 576px) {
-  .sec-title {
-    font-size: 20px;
-    margin-bottom: 12px;
-  }
-}
-
-/* Button Responsive */
-.th-btn {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
-  border-radius: 8px;
-  white-space: nowrap;
-}
-
-.th-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-}
-
-@media (max-width: 576px) {
-  .th-btn {
-    padding: 10px 16px;
-    font-size: 12px;
-  }
-}
-
-/* Smooth Scrolling & Animations */
-html {
-  scroll-behavior: smooth;
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.luxury-car-card {
-  animation: slideInUp 0.6s ease-out;
-}
-
-/* Premium Smooth Transitions */
-button,
-a,
-input,
-select,
-textarea,
-.th-btn,
-.luxury-car-card {
-  transition: all 0.25s ease;
-}
-
-/* Navigation Links Smooth */
-.main-menu > ul > li > a {
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.main-menu > ul > li > a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #D4AF37;
-  transition: width 0.3s ease;
-}
-
-.main-menu > ul > li > a:hover::after {
-  width: 100%;
-}
-
-/* Form Elements Responsive */
-.form-control {
-  transition: all 0.3s ease;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-}
-
-.form-control:focus {
-  border-color: #D4AF37;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.form-control::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* Container Responsive */
-@media (max-width: 576px) {
-  .container,
-  .container-fluid {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-/* Breadcrumb Responsive */
-@media (max-width: 576px) {
-  .breadcumb-title {
-    font-size: 18px;
-  }
-}
-
-/* Premium Header Styling */
-.menu-area {
-  padding: 15px 0;
-  transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .menu-area {
-    padding: 12px 0;
-  }
-}
-
 
