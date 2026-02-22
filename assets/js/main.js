@@ -1441,3 +1441,40 @@ function toggleAuth() {
   register.classList.toggle('active');
 }
 
+// Currency Conversion Function
+function updateCarPrice(selectElement) {
+  const selectedCurrency = selectElement.value;
+  const priceSpan = selectElement.closest('.car-card-content').querySelector('.price');
+  
+  if (!priceSpan) return;
+  
+  const aedPrice = parseFloat(priceSpan.getAttribute('data-aed'));
+  const usdPrice = parseFloat(priceSpan.getAttribute('data-usd'));
+  const eurPrice = parseFloat(priceSpan.getAttribute('data-eur'));
+  const gbpPrice = parseFloat(priceSpan.getAttribute('data-gbp'));
+  
+  let displayPrice, currencySymbol;
+  
+  switch(selectedCurrency) {
+    case 'USD':
+      displayPrice = usdPrice;
+      currencySymbol = 'USD $';
+      break;
+    case 'EUR':
+      displayPrice = eurPrice;
+      currencySymbol = 'EUR €';
+      break;
+    case 'GBP':
+      displayPrice = gbpPrice;
+      currencySymbol = 'GBP £';
+      break;
+    case 'AED':
+    default:
+      displayPrice = aedPrice;
+      currencySymbol = 'AED';
+      break;
+  }
+  
+  priceSpan.textContent = displayPrice.toLocaleString() + ' ' + currencySymbol;
+}
+
