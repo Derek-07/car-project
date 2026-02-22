@@ -2901,9 +2901,22 @@ textarea.is-invalid {
       -ms-transform: rotate(0deg);
           transform: rotate(0deg);
 }
-.th-btn.style2:hover {
-  color: var(--title-color);
+
+/* View All Button - Black with Golden Hover */
+.th-btn.style2 {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
+.th-btn.style2:hover {
+  background-color: #D4AF37 !important;
+  color: #000000 !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3) !important;
+}
+
 .th-btn.style2:hover:before, .th-btn.style2:hover:after {
   background-color: var(--white-color);
 }
@@ -18699,7 +18712,6 @@ input {
 }
 
 .brand-box {
-  background: var(--smoke-color);
   border: 1px solid var(--th-border-color);
   text-align: center;
   min-height: 170px;
@@ -28969,7 +28981,7 @@ button, a, .th-btn {
 }
 
 .luxury-car-card {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+  background: #000000;
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -29012,6 +29024,7 @@ button, a, .th-btn {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  background: #000000;
 }
 
 .car-title {
@@ -29146,6 +29159,107 @@ button, a, .th-btn {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   cursor: pointer;
+}
+
+/* Car Buttons Container */
+.car-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.car-price-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.car-category {
+  font-size: 12px;
+  color: #999999;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.separator {
+  color: #666666;
+  margin: 0 6px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #D4AF37;
+}
+
+.price-unit {
+  font-size: 11px;
+  color: #888888;
+}
+
+/* Call Button - Green */
+.btn-call {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #27AE60 0%, #229954 100%);
+  color: #ffffff;
+}
+
+.btn-call:hover {
+  background: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-call i {
+  font-size: 14px;
+}
+
+/* WhatsApp Button - Golden */
+.btn-whatsapp {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #D4AF37 0%, #C19A1B 100%);
+  color: #000000;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
+  color: #000000;
+  text-decoration: none;
+}
+
+.btn-whatsapp i {
+  font-size: 14px;
 }
 
 .call-btn {
