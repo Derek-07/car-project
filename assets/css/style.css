@@ -28952,7 +28952,7 @@ button, a, .th-btn {
 .docs-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid #d4af37;
   border-radius: 12px;
   padding: 40px 30px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -28961,12 +28961,13 @@ button, a, .th-btn {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), inset 0 0 15px rgba(212, 175, 55, 0.08);
 }
 
 .docs-card:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.15);
+  border-color: #d4af37;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), inset 0 0 20px rgba(212, 175, 55, 0.15);
   transform: translateY(-8px);
 }
 
