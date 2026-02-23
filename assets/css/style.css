@@ -18732,7 +18732,6 @@ input {
 }
 
 .brand-box {
-  border: 1px solid var(--th-border-color);
   text-align: center;
   min-height: 170px;
   display: grid !important;
