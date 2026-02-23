@@ -235,7 +235,7 @@
                             </div>
                         </li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
                         </ul>
                         </nav>
                         <button type="button" class="th-menu-toggle d-block d-lg-none"><i
@@ -423,639 +423,566 @@ Browse by Type Section
     </section>
 
     <!--======== / Hero Section ========--><!--==============================
-    Sports Car Rental Section
+    Sports Car Rental Section - Premium Carousel
     ==============================-->
-    <section class="car-rental-section space">
-        <div class="container-fluid">
-            <div class="row mb-5">
-                <div class="col-lg-12 text-center">
-                    <h2 class="sec-title mb-3">Sports Car Rental in Dubai</h2>
-                    <p class="sec-text">Experience the pinnacle of luxury and performance with Luxury Supercars Dubai,
-                        your premier destination for exotic car rentals. Whether you're exploring the vibrant streets of
-                        Dubai, cruising along the scenic coastline, or making a statement at a high-profile event, our
-                        fleet of world-class supercars is designed to elevate every journey.</p>
+    <section class="premium-carousel-section space">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="sec-title mb-3">Sports Cars</h2>
+                    <p class="sec-text">Experience the pinnacle of luxury and performance with our premium sports cars. Whether you're exploring the vibrant streets of Dubai or making a statement at a high-profile event, our fleet of world-class supercars is designed to elevate every journey.</p>
                 </div>
-                <div class="row g-4">
-                    <!-- Lamborghini Huracan STO -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="luxury-car-card">
-                            <div class="car-image">
-                                <img src="assets/cars/oragne.png" alt="Lamborghini Huracan STO" class="img-fluid">
-                            </div>
-                            <div class="car-card-content">
-                                <h3 class="car-title">Lamborghini Performante Green</h3>
-                                <p class="car-category">SUV <span class="separator">|</span> Lamborghini</p>
+            </div>
 
-                                <div class="car-price-box">
-                                    <span class="price" data-aed="3500" data-usd="951" data-eur="875"
-                                        data-gbp="770">3,500 AED</span>
-                                    <span class="price-unit">/ Per Day</span>
+            <!-- Premium Carousel Slider -->
+            <div class="carousel-wrapper sports-carousel-wrapper">
+                <div class="swiper sports-carousel" id="sports-carousel">
+                    <div class="swiper-wrapper">
+                        <!-- Lamborghini Performante Green -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/oragne.png" alt="Lamborghini Performante Green" class="car-image">
+                                    <div class="car-overlay"></div>
                                 </div>
-
-                                <div class="currency-selector">
-                                    <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                        <option value="AED" selected>AED</option>
-                                        <option value="USD">USD $</option>
-                                        <option value="EUR">EUR €</option>
-                                        <option value="GBP">GBP £</option>
-                                    </select>
-                                </div>
-
-                                <div class="car-buttons">
-                                    <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                    <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                            class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Lamborghini Performante Green</h3>
+                                    <p class="car-category">Sports <span class="separator">|</span> Lamborghini</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="3500" data-usd="951" data-eur="875" data-gbp="770">3,500 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Lamborghini Revuelto -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="luxury-car-card">
-                            <div class="car-image">
-                                <img src="assets/cars/red.png" alt="Lamborghini Revuelto" class="img-fluid">
-                            </div>
-                            <div class="car-card-content">
-                                <h3 class="car-title">Lamborghini Revuelto Red</h3>
-                                <p class="car-category">Luxury <span class="separator">|</span> Lamborghini</p>
-
-                                <div class="car-price-box">
-                                    <span class="price" data-aed="6000" data-usd="1632" data-eur="1500"
-                                        data-gbp="1320">6,000 AED</span>
-                                    <span class="price-unit">/ Per Day</span>
+                        <!-- Lamborghini Revuelto Red -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/red.png" alt="Lamborghini Revuelto Red" class="car-image">
+                                    <div class="car-overlay"></div>
                                 </div>
-
-                                <div class="currency-selector">
-                                    <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                        <option value="AED" selected>AED</option>
-                                        <option value="USD">USD $</option>
-                                        <option value="EUR">EUR €</option>
-                                        <option value="GBP">GBP £</option>
-                                    </select>
-                                </div>
-
-                                <div class="car-buttons">
-                                    <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                    <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                            class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Lamborghini Revuelto Red</h3>
+                                    <p class="car-category">Luxury <span class="separator">|</span> Lamborghini</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="6000" data-usd="1632" data-eur="1500" data-gbp="1320">6,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Lamborghini Huracan Tecnica -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="luxury-car-card">
-                            <div class="car-image">
-                                <img src="assets/cars/blue.png" alt="Lamborghini Huracan Tecnica" class="img-fluid">
-                            </div>
-                            <div class="car-card-content">
-                                <h3 class="car-title">Lamborghini Huracan Blue</h3>
-                                <p class="car-category">Luxury <span class="separator">|</span> Lamborghini</p>
-
-                                <div class="car-price-box">
-                                    <span class="price" data-aed="5800" data-usd="1578" data-eur="1450"
-                                        data-gbp="1276">5,800 AED</span>
-                                    <span class="price-unit">/ Per Day</span>
+                        <!-- Lamborghini Huracan Blue -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/blue.png" alt="Lamborghini Huracan Blue" class="car-image">
+                                    <div class="car-overlay"></div>
                                 </div>
-
-                                <div class="currency-selector">
-                                    <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                        <option value="AED" selected>AED</option>
-                                        <option value="USD">USD $</option>
-                                        <option value="EUR">EUR €</option>
-                                        <option value="GBP">GBP £</option>
-                                    </select>
-                                </div>
-
-                                <div class="car-buttons">
-                                    <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                    <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                            class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Lamborghini Huracan Blue</h3>
+                                    <p class="car-category">Sports <span class="separator">|</span> Lamborghini</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="5800" data-usd="1578" data-eur="1450" data-gbp="1276">5,800 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Mclaren 750S Spyder -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="luxury-car-card">
-                            <div class="car-image">
-                                <img src="assets/cars/red.png" alt="Mclaren 750S Spyder" class="img-fluid">
-                            </div>
-                            <div class="car-card-content">
-                                <h3 class="car-title">McLaren 750S Black</h3>
-                                <p class="car-category">Luxury <span class="separator">|</span> McLaren</p>
-
-                                <div class="car-price-box">
-                                    <span class="price" data-aed="8000" data-usd="2176" data-eur="2000"
-                                        data-gbp="1760">8,000 AED</span>
-                                    <span class="price-unit">/ Per Day</span>
+                        <!-- McLaren 750S Black -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/red.png" alt="McLaren 750S Black" class="car-image">
+                                    <div class="car-overlay"></div>
                                 </div>
-
-                                <div class="currency-selector">
-                                    <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                        <option value="AED" selected>AED</option>
-                                        <option value="USD">USD $</option>
-                                        <option value="EUR">EUR €</option>
-                                        <option value="GBP">GBP £</option>
-                                    </select>
-                                </div>
-
-                                <div class="car-buttons">
-                                    <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                    <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                            class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">McLaren 750S Black</h3>
+                                    <p class="car-category">Sports <span class="separator">|</span> McLaren</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="8000" data-usd="2176" data-eur="2000" data-gbp="1760">8,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-12 text-center">
-                        <a href="sports-cars.html" class="th-btn style2">VIEW ALL SPORTS CARS <i
-                                class="fas fa-arrow-up-right"></i></a>
-                    </div>
+
+                <!-- Navigation Arrows -->
+                <div class="carousel-nav-buttons">
+                    <button class="carousel-btn carousel-prev" id="sports-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="sports-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="sports-cars.html" class="th-btn style2">VIEW ALL SPORTS CARS <i class="fas fa-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
             </div>
     </section>
 
     <!--==============================
-    Convertible Car Rental Section
+    Convertible Car Rental Section - Premium Carousel
     ==============================-->
-    <section class="car-rental-section space">
-        <div class="container-fluid">
-            <div class="row mb-5">
-                <div class="col-lg-12 text-center">
-                    <h2 class="sec-title mb-3">Convertible Car Rental in Dubai</h2>
-                    <p class="sec-text">Feel the wind in your hair and the sun on your face with our exclusive
-                        convertible collection. Perfect for memorable drives along Dubai's stunning coastline, these
-                        open-top luxury vehicles combine elegance with pure driving pleasure, making every journey an
-                        unforgettable experience.</p>
+    <section class="convertible-carousel-section space">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="sec-title mb-3">Convertible Cars</h2>
+                    <p class="sec-text">Feel the wind in your hair and the sun on your face with our exclusive convertible collection. Perfect for memorable drives along Dubai's stunning coastline, these open-top luxury vehicles combine elegance with pure driving pleasure.</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <!-- Rolls Royce Dawn White -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/white.png" alt="Rolls Royce Dawn White" class="img-fluid">
+
+            <!-- Premium Carousel Slider -->
+            <div class="convertible-carousel-wrapper">
+                <div class="swiper convertible-carousel" id="convertible-carousel">
+                    <div class="swiper-wrapper">
+                        <!-- Rolls Royce Dawn White -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/white.png" alt="Rolls Royce Dawn White" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Rolls Royce Dawn White</h3>
+                                    <p class="car-category">Convertible <span class="separator">|</span> Rolls Royce</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="3000" data-usd="816" data-eur="750" data-gbp="660">3,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Rolls Royce Dawn White</h3>
-                            <p class="car-category">Convertible <span class="separator">|</span> Rolls Royce</p>
 
-                            <div class="car-price-box">
-                                <span class="price" data-aed="3000" data-usd="816" data-eur="750" data-gbp="660">3,000
-                                    AED</span>
-                                <span class="price-unit">/ Per Day</span>
+                        <!-- Rolls Royce Dawn Black -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/black.png" alt="Rolls Royce Dawn Black" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Rolls Royce Dawn Black</h3>
+                                    <p class="car-category">Convertible <span class="separator">|</span> Rolls Royce</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="12000" data-usd="3264" data-eur="3000" data-gbp="2640">12,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
+                        <!-- Porsche 911 Turbo S -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/porsche1.png" alt="Porsche 911 Turbo S" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Porsche 911 Turbo S</h3>
+                                    <p class="car-category">Convertible <span class="separator">|</span> Porsche</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="10800" data-usd="2937" data-eur="2700" data-gbp="2376">10,800 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <!-- Porsche 911 Carrera S -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/porsche1.png" alt="Porsche 911 Carrera S" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Porsche 911 Carrera S</h3>
+                                    <p class="car-category">Convertible <span class="separator">|</span> Porsche</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="8800" data-usd="2394" data-eur="2200" data-gbp="1936">8,800 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Rolls Royce Dawn Black -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/black.png" alt="Rolls Royce Dawn Black" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Rolls Royce Dawn Black</h3>
-                            <p class="car-category">Convertible <span class="separator">|</span> Rolls Royce</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="12000" data-usd="3264" data-eur="3000"
-                                    data-gbp="2640">12,000 AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Porsche 911 Turbo S -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/porsche1.png" alt="Porsche 911 Turbo S" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Porsche 911 Turbo S</h3>
-                            <p class="car-category">Convertible <span class="separator">|</span> Porsche</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="10800" data-usd="2937" data-eur="2700"
-                                    data-gbp="2376">10,800 AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Porsche 911 Carrera S Spyder -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/porsche1.png" alt="Porsche 911 Carrera S Spyder" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Porsche 911 Carrera S</h3>
-                            <p class="car-category">Convertible <span class="separator">|</span> Porsche</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="8800" data-usd="2394" data-eur="2200"
-                                    data-gbp="1936">8,800 AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Navigation Arrows -->
+                <div class="carousel-nav-buttons">
+                    <button class="carousel-btn carousel-prev" id="convertible-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="convertible-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
+
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="convertible-cars.html" class="th-btn style2">VIEW ALL CONVERTIBLE CARS <i
-                            class="fas fa-arrow-up-right"></i></a>
+                    <a href="convertible-cars.html" class="th-btn style2">VIEW ALL CONVERTIBLE CARS <i class="fas fa-arrow-up-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!--==============================
-    Luxury Car Rental Section
+    Luxury Car Rental Section - Premium Carousel
     ==============================-->
-    <section class="car-rental-section space">
-        <div class="container-fluid">
-            <div class="row mb-5">
-                <div class="col-lg-12 text-center">
-                    <h2 class="sec-title mb-3">Luxury Car Rental in Dubai</h2>
-                    <p class="sec-text">Embody elegance and sophistication with our prestigious luxury car collection.
-                        From timeless classics to modern marvels, experience unparalleled comfort and prestige with our
-                        handpicked selection of the world's finest luxury vehicles, perfect for those who demand nothing
-                        but the best.</p>
+    <section class="premium-carousel-section space">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="sec-title mb-3">Luxury Cars</h2>
+                    <p class="sec-text">Embody elegance and sophistication with our prestigious luxury car collection. From timeless classics to modern marvels, experience unparalleled comfort and prestige with the world's finest luxury vehicles.</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <!-- Rolls Royce Ghost White -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/white.png" alt="Rolls Royce Ghost White" class="img-fluid">
+
+            <!-- Premium Carousel Slider -->
+            <div class="carousel-wrapper luxury-carousel-wrapper">
+                <div class="swiper luxury-carousel" id="luxury-carousel">
+                    <div class="swiper-wrapper">
+                        <!-- Rolls Royce Ghost White -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/white.png" alt="Rolls Royce Ghost White" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Rolls Royce Ghost White</h3>
+                                    <p class="car-category">Luxury <span class="separator">|</span> Rolls Royce</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="15000" data-usd="4080" data-eur="3750" data-gbp="3300">15,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Rolls Royce Ghost White</h3>
-                            <p class="car-category">Luxury <span class="separator">|</span> Rolls Royce</p>
 
-                            <div class="car-price-box">
-                                <span class="price" data-aed="15000" data-usd="4080" data-eur="3750"
-                                    data-gbp="3300">15,000 AED</span>
-                                <span class="price-unit">/ Per Day</span>
+                        <!-- Bentley Continental Black -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/black.png" alt="Bentley Continental Black" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Bentley Continental Black</h3>
+                                    <p class="car-category">Luxury <span class="separator">|</span> Bentley</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="14000" data-usd="3808" data-eur="3500" data-gbp="3080">14,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
+                        <!-- Ferrari F8 Tributo Red -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/red.png" alt="Ferrari F8 Tributo Red" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Ferrari F8 Tributo Red</h3>
+                                    <p class="car-category">Luxury <span class="separator">|</span> Ferrari</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="16000" data-usd="4352" data-eur="4000" data-gbp="3520">16,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <!-- Maserati MC20 Grey -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/gw01.png" alt="Maserati MC20 Grey" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Maserati MC20 Grey</h3>
+                                    <p class="car-category">Luxury <span class="separator">|</span> Maserati</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="17000" data-usd="4624" data-eur="4250" data-gbp="3760">17,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bentley Continental Black -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/black.png" alt="Bentley Continental Black" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Bentley Continental Black</h3>
-                            <p class="car-category">Luxury <span class="separator">|</span> Bentley</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="14000" data-usd="3808" data-eur="3500"
-                                    data-gbp="3080">14,000 AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ferrari F8 Tributo Red -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/red.png" alt="Ferrari F8 Tributo Red" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Ferrari F8 Tributo Red</h3>
-                            <p class="car-category">Luxury <span class="separator">|</span> Ferrari</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="16000" data-usd="4352" data-eur="4000"
-                                    data-gbp="3520">16,000 AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Maserati MC20 Grey -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/gw01.png" alt="Maserati MC20 Grey" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Maserati MC20 Grey</h3>
-                            <p class="car-category">Luxury <span class="separator">|</span> Maserati</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="17000" data-usd="4624" data-eur="4250"
-                                    data-gbp="3760">17,000 AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Navigation Arrows -->
+                <div class="carousel-nav-buttons">
+                    <button class="carousel-btn carousel-prev" id="luxury-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="luxury-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
+
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="luxury-cars.html" class="th-btn style2">VIEW ALL LUXURY CARS <i
-                            class="fas fa-arrow-up-right"></i></a>
+                    <a href="luxury-cars.html" class="th-btn style2">VIEW ALL LUXURY CARS <i class="fas fa-arrow-up-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!--==============================
-    SUV Car Rental Section
+    SUV Car Rental Section - Premium Carousel
     ==============================-->
-    <section class="car-rental-section space">
-        <div class="container-fluid">
-            <div class="row mb-5">
-                <div class="col-lg-12 text-center">
-                    <h2 class="sec-title mb-3">Rent SUVs in Dubai</h2>
-                    <p class="sec-text">Discover unmatched comfort and versatility with our premium SUV rental service.
-                        Perfect for family trips, group outings, or exploring Dubai in style, our luxury SUVs offer
-                        spacious interiors, top-notch performance, and sophisticated design for the ultimate driving
-                        experience.</p>
+    <section class="premium-carousel-section space">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="sec-title mb-3">SUV Cars</h2>
+                    <p class="sec-text">Discover unmatched comfort and versatility with our premium SUV rental service. Perfect for family trips, group outings, or exploring Dubai in style, with spacious interiors and top-notch performance.</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <!-- Mercedes Brabus G63 800 Widestar -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/gw01.png" alt="Mercedes Brabus G63 800 Widestar" class="img-fluid">
+
+            <!-- Premium Carousel Slider -->
+            <div class="carousel-wrapper suv-carousel-wrapper">
+                <div class="swiper suv-carousel" id="suv-carousel">
+                    <div class="swiper-wrapper">
+                        <!-- Mercedes Brabus G63 Grey -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/gw01.png" alt="Mercedes Brabus G63 Grey" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Mercedes Brabus G63 Grey</h3>
+                                    <p class="car-category">SUV <span class="separator">|</span> Mercedes</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="10000" data-usd="2720" data-eur="2500" data-gbp="2200">10,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Mercedes Brabus G63 Grey</h3>
-                            <p class="car-category">SUV <span class="separator">|</span> Mercedes</p>
 
-                            <div class="car-price-box">
-                                <span class="price" data-aed="10000" data-usd="2720" data-eur="2500"
-                                    data-gbp="2200">10,000 AED</span>
-                                <span class="price-unit">/ Per Day</span>
+                        <!-- Mercedes G63 AMG Black -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/gw01.png" alt="Mercedes G63 AMG Black" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Mercedes G63 AMG Black</h3>
+                                    <p class="car-category">SUV <span class="separator">|</span> Mercedes</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="9000" data-usd="2448" data-eur="2250" data-gbp="1980">9,000 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
+                        <!-- Mercedes GLS600 Maybach -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/blue.png" alt="Mercedes GLS600 Maybach" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Mercedes GLS600 Maybach</h3>
+                                    <p class="car-category">SUV <span class="separator">|</span> Mercedes</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="2800" data-usd="762" data-eur="700" data-gbp="616">2,800 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <!-- Mercedes AMG GLE63 Red -->
+                        <div class="swiper-slide">
+                            <div class="carousel-car-card">
+                                <div class="car-image-container">
+                                    <img src="assets/cars/red.png" alt="Mercedes AMG GLE63 Red" class="car-image">
+                                    <div class="car-overlay"></div>
+                                </div>
+                                <div class="car-info-container">
+                                    <h3 class="car-title">Mercedes AMG GLE63 Red</h3>
+                                    <p class="car-category">SUV <span class="separator">|</span> Mercedes</p>
+                                    <div class="car-price-display">
+                                        <span class="price-value" data-aed="1300" data-usd="353" data-eur="325" data-gbp="286">1,300 AED</span>
+                                        <span class="price-label">/ Per Day</span>
+                                    </div>
+                                    <div class="car-action-buttons">
+                                        <a href="tel:+971544923609" class="btn-action btn-call">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                        <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Mercedes Benz G63 AMG -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/gw01.png" alt="Mercedes Benz G63 AMG" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Mercedes G63 AMG Black</h3>
-                            <p class="car-category">SUV <span class="separator">|</span> Mercedes</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="9000" data-usd="2448" data-eur="2250"
-                                    data-gbp="1980">9,000 AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mercedes GLS600 Maybach -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/blue.png" alt="Mercedes GLS600 Maybach" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Mercedes GLS600 Maybach</h3>
-                            <p class="car-category">SUV <span class="separator">|</span> Mercedes</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="2800" data-usd="762" data-eur="700" data-gbp="616">2,800
-                                    AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mercedes Benz AMG GLE63 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="luxury-car-card">
-                        <div class="car-image">
-                            <img src="assets/cars/red.png" alt="Mercedes Benz AMG GLE63" class="img-fluid">
-                        </div>
-                        <div class="car-card-content">
-                            <h3 class="car-title">Mercedes AMG GLE63 Red</h3>
-                            <p class="car-category">SUV <span class="separator">|</span> Mercedes</p>
-
-                            <div class="car-price-box">
-                                <span class="price" data-aed="1300" data-usd="353" data-eur="325" data-gbp="286">1,300
-                                    AED</span>
-                                <span class="price-unit">/ Per Day</span>
-                            </div>
-
-                            <div class="currency-selector">
-                                <select class="currency-dropdown" onchange="updateCarPrice(this)">
-                                    <option value="AED" selected>AED</option>
-                                    <option value="USD">USD $</option>
-                                    <option value="EUR">EUR €</option>
-                                    <option value="GBP">GBP £</option>
-                                </select>
-                            </div>
-
-                            <div class="car-buttons">
-                                <a href="tel:+971544923609" class="btn-call"><i class="fas fa-phone"></i> Call</a>
-                                <a href="https://wa.me/971544923609" target="_blank" class="btn-whatsapp"><i
-                                        class="fab fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Navigation Arrows -->
+                <div class="carousel-nav-buttons">
+                    <button class="carousel-btn carousel-prev" id="suv-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="suv-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
+
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="suv-cars.html" class="th-btn style2">VIEW ALL SUV CARS <i
-                            class="fas fa-arrow-up-right"></i></a>
+                    <a href="suv-cars.html" class="th-btn style2">VIEW ALL SUV CARS <i class="fas fa-arrow-up-right"></i></a>
                 </div>
             </div>
         </div>
@@ -1943,10 +1870,7 @@ Feedback Section / Contact Section
     <div class="floating-contact-buttons">
         <!-- WhatsApp Button -->
         <a href="https://wa.me/971544923609" target="_blank" class="fab-btn whatsapp-fab" title="Chat on WhatsApp">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                <path
-                    d="M17.6915026,13.4744748 C17.5909957,13.4744748 16.2309653,12.8561345 16.0211491,12.7653472 C15.8115274,12.6747602 15.6797571,12.6747602 15.5287671,12.8266185 C15.2239258,13.1314597 14.6563168,13.5898929 14.4573127,13.8042813 C14.2580076,14.018669 14.0588035,14.0406509 13.8041504,13.8915461 C13.1287812,13.5145142 12.5151656,13.0373852 12.0003164,12.3628841 C11.6104342,11.8899468 11.2876913,11.346577 11.0536778,10.7597155 C10.9572816,10.5089183 11.0739443,10.3627997 11.1910232,10.2475532 C11.2823066,10.1532065 11.375591,10.0346126 11.4858906,9.91647568 C11.7130213,9.65993295 11.7563491,9.32318836 11.6106788,9.03806061 L10.7247255,7.13020425 C10.5689876,6.85935559 10.1610268,6.62934041 9.83344688,6.64928349 C9.64848101,6.66035561 9.4663429,6.68950851 9.29122141,6.73651635 C8.22649299,7.05205529 7.38207995,7.95126984 7.34860086,9.02698902 C7.30198046,10.4785436 7.76594471,11.9193797 8.65452699,13.0739669 C9.80017625,14.5834043 11.2151196,15.6424161 12.7951502,16.1430078 C13.7066879,16.4459051 14.6782689,16.5056062 15.6169721,16.3172125 C16.6770103,16.1075214 17.5612919,15.3555013 17.8405026,14.3389526 C17.9044444,14.1193071 17.9358739,13.8994927 17.9358739,13.6821893 C17.9358739,13.4744748 17.8290455,13.4744748 17.6915026,13.4744748 Z M12.0010624,1.70451792 C6.40615487,1.70451792 1.95203975,6.15863305 1.95203975,11.7535405 C1.95203975,13.8633145 2.72022179,15.8597043 4.08988764,17.3758656 L3.14065913,20.8350326 C3.02015572,21.2744984 3.45054101,21.6508997 3.8430536,21.4165703 L7.30813854,19.1949738 C8.83506506,20.0854937 10.5880235,20.8070332 12.0010624,20.8070332 C17.5960698,20.8070332 22.0500856,16.3529173 22.0500856,10.7580099 C22.0500856,5.16309238 17.5960698,1.70451792 12.0010624,1.70451792 Z" />
-            </svg>
+            <i class="fab fa-whatsapp"></i>
         </a>
         <!-- Phone Button -->
         <a href="tel:+971544923609" class="fab-btn phone-fab" title="Call Us">
@@ -1980,6 +1904,78 @@ Feedback Section / Contact Section
 
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Carousel Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all carousels
+            const carouselConfigs = [
+                {
+                    class: '.sports-carousel',
+                    wrapper: '.sports-carousel-wrapper',
+                    prevBtn: '#sports-prev',
+                    nextBtn: '#sports-next'
+                },
+                {
+                    class: '.convertible-carousel',
+                    wrapper: '.convertible-carousel-wrapper',
+                    prevBtn: '#convertible-prev',
+                    nextBtn: '#convertible-next'
+                },
+                {
+                    class: '.luxury-carousel',
+                    wrapper: '.luxury-carousel-wrapper',
+                    prevBtn: '#luxury-prev',
+                    nextBtn: '#luxury-next'
+                },
+                {
+                    class: '.suv-carousel',
+                    wrapper: '.suv-carousel-wrapper',
+                    prevBtn: '#suv-prev',
+                    nextBtn: '#suv-next'
+                }
+            ];
+
+            const baseSwipeConfig = {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                centeredSlides: true,
+                loop: true,
+                autoplay: {
+                    delay: 2800,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
+                speed: 800,
+                effect: 'slide',
+                touchRatio: 1,
+                touchAngle: 45,
+                breakpoints: {
+                    320: { slidesPerView: 1, spaceBetween: 15 },
+                    480: { slidesPerView: 1, spaceBetween: 20 },
+                    768: { slidesPerView: 2, spaceBetween: 25 },
+                    1024: { slidesPerView: 3, spaceBetween: 30 },
+                    1200: { slidesPerView: 3, spaceBetween: 40 }
+                }
+            };
+
+            carouselConfigs.forEach(config => {
+                const swiperInstance = new Swiper(config.class, {
+                    ...baseSwipeConfig,
+                    navigation: {
+                        nextEl: config.nextBtn,
+                        prevEl: config.prevBtn
+                    }
+                });
+
+                const wrapper = document.querySelector(config.wrapper);
+                if (wrapper) {
+                    wrapper.addEventListener('mouseenter', () => swiperInstance.autoplay.pause());
+                    wrapper.addEventListener('mouseleave', () => swiperInstance.autoplay.resume());
+                }
+            });
+        });
+    </script>
 
     <!-- Mobile Menu Initialization -->
     <script>
