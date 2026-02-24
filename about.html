@@ -40,6 +40,17 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .th-header.only-top-nav {
+            transition: transform 0.28s ease, opacity 0.28s ease;
+        }
+
+        .th-header.only-top-nav.nav-hidden {
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
 
     <!-- 3d moving  -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -926,6 +937,25 @@ Faq Area
 
     <!-- Mobile enhancements (menu sync + perf hints) -->
     <script src="assets/js/mobile-enhancements.js"></script>
+    <script>
+        (function () {
+            const header = document.querySelector(".th-header");
+            const stickyWrapper = document.querySelector(".sticky-wrapper");
+            if (!header) return;
+
+            header.classList.add("only-top-nav");
+
+            function toggleHeaderByScroll() {
+                const isTop = window.scrollY <= 10;
+                header.classList.toggle("nav-hidden", !isTop);
+                if (stickyWrapper) stickyWrapper.classList.remove("sticky");
+            }
+
+            window.addEventListener("scroll", toggleHeaderByScroll, { passive: true });
+            window.addEventListener("load", toggleHeaderByScroll);
+            toggleHeaderByScroll();
+        })();
+    </script>
 </body>
 
 </html>
