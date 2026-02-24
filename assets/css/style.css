@@ -19397,7 +19397,7 @@ input {
   transition: 0.4s;
   text-align: center;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background: var(--white-color);
+  background: black;
   margin-top: 50px;
 }
 .why-card-2::before {

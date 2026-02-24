@@ -1,10 +1,10 @@
-<!doctype html>
+<!Doctype html>
 <html class="no-js " lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Apex Performance Car Rental </title>
+    <title>Apex Performance Car Rental</title>
     <meta name="author" content="Apex Performance Car Rental">
     <meta name="description" content="Apex Performance Car Rental - Premium Car Rental Services in Dubai">
     <meta name="keywords"
@@ -40,12 +40,14 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Mobile responsive overrides (load after main stylesheet) -->
-    <link rel="stylesheet" href="assets/css/mobile-responsive.css">
+
+    <!-- 3d moving  -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 
 </head>
 
-<body class="">
+<body class="body">
 
     <!--[if lte IE 9]>
     	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -67,10 +69,6 @@
             <div class="loader"></div>
         </div>
     </div>
-    <!--==============================
-    Sidemenu
-============================== -->
-
     <div class="popup-search-box d-none d-lg-block">
         <button class="searchClose"><i class="fal fa-times"></i></button>
         <form action="#">
@@ -84,7 +82,7 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="assets/img/apexlogo.png" alt="apex-html"></a>
+                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -97,9 +95,19 @@
                     <li class="#">
                         <a href="service.html">Services</a>
                     </li>
-                    <li class="#">
-                        <a href="sell-a-car.html">Sell A Car</a>
+                    <li class="menu-item-has-children">
+                        <a href="#">Inventory</a>
+                        <ul class="sub-menu">
+                            <li><a href="inventory-grid.html">Inventory Grid</a></li>
+                            <li><a href="inventory-sold.html">Sold Inventory</a></li>
+                            <li><a href="inventory-comparison.html">Inventory Comparison</a></li>
+                        </ul>
                     </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Pages</a>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="error.html">Error Page</a></li>
                     <li class="#">
                         <a href="blog.html">Blog</a>
                     </li>
@@ -124,56 +132,120 @@
                                 <a href="index.html"><img src="assets/img/apexlogo.png" alt="apexlogo"></a>
                             </div>
                         </div>
-                        <div class="col-auto">
+                        <div class="col-auto col-md-auto">
                             <nav class="main-menu sapace-left d-none d-lg-inline-block">
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
-
                                     <li><a href="about.html">About Us</a></li>
-
                                     <li><a href="service.html">Services</a></li>
-
-                                    <li><a href="sell-a-car.html">Sell A Car</a></li>
-
                                     <li class="menu-item-has-children">
-                                        <a href="#">Inventory</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="inventory-grid.html">Inventory Grid</a></li>
-                                            <li><a href="inventory-sold.html">Sold Inventory</a></li>
-                                            <li><a href="inventory-comparison.html">Inventory Comparison</a></li>
-                                        </ul>
+                                        <a href="#">Car Types</a>
+                                        <div class="sub-menu premium-dropdown dropdown-grid">
+                                            <a href="luxury-cars.html" class="grid-item"><img src="assets/img/type/01.png" alt="Luxury Cars"><span>Luxury Cars</span></a>
+                                            <a href="convertible-cars.html" class="grid-item"><img src="assets/img/type/02.png" alt="Convertible Cars"><span>Convertible Cars</span></a>
+                                            <a href="sports-cars.html" class="grid-item"><img src="assets/img/type/03.png" alt="Sports Cars"><span>Sports Cars</span></a>
+                                            <a href="suv-cars.html" class="grid-item"><img src="assets/img/type/04.png" alt="SUV Cars"><span>SUV Cars</span></a>
+                                        </div>
                                     </li>
-
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="team.html">Our Team</a></li>
-                                            <li><a href="testimonials.html">Testimonials</a></li>
-                                            <li><a href="error.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li><a href="blog.html">Blog</a></li>
-
-                                    <li><a href="contact.html">Contact Us</a></li>
-
-                                    <li><a href="login.html">Login</a></li>
-                                </ul>
-                            </nav>
-
-                            <button type="button" class="th-menu-toggle d-block d-lg-none"><i
-                                    class="far fa-bars"></i></button>
-                        </div>
-                        <div class="col-auto d-none d-xl-block">
-                            <div class="header-button">
-                                <button type="button" class="simple-icon searchBoxToggler"><i
-                                        class="far fa-search"></i></button>
-                                <!-- <button type="button" class="simple-icon sideMenuToggler"><i class="fa-sharp fa-regular fa-bag-shopping"></i> <span class="badge">5</span></button> -->
-                                <!-- <a href="sell-a-car.html" class="th-btn">Adding List <i class="fa-solid fa-circle-plus"></i></a> -->
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Brands</a>
+                            <div class="sub-menu premium-dropdown dropdown-brands-grid">
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/austin-martin.png" alt="Aston Martin"><span>Aston
+                                        Martin</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/audi.png"
+                                        alt="Audi"><span>Audi</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bent.png"
+                                        alt="Bentley"><span>Bentley</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/rr.png" alt="Rolls Royce"><span>Rolls
+                                        Royce</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mac.png"
+                                        alt="Mclaren"><span>Mclaren</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bmw.png"
+                                        alt="BMW"><span>BMW</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/land.png" alt="Range Rover"><span>Range
+                                        Rover</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/mar.png" alt="Mercedes"><span>Mercedes</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/cad.png" alt="Cadillac"><span>Cadillac</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/far.png"
+                                        alt="Ferrari"><span>Ferrari</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/lambologo.png"
+                                        alt="Lamborghini"><span>Lamborghini</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/mas2.png" alt="Maserati"><span>Maserati</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/porsche.png"
+                                        alt="Porsche"><span>Porsche</span></a>
                             </div>
-                        </div>
+                        </li>
+                        <li><a href="blog.html">Our Fleet</a></li>
+                        <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                        </ul>
+                        </nav>
+                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i
+                                class="far fa-bars"></i></button>
                     </div>
+
                 </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Mobile Menu Wrapper -->
+        <div class="th-menu-wrapper">
+            <div class="th-menu-area">
+                <button class="th-menu-toggle"><i class="far fa-times"></i></button>
+                <div class="mobile-logo">
+                    <a href="index.html"><img src="assets/img/apexlogo.png" alt="apexlogo"></a>
+                </div>
+                <nav class="mobile-menu">
+                    <ul class="th-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Types</a>
+                            <ul class="th-submenu mobile-dropdown-grid">
+                                <li><a href="luxury-cars.html"><img src="assets/img/type/01.png" alt="Luxury Cars"><span>Luxury Cars</span></a></li>
+                                <li><a href="convertible-cars.html"><img src="assets/img/type/02.png" alt="Convertible Cars"><span>Convertible Cars</span></a></li>
+                                <li><a href="sports-cars.html"><img src="assets/img/type/03.png" alt="Sports Cars"><span>Sports Cars</span></a></li>
+                                <li><a href="suv-cars.html"><img src="assets/img/type/04.png" alt="SUV Cars"><span>SUV Cars</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Brands</a>
+                            <ul class="th-submenu mobile-dropdown-brands">
+                                <li><a href="inventory-grid.html">Aston Martin</a></li>
+                                <li><a href="inventory-grid.html">Audi</a></li>
+                                <li><a href="inventory-grid.html">Bentley</a></li>
+                                <li><a href="inventory-grid.html">Rolls Royce</a></li>
+                                <li><a href="inventory-grid.html">Mclaren</a></li>
+                                <li><a href="inventory-grid.html">BMW</a></li>
+                                <li><a href="inventory-grid.html">Range Rover</a></li>
+                                <li><a href="inventory-grid.html">Mercedes</a></li>
+                                <li><a href="inventory-grid.html">Cadillac</a></li>
+                                <li><a href="inventory-grid.html">Ferrari</a></li>
+                                <li><a href="inventory-grid.html">Lamborghini</a></li>
+                                <li><a href="inventory-grid.html">Maserati</a></li>
+                                <li><a href="inventory-grid.html">Porsche</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Pages</a>
+                            <ul class="th-submenu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="error.html">Error Page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Our Fleet</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header><!--==============================
@@ -192,85 +264,249 @@
         </div>
     </div>
     <!--==============================
-About Area  
+About Me Area  
 ==============================-->
-    <div class="about-1-wrapper space " id="about-sec">
+    <div class="about-me-section" style="background: #1a1a1a; padding: 60px 0; position: relative;">
         <div class="container">
-            <div class="row gy-40 gx-60 flex-wrap-reverse justify-content-center">
-                <div class="col-xl-7">
-                    <div class="img-box1 about-2">
-                        <div class="img1">
-                            <img class="tilt-active" src="assets/img/about/about001.jpg" alt="Image">
+            <div class="row align-items-center gy-40">
+                <!-- Left Side - Quote and Text -->
+                <div class="col-lg-6">
+                    <div class="about-me-content">
+                        <div class="quote-mark-wrapper" style="position: relative; margin-bottom: 30px;">
+                            <h2 style="font-size: 48px; color: #fff; font-weight: 700; margin: 0 0 20px 0; font-family: 'Play', sans-serif;">About me</h2>
                         </div>
-                        <div class="img2">
-                            <img class="tilt-active" src="assets/img/about/about002.jpg" alt="Image">
+                        
+                        <div class="about-text-box" style="background: rgba(255, 255, 255, 0.03); border-left: 4px solid #D4A574; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+                            <p style="font-size: 16px; color: #999; line-height: 1.8; margin: 0;">
+                                I'm Ahmed Amwell, the proud owner of Luxury Supercar Rentals. Dubai's superior destination for the most luxury and exclusive cars available. Join us as we showcase the latest supercars, share expert insights into the world of luxury automobiles, and take you behind the scenes of our iconic showroom.
+                            </p>
                         </div>
-                        <div class="img3">
-                            <img src="assets/img/about/about003.jpg" alt="Image">
+
+                        <!-- Social Media Icons -->
+                        <div class="social-icons-wrapper" style="display: flex; gap: 15px; align-items: center;">
+                            <a href="#" class="social-icon" style="
+                                width: 45px; 
+                                height: 45px; 
+                                border: 2px solid #D4A574; 
+                                border-radius: 50%; 
+                                display: flex; 
+                                align-items: center; 
+                                justify-content: center; 
+                                color: #D4A574; 
+                                text-decoration: none; 
+                                transition: all 0.3s ease;
+                                font-size: 20px;
+                            "
+                            onmouseover="this.style.background='#D4A574'; this.style.color='#1a1a1a';"
+                            onmouseout="this.style.background='transparent'; this.style.color='#D4A574';">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon" style="
+                                width: 45px; 
+                                height: 45px; 
+                                border: 2px solid #D4A574; 
+                                border-radius: 50%; 
+                                display: flex; 
+                                align-items: center; 
+                                justify-content: center; 
+                                color: #D4A574; 
+                                text-decoration: none; 
+                                transition: all 0.3s ease;
+                                font-size: 20px;
+                            "
+                            onmouseover="this.style.background='#D4A574'; this.style.color='#1a1a1a';"
+                            onmouseout="this.style.background='transparent'; this.style.color='#D4A574';">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon" style="
+                                width: 45px; 
+                                height: 45px; 
+                                border: 2px solid #D4A574; 
+                                border-radius: 50%; 
+                                display: flex; 
+                                align-items: center; 
+                                justify-content: center; 
+                                color: #D4A574; 
+                                text-decoration: none; 
+                                transition: all 0.3s ease;
+                                font-size: 20px;
+                            "
+                            onmouseover="this.style.background='#D4A574'; this.style.color='#1a1a1a';"
+                            onmouseout="this.style.background='transparent'; this.style.color='#D4A574';">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-icon" style="
+                                width: 45px; 
+                                height: 45px; 
+                                border: 2px solid #D4A574; 
+                                border-radius: 50%; 
+                                display: flex; 
+                                align-items: center; 
+                                justify-content: center; 
+                                color: #D4A574; 
+                                text-decoration: none; 
+                                transition: all 0.3s ease;
+                                font-size: 20px;
+                            "
+                            onmouseover="this.style.background='#D4A574'; this.style.color='#1a1a1a';"
+                            onmouseout="this.style.background='transparent'; this.style.color='#D4A574';">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5">
-                    <div class="title-area mb-25 ps-xl-4">
-                        <span class="sub-title style-2"> Welcome to Apex </span>
-                        <h2 class="sec-title">About Us Our Auto Dealership Company</h2>
-                        <p class="sec-text">Our multi-brand trade-in program allows you to bring in your current
-                            vehicle, regardless of make or model, and receive a competitive trade-in value. This makes
-                            upgrading to a new car even easier and more affordable.</p>
-                        <p class="sec-text">We offer flexible payment plans to meet your financial needs and even
-                            provide tailored solutions for customers with various credit profiles.</p>
-                        <div class="client-bottom-wrap">
-                            <div class="client-wrap">
-                                <div class="thumb">
-                                    <img src="assets/img/about/about-1.1-client.png" alt="img">
-                                </div>
-                                <div class="text-wrap">
-                                    <h4 class="box-title">Arun</h4>
-                                    <p>CEO, Founder of Apex</p>
-                                </div>
-                            </div>
+
+                <!-- Right Side - Video -->
+                <div class="col-lg-6">
+                    <div class="about-me-video-container" style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        perspective: 1000px;
+                    ">
+                        <div class="about-me-video-wrapper" style="
+                            position: relative;
+                            width: 100%;
+                            max-width: 400px;
+                            aspect-ratio: 9 / 16;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            background: #000;
+                            box-shadow: 
+                                0 20px 60px rgba(212, 165, 116, 0.3),
+                                0 0 40px rgba(212, 165, 116, 0.2),
+                                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                            border: 2px solid rgba(212, 165, 116, 0.3);
+                            transition: all 0.3s ease;
+                            animation: videoFloat 3s ease-in-out infinite;
+                        "
+                        onmouseover="this.style.boxShadow='0 30px 80px rgba(212, 165, 116, 0.4), 0 0 60px rgba(212, 165, 116, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-10px) scale(1.02)';"
+                        onmouseout="this.style.boxShadow='0 20px 60px rgba(212, 165, 116, 0.3), 0 0 40px rgba(212, 165, 116, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0) scale(1)';">
+                            
+                            <!-- Glow Effect Background -->
+                            <div style="
+                                position: absolute;
+                                top: -50%;
+                                left: -50%;
+                                width: 200%;
+                                height: 200%;
+                                background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+                                animation: glowRotate 8s linear infinite;
+                                pointer-events: none;
+                            "></div>
+
+                            <!-- Video Element -->
+                            <video 
+                                width="100%" 
+                                height="100%" 
+                                controls 
+                                style="
+                                    display: block; 
+                                    background: #000; 
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    border-radius: 18px;
+                                "
+                                poster="assets/img/about/01.jpg">
+                                <source src="assets/video/VN20260207_001641.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+
+                            <!-- Top Shine Effect -->
+                            <div style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                height: 2px;
+                                background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.5), transparent);
+                                pointer-events: none;
+                            "></div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row justify-content-xl-end">
-                <div class="col-xl-8">
-                    <div class="counter-card-wrap style-2-inner">
-                        <div class="counter-card">
-                            <div class="box-icon">
-                                <img src="assets/img/icon/counter_1.1_1.svg" alt="Icon">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="box-number"><span class="counter-number">2760</span><span
-                                        class="plus-simple">+</span></h4>
-                                <p class="box-text">Cars For Sale</p>
-                            </div>
-                        </div>
-                        <div class="counter-card">
-                            <div class="box-icon">
-                                <img src="assets/img/icon/counter_1.1_2.svg" alt="Icon">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="box-number"><span class="counter-number">300</span><span
-                                        class="plus-simple">+</span></h4>
-                                <p class="box-text">Visitor Per Day</p>
-                            </div>
-                        </div>
-                        <div class="counter-card">
-                            <div class="box-icon">
-                                <img src="assets/img/icon/counter_1.1_3.svg" alt="Icon">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="box-number"><span class="counter-number">2660</span><span
-                                        class="plus-simple">+</span></h4>
-                                <p class="box-text">Dealers Review</p>
-                            </div>
-                        </div>
+
+                    <!-- Floating Particles Effect -->
+                    <div style="
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                        width: 300px;
+                        height: 500px;
+                        pointer-events: none;
+                    ">
+                        <div style="
+                            position: absolute;
+                            width: 100px;
+                            height: 100px;
+                            border: 1px solid rgba(212, 165, 116, 0.1);
+                            border-radius: 50%;
+                            top: 10%;
+                            right: -50px;
+                            animation: float 4s ease-in-out infinite;
+                        "></div>
+                        <div style="
+                            position: absolute;
+                            width: 60px;
+                            height: 60px;
+                            border: 1px solid rgba(212, 165, 116, 0.1);
+                            border-radius: 50%;
+                            bottom: 20%;
+                            right: -30px;
+                            animation: float 5s ease-in-out infinite reverse;
+                        "></div>
                     </div>
                 </div>
+
+                <style>
+                    @keyframes videoFloat {
+                        0%, 100% {
+                            transform: translateY(0px);
+                        }
+                        50% {
+                            transform: translateY(-15px);
+                        }
+                    }
+
+                    @keyframes glowRotate {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                    @keyframes float {
+                        0%, 100% {
+                            transform: translateY(0px);
+                            opacity: 0.3;
+                        }
+                        50% {
+                            transform: translateY(-30px);
+                            opacity: 0.6;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        .about-me-video-wrapper {
+                            max-width: 320px !important;
+                            aspect-ratio: 9 / 16 !important;
+                        }
+                    }
+
+                    @media (max-width: 480px) {
+                        .about-me-video-wrapper {
+                            max-width: 280px !important;
+                            aspect-ratio: 9 / 16 !important;
+                        }
+                    }
+                </style>
             </div>
         </div>
-    </div><!--==============================
+    </div>
+    <!--==============================
 Why choose Area  
 ==============================-->
     <div class="why-sec-2 " id="why-sec">
@@ -533,385 +769,72 @@ Faq Area
             </div>
         </div>
     </section><!--==============================
-Team Area  
-==============================-->
-    <section class="team-area-1 space bg-black">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="title-area text-center pe-xl-2 pl-xl-2">
-                        <span class="sub-title style-2"><img src="assets/img/icon/title-3_icon.svg" alt="Icon"> Team
-                            Members </span>
-                        <h2 class="sec-title">Meet Our Professional Team Members</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row gy-4 justify-content-center">
-                <!-- Single Item -->
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="team-card style-2">
-                        <div class="team-img">
-                            <img src="assets/img/team/team_1_1.jpg" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="box-title"><a href="team-details.html">Anjelina Sinthiya</a></h3>
-                            <span class="team-desig">Expert Technician</span>
-                            <div class="team-social">
-                                <div class="th-social">
-                                    <a target="_blank" href="https://facebook.com/"><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a target="_blank" href="https://instagram.com/"><i
-                                            class="fab fa-instagram"></i></a>
-                                    <a target="_blank" href="https://linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="team-card style-2">
-                        <div class="team-img">
-                            <img src="assets/img/team/team_1_2.jpg" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="box-title"><a href="team-details.html">Rothar Federer</a></h3>
-                            <span class="team-desig">Service Specialist</span>
-                            <div class="team-social">
-                                <div class="th-social">
-                                    <a target="_blank" href="https://facebook.com/"><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a target="_blank" href="https://instagram.com/"><i
-                                            class="fab fa-instagram"></i></a>
-                                    <a target="_blank" href="https://linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="team-card style-2">
-                        <div class="team-img">
-                            <img src="assets/img/team/team_1_3.jpg" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="box-title"><a href="team-details.html">Jenifer Lopez</a></h3>
-                            <span class="team-desig">Maintenance Expert</span>
-                            <div class="team-social">
-                                <div class="th-social">
-                                    <a target="_blank" href="https://facebook.com/"><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a target="_blank" href="https://instagram.com/"><i
-                                            class="fab fa-instagram"></i></a>
-                                    <a target="_blank" href="https://linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="team-card style-2">
-                        <div class="team-img">
-                            <img src="assets/img/team/team_1_4.jpg" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="box-title"><a href="team-details.html">Alex Furnandes</a></h3>
-                            <span class="team-desig">Repair Specialist</span>
-                            <div class="team-social">
-                                <div class="th-social">
-                                    <a target="_blank" href="https://facebook.com/"><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a target="_blank" href="https://instagram.com/"><i
-                                            class="fab fa-instagram"></i></a>
-                                    <a target="_blank" href="https://linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section><!--==============================
-Testimonial Area  
-==============================-->
-    <section class="testi-card-area-1 space overflow-hidden" id="testi-sec">
-        <div class="shape-mockup" data-right="0" data-top="0">
-            <img src="assets/img/shape/testi-irhgt-shpae-bg.png" alt="shape-bg">
-        </div>
-        <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-xxl-7 col-xl-7">
-                    <div class="title-area text-center">
-                        <h2 class="sec-title">Our Customer Feedback!</h2>
-                        <p>Many dealerships have service departments equipped with certified technicians who handle
-                            maintenance, repairs, oil changes, tire rotations, and other essential vehicle services.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row gy-4 justify-content-center">
-                <div class="testi-card-slide">
-                    <div class="swiper has-shadow th-slider" id="testiSlide1"
-                        data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="testi-block bg-smoke" dir="ltr">
-                                    <div class="testi-block-top">
-                                        <div class="box-img">
-                                            <img src="assets/img/testimonial/testi_1_1.jpg" alt="Avater">
-                                        </div>
-                                        <div class="content">
-                                            <div class="box-review">
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <div class="rating">
-                                                    <span>4.0 / 5.0 Reviews</span>
-                                                </div>
-                                            </div>
-                                            <h3 class="box-title">Good Price Care</h3>
-                                            <p class="box-text">“Many dealerships offer extended warranties, service
-                                                contracts, and protection plans that cover.”</p>
-                                            <div class="content-bottom">
-                                                <div class="left">
-                                                    <h3 class="name-title">Parker Jimines</h3>
-                                                    <p class="box-desig">Customer</p>
-                                                </div>
-                                                <div class="right">
-                                                    <img src="assets/img/icon/testi-quote-icon.png" alt="image">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testi-block bg-smoke" dir="ltr">
-                                    <div class="testi-block-top">
-                                        <div class="box-img">
-                                            <img src="assets/img/testimonial/testi_1_2.jpg" alt="Avater">
-                                        </div>
-                                        <div class="content">
-                                            <div class="box-review">
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <div class="rating">
-                                                    <span>4.0 / 5.0 Reviews</span>
-                                                </div>
-                                            </div>
-                                            <h3 class="box-title">Good Service Care</h3>
-                                            <p class="box-text">“Dealerships offer protection plans, maintenance
-                                                services, and to keep vehicles running smoothly.”</p>
-                                            <div class="content-bottom">
-                                                <div class="left">
-                                                    <h3 class="name-title">Parker Jimines</h3>
-                                                    <p class="box-desig">Customer</p>
-                                                </div>
-                                                <div class="right">
-                                                    <img src="assets/img/icon/testi-quote-icon.png" alt="image">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testi-block bg-smoke" dir="ltr">
-                                    <div class="testi-block-top">
-                                        <div class="box-img">
-                                            <img src="assets/img/testimonial/testi_1_3.jpg" alt="Avater">
-                                        </div>
-                                        <div class="content">
-                                            <div class="box-review">
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <div class="rating">
-                                                    <span>4.0 / 5.0 Reviews</span>
-                                                </div>
-                                            </div>
-                                            <h3 class="box-title">Trusted Value Care</h3>
-                                            <p class="box-text">“Extended service contracts, warranty options, and
-                                                repair coverage available at many dealerships.”</p>
-                                            <div class="content-bottom">
-                                                <div class="left">
-                                                    <h3 class="name-title">Parker Jimines</h3>
-                                                    <p class="box-desig">Customer</p>
-                                                </div>
-                                                <div class="right">
-                                                    <img src="assets/img/icon/testi-quote-icon.png" alt="image">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testi-block bg-smoke" dir="ltr">
-                                    <div class="testi-block-top">
-                                        <div class="box-img">
-                                            <img src="assets/img/testimonial/testi_1_1.jpg" alt="Avater">
-                                        </div>
-                                        <div class="content">
-                                            <div class="box-review">
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <div class="rating">
-                                                    <span>4.0 / 5.0 Reviews</span>
-                                                </div>
-                                            </div>
-                                            <h3 class="box-title">Excellent Deal Care</h3>
-                                            <p class="box-text">“Customers can benefit from extended warranties, service
-                                                contracts, protection plans at dealerships..”</p>
-                                            <div class="content-bottom">
-                                                <div class="left">
-                                                    <h3 class="name-title">Parker Jimines</h3>
-                                                    <p class="box-desig">Customer</p>
-                                                </div>
-                                                <div class="right">
-                                                    <img src="assets/img/icon/testi-quote-icon.png" alt="image">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testi-block bg-smoke" dir="ltr">
-                                    <div class="testi-block-top">
-                                        <div class="box-img">
-                                            <img src="assets/img/testimonial/testi_1_2.jpg" alt="Avater">
-                                        </div>
-                                        <div class="content">
-                                            <div class="box-review">
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <div class="rating">
-                                                    <span>4.0 / 5.0 Reviews</span>
-                                                </div>
-                                            </div>
-                                            <h3 class="box-title">Luxury Ride Care</h3>
-                                            <p class="box-text">“Comprehensive protection plans, scheduled maintenance,
-                                                extended warranties are available at dealerships.”</p>
-                                            <div class="content-bottom">
-                                                <div class="left">
-                                                    <h3 class="name-title">Parker Jimines</h3>
-                                                    <p class="box-desig">Customer</p>
-                                                </div>
-                                                <div class="right">
-                                                    <img src="assets/img/icon/testi-quote-icon.png" alt="image">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testi-block bg-smoke" dir="ltr">
-                                    <div class="testi-block-top">
-                                        <div class="box-img">
-                                            <img src="assets/img/testimonial/testi_1_3.jpg" alt="Avater">
-                                        </div>
-                                        <div class="content">
-                                            <div class="box-review">
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <i class="fa-sharp fa-solid fa-star"></i>
-                                                <div class="rating">
-                                                    <span>4.0 / 5.0 Reviews</span>
-                                                </div>
-                                            </div>
-                                            <h3 class="box-title">Smart Budget Care</h3>
-                                            <p class="box-text">“Many dealerships offer repair coverage, service and are
-                                                the contracts, and vehicle protection programs.”</p>
-                                            <div class="content-bottom">
-                                                <div class="left">
-                                                    <h3 class="name-title">Parker Jimines</h3>
-                                                    <p class="box-desig">Customer</p>
-                                                </div>
-                                                <div class="right">
-                                                    <img src="assets/img/icon/testi-quote-icon.png" alt="image">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pagination-count-wrap border-style">
-                            <div class="pagination-wrap">
-                                <div class="slider-pagination"></div>
-                            </div>
-                            <div class="slider-pagination2"></div>
-                        </div>
-                    </div>
-                    <button data-slider-prev="#testiSlide1" class="slider-arrow slider-prev"><i
-                            class="far fa-arrow-left"></i></button>
-                    <button data-slider-next="#testiSlide1" class="slider-arrow slider-next"><i
-                            class="far fa-arrow-right"></i></button>
-                </div>
-            </div>
-        </div>
-    </section><!--==============================
 	Footer Area
 ==============================-->
-    <footer class="footer-wrapper footer-default bg-footer-color">
-        <div class="shape-mockup d-none d-xxl-block" data-top="0" data-left="0">
-            <img src="assets/img/shape/footer-1-top-shape.png" alt="shape">
-        </div>
-
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-top-border">
-                    <div class="row gy-4 justify-content-between">
-                        <div class="col-lg-3">
-                            <div class="logo-top">
-                                <a href="index.html"><img src="assets/img/apexlogo.png" alt="apex-html"></a>
+   <footer class="footer-wrapper premium-footer" style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
+        <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-start">
+                    <!-- Left Column - Logo & Description -->
+                    <div class="col-lg-3">
+                        <div class="footer-brand">
+                            <div class="footer-logo mb-4">
+                                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex Logo" style="max-width: 180px;"></a>
                             </div>
+                            <p class="footer-desc" style="font-size: 14px; line-height: 1.7; color: #bdbdbd;">
+                                If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a fascinating experience.
+                            </p>
                         </div>
-                        <div class="col-lg-9">
-                            <div class="payment-wrap">
-                                <div class="info">
-                                    <h4 class="text-white">Our Payment Methods</h4>
-                                    <h6>Our Easy And simple payment methods with cards</h6>
+                    </div>
+
+                    <!-- Car Brands Column -->
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Car Brands</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
+                            <li><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Useful Links Column -->
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Useful Links</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #bdbdbd; text-decoration: none;">Home</a></li>
+                            <li style="margin-bottom: 10px;"><a href="about.html" style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
+                            <li style="margin-bottom: 10px;"><a href="service.html" style="color: #bdbdbd; text-decoration: none;">Services</a></li>
+                            <li style="margin-bottom: 10px;"><a href="blog.html" style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
+                            <li style="margin-bottom: 10px;"><a href="team.html" style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
+                            <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Us Column -->
+                    <div class="col-lg-3">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Contact Us</h4>
+                        <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-phone" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <a href="tel:+971544923609" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
+                                    <a href="tel:+971507903412" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 50 790 3412</a>
                                 </div>
-                                <div class="card-thumb-card">
-                                    <img src="assets/img/shape/cards.png" alt="card-img">
-                                </div>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-envelope" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info@apexcardubai.com</a>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <p style="margin: 0; color: #bdbdbd; font-size: 14px;">59MJ+F95, Nadd Al Hamar, Dubai, UAE</p>
                             </div>
                         </div>
                     </div>
@@ -919,102 +842,51 @@ Testimonial Area
             </div>
         </div>
 
-        <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">About Company</h3>
-                            <div class="th-widget-about">
-                                <p class="about-text">Dealerships allow customers to take vehicles for test drives to
-                                    experience how the car feels before making a purchase.</p>
-                                <div class="footer-call-wrap">
-                                    <div class="info-box">
-                                        <div class="info-contnt">
-                                            <h4 class="footer-info-title">Call Us:</h4>
-                                            <p class="info-box_text">
-                                                <a href="tel:+971544923609" class="info-box_link">+971 54 492
-                                                    3609</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="info-box">
-                                        <div class="info-contnt">
-                                            <h4 class="footer-info-title">Email Us:</h4>
-                                            <p class="info-box_text">
-                                                <a href="mailto:info.apexperformancecarrental@gmail.com"
-                                                    class="info-box_link">info.apexperformancecarrental@gmail.com</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="th-social">
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Pages</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="blog.html">Our Blog</a></li>
-                                    <li><a href="team.html">Our Team</a></li>
-                                    <li><a href="service.html">Our Services</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Vehicles List</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="inventory-grid.html">Sedan</a></li>
-                                    <li><a href="inventory-grid.html">Hatchback</a></li>
-                                    <li><a href="inventory-grid.html">SUV</a></li>
-                                    <li><a href="inventory-grid.html">Hybrid</a></li>
-                                    <li><a href="inventory-grid.html">Convertible</a></li>
-                                    <li><a href="inventory-grid.html">Coupe</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Our Brand</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="inventory-grid.html">Toyota</a></li>
-                                    <li><a href="inventory-grid.html">Audi</a></li>
-                                    <li><a href="inventory-grid.html">BMW</a></li>
-                                    <li><a href="inventory-grid.html">Ferrari</a></li>
-                                    <li><a href="inventory-grid.html">Nissan</a></li>
-                                    <li><a href="inventory-grid.html">Ford</a></li>
-                                </ul>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
+            <div class="container-fluid">
+                <div class="row gy-3 align-items-center">
+                    <!-- 24/7 Service -->
+                    <div class="col-lg-3">
+                        <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
+                            <i class="fas fa-clock" style="font-size: 32px; color: #d4af37;"></i>
+                            <div>
+                                <h5 style="margin: 0; color: #ffffff; font-weight: 700; font-size: 18px;">24/7</h5>
+                                <p style="margin: 0; color: #d4af37; font-size: 13px;">Rental service</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Payment Methods -->
+                    <div class="col-lg-4 text-center">
+                        <div class="payment-methods" style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                            <img src="assets/img/type/PayPalCard-02.png" alt="PayPal" style="height: 35px;">
+                            <img src="assets/img/type/mastercard01.png" alt="Mastercard" style="height: 35px;">
+                            <img src="assets/img/type/visa.jpg" alt="Visa" style="height: 35px;">
+                            <img src="assets/img/type/amex-removebg-preview.png" alt="American Express" style="height: 35px;">
+                            <img src="assets/img/type/images (3).png" alt="Bitcoin" style="height: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="col-lg-3 text-end">
+                        <div class="footer-social" style="display: flex; align-items: center; justify-content: flex-end; gap: 20px;">
+                            <a href="https://www.facebook.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/apexcarsdubai/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease;"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease;"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        </div>
-        <div class="copyright-wrap">
-            <div class="container">
-                <div class="row gy-2 align-items-center">
-                    <div class="col-md-12">
-                        <p class="copyright-text text-center">Copyright <i class="fal fa-copyright"></i> 2026<a
-                                href="index.html">Apex Performance Car Rental</a>. All Rights Reserved.</p>
+
+                <!-- Copyright Section -->
+                <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px; text-align: center;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <a href="booking-toc.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
+                        <span style="color: #d4af37;">|</span>
+                        <a href="privacy-policy.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Privacy Policy</a>
                     </div>
+                    <p style="margin: 0; color: #bdbdbd; font-size: 13px;">� 2025 Luxury Super Car Rentals. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -1024,14 +896,6 @@ Testimonial Area
 			Code End  Here 
 	******************************** -->
 
-    <!-- Scroll To Top -->
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg>
-    </div>
 
     <!--==============================
     All Js File
