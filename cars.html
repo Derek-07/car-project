@@ -1253,6 +1253,72 @@ Testimonial Area - Google Reviews
     <script>
         // ============ BRAND DATA ============
         const brandData = {
+            mclaren: {
+                title: "McLaren",
+                displayName: "McLaren Cars Rental Dubai",
+                description: "Experience British supercar excellence with McLaren. Cutting-edge technology meets stunning design in these high-performance vehicles engineered for pure driving thrills.",
+                sectionTitle: "Premium McLaren Rental in Dubai",
+                logo: "assets/img/brand/mac.png",
+                heroImage: "assets/cars/blue.png",
+                cars: [
+                    { name: "McLaren 720S", price: 15000, image: "assets/cars/blue.png", color: "orange" },
+                    { name: "McLaren 570S", price: 14000, image: "assets/cars/blue.png", color: "orange" },
+                    { name: "McLaren Senna", price: 18000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "McLaren Speedtail", price: 22000, image: "assets/cars/blue.png", color: "silver" },
+                    { name: "McLaren GT", price: 13000, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "McLaren Artura", price: 16000, image: "assets/cars/blue.png", color: "orange" },
+                    { name: "McLaren P1", price: 20000, image: "assets/cars/blue.png", color: "red" },
+                    { name: "McLaren 650S", price: 13500, image: "assets/cars/blue.png", color: "orange" },
+                    { name: "McLaren MP4-12C", price: 12500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "McLaren F1", price: 25000, image: "assets/cars/blue.png", color: "silver" },
+                    { name: "McLaren 540C", price: 11500, image: "assets/cars/blue.png", color: "orange" },
+                    { name: "McLaren Elva", price: 19000, image: "assets/cars/blue.png", color: "yellow" }
+                ]
+            },
+            audi: {
+                title: "Audi",
+                displayName: "Audi Cars Rental Dubai",
+                description: "Discover German engineering perfection with Audi. Premium luxury combined with advanced technology and sophisticated design in every model.",
+                sectionTitle: "Premium Audi Rental in Dubai",
+                logo: "assets/img/brand/audi.png",
+                heroImage: "assets/cars/gw01.png",
+                cars: [
+                    { name: "Audi R8", price: 13500, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Audi A8", price: 9000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Audi RS6", price: 12000, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Audi Q7", price: 8500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Audi Q8", price: 9500, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Audi RS7", price: 12500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Audi S8", price: 10500, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Audi A6", price: 7500, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Audi RS Q8", price: 11000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Audi S6", price: 10000, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Audi A4", price: 6500, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Audi e-tron GT", price: 11500, image: "assets/cars/gw01.png", color: "black" }
+                ]
+            },
+            "aston-martin": {
+                title: "Aston Martin",
+                displayName: "Aston Martin Cars Rental Dubai",
+                description: "Experience British elegance and refined performance with Aston Martin. Iconic luxury vehicles that combine timeless design with exhilarating driving dynamics.",
+                sectionTitle: "Premium Aston Martin Rental in Dubai",
+                logo: "assets/img/brand/aston.png",
+                heroImage: "assets/cars/blue.png",
+                cars: [
+                    { name: "Aston Martin DB11", price: 14000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Aston Martin Vantage", price: 13000, image: "assets/cars/blue.png", color: "silver" },
+                    { name: "Aston Martin DBX", price: 15000, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Aston Martin Vanquish", price: 16000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Aston Martin Rapide", price: 12500, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Aston Martin One-77", price: 20000, image: "assets/cars/blue.png", color: "silver" },
+                    { name: "Aston Martin DBS", price: 15500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Aston Martin Virage", price: 14500, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Aston Martin Valkyrie", price: 22000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Aston Martin V8 Vantage", price: 12000, image: "assets/cars/blue.png", color: "red" },
+                    { name: "Aston Martin Lagonda", price: 17000, image: "assets/cars/blue.png", color: "silver" },
+                    { name: "Aston Martin CC100", price: 18000, image: "assets/cars/blue.png", color: "white" }
+                ]
+            },
             bmw: {
                 title: "BMW",
                 displayName: "BMW Cars Rental Dubai",
@@ -1506,8 +1572,12 @@ Testimonial Area - Google Reviews
 
         // ============ UPDATE PAGE CONTENT ============
         function updatePageContent(brand) {
-            const data = brandData[brand];
-            if (!data) return;
+            let data = brandData[brand];
+            // Fallback to lamborghini if brand doesn't exist
+            if (!data) {
+                brand = 'lamborghini';
+                data = brandData[brand];
+            }
 
             // Update breadcrumb
             document.getElementById('breadcrumbBrand').textContent = data.title + ' Cars';
@@ -1737,6 +1807,7 @@ Testimonial Area - Google Reviews
         // ============ INITIALIZE ON PAGE LOAD ============
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
+                window.scrollTo(0, 0);
                 const brand = getBrandFromURL();
                 updatePageContent(brand);
                 setupFilters();
@@ -1745,6 +1816,7 @@ Testimonial Area - Google Reviews
 
         // Update on URL change (for back button)
         window.addEventListener('popstate', function() {
+            window.scrollTo(0, 0);
             const brand = getBrandFromURL();
             updatePageContent(brand);
         });
