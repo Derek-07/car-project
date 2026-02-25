@@ -77,7 +77,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 350px;
+            min-height: 500px;
         }
 
         .breadcumb-trail {
@@ -113,12 +113,13 @@
 
         .breadcumb-title {
             color: #fff;
-            font-size: 3rem;
+            font-size: 5.5rem;
             font-weight: 700;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             margin: 0;
             text-align: center;
             text-transform: capitalize;
+            letter-spacing: 3px;
         }
 
         /* ======== FILTER SECTION ======== */
@@ -293,6 +294,125 @@
         .filter-reset-btn:hover {
             background: rgba(212, 175, 55, 0.1);
             border-color: var(--primary-color);
+        }
+
+        /* ======== PREMIUM HOVER EFFECT ======== */
+        .carousel-car-card {
+            transition: all 0.5s cubic-bezier(0.35, 0, 0.65, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-car-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .carousel-car-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 
+                        0 0 40px rgba(212, 175, 55, 0.2),
+                        inset 0 0 20px rgba(212, 175, 55, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .carousel-car-card:hover::before {
+            opacity: 1;
+            animation: glow-pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .car-image {
+            transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1);
+        }
+
+        .carousel-car-card:hover .car-image {
+            transform: scale(1.15) rotate(2deg);
+            filter: brightness(1.1) saturate(1.2);
+        }
+
+        .carousel-car-card:hover .car-title {
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* ======== LOAD MORE BUTTON ======== */
+        .load-more-wrapper {
+            text-align: center;
+            margin: 120px 0;
+            padding: 60px 20px;
+        }
+
+        .load-more-btn {
+            padding: 18px 70px;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .load-more-btn:hover {
+            background: var(--primary-color);
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .load-more-btn:active {
+            transform: scale(0.98);
+        }
+
+        .load-more-btn.hidden {
+            display: none;
+        }
+
+        .car-card-hidden {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .car-card-hidden.revealed {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            margin: 15px 0;
+            padding: 15px;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsive */
@@ -600,7 +720,7 @@
     <!--==============================
     Breadcrumb
     ==============================-->
-    <div class="breadcumb-wrapper" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/cars/gw01.png') center/cover; padding: 100px 20px; position: relative;">
+    <div class="breadcumb-wrapper" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/cars/gw01.png') center/cover; padding: 140px 20px; position: relative;">
         <div class="container">
             <ul class="breadcumb-trail">
                 <li><a href="index.html">Home</a></li>
@@ -792,6 +912,167 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Audi Q8 S-Line -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/gw01.png" alt="Audi Q8 S-Line" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Audi Q8 S-Line</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Audi</p>
+                            <div class="car-price-display">
+                                <span class="price-value">8,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Porsche Cayenne Turbo -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.png" alt="Porsche Cayenne" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Porsche Cayenne Turbo</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Porsche</p>
+                            <div class="car-price-display">
+                                <span class="price-value">12,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lamborghini LM002 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/gw01.png" alt="Lamborghini LM002" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Lamborghini LM002</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Lamborghini</p>
+                            <div class="car-price-display">
+                                <span class="price-value">14,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rolls Royce Cullinan -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.png" alt="Rolls Royce Cullinan" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Rolls Royce Cullinan</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Rolls Royce</p>
+                            <div class="car-price-display">
+                                <span class="price-value">18,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bentley Bentayga (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/gw01.png" alt="Bentley Bentayga" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Bentley Bentayga</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Bentley</p>
+                            <div class="car-price-display">
+                                <span class="price-value">16,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maserati Levante (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.png" alt="Maserati Levante" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Maserati Levante</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Maserati</p>
+                            <div class="car-price-display">
+                                <span class="price-value">9,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-wrapper">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Vehicles</button>
             </div>
         </div>
     </section>
@@ -1488,6 +1769,40 @@ Testimonial Area - Google Reviews
             
             applyFilters();
         });
+
+        // ========== LOAD MORE BUTTON FUNCTIONALITY ==========
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const hiddenCards = document.querySelectorAll('.car-card-hidden');
+        let cardsToShow = 2;
+        let currentShown = 8;
+
+        loadMoreBtn.addEventListener('click', function() {
+            let revealed = 0;
+            
+            for (let i = 0; i < hiddenCards.length && revealed < cardsToShow; i++) {
+                const card = hiddenCards[i];
+                if (!card.classList.contains('revealed')) {
+                    card.classList.add('revealed');
+                    revealed++;
+                    currentShown++;
+                }
+            }
+            
+            if (currentShown >= hiddenCards.length + 8) {
+                loadMoreBtn.classList.add('hidden');
+            }
+            
+            setTimeout(() => {
+                const visibleCards = document.querySelectorAll('.carousel-car-card:not(.car-card-hidden), .carousel-car-card.car-card-hidden.revealed');
+                if (visibleCards.length > 0 && visibleCards.length >= cardsToShow) {
+                    visibleCards[visibleCards.length - cardsToShow].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }, 100);
+        });
+        
+        if (hiddenCards.length === 0) {
+            loadMoreBtn.classList.add('hidden');
+        }
     </script>
 </body>
 

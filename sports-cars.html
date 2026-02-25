@@ -1,887 +1,115 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
+<!Doctype html>
+<html class="no-js " lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Rent Sport Cars in Dubai - Luxury Sports Car Rental | Apex</title>
-    <meta name="description" content="Rent premium sports cars in Dubai. Lamborghini, Ferrari, McLaren, Porsche & more. Competitive prices & premium service.">
+    <title>Apex Performance Car Rental</title>
+    <meta name="author" content="Apex Performance Car Rental">
+    <meta name="description" content="Apex Performance Car Rental - Premium Car Rental Services in Dubai">
+    <meta name="keywords" content="Apex Performance Car Rental, Dubai, Car Rental, Luxury Cars, Premium Cars, Rent a Car, Exotic Cars, Sports Cars, Car Hire, Car Rental Services">
+    <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="theme-color" content="#0a0a0a">
-
-    <!-- Google Fonts -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS Files -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        /* ======== SPORTS CARS PAGE CUSTOM STYLES ======== */
-        :root {
-            --primary-gold: #C9A24B;
-            --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
-            --border-color: rgba(201, 162, 75, 0.2);
-        }
-
-        /* Fallback styles for header */
-        .th-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
-        .th-header { background: rgba(10, 10, 10, 0.95); padding: 15px 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(201, 162, 75, 0.2); transition: transform 0.3s ease; }
-        .th-header.header-hidden { transform: translateY(-100%); }
-        .th-header.header-visible { transform: translateY(0); }
-        .menu-area { display: flex; align-items: center; }
-        .main-menu { margin: 0; }
-        .main-menu ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
-        .main-menu a { color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        .main-menu a:hover { color: var(--primary-gold); }
-        .contact-btn { padding: 10px 20px; background: var(--primary-gold); color: #000; border-radius: 6px; font-weight: 700; }
-        .contact-btn:hover { opacity: 0.9; }
-        .th-menu-toggle { background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
-        .th-menu-wrapper { position: fixed; top: 0; left: -100%; width: 100%; height: 100vh; background: rgba(10, 10, 10, 0.98); z-index: 90; transition: left 0.3s ease; }
-        .th-menu-wrapper.active { left: 0; }
-        .th-menu-area { padding: 40px 20px; }
-        .th-menu { list-style: none; padding: 0; margin: 0; }
-        .th-menu li { margin-bottom: 20px; }
-        .th-menu a { color: #fff; text-decoration: none; font-weight: 500; display: block; padding: 10px 0; }
-        .menu-item-has-children > a::after { content: '+'; float: right; }
-        .th-submenu { list-style: none; padding-left: 20px; margin-top: 10px; display: none; }
-        .menu-item-has-children.active .th-submenu { display: block; }
-        .th-submenu li { margin-bottom: 10px; }
-        
-        /* Toggle Filter Button */
-        .filter-toggle-btn { 
-            position: fixed; left: 20px; top: 200px; z-index: 50; padding: 12px 18px; 
-            background: var(--primary-gold); color: #000; border: none; border-radius: 8px;
-            cursor: pointer; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; 
-        }
-        .filter-toggle-btn:hover { transform: translateY(-2px); background: #e5bf2e; }
-        
-        /* Filter Panel - Toggle */
-        .filter-panel { 
-            position: fixed; left: 0; top: 180px; width: 280px; 
-            background: linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(30, 30, 30, 0.98) 100%);
-            border: 1px solid var(--border-color); border-radius: 0 12px 12px 0; padding: 25px; z-index: 40;
-            max-height: calc(100vh - 200px); overflow-y: auto; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.35, 0, 0.65, 1);
-        }
-        .filter-panel.active { transform: translateX(0); }
-
-        body {
-            background: var(--dark-bg);
-            color: #fff;
-        }
-
-        /* ======== HERO SECTION ======== */
-        .sports-hero {
-            height: 500px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/hero/hero.jpg') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sports-hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .sports-hero p {
-            font-size: 1.2rem;
-            color: var(--primary-gold);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ======== FILTER & CARS WRAPPER ======== */
-        .sports-filters-wrapper {
-            background: var(--dark-bg);
-            padding: 60px 20px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .filter-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 40px;
-            align-items: flex-start;
-        }
-
-        /* Sidebar Filter */
-        .filter-sidebar {
-            position: sticky;
-            top: 100px;
-        }
-
-        .filter-panel {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(15, 15, 15, 0.95) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 25px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-        }
-
-        .filter-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--primary-gold);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 15px;
-        }
-
-        .filter-group {
-            margin-bottom: 25px;
-        }
-
-        .filter-label {
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--primary-gold);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .price-slider {
-            margin-bottom: 15px;
-        }
-
-        .price-slider input[type="range"] {
-            width: 100%;
-            height: 4px;
-            background: var(--border-color);
-            border-radius: 2px;
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        .price-slider input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 18px;
-            height: 18px;
-            background: var(--primary-gold);
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .price-slider input[type="range"]::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
-            background: var(--primary-gold);
-            border-radius: 50%;
-            cursor: pointer;
-            border: none;
-        }
-
-        .price-range-display {
-            background: rgba(201, 162, 75, 0.1);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 12px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary-gold);
-            margin-top: 10px;
-        }
-
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-        }
-
-        .checkbox-item input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            accent-color: var(--primary-gold);
-            margin-right: 10px;
-        }
-
-        .checkbox-item label {
-            cursor: pointer;
-            font-size: 13px;
-            color: #ddd;
-            margin-bottom: 0;
-        }
-
-        .filter-reset {
-            width: 100%;
-            padding: 12px;
-            background: transparent;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--primary-gold);
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .filter-reset:hover {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-        }
-
-        /* ======== CAR GRID ======== */
-        .cars-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 28px;
-            margin-bottom: 50px;
-        }
-
-        /* Exact Card from index.html */
-        .carousel-car-card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            transition: all 0.6s cubic-bezier(0.35, 0, 0.65, 1);
-            border: 1px solid rgba(201, 162, 75, 0.1);
-            position: relative;
-        }
-
-        .carousel-car-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(201, 162, 75, 0.15) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
-            border-radius: 20px;
-        }
-
-        .carousel-car-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(201, 162, 75, 0.3);
-            box-shadow: 0 20px 60px rgba(201, 162, 75, 0.2);
-        }
-
-        .carousel-car-card:hover::before {
-            opacity: 1;
-        }
-
-        .car-image-container {
-            position: relative;
-            height: 320px;
-            overflow: hidden;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
-        }
-
-        .car-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1);
-            filter: brightness(0.95);
-        }
-
-        .carousel-car-card:hover .car-image {
-            transform: scale(1.1);
-            filter: brightness(1.05);
-        }
-
-        .car-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-        }
-
-        .car-info-container {
-            padding: 30px 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-        }
-
-        .car-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-            transition: color 0.4s ease;
-        }
-
-        .carousel-car-card:hover .car-title {
-            color: var(--primary-gold);
-            text-shadow: 0 0 20px rgba(201, 162, 75, 0.3);
-        }
-
-        .car-category {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        .car-category .separator {
-            margin: 0 8px;
-            color: var(--primary-gold);
-        }
-
-        .car-price-display {
-            margin-bottom: 25px;
-        }
-
-        .price-value {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary-gold);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .price-label {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.5);
-            display: block;
-        }
-
-        /* Action Buttons */
-        .car-action-buttons {
-            display: flex;
-            gap: 12px;
-        }
-
-        .btn-action {
-            flex: 1;
-            padding: 14px 0;
-            border: 2px solid rgba(201, 162, 75, 0.3);
-            border-radius: 12px;
-            color: var(--primary-gold);
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.35, 0, 0.65, 1);
-            background: rgba(201, 162, 75, 0.05);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-action::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(201, 162, 75, 0.2);
-            transition: left 0.4s ease;
-            z-index: -1;
-        }
-
-        .btn-action:hover {
-            border-color: var(--primary-gold);
-            background: rgba(201, 162, 75, 0.15);
-            transform: translateY(-3px);
-        }
-
-        .btn-action:hover::before {
-            left: 0;
-        }
-
-        .btn-call {
-            border-color: rgba(52, 152, 219, 0.3) !important;
-            color: #3498db !important;
-            background: rgba(52, 152, 219, 0.05) !important;
-        }
-
-        .btn-call:hover {
-            border-color: #3498db !important;
-            background: rgba(52, 152, 219, 0.15) !important;
-        }
-
-        .btn-whatsapp {
-            border-color: rgba(37, 211, 102, 0.3) !important;
-            color: #25D366 !important;
-            background: rgba(37, 211, 102, 0.05) !important;
-        }
-
-        .btn-whatsapp:hover {
-            border-color: #25D366 !important;
-            background: rgba(37, 211, 102, 0.15) !important;
-        }
-
-        /* ======== LOAD MORE BUTTON ======== */
-        .load-more-wrapper {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .load-more-btn {
-            padding: 16px 60px;
-            background: transparent;
-            border: 2px solid var(--primary-gold);
-            border-radius: 8px;
-            color: var(--primary-gold);
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.35, 0, 0.65, 1);
-        }
-
-        .load-more-btn:hover {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(201, 162, 75, 0.3);
-        }
-
-        .load-more-btn.hidden {
-            display: none;
-        }
-
-      
-
-        /* ======== REVIEWS SECTION ======== */
-        .reviews-section {
-            background: var(--dark-bg);
-            padding: 80px 20px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 60px;
-            color: #fff;
-        }
-
-        .section-title .highlight {
-            color: var(--primary-gold);
-        }
-
-        .reviews-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .review-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .review-card:hover {
-            border-color: var(--primary-gold);
-            box-shadow: 0 10px 30px rgba(201, 162, 75, 0.15);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .reviewer-name {
-            font-weight: 700;
-            color: var(--primary-gold);
-            font-size: 14px;
-        }
-
-        .review-time {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .review-stars {
-            color: var(--primary-gold);
-            font-size: 12px;
-            letter-spacing: 1px;
-        }
-
-        .review-text {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        /* ======== FAQ SECTION ======== */
-        .faq-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            padding: 80px 20px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(90deg, rgba(201, 162, 75, 0.05) 0%, transparent 100%);
-            transition: all 0.3s ease;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .faq-question:hover {
-            background: linear-gradient(90deg, rgba(201, 162, 75, 0.1) 0%, transparent 100%);
-            color: var(--primary-gold);
-        }
-
-        .faq-icon {
-            color: var(--primary-gold);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 20px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* ======== CONTACT SECTION ======== */
-        .contact-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/contact.jpg') center/cover;
-            padding: 80px 20px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(201, 162, 75, 0.1);
-            border: 2px solid var(--primary-gold);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-gold);
-            flex-shrink: 0;
-            font-size: 20px;
-        }
-
-        .contact-info h3 {
-            color: var(--primary-gold);
-            margin-bottom: 5px;
-            font-size: 14px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .contact-info p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0;
-        }
-
-        .contact-info a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary-gold);
-        }
-
-        /* ======== MAP SECTION ======== */
-        .map-section {
-            height: 500px;
-            border-bottom: 2px solid var(--border-color);
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 60px 20px;
-        }
-
-        .map-section iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* ======== FLOATING BUTTONS ======== */
-        .floating-buttons {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 999;
-        }
-
-        .float-btn {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .float-btn.whatsapp {
-            background: #25D366;
-        }
-
-        .float-btn.phone {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-        }
-
-        .float-btn:hover {
-            transform: scale(1.15);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
-        }
-
-        /* ======== FOOTER ======== */
-        footer {
-            background: #0a0a0a;
-            border-top: 2px solid var(--border-color);
-            padding: 60px 20px 20px;
-        }
-
-        footer h4 {
-            color: var(--primary-gold);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        footer ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer ul li a:hover {
-            color: var(--primary-gold);
-        }
-
-        /* ======== RESPONSIVE ======== */
-        @media (max-width: 1200px) {
-            .cars-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 24px;
-            }
-
-            .filter-container {
-                grid-template-columns: 260px 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .filter-container {
-                grid-template-columns: 1fr;
-            }
-
-            .filter-sidebar {
-                position: static;
-                top: auto;
-            }
-
-            .filter-panel {
-                display: none;
-            }
-
-            .filter-panel.mobile-active {
-                display: block;
-                margin-bottom: 30px;
-            }
-
-            .cars-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .sports-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .car-image-container {
-                height: 240px;
-            }
-
-            .car-info-container {
-                padding: 20px 18px;
-            }
-
-            .price-value {
-                font-size: 22px;
-            }
-
-            .car-title {
-                font-size: 18px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .cars-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sports-hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .sports-hero {
-                height: 350px;
-            }
-
-            .map-section {
-                height: 350px;
-                margin: 40px 10px;
-            }
-
-            .floating-buttons {
-                right: 15px;
-                bottom: 15px;
-                gap: 12px;
-            }
-
-            .float-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-        }
+        :root { --primary-color: #D4AF37; }
+        .map-section { height: 500px; border-bottom: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; margin: 60px 20px; }
+        .map-section iframe { width: 100%; height: 100%; border: none; }
+        .breadcumb-wrapper { background-size: cover !important; background-position: center !important; display: flex; align-items: center; justify-content: center; min-height: 500px; }
+        .breadcumb-trail { list-style: none; padding: 0; margin: 0 0 15px 0; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .breadcumb-trail li { color: rgba(255, 255, 255, 0.8); font-size: 14px; }
+        .breadcumb-trail li a { color: var(--primary-color); text-decoration: none; transition: color 0.3s; }
+        .breadcumb-trail li a:hover { color: #fff; }
+        .breadcumb-trail li:not(:last-child)::after { content: " / "; color: rgba(255, 255, 255, 0.6); margin-left: 15px; }
+        .breadcumb-title { color: #fff; font-size: 5.5rem; font-weight: 700; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); margin: 0; text-align: center; text-transform: capitalize; letter-spacing: 3px; }
+        .filter-toggle-btn { position: fixed; left: 20px; top: 120px; z-index: 50; padding: 12px 20px; background: var(--primary-color); color: #000; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 14px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px; }
+        .filter-toggle-btn:hover { background: #e5bf2e; transform: translateY(-2px); }
+        .filter-box { position: fixed; left: 0; top: 180px; width: 280px; background: linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(30, 30, 30, 0.98) 100%); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 0 12px 12px 0; padding: 25px; z-index: 40; max-height: calc(100vh - 200px); overflow-y: auto; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.35, 0, 0.65, 1); }
+        .filter-box.active { transform: translateX(0); }
+        .filter-box h3 { font-size: 16px; color: var(--primary-color); margin-bottom: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid rgba(212, 175, 55, 0.3); padding-bottom: 10px; }
+        .filter-group { margin-bottom: 25px; }
+        .filter-label { display: block; font-size: 12px; color: var(--primary-color); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .price-slider-wrapper { margin: 15px 0; }
+        .price-slider-wrapper input[type="range"] { width: 100%; height: 4px; background: rgba(212, 175, 55, 0.2); border-radius: 2px; outline: none; -webkit-appearance: none; margin-bottom: 8px; }
+        .price-slider-wrapper input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: var(--primary-color); border-radius: 50%; cursor: pointer; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
+        .price-slider-wrapper input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; background: var(--primary-color); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
+        .price-display { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 10px; border-radius: 6px; text-align: center; font-size: 12px; color: var(--primary-color); font-weight: 600; }
+        .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+        .checkbox-item { display: flex; align-items: center; gap: 10px; }
+        .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; accent-color: var(--primary-color); }
+        .checkbox-item label { cursor: pointer; color: rgba(255, 255, 255, 0.8); font-size: 13px; margin: 0; transition: color 0.3s; }
+        .checkbox-item input[type="checkbox"]:checked + label { color: var(--primary-color); }
+        .filter-reset-btn { width: 100%; padding: 10px; background: transparent; border: 2px solid rgba(212, 175, 55, 0.3); color: var(--primary-color); border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease; margin-top: 15px; }
+        .filter-reset-btn:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--primary-color); }
+        .carousel-car-card { transition: all 0.5s cubic-bezier(0.35, 0, 0.65, 1); position: relative; overflow: hidden; }
+        .carousel-car-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%); opacity: 0; transition: opacity 0.6s ease; pointer-events: none; }
+        .carousel-car-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.2), inset 0 0 20px rgba(212, 175, 55, 0.1); border: 2px solid rgba(212, 175, 55, 0.5); }
+        .carousel-car-card:hover::before { opacity: 1; animation: glow-pulse 1.5s ease-in-out infinite; }
+        @keyframes glow-pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.6; } 100% { transform: scale(1); opacity: 1; } }
+        .car-image { transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1); }
+        .carousel-car-card:hover .car-image { transform: scale(1.15) rotate(2deg); filter: brightness(1.1) saturate(1.2); }
+        .carousel-car-card:hover .car-title { color: #d4af37; text-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+        .load-more-wrapper { text-align: center; margin: 120px 0; padding: 60px 20px; }
+        .load-more-btn { padding: 18px 70px; background: transparent; border: 2px solid var(--primary-color); border-radius: 50px; color: var(--primary-color); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); }
+        .load-more-btn:hover { background: var(--primary-color); color: #000; transform: scale(1.05); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4); }
+        .load-more-btn.hidden { display: none; }
+        .car-card-hidden { opacity: 0; visibility: hidden; height: 0; margin: 0; padding: 0; overflow: hidden; }
+        .car-card-hidden.revealed { opacity: 1; visibility: visible; height: auto; margin: 15px 0; padding: 15px; animation: slideInUp 0.6s ease-out; }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 992px) { .filter-toggle-btn { left: 15px; top: 100px; padding: 10px 15px; font-size: 12px; } .filter-box { top: 150px; width: 250px; } .breadcumb-title { font-size: 2rem; } }
+        @media (max-width: 576px) { .filter-toggle-btn { left: 10px; top: 85px; padding: 8px 12px; font-size: 11px; } .filter-box { top: 130px; width: 100%; border-radius: 0; max-width: none; } .breadcumb-wrapper { min-height: 250px; } .breadcumb-title { font-size: 1.5rem; } }
     </style>
 </head>
 
-<body>
-
-    <!-- ======== HEADER ======== -->
+<body class="body">
+    <div class="slider-drag-cursor"> &lt;DRAG&gt; </div>
+    <div class="preloader ">
+        <button class="th-btn preloaderCls">Cancel Preloader </button>
+        <div class="preloader-inner">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="popup-search-box d-none d-lg-block">
+        <button class="searchClose"><i class="fal fa-times"></i></button>
+        <form action="#">
+            <input type="text" placeholder="What are you looking for?">
+            <button type="submit"><i class="fal fa-search"></i></button>
+        </form>
+    </div>
+    <div class="th-menu-wrapper">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li class="menu-item-has-children"><a href="#">Inventory</a><ul class="sub-menu"><li><a href="inventory-grid.html">Inventory Grid</a></li><li><a href="inventory-sold.html">Sold Inventory</a></li><li><a href="inventory-comparison.html">Inventory Comparison</a></li></ul></li>
+                    <li class="menu-item-has-children"><a href="#">Pages</a><li><a href="team.html">Our Team</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="error.html">Error Page</a></li></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <header class="th-header header-default">
         <div class="sticky-wrapper">
-            <!-- Main Menu Area -->
             <div class="menu-area">
                 <div class="th-container">
                     <div class="row align-items-center justify-content-between">
@@ -927,14 +155,12 @@
                                     <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
                                 </ul>
                             </nav>
+                            <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
                         </div>
-                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu Wrapper -->
         <div class="th-menu-wrapper">
             <div class="th-menu-area">
                 <button class="th-menu-toggle"><i class="far fa-times"></i></button>
@@ -973,6 +199,14 @@
                                 <li><a href="inventory-grid.html">Porsche</a></li>
                             </ul>
                         </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Pages</a>
+                            <ul class="th-submenu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="error.html">Error Page</a></li>
+                            </ul>
+                        </li>
                         <li><a href="blog.html">Our Fleet</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
@@ -980,508 +214,447 @@
             </div>
         </div>
     </header>
-
-    <!-- Toggle Filter Button -->
-    <button class="filter-toggle-btn"><i class="fas fa-sliders-h"></i> Filters</button>
-
-    <!-- Filter Panel -->
-    <div class="filter-panel">
-        <h3 style="color: var(--primary-gold); font-size: 18px; margin-bottom: 20px;">Filters</h3>
-        
-        <!-- Price Range -->
-        <div style="margin-bottom: 25px;">
-            <label style="color: #fff; display: block; margin-bottom: 10px; font-weight: 600;">Price Range</label>
-            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                <input type="range" id="price-min" min="15000" max="500000" value="15000" style="flex: 1; cursor: pointer;">
-                <input type="range" id="price-max" min="15000" max="500000" value="500000" style="flex: 1; cursor: pointer;">
-            </div>
-            <div style="display: flex; justify-content: space-between; color: var(--primary-gold); font-weight: 600;">
-                <span id="range-min">$15000</span> - <span id="range-max">$500000</span>
-            </div>
+    <div class="breadcumb-wrapper" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/cars/red.png') center/cover; padding: 140px 20px; position: relative;">
+        <div class="container">
+            <ul class="breadcumb-trail">
+                <li><a href="index.html">Home</a></li>
+                <li>Sports Cars</li>
+            </ul>
+            <h1 class="breadcumb-title">Sports Cars Rental Dubai</h1>
         </div>
-
-        <!-- Seats -->
-        <div style="margin-bottom: 25px;">
-            <label style="color: #fff; display: block; margin-bottom: 12px; font-weight: 600;">Seats</label>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="2" class="seat-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    2 Seats
-                </label>
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="4" class="seat-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    4 Seats
-                </label>
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="5" class="seat-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    5 Seats
-                </label>
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="7" class="seat-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    7 Seats
-                </label>
-            </div>
-        </div>
-
-        <!-- Colors -->
-        <div style="margin-bottom: 25px;">
-            <label style="color: #fff; display: block; margin-bottom: 12px; font-weight: 600;">Color</label>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="Red" class="color-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    Red
-                </label>
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="Black" class="color-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    Black
-                </label>
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="White" class="color-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    White
-                </label>
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="Silver" class="color-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    Silver
-                </label>
-                <label style="color: #ccc; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" value="Gold" class="color-checkbox" style="margin-right: 8px; cursor: pointer; width: 16px; height: 16px;">
-                    Gold
-                </label>
-            </div>
-        </div>
-
-        <!-- Reset Button -->
-        <button class="reset-filter-btn" style="width: 100%; padding: 12px; background: transparent; border: 2px solid var(--primary-gold); color: var(--primary-gold); font-weight: 700; border-radius: 6px; cursor: pointer; transition: 0.3s;">
-            Reset Filters
-        </button>
     </div>
-
-    <!-- ======== HERO SECTION ======== -->
-    <section class="sports-hero">
-        <div style="text-align: center; width: 100%;">
-            <h1>Rent Sport Cars in Dubai</h1>
-            <p>Home / Sports Cars</p>
+    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
+    <div class="filter-box" id="filterBox">
+        <h3>Filter Cars</h3>
+        <div class="filter-group">
+            <label class="filter-label">Price Range</label>
+            <div class="price-slider-wrapper">
+                <input type="range" id="priceMin" min="5000" max="20000" value="5000">
+                <input type="range" id="priceMax" min="5000" max="20000" value="20000">
+                <div class="price-display"><span id="priceDisplay">AED 5,000 - AED 20,000</span></div>
+            </div>
         </div>
-    </section>
-
-
-            <!-- CARS SECTION -->
-            <div>
-                <div class="cars-grid" id="carsGrid"></div>
-                <div class="load-more-wrapper">
-                    <button class="load-more-btn" id="loadMoreBtn">Load More Cars</button>
+        <div class="filter-group">
+            <label class="filter-label">Seats</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox" id="seats2" value="2"><label for="seats2">2 Seats</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="seats4" value="4"><label for="seats4">4 Seats</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="seats5" value="5"><label for="seats5">5+ Seats</label></div>
+            </div>
+        </div>
+        <div class="filter-group">
+            <label class="filter-label">Color</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox" id="colorBlack" value="black"><label for="colorBlack">Black</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="colorGray" value="gray"><label for="colorGray">Gray</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="colorBlue" value="blue"><label for="colorBlue">Blue</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="colorWhite" value="white"><label for="colorWhite">White</label></div>
+            </div>
+        </div>
+        <button class="filter-reset-btn" id="filterResetBtn">Reset Filters</button>
+    </div>
+    <section class="car-rental-section space">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h2 class="sec-title mb-3">Performance Sports Cars in Dubai</h2>
+                    <p class="sec-text">Experience adrenaline-pumping thrills with our high-performance sports car collection. From track-ready acceleration to cutting-edge technology, each vehicle delivers the ultimate driving experience for speed enthusiasts and performance seekers.</p>
                 </div>
             </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/red.png" alt="Lamborghini Huracan" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Lamborghini Huracan</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Lamborghini</p>
+                            <div class="car-price-display">
+                                <span class="price-value">13,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/red.png" alt="Ferrari 488 GTB" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Ferrari 488 GTB</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Ferrari</p>
+                            <div class="car-price-display">
+                                <span class="price-value">14,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/black.png" alt="McLaren 720S" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">McLaren 720S</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> McLaren</p>
+                            <div class="car-price-display">
+                                <span class="price-value">15,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.png" alt="Porsche 911 Turbo" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Porsche 911 Turbo</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Porsche</p>
+                            <div class="car-price-display">
+                                <span class="price-value">13,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/gw01.png" alt="Audi R8" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Audi R8</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Audi</p>
+                            <div class="car-price-display">
+                                <span class="price-value">11,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/black.png" alt="BMW M4" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">BMW M4</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> BMW</p>
+                            <div class="car-price-display">
+                                <span class="price-value">10,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.png" alt="Mercedes AMG GT" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Mercedes AMG GT</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Mercedes</p>
+                            <div class="car-price-display">
+                                <span class="price-value">12,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/white.png" alt="Nissan GT-R" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Nissan GT-R</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Nissan</p>
+                            <div class="car-price-display">
+                                <span class="price-value">9,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="load-more-wrapper">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Vehicles</button>
+            </div>
         </div>
-    </div>
-
-    <!--==============================
-Brand Area  
-==============================-->
+    </section>
     <div class="brand-area-1 space overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="swiper th-slider" id="brand-slider-1"
-                        data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}'>
+                    <div class="swiper th-slider" id="brand-slider-1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}'>
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/mac.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/audi.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/austin-martin.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/lambologo.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/far.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/bmw.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/mas2.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/porsche.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/bent.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/rr.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/buga.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/mar.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/land.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="about.html">
-                                        <img src="assets/img/brand/cad.png" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/mac.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/audi.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/austin-martin.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/lambologo.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/far.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/bmw.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/land.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/mar.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/cad.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/far.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/lambologo.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/mas2.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/porsche.png" alt="Brand Logo"></a></div></div>
+                            <div class="swiper-slide"><div class="brand-box"><a href="about.html"><img src="assets/img/brand/bent.png" alt="Brand Logo"></a></div></div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- ======== REVIEWS SECTION ======== -->
-    <section class="reviews-section" style="padding: 80px 20px;">
-        <div style="max-width: 1400px; margin: 0 auto;">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">What Our <span class="highlight">Customers</span> Say</h2>
-            
-            <!-- Reviews Carousel -->
-            <div class="swiper reviews-swiper" style="max-width: 800px; margin: 0 auto;">
-                <div class="swiper-wrapper">
-                    <!-- Review 1 -->
-                    <div class="swiper-slide">
-                        <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                                    <span style="background: #4285f4; color: white; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">G</span>
-                                    <span style="color: #666; font-size: 12px; font-weight: 600;">Google Review</span>
-                                </div>
-                                <div style="color: #fbbc04; margin-bottom: 15px; font-size: 18px;">★★★★★</div>
-                                <p style="color: #202124; font-size: 15px; line-height: 1.6; margin-bottom: 15px;">"Best car rental in Dubai! The service was exceptional and the cars are immaculate. Highly recommended to anyone looking for luxury vehicles."</p>
-                            </div>
-                            <div style="border-top: 1px solid #e8e8e8; padding-top: 15px;">
-                                <p style="color: #202124; font-weight: 600; font-size: 14px; margin: 0;">Kashif Dogar</p>
-                                <p style="color: #999; font-size: 12px; margin: 5px 0 0 0;">9 months ago</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review 2 -->
-                    <div class="swiper-slide">
-                        <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                                    <span style="background: #4285f4; color: white; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">G</span>
-                                    <span style="color: #666; font-size: 12px; font-weight: 600;">Google Review</span>
-                                </div>
-                                <div style="color: #fbbc04; margin-bottom: 15px; font-size: 18px;">★★★★★</div>
-                                <p style="color: #202124; font-size: 15px; line-height: 1.6; margin-bottom: 15px;">"Friendly and helpful staff! The entire rental process was smooth and hassle-free. I will definitely come back!"</p>
-                            </div>
-                            <div style="border-top: 1px solid #e8e8e8; padding-top: 15px;">
-                                <p style="color: #202124; font-weight: 600; font-size: 14px; margin: 0;">Hassan Khreis</p>
-                                <p style="color: #999; font-size: 12px; margin: 5px 0 0 0;">9 months ago</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review 3 -->
-                    <div class="swiper-slide">
-                        <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                                    <span style="background: #4285f4; color: white; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">G</span>
-                                    <span style="color: #666; font-size: 12px; font-weight: 600;">Google Review</span>
-                                </div>
-                                <div style="color: #fbbc04; margin-bottom: 15px; font-size: 18px;">★★★★★</div>
-                                <p style="color: #202124; font-size: 15px; line-height: 1.6; margin-bottom: 15px;">"Amazing customer service! Every staff member was courteous and professional. Highly recommend for car enthusiasts!"</p>
-                            </div>
-                            <div style="border-top: 1px solid #e8e8e8; padding-top: 15px;">
-                                <p style="color: #202124; font-weight: 600; font-size: 14px; margin: 0;">Roy Ashkar</p>
-                                <p style="color: #999; font-size: 12px; margin: 5px 0 0 0;">9 months ago</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review 4 -->
-                    <div class="swiper-slide">
-                        <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                                    <span style="background: #4285f4; color: white; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">G</span>
-                                    <span style="color: #666; font-size: 12px; font-weight: 600;">Google Review</span>
-                                </div>
-                                <div style="color: #fbbc04; margin-bottom: 15px; font-size: 18px;">★★★★★</div>
-                                <p style="color: #202124; font-size: 15px; line-height: 1.6; margin-bottom: 15px;">"Premium vehicles with excellent condition. Great prices and superb service throughout the rental period."</p>
-                            </div>
-                            <div style="border-top: 1px solid #e8e8e8; padding-top: 15px;">
-                                <p style="color: #202124; font-weight: 600; font-size: 14px; margin: 0;">Ahmed Mohammed</p>
-                                <p style="color: #999; font-size: 12px; margin: 5px 0 0 0;">8 months ago</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review 5 -->
-                    <div class="swiper-slide">
-                        <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                                    <span style="background: #4285f4; color: white; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">G</span>
-                                    <span style="color: #666; font-size: 12px; font-weight: 600;">Google Review</span>
-                                </div>
-                                <div style="color: #fbbc04; margin-bottom: 15px; font-size: 18px;">★★★★★</div>
-                                <p style="color: #202124; font-size: 15px; line-height: 1.6; margin-bottom: 15px;">"Unbeatable collection of sports cars. Professional team made my experience absolutely perfect!"</p>
-                            </div>
-                            <div style="border-top: 1px solid #e8e8e8; padding-top: 15px;">
-                                <p style="color: #202124; font-weight: 600; font-size: 14px; margin: 0;">Fatima Al-Mansouri</p>
-                                <p style="color: #999; font-size: 12px; margin: 5px 0 0 0;">7 months ago</p>
-                            </div>
-                        </div>
+    <section class="testi-card-area-1 space overflow-hidden" id="testi-sec">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-8 col-xl-8">
+                    <div class="title-area text-center">
+                        <h2 class="sec-title">What Our Customers Are Saying</h2>
+                        <p>Real reviews from verified Google customers. See why Luxury Supercars Rental is trusted by thousands.</p>
                     </div>
                 </div>
-
-                <!-- Navigation -->
-                <div class="swiper-button-prev" style="color: var(--primary-gold); left: 0;"></div>
-                <div class="swiper-button-next" style="color: var(--primary-gold); right: 0;"></div>
+            </div>
+            <div class="row gy-4 justify-content-center">
+                <div class="testi-card-slide">
+                    <div class="swiper has-shadow th-slider" id="testiSlide1" data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;"><span style="font-size: 18px; color: #4285f4;">G</span><span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span><i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i></div>
+                                    <div style="display: flex; gap: 3px; margin-bottom: 12px;"><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i></div>
+                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Amazing 10/10 service, hassle free and straightforward. Special thanks to Claire & Jay for making this the best experience. Truly professional team!</p>
+                                    <div style="border-top: 1px solid #e8eaed; padding-top: 15px;"><h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Louis Kent</h4><p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;"><span style="font-size: 18px; color: #4285f4;">G</span><span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span><i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i></div>
+                                    <div style="display: flex; gap: 3px; margin-bottom: 12px;"><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i></div>
+                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">I'm absolutely thrilled with my experience at Luxury Supercars Dubai! From the very first contact to the return of the vehicle, everything was smooth, professional, and hassle-free. Highly recommended!</p>
+                                    <div style="border-top: 1px solid #e8eaed; padding-top: 15px;"><h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Kaan</h4><p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;"><span style="font-size: 18px; color: #4285f4;">G</span><span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span><i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i></div>
+                                    <div style="display: flex; gap: 3px; margin-bottom: 12px;"><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i><i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i></div>
+                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Amazing customer service, making it flawless and hassle free to drive any car you want. They really go above and beyond for customers. This is the kind of service you deserve!</p>
+                                    <div style="border-top: 1px solid #e8eaed; padding-top: 15px;"><h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Mihai Alexandru</h4><p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button data-slider-prev="#testiSlide1" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
+                    <button data-slider-next="#testiSlide1" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="https://www.google.com/search?q=Luxury+Supercars+Rental+Dubai" target="_blank" class="th-btn" style="background: #4285f4; color: #ffffff; padding: 12px 35px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;"><i class="fab fa-google" style="margin-right: 8px;"></i> View All Google Reviews</a>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- ======== FAQ SECTION ======== -->
-    <section class="faq-section">
-        <div class="faq-container">
-            <h2 class="section-title" style="margin-bottom: 40px;">Sports Cars <span class="highlight">FAQs</span></h2>
-            <div id="faqContainer"></div>
-        </div>
-    </section>
-
-    <!-- ======== CONTACT SECTION ======== -->
-    <section style="padding: 80px 20px; background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(20,20,20,1) 100%);">
-        <div style="max-width: 1400px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center;">
-                <!-- Left Side - Contact Info -->
-                <div style="padding: 40px;">
-                    <p style="color: #d4af37; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Contact Information</p>
-                    <h2 style="color: #ffffff; font-size: 40px; font-weight: 700; margin-bottom: 40px; line-height: 1.2;">Get in Touch With Us</h2>
-
-                    <!-- Phone -->
-                    <div style="display: flex; gap: 15px; margin-bottom: 30px; align-items: flex-start;">
-                        <div style="width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-phone" style="color: #d4af37; font-size: 20px;"></i>
+    <section class="contact-section space" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/bgofcc.jpg') center/cover no-repeat;">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <div class="contact-info-group">
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Phone</h4>
+                                <p class="info-text">+971 54 492 3609</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 style="color: #ffffff; font-size: 16px; font-weight: 700; margin: 0 0 5px 0;">Phone</h4>
-                            <p style="margin: 0; color: #bdbdbd; font-size: 14px;"><a href="tel:+971565266295" style="color: #d4af37; text-decoration: none;">+971 56 526 6295</a></p>
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Email</h4>
+                                <p class="info-text">info@apexperformancecarrental.com</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div style="display: flex; gap: 15px; margin-bottom: 30px; align-items: flex-start;">
-                        <div style="width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-envelope" style="color: #d4af37; font-size: 20px;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: #ffffff; font-size: 16px; font-weight: 700; margin: 0 0 5px 0;">Email</h4>
-                            <p style="margin: 0; color: #bdbdbd; font-size: 14px;"><a href="mailto:info@apexcars.ae" style="color: #d4af37; text-decoration: none;">info@apexcars.ae</a></p>
-                        </div>
-                    </div>
-
-                    <!-- Address -->
-                    <div style="display: flex; gap: 15px; align-items: flex-start;">
-                        <div style="width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 20px;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: #ffffff; font-size: 16px; font-weight: 700; margin: 0 0 5px 0;">Address</h4>
-                            <p style="margin: 0; color: #bdbdbd; font-size: 14px;">59MJ+F95 - Showroom 317 - Nadd Al Hamar - Dubai</p>
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Address</h4>
+                                <p class="info-text">Dubai, UAE</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Right Side - Contact Form -->
-                <div>
-                    <div style="background: rgba(20, 20, 20, 0.8); border: 1px solid #d4af37; padding: 50px; border-radius: 12px; backdrop-filter: blur(10px);">
-                        <p style="color: #d4af37; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block;">Contact</p>
-                        <h2 style="color: #ffffff; font-size: 28px; font-weight: 700; margin-bottom: 40px;">How Can We Help You?</h2>
-
-                        <form action="submit-contact.php" method="POST" style="display: grid; gap: 20px;">
-                            <!-- Full Name -->
-                            <div>
-                                <input type="text" name="name" placeholder="Full Name" required style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid #d4af37; border-radius: 6px; color: #ffffff; font-size: 14px; outline: none; transition: 0.3s;">
-                            </div>
-
-                            <!-- Email -->
-                            <div>
-                                <input type="email" name="email" placeholder="E-mail Address" required style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid #d4af37; border-radius: 6px; color: #ffffff; font-size: 14px; outline: none; transition: 0.3s;">
-                            </div>
-
-                            <!-- Phone -->
-                            <div>
-                                <input type="tel" name="phone" placeholder="971 xxx xxxx" required style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid #d4af37; border-radius: 6px; color: #ffffff; font-size: 14px; outline: none; transition: 0.3s;">
-                            </div>
-
-                            <!-- Select Brand -->
-                            <div>
-                                <input type="text" name="brand" placeholder="e.g. BMW, Mercedes, Porsche" required style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid #d4af37; border-radius: 6px; color: #ffffff; font-size: 14px; outline: none; transition: 0.3s;">
-                            </div>
-
-                            <!-- Message -->
-                            <div>
-                                <textarea name="message" rows="6" placeholder="Message" required style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid #d4af37; border-radius: 6px; color: #ffffff; font-size: 14px; outline: none; transition: 0.3s; resize: none;"></textarea>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div>
-                                <button type="submit" style="width: 100%; padding: 14px; background: #d4af37; color: #000; border: none; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: 0.3s; margin-top: 10px;">Submit</button>
+                <div class="col-lg-7">
+                    <div class="contact-form-wrapper">
+                        <p class="form-subtitle">Contact</p>
+                        <h2 class="form-title">Book Your Sports Car Now!</h2>
+                        <form action="submit-contact.php" method="POST" class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="E-mail Address" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="car" class="form-control" placeholder="Car Model" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" rows="4" class="form-control" placeholder="Message" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="submit-btn">Send Inquiry</button>
+                                </div>
                             </div>
                         </form>
-
-                        <!-- Success Message -->
-                        <div class="contact-success" style="display: none; color: #d4af37; text-align: center; margin-top: 15px; font-size: 14px;"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ======== MAP ======== -->
     <div class="map-section">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.6743839261647!2d55.36201767621622!3d25.218395872042587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d8c8c8c8c8d%3A0x1234567890!2sLuxury%20Supercars%20Rental!5e0!3m2!1sen!2sae!4v1234567890"></iframe>
     </div>
-
-    <!-- ======== FOOTER ======== -->
-    <footer style="background: #0a0a0a; border-top: 1px solid rgba(212, 175, 55, 0.2); color: #fff; padding: 60px 20px 20px;">
-        <div style="max-width: 1400px; margin: 0 auto;">
-            <!-- Footer Content 4 Columns -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 50px; margin-bottom: 50px;">
-                <!-- Brand Info -->
-                <div>
-                    <h4 style="color: #d4af37; font-weight: 700; margin-bottom: 15px; font-size: 18px;">Apex Cars</h4>
-                    <img src="assets/img/apexlogo.png" alt="Apex Cars" style="height: 50px; margin-bottom: 15px;">
-                    <p style="color: #bdbdbd; line-height: 1.8; font-size: 14px;">Leading luxury car rental company in UAE. Experience premium vehicles and exceptional service.</p>
-                </div>
-
-                <!-- Car Types -->
-                <div>
-                    <h4 style="color: #d4af37; font-weight: 700; margin-bottom: 20px; font-size: 16px;">Car Types</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 10px;"><a href="luxury-cars.html" style="color: #bdbdbd; text-decoration: none; transition: 0.3s; display: block;">Luxury Cars</a></li>
-                        <li style="margin-bottom: 10px;"><a href="sports-cars.html" style="color: #bdbdbd; text-decoration: none; transition: 0.3s; display: block;">Sports Cars</a></li>
-                        <li style="margin-bottom: 10px;"><a href="suv-cars.html" style="color: #bdbdbd; text-decoration: none; transition: 0.3s; display: block;">SUV Cars</a></li>
-                        <li style="margin-bottom: 10px;"><a href="convertible-cars.html" style="color: #bdbdbd; text-decoration: none; transition: 0.3s; display: block;">Convertible Cars</a></li>
-                    </ul>
-                </div>
-
-                <!-- Useful Links -->
-                <div>
-                    <h4 style="color: #d4af37; font-weight: 700; margin-bottom: 20px; font-size: 16px;">Useful Links</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 10px;"><a href="index.html" style="color: #bdbdbd; text-decoration: none; transition: 0.3s; display: block;">Home</a></li>
-                        <li style="margin-bottom: 10px;"><a href="about.html" style="color: #bdbdbd; text-decoration: none; transition: 0.3s; display: block;">About Us</a></li>
-                        <li style="margin-bottom: 10px;"><a href="service.html" style="color: #bdbdbd; text-decoration: none; transition: 0.3s; display: block;">Services</a></li>
-                        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #bdbdbd; text-decoration: none; transition: 0.3s; display: block;">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div>
-                    <h4 style="color: #d4af37; font-weight: 700; margin-bottom: 20px; font-size: 16px;">Contact Info</h4>
-                    <p style="color: #bdbdbd; margin-bottom: 12px; font-size: 14px;">
-                        <i class="fas fa-phone" style="color: #d4af37; margin-right: 8px;"></i>
-                        <a href="tel:+971565266295" style="color: inherit; text-decoration: none;">+971 56 526 6295</a>
-                    </p>
-                    <p style="color: #bdbdbd; margin-bottom: 12px; font-size: 14px;">
-                        <i class="fas fa-envelope" style="color: #d4af37; margin-right: 8px;"></i>
-                        <a href="mailto:info@apexcars.ae" style="color: inherit; text-decoration: none;">info@apexcars.ae</a>
-                    </p>
-                    <p style="color: #bdbdbd; font-size: 14px;">
-                        <i class="fas fa-map-marker-alt" style="color: #d4af37; margin-right: 8px;"></i>
-                        Dubai, UAE
-                    </p>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div style="padding: 30px 40px; background: transparent;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; padding-bottom: 30px;">
-                    <!-- 24/7 Service -->
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-                        <i class="fas fa-clock" style="font-size: 32px; color: #d4af37;"></i>
-                        <div style="text-align: left;">
-                            <h5 style="margin: 0; color: #ffffff; font-weight: 700; font-size: 18px;">24/7</h5>
-                            <p style="margin: 0; color: #d4af37; font-size: 13px;">Rental service</p>
+    <footer class="footer-wrapper premium-footer" style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
+        <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-start">
+                    <div class="col-lg-3">
+                        <div class="footer-brand">
+                            <div class="footer-logo mb-4">
+                                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex Logo" style="max-width: 180px;"></a>
+                            </div>
+                            <p class="footer-desc" style="font-size: 14px; line-height: 1.7; color: #bdbdbd;">If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars.</p>
                         </div>
                     </div>
-
-                    <!-- Payment Methods -->
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                        <img src="assets/img/type/PayPalCard-02.png" alt="PayPal" style="height: 35px;">
-                        <img src="assets/img/type/mastercard01.png" alt="Mastercard" style="height: 35px;">
-                        <img src="assets/img/type/visa.jpg" alt="Visa" style="height: 35px;">
-                        <img src="assets/img/type/amex-removebg-preview.png" alt="Amex" style="height: 35px;">
-                        <img src="assets/img/type/images (3).png" alt="Bitcoin" style="height: 35px;">
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Car Brands</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
+                            <li><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
+                        </ul>
                     </div>
-
-                    <!-- Social Icons -->
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-                        <a href="https://www.facebook.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: 0.3s;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/apexcarsdubai/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: 0.3s;"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: 0.3s;"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.tiktok.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: 0.3s;"><i class="fab fa-tiktok"></i></a>
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Useful Links</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #bdbdbd; text-decoration: none;">Home</a></li>
+                            <li style="margin-bottom: 10px;"><a href="about.html" style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
+                            <li style="margin-bottom: 10px;"><a href="service.html" style="color: #bdbdbd; text-decoration: none;">Services</a></li>
+                            <li style="margin-bottom: 10px;"><a href="blog.html" style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
+                            <li style="margin-bottom: 10px;"><a href="team.html" style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
+                            <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Contact Us</h4>
+                        <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-phone" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <a href="tel:+971544923609" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
+                                    <a href="tel:+971507903412" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 50 790 3412</a>
+                                </div>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-envelope" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <a href="mailto:info@apexcardubai.com" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info@apexcardubai.com</a>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <p style="margin: 0; color: #bdbdbd; font-size: 14px;">59MJ+F95, Nadd Al Hamar, Dubai, UAE</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Copyright Section -->
+            </div>
+        </div>
+        <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
+            <div class="container-fluid">
+                <div class="row gy-3 align-items-center">
+                    <div class="col-lg-3">
+                        <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
+                            <i class="fas fa-clock" style="font-size: 32px; color: #d4af37;"></i>
+                            <div><h5 style="margin: 0; color: #ffffff; font-weight: 700; font-size: 18px;">24/7</h5><p style="margin: 0; color: #d4af37; font-size: 13px;">Rental service</p></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="payment-methods" style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                            <img src="assets/img/type/PayPalCard-02.png" alt="PayPal" style="height: 35px;">
+                            <img src="assets/img/type/mastercard01.png" alt="Mastercard" style="height: 35px;">
+                            <img src="assets/img/type/visa.jpg" alt="Visa" style="height: 35px;">
+                            <img src="assets/img/type/amex-removebg-preview.png" alt="American Express" style="height: 35px;">
+                            <img src="assets/img/type/images (3).png" alt="Bitcoin" style="height: 35px;">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-end">
+                        <div class="footer-social" style="display: flex; align-items: center; justify-content: flex-end; gap: 20px;">
+                            <a href="https://www.facebook.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/apexcarsdubai/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
                 <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px; text-align: center;">
                     <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
                         <a href="booking-toc.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
@@ -1493,218 +666,85 @@ Brand Area
             </div>
         </div>
     </footer>
-
-    <!-- ======== FLOATING BUTTONS ======== -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/971544923609" target="_blank" class="float-btn whatsapp" title="Chat on WhatsApp">
+    <div class="floating-contact-buttons">
+        <a href="https://wa.me/971544923609" target="_blank" class="fab-btn whatsapp-fab" title="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="tel:+971544923609" class="float-btn phone" title="Call Us">
+        <a href="tel:+971544923609" class="fab-btn phone-fab" title="Call Us">
             <i class="fas fa-phone"></i>
         </a>
     </div>
-
-    <!-- ======== SCRIPTS ======== -->
     <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/nice-select.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/mobile-enhancements.js"></script>
     <script>
-        // ========== NAVBAR HIDE ON SCROLL ==========
         let lastScrollTop = 0;
-        const header = document.querySelector('.th-header');
-        
-        if (header) {
-            window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > 100) {
-                    // Scrolling down
-                    if (scrollTop > lastScrollTop) {
-                        header.classList.add('header-hidden');
-                        header.classList.remove('header-visible');
-                    }
-                    // Scrolling up
-                    else {
-                        header.classList.remove('header-hidden');
-                        header.classList.add('header-visible');
-                    }
-                } else {
-                    header.classList.remove('header-hidden');
-                    header.classList.add('header-visible');
-                }
-                
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-            });
-        }
-
-        // ========== TOGGLE FILTER BUTTON ==========
-        const filterToggleBtn = document.querySelector('.filter-toggle-btn');
-        const filterPanel = document.querySelector('.filter-panel');
-        
-        if (filterToggleBtn && filterPanel) {
-            filterToggleBtn.addEventListener('click', function() {
-                filterPanel.classList.toggle('active');
-            });
-            
-            // Close filter panel when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!filterPanel.contains(event.target) && !filterToggleBtn.contains(event.target)) {
-                    filterPanel.classList.remove('active');
-                }
-            });
-        }
-
-        // ========== CARS DATA ==========
-        const carsData = [
-            { id: 1, name: 'Lamborghini Performante', category: 'Sports', brand: 'Lamborghini', image: 'assets/cars/oragne.png', specs: { color: 'Orange', engine: 'V12', acceleration: '2.8s', doors: 2, seats: 2 }, price: 3500 },
-            { id: 2, name: 'Lamborghini Revuelto', category: 'Luxury', brand: 'Lamborghini', image: 'assets/cars/red.png', specs: { color: 'Red', engine: 'V12', acceleration: '2.5s', doors: 2, seats: 2 }, price: 6000 },
-            { id: 3, name: 'Ferrari F8 Tributo', category: 'Sports', brand: 'Ferrari', image: 'assets/cars/oragne.png', specs: { color: 'Red', engine: 'V12', acceleration: '2.9s', doors: 2, seats: 2 }, price: 12000 },
-            { id: 4, name: 'McLaren 750S', category: 'Sports', brand: 'McLaren', image: 'assets/cars/red.png', specs: { color: 'Black', engine: 'V8', acceleration: '2.8s', doors: 2, seats: 2 }, price: 8000 },
-            { id: 5, name: 'Porsche 911 Turbo', category: 'Sports', brand: 'Porsche', image: 'assets/cars/blue.png', specs: { color: 'Blue', engine: 'Flat-6', acceleration: '2.7s', doors: 2, seats: 4 }, price: 10800 },
-            { id: 6, name: 'BMW M440i xDrive', category: 'Sports', brand: 'BMW', image: 'assets/cars/oragne.png', specs: { color: 'Orange', engine: 'Inline-6', acceleration: '3.9s', doors: 2, seats: 4 }, price: 4500 },
-            { id: 7, name: 'Audi RS6 Avant', category: 'Sports', brand: 'Audi', image: 'assets/cars/red.png', specs: { color: 'Red', engine: 'V10', acceleration: '3.6s', doors: 5, seats: 5 }, price: 7200 },
-            { id: 8, name: 'Mercedes AMG GT 63', category: 'Sports', brand: 'Mercedes', image: 'assets/cars/blue.png', specs: { color: 'Black', engine: 'V8', acceleration: '2.9s', doors: 2, seats: 2 }, price: 9500 },
-            { id: 9, name: 'Bentley Continental GT', category: 'Luxury', brand: 'Bentley', image: 'assets/cars/red.png', specs: { color: 'Red', engine: 'V12', acceleration: '3.5s', doors: 2, seats: 4 }, price: 11000 },
-            { id: 10, name: 'Rolls Royce Ghost', category: 'Luxury', brand: 'Rolls Royce', image: 'assets/cars/blue.png', specs: { color: 'Blue', engine: 'V12', acceleration: '4.6s', doors: 4, seats: 5 }, price: 15000 },
-            { id: 11, name: 'Lamborghini Urus', category: 'Luxury', brand: 'Lamborghini', image: 'assets/cars/oragne.png', specs: { color: 'Orange', engine: 'V8', acceleration: '3.6s', doors: 4, seats: 5 }, price: 13500 },
-            { id: 12, name: 'Ferrari SF90', category: 'Sports', brand: 'Ferrari', image: 'assets/cars/red.png', specs: { color: 'Red', engine: 'V8', acceleration: '2.5s', doors: 2, seats: 2 }, price: 14000 }
-        ];
-
-        // ========== CREATE CAR CARD ==========
-        function createCarCard(car) {
-            return `
-                <div class="carousel-car-card">
-                    <div class="car-image-container">
-                        <img src="${car.image}" alt="${car.name}" class="car-image">
-                        <div class="car-overlay"></div>
-                    </div>
-                    <div class="car-info-container">
-                        <h3 class="car-title">${car.name}</h3>
-                        <p class="car-category">${car.category} <span class="separator">|</span> ${car.brand}</p>
-                        <div class="car-price-display">
-                            <span class="price-value">${car.price} AED</span>
-                            <span class="price-label">/ Per Day</span>
-                        </div>
-                        <div class="car-action-buttons">
-                            <a href="tel:+971544923609" class="btn-action btn-call">
-                                <i class="fas fa-phone"></i>
-                            </a>
-                            <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // ========== RENDER CARS ==========
-        const carsGrid = document.getElementById('carsGrid');
-        let currentIndex = 0;
-
-        function renderCars(limit) {
-            carsGrid.innerHTML = '';
-            for (let i = 0; i < Math.min(limit, carsData.length); i++) {
-                carsGrid.innerHTML += createCarCard(carsData[i]);
+        const navbar = document.querySelector('.th-header');
+        const scrollThreshold = 50;
+        window.addEventListener('scroll', function() {
+            if (!navbar) return;
+            let currentScroll = window.scrollY || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+                navbar.classList.add('header-hidden');
+                navbar.classList.remove('header-visible');
+            } else if (currentScroll < lastScrollTop) {
+                navbar.classList.remove('header-hidden');
+                navbar.classList.add('header-visible');
             }
-            currentIndex = limit;
-        }
-
-        renderCars(8);
-
-        // ========== LOAD MORE ==========
-        document.getElementById('loadMoreBtn').addEventListener('click', function() {
-            const newCars = carsData.slice(currentIndex, currentIndex + 4);
-            newCars.forEach(car => {
-                carsGrid.innerHTML += createCarCard(car);
-            });
-            currentIndex += 4;
-            if (currentIndex >= carsData.length) {
-                this.classList.add('hidden');
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggles = document.querySelectorAll('.th-menu-toggle');
+            const mobileMenu = document.querySelector('.th-menu-wrapper');
+            if (menuToggles.length > 0 && mobileMenu) {
+                menuToggles.forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        mobileMenu.classList.toggle('active');
+                    });
+                });
             }
         });
-
-        // ========== FILTERS ==========
+        const filterToggleBtn = document.getElementById('filterToggleBtn');
+        const filterBox = document.getElementById('filterBox');
+        filterToggleBtn.addEventListener('click', function() {
+            filterBox.classList.toggle('active');
+        });
         const priceMin = document.getElementById('priceMin');
         const priceMax = document.getElementById('priceMax');
         const priceDisplay = document.getElementById('priceDisplay');
-
         function updatePriceDisplay() {
             const min = parseInt(priceMin.value);
             const max = parseInt(priceMax.value);
-            if (max < min) priceMin.value = max;
+            if (max < min) {
+                priceMin.value = max;
+            }
             priceDisplay.textContent = `AED ${min.toLocaleString()} - AED ${max.toLocaleString()}`;
         }
-
         priceMin.addEventListener('input', updatePriceDisplay);
         priceMax.addEventListener('input', updatePriceDisplay);
-
-        document.querySelector('.filter-reset').addEventListener('click', () => {
-            priceMin.value = 1000;
-            priceMax.value = 12000;
-            updatePriceDisplay();
-            document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach(box => box.checked = false);
-            renderCars(8);
-        });
-
-        // ========== BRAND CAROUSEL ==========
-        const brandCarousel = document.getElementById('brandCarousel');
-        const brands = ['Maserati', 'Porsche', 'Aston Martin', 'Audi', 'Bentley', 'Rolls Royce', 'Bugatti', 'McLaren'];
-        brands.forEach((brand, i) => {
-            brandCarousel.innerHTML += `
-                <div class="brand-logo">
-                    <img src="assets/img/brand/brand-${i + 1}.png" alt="${brand}" style="height: 60px;">
-                </div>
-            `;
-        });
-        brandCarousel.innerHTML += brandCarousel.innerHTML;
-
-        // ========== REVIEWS ==========
-        const reviews = [
-            { name: 'Kashif Dogar', time: '9 months ago', rating: 5, text: 'Best car Rental in Dubai I must recommended it.' },
-            { name: 'Hassan Khreis', time: '9 months ago', rating: 5, text: 'Really great service! Friendly! Helpful! I will definitely come back and rent a car from Luxury Supercars Rental again! Thank you so much!' },
-            { name: 'Roy Ashkar', time: '9 months ago', rating: 5, text: 'Amazing customer service. Recommend for each car enthusiast to get their rental cars from them.' }
-        ];
-
-        const reviewsGrid = document.getElementById('reviewsGrid');
-        reviews.forEach(review => {
-            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
-            reviewsGrid.innerHTML += `
-                <div class="review-card">
-                    <div class="review-header">
-                        <div><p class="reviewer-name">${review.name}</p><p class="review-time">${review.time}</p></div>
-                    </div>
-                    <div class="review-stars">${stars}</div>
-                    <p class="review-text">"${review.text}"</p>
-                </div>
-            `;
-        });
-
-        // ========== FAQ ==========
-        const faqs = [
-            { question: 'How much does it cost to rent a sports car in Dubai?', answer: 'Sports car rental rates range from AED 3,500 to AED 15,000 per day depending on the vehicle.' },
-            { question: 'Is insurance included in the rental price?', answer: 'Yes, comprehensive insurance is included in all our rental packages.' },
-            { question: 'Are there mileage limits on sports car rentals?', answer: 'We offer unlimited mileage on most vehicles. Specific terms apply based on rental duration.' },
-            { question: 'What documents are required to rent a sports car?', answer: 'Valid UAE driving license/IDP, passport, and credit card for security deposit.' },
-            { question: 'How many persons can the sports car carry?', answer: 'Most sports cars seat 2-4 passengers. Some luxury models accommodate up to 5 people.' },
-            { question: 'Can I rent a sports car for special occasions?', answer: 'Yes! We offer special packages for weddings, corporate events, and celebrations.' },
-            { question: 'What happens if I get traffic fines or toll charges?', answer: 'Traffic violations and toll charges are your responsibility and will be billed after rental.' }
-        ];
-
-        const faqContainer = document.getElementById('faqContainer');
-        faqs.forEach(faq => {
-            faqContainer.innerHTML += `
-                <div class="faq-item" onclick="this.classList.toggle('active')">
-                    <div class="faq-question">
-                        <span>${faq.question}</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">${faq.answer}</div>
-                </div>
-            `;
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const hiddenCards = document.querySelectorAll('.car-card-hidden');
+        let cardsToShow = 2;
+        let currentShown = 8;
+        loadMoreBtn.addEventListener('click', function() {
+            let revealed = 0;
+            for (let i = 0; i < hiddenCards.length && revealed < cardsToShow; i++) {
+                const card = hiddenCards[i];
+                if (!card.classList.contains('revealed')) {
+                    card.classList.add('revealed');
+                    revealed++;
+                    currentShown++;
+                }
+            }
+            if (currentShown >= hiddenCards.length + 8) {
+                loadMoreBtn.classList.add('hidden');
+            }
         });
     </script>
-
 </body>
-
 </html>
