@@ -1,10 +1,14 @@
-<!doctype html>
+<!Doctype html>
 <html class="no-js " lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Apex Performance Car Rental</title>
+    <meta name="author" content="Apex Performance Car Rental">
+    <meta name="description" content="Apex Performance Car Rental - Premium Car Rental Services in Dubai">
+    <meta name="keywords"
+        content="Apex Performance Car Rental, Dubai, Car Rental, Luxury Cars, Premium Cars, Rent a Car, Exotic Cars, Sports Cars, Car Hire, Car Rental Services">
     <meta name="robots" content="INDEX,FOLLOW">
 
     <!-- Mobile Specific Metas -->
@@ -36,12 +40,27 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Mobile responsive overrides (load after main stylesheet) -->
-    <link rel="stylesheet" href="assets/css/mobile-responsive.css">
+    <style>
+        .th-header {
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .th-header.hide-navbar {
+            transform: translateY(-100%);
+            box-shadow: none;
+        }
+    </style>
+
+    <!-- 3d moving  -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 
 </head>
 
-<body class="">
+<body class="body">
 
     <!--[if lte IE 9]>
     	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -62,10 +81,7 @@
         <div class="preloader-inner">
             <div class="loader"></div>
         </div>
-    </div><!--==============================
-    Sidemenu
-============================== -->
-
+    </div>
     <div class="popup-search-box d-none d-lg-block">
         <button class="searchClose"><i class="fal fa-times"></i></button>
         <form action="#">
@@ -79,7 +95,7 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex-html"></a>
+                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -93,26 +109,18 @@
                         <a href="service.html">Services</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="sell-a-car.html">Sell A Car</a>
-
-                    </li>
-                    <li class="menu-item-has-children">
                         <a href="#">Inventory</a>
                         <ul class="sub-menu">
                             <li><a href="inventory-grid.html">Inventory Grid</a></li>
                             <li><a href="inventory-sold.html">Sold Inventory</a></li>
-                            <li><a href="inventory-comparison.html">Inventory Comparison</a>
-                            </li>
+                            <li><a href="inventory-comparison.html">Inventory Comparison</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="team.html">Our Team</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            <li><a href="error.html">Error Page</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="error.html">Error Page</a></li>
                     <li class="#">
                         <a href="blog.html">Blog</a>
                     </li>
@@ -123,8 +131,11 @@
                 </ul>
             </div>
         </div>
-    </div>
-    
+    </div><!--==============================
+	Header Area
+==============================-->
+    <header class="th-header header-default">
+        <div class="sticky-wrapper">
             <!-- Main Menu Area -->
             <div class="menu-area">
                 <div class="th-container">
@@ -134,64 +145,127 @@
                                 <a href="index.html"><img src="assets/img/apexlogo.png" alt="apexlogo"></a>
                             </div>
                         </div>
-                        <div class="col-auto">
+                        <div class="col-auto col-md-auto">
                             <nav class="main-menu sapace-left d-none d-lg-inline-block">
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
-
                                     <li><a href="about.html">About Us</a></li>
-
                                     <li><a href="service.html">Services</a></li>
-
-                                    <li><a href="sell-a-car.html">Sell A Car</a></li>
-
                                     <li class="menu-item-has-children">
-                                        <a href="#">Inventory</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="inventory-grid.html">Inventory Grid</a></li>
-                                            <li><a href="inventory-sold.html">Sold Inventory</a></li>
-                                            <li><a href="inventory-comparison.html">Inventory Comparison</a></li>
-                                        </ul>
+                                        <a href="#">Car Types</a>
+                                        <div class="sub-menu premium-dropdown dropdown-grid">
+                                            <a href="luxury-cars.html" class="grid-item"><img src="assets/img/type/01.png" alt="Luxury Cars"><span>Luxury Cars</span></a>
+                                            <a href="convertible-cars.html" class="grid-item"><img src="assets/img/type/02.png" alt="Convertible Cars"><span>Convertible Cars</span></a>
+                                            <a href="sports-cars.html" class="grid-item"><img src="assets/img/type/03.png" alt="Sports Cars"><span>Sports Cars</span></a>
+                                            <a href="suv-cars.html" class="grid-item"><img src="assets/img/type/04.png" alt="SUV Cars"><span>SUV Cars</span></a>
+                                        </div>
                                     </li>
-
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="team.html">Our Team</a></li>
-                                            <li><a href="testimonials.html">Testimonials</a></li>
-
-                                            <li><a href="error.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li><a href="blog.html">Blog</a></li>
-
-                                    <li><a href="contact.html">Contact Us</a></li>
-
-                                    <li><a href="login.html">Login</a></li>
-                                </ul>
-                            </nav>
-
-                            <button type="button" class="th-menu-toggle d-block d-lg-none"><i
-                                    class="far fa-bars"></i></button>
-                        </div>
-                        <div class="col-auto d-none d-xl-block">
-                            <div class="header-button">
-                                <button type="button" class="simple-icon searchBoxToggler"><i
-                                        class="far fa-search"></i></button>
-                                <!-- <button type="button" class="simple-icon sideMenuToggler"><i class="fa-sharp fa-regular fa-bag-shopping"></i> <span class="badge">5</span></button> -->
-                                <!-- <a href="sell-a-car.html" class="th-btn">Adding List <i class="fa-solid fa-circle-plus"></i></a> -->
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Brands</a>
+                            <div class="sub-menu premium-dropdown dropdown-brands-grid">
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/austin-martin.png" alt="Aston Martin"><span>Aston
+                                        Martin</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/audi.png"
+                                        alt="Audi"><span>Audi</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bent.png"
+                                        alt="Bentley"><span>Bentley</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/rr.png" alt="Rolls Royce"><span>Rolls
+                                        Royce</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mac.png"
+                                        alt="Mclaren"><span>Mclaren</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bmw.png"
+                                        alt="BMW"><span>BMW</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/land.png" alt="Range Rover"><span>Range
+                                        Rover</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/mar.png" alt="Mercedes"><span>Mercedes</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/cad.png" alt="Cadillac"><span>Cadillac</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/far.png"
+                                        alt="Ferrari"><span>Ferrari</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/lambologo.png"
+                                        alt="Lamborghini"><span>Lamborghini</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/mas2.png" alt="Maserati"><span>Maserati</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/porsche.png"
+                                        alt="Porsche"><span>Porsche</span></a>
                             </div>
-                        </div>
+                        </li>
+                        <li><a href="blog.html">Our Fleet</a></li>
+                        <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                        </ul>
+                        </nav>
+                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i
+                                class="far fa-bars"></i></button>
                     </div>
+
                 </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Mobile Menu Wrapper -->
+        <div class="th-menu-wrapper">
+            <div class="th-menu-area">
+                <button class="th-menu-toggle"><i class="far fa-times"></i></button>
+                <div class="mobile-logo">
+                    <a href="index.html"><img src="assets/img/apexlogo.png" alt="apexlogo"></a>
+                </div>
+                <nav class="mobile-menu">
+                    <ul class="th-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Types</a>
+                            <ul class="th-submenu mobile-dropdown-grid">
+                                <li><a href="luxury-cars.html"><img src="assets/img/type/01.png" alt="Luxury Cars"><span>Luxury Cars</span></a></li>
+                                <li><a href="convertible-cars.html"><img src="assets/img/type/02.png" alt="Convertible Cars"><span>Convertible Cars</span></a></li>
+                                <li><a href="sports-cars.html"><img src="assets/img/type/03.png" alt="Sports Cars"><span>Sports Cars</span></a></li>
+                                <li><a href="suv-cars.html"><img src="assets/img/type/04.png" alt="SUV Cars"><span>SUV Cars</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Brands</a>
+                            <ul class="th-submenu mobile-dropdown-brands">
+                                <li><a href="inventory-grid.html">Aston Martin</a></li>
+                                <li><a href="inventory-grid.html">Audi</a></li>
+                                <li><a href="inventory-grid.html">Bentley</a></li>
+                                <li><a href="inventory-grid.html">Rolls Royce</a></li>
+                                <li><a href="inventory-grid.html">Mclaren</a></li>
+                                <li><a href="inventory-grid.html">BMW</a></li>
+                                <li><a href="inventory-grid.html">Range Rover</a></li>
+                                <li><a href="inventory-grid.html">Mercedes</a></li>
+                                <li><a href="inventory-grid.html">Cadillac</a></li>
+                                <li><a href="inventory-grid.html">Ferrari</a></li>
+                                <li><a href="inventory-grid.html">Lamborghini</a></li>
+                                <li><a href="inventory-grid.html">Maserati</a></li>
+                                <li><a href="inventory-grid.html">Porsche</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Pages</a>
+                            <ul class="th-submenu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="error.html">Error Page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Our Fleet</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header><!--==============================
     Breadcumb
 ============================== -->
 
-    <div class="breadcumb-wrapper " data-bg-src="assets/img/contact/contactbg.png" data-overlay="black"
+    <div class="breadcumb-wrapper " data-bg-src="assets/img/type/contact01.png" data-overlay="black"
         data-opacity="3">
         <div class="container">
             <div class="breadcumb-content">
@@ -206,7 +280,7 @@
     <!--==============================
 Contact Area  
 ==============================-->
-    <div class="contact-area-2 space-top" id="contact-sec">
+    <!-- <div class="contact-area-2 space-top" id="contact-sec">
         <div class="container">
             <div class="title-area text-center">
                 <h2 class="sec-title">Our Contact Information</h2>
@@ -252,265 +326,311 @@ Contact Area
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <!-- Contact form area -->
-    <div class="contact-form-area">
+   <section class="contact-section space" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #1a1a1a;">
         <div class="container">
-            <div class="row gx-0">
-                <div class="col-xl-12">
-                    <div class="contact-all-wrapper">
-                        <div class="row gy-30 align-items-center">
-                            <div class="col-lg-7">
-                                <div class="contact-form-wrap">
-                                    <form action="mail.php" method="POST" class="contact-form ajax-contact">
-                                        <h3 class="form-title">Get In Touch</h3>
-                                        <div class="row">
-                                            <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="name" id="name"
-                                                    placeholder="Your Name">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="Email Address">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <input type="tel" class="form-control" name="number" id="number"
-                                                    placeholder="Phone Number">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <select name="subject" id="subject" class="orderby">
-                                                    <option value="" disabled="" selected="" hidden="">Select Subject
-                                                    </option>
-                                                    <option value="Defensive Driving">Defensive Driving</option>
-                                                    <option value="Traffic Guide">Traffic Guide</option>
-                                                    <option value="International Driving">International Driving</option>
-                                                    <option value="Highway Driving">Highway Driving</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-12">
-                                                <textarea name="message" id="message" cols="30" rows="3"
-                                                    class="form-control" placeholder="Your Message"></textarea>
-                                            </div>
-                                            <div class="form-btn col-12">
-                                                <button class="th-btn star-btn">Submit Message</button>
-                                            </div>
-                                        </div>
-                                        <p class="form-messages mb-0 mt-3"></p>
-                                    </form>
-                                </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <div class="contact-info-group">
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Phone</h4>
+                                <p class="info-text">+971 54 492 3609</p>
                             </div>
-                            <div class="col-lg-5">
-                                <div class="contact-form-thumb overflow-hidden">
-                                    <img src="assets/img/contact/contact002.jpg" alt="img">
-                                </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Email</h4>
+                                <p class="info-text">info@apexperformancecarrental.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Address</h4>
+                                <p class="info-text">ONTARIO TOWER C 1801, BUSINESS BAY, DUBAI, UAE</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact form area -->
-    <!-- <div class="contact-form-area">
-    <div class="container">
-        <div class="row gx-0">
-            <div class="col-xl-12">
-                <div class="contact-all-wrapper">
-                    <div class="contact-form-wrap">
-                        <form action="mail.php" method="POST" class="contact-form ajax-contact">
-                            <h3 class="form-title">Get In Touch</h3>
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                <div class="col-lg-7">
+                    <div class="contact-form-wrapper">
+                        <p class="form-subtitle">Contact</p>
+                        <h2 class="form-title">Book Your Convertible Now!</h2>
+                        <form action="submit-contact.php" method="POST" class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="E-mail Address" required>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <input type="tel" class="form-control" name="number" id="number" placeholder="Phone Number">
+                                <div class="col-md-6">
+                                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <select name="subject" id="subject" class="orderby">
-                                        <option value="" disabled="" selected="" hidden="">Select Subject</option>
-                                        <option value="Defensive Driving">Defensive Driving</option>
-                                        <option value="Traffic Guide">Traffic Guide</option>
-                                        <option value="International Driving">International Driving</option>
-                                        <option value="Highway Driving">Highway Driving</option>
-                                    </select>
+                                <div class="col-md-6">
+                                    <input type="text" name="car" class="form-control" placeholder="Car Model" required>
                                 </div>
-                                <div class="form-group col-12">
-                                    <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea>
+                                <div class="col-12">
+                                    <textarea name="message" rows="4" class="form-control" placeholder="Message" required></textarea>
                                 </div>
-                                <div class="form-btn col-12">
-                                    <button class="th-btn star-btn">Submit Message</button>
+                                <div class="col-12">
+                                    <button type="submit" class="submit-btn">Send Inquiry</button>
                                 </div>
                             </div>
-                            <p class="form-messages mb-0 mt-3"></p>
                         </form>
                     </div>
-                    <div class="contact-form-thumb overflow-hidden">
-                        <img src="assets/img/contact/contact-page-thumb.jpg" alt="img">
-                    </div>
                 </div>
             </div>
         </div>
+    </section>
+    <div class="map-section" style="width: 100%; height: 500px; overflow: hidden; border: 3px solid #d4af37;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.6743839261647!2d55.36201767621622!3d25.218395872042587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d8c8c8c8c8d%3A0x1234567890!2sLuxury%20Supercars%20Rental!5e0!3m2!1sen!2sae!4v1234567890" style="width: 100%; height: 100%; border: none;"></iframe>
     </div>
-</div> --><!--==============================
-Map Area  
-==============================-->
-    <div class="contact-map">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!4v1700000000000!6m8!1m7!1sfl908G9YxxRf1_XpdY8FLg!2m2!1d25.1857638!2d55.2625351!3f300.35!4f-9.08!5f0.7820865974627469"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-    <!--==============================
-	Footer Area
-==============================-->
-    <footer class="footer-wrapper footer-default bg-footer-color">
-        <div class="shape-mockup d-none d-xxl-block" data-top="0" data-left="0">
-            <img src="assets/img/shape/footer-1-top-shape.png" alt="shape">
-        </div>
-
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-top-border">
-                    <div class="row gy-4 justify-content-between">
-                        <div class="col-lg-3">
-                            <div class="logo-top">
-                                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex"></a>
+    <footer class="footer-wrapper premium-footer" style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
+        <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-start">
+                    <div class="col-lg-3">
+                        <div class="footer-brand">
+                            <div class="footer-logo mb-4">
+                                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex Logo" style="max-width: 180px;"></a>
                             </div>
+                            <p class="footer-desc" style="font-size: 14px; line-height: 1.7; color: #bdbdbd;">If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars.</p>
                         </div>
-                        <div class="col-lg-9">
-                            <div class="payment-wrap">
-                                <div class="info">
-                                    <h4 class="text-white">Our Payment Methods</h4>
-                                    <h6>Our Easy And simple payment methods with cards</h6>
+                    </div>
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Car Brands</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
+                            <li><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Useful Links</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #bdbdbd; text-decoration: none;">Home</a></li>
+                            <li style="margin-bottom: 10px;"><a href="about.html" style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
+                            <li style="margin-bottom: 10px;"><a href="service.html" style="color: #bdbdbd; text-decoration: none;">Services</a></li>
+                            <li style="margin-bottom: 10px;"><a href="blog.html" style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
+                            <li style="margin-bottom: 10px;"><a href="team.html" style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
+                            <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Contact Us</h4>
+                        <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-phone" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <a href="tel:+971544923609" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
+                                    <a href="tel:+971507903412" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 50 790 3412</a>
                                 </div>
-                                <div class="card-thumb-card">
-                                    <img src="assets/img/shape/cards.png" alt="card-img">
-                                </div>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-envelope" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <a href="mailto:info@apexcardubai.com" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info@apexcardubai.com</a>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <p style="margin: 0; color: #bdbdbd; font-size: 14px;">59MJ+F95, Nadd Al Hamar, Dubai, UAE</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">About Company</h3>
-                            <div class="th-widget-about">
-                                <p class="about-text">Dealerships allow customers to take vehicles for test drives to
-                                    experience how the car feels before making a purchase.</p>
-                                <div class="footer-call-wrap">
-                                    <div class="info-box">
-                                        <div class="info-contnt">
-                                            <h4 class="footer-info-title">Call Us:</h4>
-                                            <p class="info-box_text">
-                                                <a href="tel:+971544923609" class="info-box_link">+971 54 492
-                                                    3609</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="info-box">
-                                        <div class="info-contnt">
-                                            <h4 class="footer-info-title">Email Us:</h4>
-                                            <p class="info-box_text">
-                                                <a href="mailto:info.apexperformancecarrental@gmail.com"
-                                                    class="info-box_link">info.apexperformancecarrental@gmail.com</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="th-social">
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
-                                </div>
-                            </div>
+        <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
+            <div class="container-fluid">
+                <div class="row gy-3 align-items-center">
+                    <div class="col-lg-3">
+                        <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
+                            <i class="fas fa-clock" style="font-size: 32px; color: #d4af37;"></i>
+                            <div><h5 style="margin: 0; color: #ffffff; font-weight: 700; font-size: 18px;">24/7</h5><p style="margin: 0; color: #d4af37; font-size: 13px;">Rental service</p></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Pages</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="blog.html">Our Blog</a></li>
-                                    <li><a href="team.html">Our Services</a></li>
-                                    <li><a href="service.html">Our Services</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="payment-methods" style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                            <img src="assets/img/type/PayPalCard-02.png" alt="PayPal" style="height: 35px;">
+                            <img src="assets/img/type/mastercard01.png" alt="Mastercard" style="height: 35px;">
+                            <img src="assets/img/type/visa.jpg" alt="Visa" style="height: 35px;">
+                            <img src="assets/img/type/amex-removebg-preview.png" alt="American Express" style="height: 35px;">
+                            <img src="assets/img/type/images (3).png" alt="Bitcoin" style="height: 35px;">
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Vehicles List</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="inventory-grid.html">Sedan</a></li>
-                                    <li><a href="inventory-grid.html">Hatchback</a></li>
-                                    <li><a href="inventory-grid.html">SUV</a></li>
-                                    <li><a href="inventory-grid.html">Hybrid</a></li>
-                                    <li><a href="inventory-grid.html">Convertible</a></li>
-                                    <li><a href="inventory-grid.html">Coupe</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Our Brand</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="inventory-grid.html">Toyota</a></li>
-                                    <li><a href="inventory-grid.html">Audi</a></li>
-                                    <li><a href="inventory-grid.html">BMW</a></li>
-                                    <li><a href="inventory-grid.html">Ferrari</a></li>
-                                    <li><a href="inventory-grid.html">Nissan</a></li>
-                                    <li><a href="inventory-grid.html">Ford</a></li>
-                                </ul>
-                            </div>
+                    <div class="col-lg-3 text-end">
+                        <div class="footer-social" style="display: flex; align-items: center; justify-content: flex-end; gap: 20px;">
+                            <a href="https://www.facebook.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/apexcarsdubai/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="copyright-wrap">
-            <div class="container">
-                <div class="row gy-2 align-items-center">
-                    <div class="col-md-12">
-                        <p class="copyright-text text-center">Copyright <i class="fal fa-copyright"></i> 2026 <a
-                                href="index.html">Apex Performance Car Rental</a>. All Rights Reserved.</p>
+                <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px; text-align: center;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <a href="booking-toc.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
+                        <span style="color: #d4af37;">|</span>
+                        <a href="privacy-policy.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Privacy Policy</a>
                     </div>
+                    <p style="margin: 0; color: #bdbdbd; font-size: 13px;">© 2025 Luxury Super Car Rentals. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!--********************************
-			Code End  Here 
-	******************************** -->
-
-    <!-- Scroll To Top -->
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg>
+    <div class="floating-contact-buttons">
+        <a href="https://wa.me/971544923609" target="_blank" class="fab-btn whatsapp-fab" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+971544923609" class="fab-btn phone-fab" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
     </div>
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/nice-select.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/mobile-enhancements.js"></script>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.th-header');
+        const scrollThreshold = 50;
+        window.addEventListener('scroll', function() {
+            if (!navbar) return;
+            let currentScroll = window.scrollY || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+                navbar.classList.add('header-hidden');
+                navbar.classList.remove('header-visible');
+            } else if (currentScroll < lastScrollTop) {
+                navbar.classList.remove('header-hidden');
+                navbar.classList.add('header-visible');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggles = document.querySelectorAll('.th-menu-toggle');
+            const mobileMenu = document.querySelector('.th-menu-wrapper');
+            if (menuToggles.length > 0 && mobileMenu) {
+                menuToggles.forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        mobileMenu.classList.toggle('active');
+                    });
+                });
+                const submenuOpeners = mobileMenu.querySelectorAll('.menu-item-has-children > a');
+                submenuOpeners.forEach(opener => {
+                    opener.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        const submenu = parent.querySelector('.sub-menu');
+                        if (submenu) {
+                            const isOpen = submenu.style.display === 'block';
+                            submenu.style.display = isOpen ? 'none' : 'block';
+                            parent.classList.toggle('active', !isOpen);
+                        }
+                    });
+                });
+                const regularLinks = mobileMenu.querySelectorAll('a:not(.menu-item-has-children > a)');
+                regularLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+                document.addEventListener('click', function(e) {
+                    let isToggle = false;
+                    menuToggles.forEach(toggle => {
+                        if (toggle.contains(e.target)) isToggle = true;
+                    });
+                    if (!mobileMenu.contains(e.target) && !isToggle) {
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+        const filterToggleBtn = document.getElementById('filterToggleBtn');
+        const filterBox = document.getElementById('filterBox');
+        filterToggleBtn.addEventListener('click', function() {
+            filterBox.classList.toggle('active');
+        });
+        document.addEventListener('click', function(e) {
+            if (!filterBox.contains(e.target) && !filterToggleBtn.contains(e.target)) {
+                filterBox.classList.remove('active');
+            }
+        });
+        const priceMin = document.getElementById('priceMin');
+        const priceMax = document.getElementById('priceMax');
+        const priceDisplay = document.getElementById('priceDisplay');
+        function updatePriceDisplay() {
+            const min = parseInt(priceMin.value);
+            const max = parseInt(priceMax.value);
+            if (max < min) {
+                priceMin.value = max;
+            }
+            priceDisplay.textContent = `AED ${min.toLocaleString()} - AED ${max.toLocaleString()}`;
+            applyFilters();
+        }
+        priceMin.addEventListener('input', updatePriceDisplay);
+        priceMax.addEventListener('input', updatePriceDisplay);
+        function applyFilters() {
+            const minPrice = parseInt(priceMin.value);
+            const maxPrice = parseInt(priceMax.value);
+            const cars = document.querySelectorAll('.carousel-car-card');
+            let visibleCount = 0;
+            cars.forEach(car => {
+                const priceText = car.querySelector('.price-value').textContent;
+                const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+                let show = price >= minPrice && price <= maxPrice;
+                car.style.display = show ? 'block' : 'none';
+                if (show) visibleCount++;
+            });
+        }
+        document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', applyFilters);
+        });
+        document.getElementById('filterResetBtn').addEventListener('click', function() {
+            priceMin.value = 5000;
+            priceMax.value = 20000;
+            updatePriceDisplay();
+            document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            applyFilters();
+        });
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const hiddenCards = document.querySelectorAll('.car-card-hidden');
+        let cardsToShow = 2;
+        let currentShown = 8;
+        loadMoreBtn.addEventListener('click', function() {
+            let revealed = 0;
+            for (let i = 0; i < hiddenCards.length && revealed < cardsToShow; i++) {
+                const card = hiddenCards[i];
+                if (!card.classList.contains('revealed')) {
+                    card.classList.add('revealed');
+                    revealed++;
+                    currentShown++;
+                }
+            }
+            if (currentShown >= hiddenCards.length + 8) {
+                loadMoreBtn.classList.add('hidden');
+            }
+        });
+        if (hiddenCards.length === 0) {
+            loadMoreBtn.classList.add('hidden');
+        }
+    </script>
 
     <!--==============================
     All Js File
