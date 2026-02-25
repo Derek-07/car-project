@@ -1,0 +1,1825 @@
+<!Doctype html>
+<html class="no-js " lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Apex Performance Car Rental</title>
+    <meta name="author" content="Apex Performance Car Rental">
+    <meta name="description" content="Apex Performance Car Rental - Premium Car Rental Services in Dubai">
+    <meta name="keywords"
+        content="Apex Performance Car Rental, Dubai, Car Rental, Luxury Cars, Premium Cars, Rent a Car, Exotic Cars, Sports Cars, Car Hire, Car Rental Services">
+    <meta name="robots" content="INDEX,FOLLOW">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--==============================
+	  Google Fonts
+	============================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!--==============================
+	    All CSS File
+	============================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Fontawesome Icon -->
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <!-- Swiper Js -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- 3d moving  -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <style>
+
+        /* ======== MAP SECTION ======== */
+        .map-section {
+            height: 500px;
+            border-bottom: 2px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 60px 20px;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+        /* ======== CAR PAGE CUSTOM STYLES ======== */
+        :root {
+            --primary-color: #D4AF37;
+        }
+
+        /* Breadcrumb Fix */
+        .breadcumb-wrapper {
+            background-size: cover !important;
+            background-position: center !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .breadcumb-trail {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .breadcumb-trail li {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .breadcumb-trail li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcumb-trail li a:hover {
+            color: #fff;
+        }
+
+        .breadcumb-trail li:not(:last-child)::after {
+            content: " / ";
+            color: rgba(255, 255, 255, 0.6);
+            margin-left: 15px;
+        }
+
+        .breadcumb-title {
+            color: #fff;
+            font-size: 5.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            text-align: center;
+            text-transform: capitalize;
+            letter-spacing: 3px;
+        }
+
+        /* ======== FILTER SECTION ======== */
+        .filter-toggle-btn {
+            position: fixed;
+            left: 20px;
+            top: 120px;
+            z-index: 50;
+            padding: 12px 20px;
+            background: var(--primary-color);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-toggle-btn:hover {
+            background: #e5bf2e;
+            transform: translateY(-2px);
+        }
+
+        .filter-toggle-btn i {
+            font-size: 16px;
+        }
+
+        .filter-box {
+            position: fixed;
+            left: 0;
+            top: 180px;
+            width: 280px;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(30, 30, 30, 0.98) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 0 12px 12px 0;
+            padding: 25px;
+            z-index: 40;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.35, 0, 0.65, 1);
+        }
+
+        .filter-box.active {
+            transform: translateX(0);
+        }
+
+        .filter-box h3 {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+        }
+
+        .filter-label {
+            display: block;
+            font-size: 12px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Price Range Slider */
+        .price-slider-wrapper {
+            margin: 15px 0;
+        }
+
+        .price-slider-wrapper input[type="range"] {
+            width: 100%;
+            height: 4px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+            margin-bottom: 8px;
+        }
+
+        .price-slider-wrapper input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-slider-wrapper input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-display {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Checkboxes */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            margin: 0;
+            transition: color 0.3s;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + label {
+            color: var(--primary-color);
+        }
+
+        .filter-reset-btn {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            color: var(--primary-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .filter-reset-btn:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        /* ======== PREMIUM HOVER EFFECT ======== */
+        .carousel-car-card {
+            transition: all 0.5s cubic-bezier(0.35, 0, 0.65, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-car-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .carousel-car-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 
+                        0 0 40px rgba(212, 175, 55, 0.2),
+                        inset 0 0 20px rgba(212, 175, 55, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .carousel-car-card:hover::before {
+            opacity: 1;
+            animation: glow-pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .car-image {
+            transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1);
+        }
+
+        .carousel-car-card:hover .car-image {
+            transform: scale(1.15) rotate(2deg);
+            filter: brightness(1.1) saturate(1.2);
+        }
+
+        .carousel-car-card:hover .car-title {
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* ======== LOAD MORE BUTTON ======== */
+        .load-more-wrapper {
+            text-align: center;
+            margin: 120px 0;
+            padding: 60px 20px;
+        }
+
+        .load-more-btn {
+            padding: 18px 70px;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .load-more-btn:hover {
+            background: var(--primary-color);
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .load-more-btn:active {
+            transform: scale(0.98);
+        }
+
+        .load-more-btn.hidden {
+            display: none;
+        }
+
+        .car-card-hidden {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .car-card-hidden.revealed {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            margin: 15px 0;
+            padding: 15px;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Brand Logo Section */
+        .brand-logo-section {
+            text-align: center;
+            margin: 60px 0 80px 0;
+            padding: 40px 20px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-logo-section img {
+            max-height: 120px;
+            max-width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo-section img:hover {
+            filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.5));
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .filter-toggle-btn {
+                left: 15px;
+                top: 100px;
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .filter-box {
+                top: 150px;
+                width: 250px;
+            }
+
+            .breadcumb-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .filter-toggle-btn {
+                left: 10px;
+                top: 85px;
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+
+            .filter-box {
+                top: 130px;
+                width: 100%;
+                border-radius: 0;
+                max-width: none;
+            }
+
+            .breadcumb-wrapper {
+                min-height: 250px;
+            }
+
+            .breadcumb-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body class="body">
+
+    <!--[if lte IE 9]>
+    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  	<![endif]-->
+
+
+    <!--================================
+   		Code Start From Here 
+	================================ -->
+    <!-- slider drag cursor -->
+    <div class="slider-drag-cursor"> &lt;DRAG&gt; </div>
+
+    <!--==============================
+     Preloader
+  ==============================-->
+    <div class="preloader ">
+        <button class="th-btn preloaderCls">Cancel Preloader </button>
+        <div class="preloader-inner">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="popup-search-box d-none d-lg-block">
+        <button class="searchClose"><i class="fal fa-times"></i></button>
+        <form action="#">
+            <input type="text" placeholder="What are you looking for?">
+            <button type="submit"><i class="fal fa-search"></i></button>
+        </form>
+    </div><!--==============================
+    Mobile Menu
+  ============================== -->
+    <div class="th-menu-wrapper">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul>
+                    <li class="#">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li class="#">
+                        <a href="service.html">Services</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Inventory</a>
+                        <ul class="sub-menu">
+                            <li><a href="inventory-grid.html">Inventory Grid</a></li>
+                            <li><a href="inventory-sold.html">Sold Inventory</a></li>
+                            <li><a href="inventory-comparison.html">Inventory Comparison</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Pages</a>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="error.html">Error Page</a></li>
+                    <li class="#">
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div><!--==============================
+	Header Area
+==============================-->
+    <header class="th-header header-default">
+        <div class="sticky-wrapper">
+            <!-- Main Menu Area -->
+            <div class="menu-area">
+                <div class="th-container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="header-logo">
+                                <a href="index.html"><img src="assets/img/apexlogo.png" alt="apexlogo"></a>
+                            </div>
+                        </div>
+                        <div class="col-auto col-md-auto">
+                            <nav class="main-menu sapace-left d-none d-lg-inline-block">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="service.html">Services</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Car Types</a>
+                                        <div class="sub-menu premium-dropdown dropdown-grid">
+                                            <a href="luxury-cars.html" class="grid-item"><img src="assets/img/type/01.png" alt="Luxury Cars"><span>Luxury Cars</span></a>
+                                            <a href="convertible-cars.html" class="grid-item"><img src="assets/img/type/02.png" alt="Convertible Cars"><span>Convertible Cars</span></a>
+                                            <a href="sports-cars.html" class="grid-item"><img src="assets/img/type/03.png" alt="Sports Cars"><span>Sports Cars</span></a>
+                                            <a href="suv-cars.html" class="grid-item"><img src="assets/img/type/04.png" alt="SUV Cars"><span>SUV Cars</span></a>
+                                        </div>
+                                    </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Brands</a>
+                            <div class="sub-menu premium-dropdown dropdown-brands-grid">
+                                <a href="cars.html?brand=bmw" class="brand-item"><img src="assets/img/brand/bmw.png" alt="BMW"><span>BMW</span></a>
+                                <a href="cars.html?brand=mercedes" class="brand-item"><img src="assets/img/brand/mar.png" alt="Mercedes"><span>Mercedes</span></a>
+                                <a href="cars.html?brand=ferrari" class="brand-item"><img src="assets/img/brand/far.png" alt="Ferrari"><span>Ferrari</span></a>
+                                <a href="cars.html?brand=lamborghini" class="brand-item"><img src="assets/img/brand/lambologo.png" alt="Lamborghini"><span>Lamborghini</span></a>
+                                <a href="cars.html?brand=rolls-royce" class="brand-item"><img src="assets/img/brand/rr.png" alt="Rolls Royce"><span>Rolls Royce</span></a>
+                                <a href="cars.html?brand=bentley" class="brand-item"><img src="assets/img/brand/bent.png" alt="Bentley"><span>Bentley</span></a>
+                                <a href="cars.html?brand=porsche" class="brand-item"><img src="assets/img/brand/porsche.png" alt="Porsche"><span>Porsche</span></a>
+                                <a href="cars.html?brand=bugatti" class="brand-item"><img src="assets/img/brand/buga.png" alt="Bugatti"><span>Bugatti</span></a>
+                                <a href="cars.html?brand=maserati" class="brand-item"><img src="assets/img/brand/mas2.png" alt="Maserati"><span>Maserati</span></a>
+                                <a href="cars.html?brand=range-rover" class="brand-item"><img src="assets/img/brand/land.png" alt="Range Rover"><span>Range Rover</span></a>
+                                <a href="cars.html?brand=cadillac" class="brand-item"><img src="assets/img/brand/cad.png" alt="Cadillac"><span>Cadillac</span></a>
+                            </div>
+                        </li>
+                        <li><a href="blog.html">Our Fleet</a></li>
+                        <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                        </ul>
+                        </nav>
+                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i
+                                class="far fa-bars"></i></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Mobile Menu Wrapper -->
+        <div class="th-menu-wrapper">
+            <div class="th-menu-area">
+                <button class="th-menu-toggle"><i class="far fa-times"></i></button>
+                <div class="mobile-logo">
+                    <a href="index.html"><img src="assets/img/apexlogo.png" alt="apexlogo"></a>
+                </div>
+                <nav class="mobile-menu">
+                    <ul class="th-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Types</a>
+                            <ul class="th-submenu mobile-dropdown-grid">
+                                <li><a href="luxury-cars.html"><img src="assets/img/type/01.png" alt="Luxury Cars"><span>Luxury Cars</span></a></li>
+                                <li><a href="convertible-cars.html"><img src="assets/img/type/02.png" alt="Convertible Cars"><span>Convertible Cars</span></a></li>
+                                <li><a href="sports-cars.html"><img src="assets/img/type/03.png" alt="Sports Cars"><span>Sports Cars</span></a></li>
+                                <li><a href="suv-cars.html"><img src="assets/img/type/04.png" alt="SUV Cars"><span>SUV Cars</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Car Brands</a>
+                            <ul class="th-submenu mobile-dropdown-brands">
+                                <li><a href="cars.html?brand=bmw">BMW</a></li>
+                                <li><a href="cars.html?brand=mercedes">Mercedes</a></li>
+                                <li><a href="cars.html?brand=ferrari">Ferrari</a></li>
+                                <li><a href="cars.html?brand=lamborghini">Lamborghini</a></li>
+                                <li><a href="cars.html?brand=rolls-royce">Rolls Royce</a></li>
+                                <li><a href="cars.html?brand=bentley">Bentley</a></li>
+                                <li><a href="cars.html?brand=porsche">Porsche</a></li>
+                                <li><a href="cars.html?brand=bugatti">Bugatti</a></li>
+                                <li><a href="cars.html?brand=maserati">Maserati</a></li>
+                                <li><a href="cars.html?brand=range-rover">Range Rover</a></li>
+                                <li><a href="cars.html?brand=cadillac">Cadillac</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Pages</a>
+                            <ul class="th-submenu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="error.html">Error Page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Our Fleet</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!--==============================
+    Breadcrumb
+    ==============================-->
+    <div class="breadcumb-wrapper" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.8) 100%), url('assets/cars/yellow.png') center/cover no-repeat; padding: 140px 20px; position: relative; min-height: 500px;" id="breadcrumbSection">
+        <div class="container">
+            <ul class="breadcumb-trail">
+                <li><a href="index.html">Home</a></li>
+                <li id="breadcrumbBrand">Lamborghini Cars</li>
+            </ul>
+            <h1 class="breadcumb-title" id="breadcrumbTitle">Lamborghini Cars Rental Dubai</h1>
+        </div>
+    </div>
+
+    <!-- Filter Toggle Button -->
+    <button class="filter-toggle-btn" id="filterToggleBtn">
+        <i class="fas fa-sliders-h"></i>
+        <span>Filters</span>
+    </button>
+
+    <!-- Filter Box -->
+    <div class="filter-box" id="filterBox">
+        <h3>Filter Cars</h3>
+
+        <!-- Price Filter -->
+        <div class="filter-group">
+            <label class="filter-label">Price Range</label>
+            <div class="price-slider-wrapper">
+                <input type="range" id="priceMin" min="5000" max="25000" value="5000">
+                <input type="range" id="priceMax" min="5000" max="25000" value="25000">
+                <div class="price-display">
+                    <span id="priceDisplay">AED 5,000 - AED 25,000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seats Filter -->
+        <div class="filter-group">
+            <label class="filter-label">Seats</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="seats2" value="2">
+                    <label for="seats2">2 Seats</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="seats4" value="4">
+                    <label for="seats4">4 Seats</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="seats5" value="5">
+                    <label for="seats5">5+ Seats</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Filter -->
+        <div class="filter-group">
+            <label class="filter-label">Color</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="colorBlack" value="black">
+                    <label for="colorBlack">Black</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="colorGray" value="gray">
+                    <label for="colorGray">Gray</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="colorBlue" value="blue">
+                    <label for="colorBlue">Blue</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="colorWhite" value="white">
+                    <label for="colorWhite">White</label>
+                </div>
+            </div>
+        </div>
+
+        <button class="filter-reset-btn" id="filterResetBtn">Reset Filters</button>
+    </div>
+
+    <!--==============================
+    Car Rental Section
+    ==============================-->
+    <section class="car-rental-section space">
+        <div class="container-fluid">
+            <!-- Brand Logo -->
+            <div class="brand-logo-section" id="brandLogoSection">
+                <h3 style="color: #d4af37; font-size: 18px; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;" id="brandNameDisplay">BMW</h3>
+                <img id="brandLogo" src="assets/img/brand/bmw.png" alt="Brand Logo" style="max-height: 120px; max-width: 280px;">
+                <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 15px; font-style: italic;" id="brandTagline">Premium Performance Vehicles</p>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h2 class="sec-title mb-3" id="sectionTitle">Premium BMW Rental in Dubai</h2>
+                    <p class="sec-text" id="sectionDescription">Experience luxury and performance with our premium BMW rental service. Perfect for those seeking sophisticated design, cutting-edge technology, and unmatched driving dynamics.</p>
+                </div>
+            </div>
+            <div class="row g-4" id="carsContainer">
+                <!-- Cars will be dynamically generated here -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-wrapper">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Vehicles</button>
+            </div>
+        </div>
+    </section>
+
+       <!--==============================
+Brand Area  
+==============================-->
+    <div class="brand-area-1 space overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="swiper th-slider" id="brand-slider-1"
+                        data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}'>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/mac.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/audi.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/austin-martin.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/lambologo.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/far.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/bmw.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/mas2.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/porsche.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/bent.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/rr.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/buga.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/mar.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/land.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-box">
+                                    <a href="about.html">
+                                        <img src="assets/img/brand/cad.png" alt="Brand Logo">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!--==============================
+Testimonial Area - Google Reviews
+==============================-->
+    <section class="testi-card-area-1 space overflow-hidden" id="testi-sec">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-8 col-xl-8">
+                    <div class="title-area text-center">
+                        <h2 class="sec-title">What Our Customers Are Saying</h2>
+                        <p>Real reviews from verified Google customers. See why Luxury Supercars Rental is trusted by thousands.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-4 justify-content-center">
+                <div class="testi-card-slide">
+                    <div class="swiper has-shadow th-slider" id="testiSlide1"
+                        data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
+                        <div class="swiper-wrapper">
+                            <!-- Google Review Card 1 -->
+                            <div class="swiper-slide">
+                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                                        <span style="font-size: 18px; color: #4285f4;">G</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
+                                    </div>
+                                    <div style="display: flex; gap: 3px; margin-bottom: 12px;">
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                    </div>
+                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Amazing 10/10 service, hassle free and straightforward. Special thanks to Claire & Jay for making this the best experience. Truly professional team!</p>
+                                    <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
+                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Louis Kent</h4>
+                                        <p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Google Review Card 2 -->
+                            <div class="swiper-slide">
+                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                                        <span style="font-size: 18px; color: #4285f4;">G</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
+                                    </div>
+                                    <div style="display: flex; gap: 3px; margin-bottom: 12px;">
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                    </div>
+                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">I'm absolutely thrilled with my experience at Luxury Supercars Dubai! From the very first contact to the return of the vehicle, everything was smooth, professional, and hassle-free. Highly recommended!</p>
+                                    <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
+                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Kaan</h4>
+                                        <p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Google Review Card 3 -->
+                            <div class="swiper-slide">
+                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                                        <span style="font-size: 18px; color: #4285f4;">G</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
+                                    </div>
+                                    <div style="display: flex; gap: 3px; margin-bottom: 12px;">
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                    </div>
+                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Amazing customer service, making it flawless and hassle free to drive any car you want. They really go above and beyond for customers. This is the kind of service you deserve!</p>
+                                    <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
+                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Mihai Alexandru</h4>
+                                        <p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Google Review Card 4 -->
+                            <div class="swiper-slide">
+                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                                        <span style="font-size: 18px; color: #4285f4;">G</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
+                                    </div>
+                                    <div style="display: flex; gap: 3px; margin-bottom: 12px;">
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                    </div>
+                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Professional service with excellent vehicle selection. The team was responsive and accommodating to all my needs. Will definitely rent again!</p>
+                                    <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
+                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Sarah Johnson</h4>
+                                        <p style="color: #9aa0a6; font-size: 13px; margin: 0;">8 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Google Review Card 5 -->
+                            <div class="swiper-slide">
+                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                                        <span style="font-size: 18px; color: #4285f4;">G</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
+                                    </div>
+                                    <div style="display: flex; gap: 3px; margin-bottom: 12px;">
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                        <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
+                                    </div>
+                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Fantastic experience renting a luxury car. The vehicles are immaculate, staff is friendly and knowledgeable. Best car rental in Dubai!</p>
+                                    <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
+                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Ahmed Hassan</h4>
+                                        <p style="color: #9aa0a6; font-size: 13px; margin: 0;">7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button data-slider-prev="#testiSlide1" class="slider-arrow slider-prev"><i
+                            class="far fa-arrow-left"></i></button>
+                    <button data-slider-next="#testiSlide1" class="slider-arrow slider-next"><i
+                            class="far fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- View All Reviews Button -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="https://www.google.com/search?q=Luxury+Supercars+Rental+Dubai" target="_blank" class="th-btn" style="background: #4285f4; color: #ffffff; padding: 12px 35px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;">
+                        <i class="fab fa-google" style="margin-right: 8px;"></i> View All Google Reviews
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==============================
+    Contact Section
+    ==============================-->
+    <section class="contact-section space" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/bgofcc.jpg') center/cover no-repeat;">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <div class="contact-info-group">
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Phone</h4>
+                                <p class="info-text">+971 54 492 3609</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Email</h4>
+                                <p class="info-text">info@apexperformancecarrental.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-content">
+                                <h4 class="info-title">Address</h4>
+                                <p class="info-text">Dubai, UAE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form-wrapper">
+                        <p class="form-subtitle">Contact</p>
+                        <h2 class="form-title" id="bookingTitle">Book Your Car Now!</h2>
+                        <form action="submit-contact.php" method="POST" class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="E-mail Address" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="car" class="form-control" placeholder="Car Model" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" rows="4" class="form-control" placeholder="Message" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="submit-btn">Send Inquiry</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                <!-- ======== MAP ======== -->
+    <div class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.6743839261647!2d55.36201767621622!3d25.218395872042587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d8c8c8c8c8d%3A0x1234567890!2sLuxury%20Supercars%20Rental!5e0!3m2!1sen!2sae!4v1234567890"></iframe>
+    </div>
+
+       <!--==============================
+	Footer Area
+==============================-->
+    <footer class="footer-wrapper premium-footer" style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
+        <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-start">
+                    <!-- Left Column - Logo & Description -->
+                    <div class="col-lg-3">
+                        <div class="footer-brand">
+                            <div class="footer-logo mb-4">
+                                <a href="index.html"><img src="assets/img/apexlogo.png" alt="Apex Logo" style="max-width: 180px;"></a>
+                            </div>
+                            <p class="footer-desc" style="font-size: 14px; line-height: 1.7; color: #bdbdbd;">
+                                If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Car Brands Column -->
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Car Brands</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="cars.html?brand=bmw" style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
+                            <li style="margin-bottom: 10px;"><a href="cars.html?brand=mercedes" style="color: #bdbdbd; text-decoration: none;">Mercedes</a></li>
+                            <li style="margin-bottom: 10px;"><a href="cars.html?brand=lamborghini" style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
+                            <li style="margin-bottom: 10px;"><a href="cars.html?brand=ferrari" style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
+                            <li style="margin-bottom: 10px;"><a href="cars.html?brand=rolls-royce" style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
+                            <li style="margin-bottom: 10px;"><a href="cars.html?brand=bentley" style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
+                            <li style="margin-bottom: 10px;"><a href="cars.html?brand=porsche" style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
+                            <li><a href="cars.html?brand=maserati" style="color: #bdbdbd; text-decoration: none;">Maserati</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Useful Links Column -->
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Useful Links</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #bdbdbd; text-decoration: none;">Home</a></li>
+                            <li style="margin-bottom: 10px;"><a href="about.html" style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
+                            <li style="margin-bottom: 10px;"><a href="service.html" style="color: #bdbdbd; text-decoration: none;">Services</a></li>
+                            <li style="margin-bottom: 10px;"><a href="blog.html" style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
+                            <li style="margin-bottom: 10px;"><a href="team.html" style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
+                            <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Us Column -->
+                    <div class="col-lg-3">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Contact Us</h4>
+                        <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-phone" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <a href="tel:+971544923609" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
+                                    <a href="tel:+971507903412" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 50 790 3412</a>
+                                </div>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-envelope" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info@apexcardubai.com</a>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <p style="margin: 0; color: #bdbdbd; font-size: 14px;">59MJ+F95, Nadd Al Hamar, Dubai, UAE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
+            <div class="container-fluid">
+                <div class="row gy-3 align-items-center">
+                    <!-- 24/7 Service -->
+                    <div class="col-lg-3">
+                        <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
+                            <i class="fas fa-clock" style="font-size: 32px; color: #d4af37;"></i>
+                            <div>
+                                <h5 style="margin: 0; color: #ffffff; font-weight: 700; font-size: 18px;">24/7</h5>
+                                <p style="margin: 0; color: #d4af37; font-size: 13px;">Rental service</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="col-lg-4 text-center">
+                        <div class="payment-methods" style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                            <img src="assets/img/type/PayPalCard-02.png" alt="PayPal" style="height: 35px;">
+                            <img src="assets/img/type/mastercard01.png" alt="Mastercard" style="height: 35px;">
+                            <img src="assets/img/type/visa.jpg" alt="Visa" style="height: 35px;">
+                            <img src="assets/img/type/amex-removebg-preview.png" alt="American Express" style="height: 35px;">
+                            <img src="assets/img/type/images (3).png" alt="Bitcoin" style="height: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="col-lg-3 text-end">
+                        <div class="footer-social" style="display: flex; align-items: center; justify-content: flex-end; gap: 20px;">
+                            <a href="https://www.facebook.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/apexcarsdubai/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease;"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/" target="_blank" style="width: 40px; height: 40px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease;"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright Section -->
+                <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px; text-align: center;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <a href="booking-toc.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
+                        <span style="color: #d4af37;">|</span>
+                        <a href="privacy-policy.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Privacy Policy</a>
+                    </div>
+                    <p style="margin: 0; color: #bdbdbd; font-size: 13px;">© 2025 Luxury Super Car Rentals. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact-buttons">
+        <a href="https://wa.me/971544923609" target="_blank" class="fab-btn whatsapp-fab" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+971544923609" class="fab-btn phone-fab" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/nice-select.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Dynamic Car Listing Script -->
+    <script>
+        // ============ BRAND DATA ============
+        const brandData = {
+            bmw: {
+                title: "BMW",
+                displayName: "BMW Cars Rental Dubai",
+                description: "Experience luxury and performance with our premium BMW rental service. Perfect for those seeking sophisticated design, cutting-edge technology, and unmatched driving dynamics.",
+                sectionTitle: "Premium BMW Rental in Dubai",
+                logo: "assets/img/brand/bmw.png",
+                heroImage: "assets/cars/blue.png",
+                cars: [
+                    { name: "BMW M5 Competition", price: 8500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "BMW i7", price: 9500, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "BMW X7 M50i", price: 7500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "BMW 750Li", price: 8000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "BMW M440i", price: 6500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "BMW 328i", price: 5500, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "BMW M760Li", price: 12000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "BMW X5 40i", price: 7000, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "BMW M4 Coupe", price: 11000, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "BMW 340i", price: 5800, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "BMW M8 Gran Coupe", price: 14000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "BMW Z4 Roadster", price: 9000, image: "assets/cars/gw01.png", color: "red" }
+                ]
+            },
+            mercedes: {
+                title: "Mercedes-Benz",
+                displayName: "Mercedes-Benz Cars Rental Dubai",
+                description: "Indulge in timeless elegance and German engineering with our Mercedes-Benz rental collection. Every vehicle represents the pinnacle of luxury, comfort, and prestige.",
+                sectionTitle: "Premium Mercedes-Benz Rental in Dubai",
+                logo: "assets/img/brand/mar.png",
+                heroImage: "assets/cars/gw01.png",
+                cars: [
+                    { name: "Mercedes-AMG S63", price: 12500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Mercedes-Benz S-Class", price: 12500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "Mercedes-AMG G63", price: 10000, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Mercedes-Benz E-Class", price: 8500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "Mercedes-AMG GLE", price: 9500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Mercedes-Benz C-Class", price: 6500, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Mercedes-Maybach GLS", price: 15000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Mercedes-AMG GT", price: 13500, image: "assets/cars/blue.png", color: "red" },
+                    { name: "Mercedes-Benz Cabriolet", price: 11000, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Mercedes-AMG A45", price: 5500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "Mercedes-Benz GLC", price: 7500, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Mercedes-AMG SL", price: 14000, image: "assets/cars/blue.png", color: "black" }
+                ]
+            },
+            ferrari: {
+                title: "Ferrari",
+                displayName: "Ferrari Cars Rental Dubai",
+                description: "Feel the thrill of Italian passion with our exclusive Ferrari rental collection. Experience the raw power, sleek design, and unparalleled performance of these iconic supercars.",
+                sectionTitle: "Premium Ferrari Rental in Dubai",
+                logo: "assets/img/brand/far.png",
+                heroImage: "assets/cars/red.png",
+                cars: [
+                    { name: "Ferrari F8 Tributo", price: 15000, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari Portofino", price: 12500, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari 488 GTB", price: 14000, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari GTC4Lusso", price: 13500, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari SF90 Stradale", price: 18000, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari Roma", price: 13000, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari F12berlinetta", price: 14500, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari California", price: 12000, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari 812 Superfast", price: 16000, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari Pista", price: 17000, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari 458 Italia", price: 13000, image: "assets/cars/red.png", color: "red" },
+                    { name: "Ferrari FF", price: 14000, image: "assets/cars/red.png", color: "red" }
+                ]
+            },
+            lamborghini: {
+                title: "Lamborghini",
+                displayName: "Lamborghini Cars Rental Dubai",
+                description: "Unleash your inner speed demon with our stunning Lamborghini collection. Bold design meets savage performance in these Italian supercars that turn heads everywhere.",
+                sectionTitle: "Premium Lamborghini Rental in Dubai",
+                logo: "assets/img/brand/lambologo.png",
+                heroImage: "assets/cars/gw01.png",
+                cars: [
+                    { name: "Lamborghini Huracán", price: 14000, image: "assets/cars/gw01.png", color: "yellow" },
+                    { name: "Lamborghini Aventador", price: 16000, image: "assets/cars/blue.png", color: "yellow" },
+                    { name: "Lamborghini Urus", price: 17000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Lamborghini Revuelto", price: 20000, image: "assets/cars/blue.png", color: "yellow" },
+                    { name: "Lamborghini LM002", price: 14000, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Lamborghini Huracán Spyder", price: 15000, image: "assets/cars/blue.png", color: "yellow" },
+                    { name: "Lamborghini Murciélago", price: 13000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Lamborghini Gallardo", price: 11000, image: "assets/cars/blue.png", color: "yellow" },
+                    { name: "Lamborghini Essenza", price: 18000, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Lamborghini Diablo", price: 12000, image: "assets/cars/blue.png", color: "red" },
+                    { name: "Lamborghini Countach", price: 15000, image: "assets/cars/gw01.png", color: "yellow" },
+                    { name: "Lamborghini Sian", price: 19000, image: "assets/cars/blue.png", color: "yellow" }
+                ]
+            },
+            "rolls-royce": {
+                title: "Rolls-Royce",
+                displayName: "Rolls-Royce Cars Rental Dubai",
+                description: "Experience absolute luxury and uncompromising quality with Rolls-Royce. These bespoke vehicles represent the ultimate expression of elegance, comfort, and prestige.",
+                sectionTitle: "Premium Rolls-Royce Rental in Dubai",
+                logo: "assets/img/brand/rr.png",
+                heroImage: "assets/cars/blue.png",
+                cars: [
+                    { name: "Rolls-Royce Phantom", price: 18000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Ghost", price: 15000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Wraith", price: 16000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Dawn", price: 16500, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Rolls-Royce Cullinan", price: 18000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Spectre", price: 20000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Black Badge", price: 17500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Drophead", price: 17000, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Rolls-Royce Phantom Drophead", price: 19000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Ghost Black Badge", price: 17000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Phantom VIII", price: 18500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Rolls-Royce Silver Cloud", price: 16000, image: "assets/cars/blue.png", color: "gray" }
+                ]
+            },
+            bentley: {
+                title: "Bentley",
+                displayName: "Bentley Cars Rental Dubai",
+                description: "Discover the epitome of British craftsmanship and luxury with our Bentley collection. Combining sophisticated elegance with powerful performance in every drive.",
+                sectionTitle: "Premium Bentley Rental in Dubai",
+                logo: "assets/img/brand/bent.png",
+                heroImage: "assets/cars/gw01.png",
+                cars: [
+                    { name: "Bentley Continental GT", price: 15000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Bentley Flying Spur", price: 14000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Bentley Bentayga", price: 16000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Bentley Azure", price: 13000, image: "assets/cars/gw01.png", color: "blue" },
+                    { name: "Bentley Mulsanne", price: 14500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Bentley Continental Supersports", price: 16500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Bentley Arnage", price: 13500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Bentley Continental GTC", price: 15000, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Bentley Speed 6", price: 14000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Bentley 8 Litre", price: 15500, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Bentley Brooklands", price: 14500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Bentley Turbo R", price: 13000, image: "assets/cars/gw01.png", color: "black" }
+                ]
+            },
+            porsche: {
+                title: "Porsche",
+                displayName: "Porsche Cars Rental Dubai",
+                description: "Feel the adrenaline rush with our Porsche collection. German engineering perfection paired with thrilling performance and timeless design in every model.",
+                sectionTitle: "Premium Porsche Rental in Dubai",
+                logo: "assets/img/brand/porsche.png",
+                heroImage: "assets/cars/blue.png",
+                cars: [
+                    { name: "Porsche 911 Turbo", price: 13500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Porsche Cayenne", price: 12000, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Porsche Panamera", price: 13000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Porsche 918 Spyder", price: 17000, image: "assets/cars/blue.png", color: "red" },
+                    { name: "Porsche 911 Carrera", price: 12500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "Porsche Boxster", price: 10500, image: "assets/cars/blue.png", color: "red" },
+                    { name: "Porsche Cayman", price: 11000, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "Porsche Taycan", price: 14000, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Porsche 911 GT", price: 15000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Porsche Macan", price: 11500, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Porsche 911 RSR", price: 16000, image: "assets/cars/blue.png", color: "yellow" },
+                    { name: "Porsche Carrera GT", price: 15500, image: "assets/cars/blue.png", color: "black" }
+                ]
+            },
+            bugatti: {
+                title: "Bugatti",
+                displayName: "Bugatti Cars Rental Dubai",
+                description: "Experience hypercars like no other with Bugatti. Limited-edition masterpieces that combine revolutionary engineering with breathtaking design and unmatched speed.",
+                sectionTitle: "Premium Bugatti Rental in Dubai",
+                logo: "assets/img/brand/buga.png",
+                heroImage: "assets/cars/black.png",
+                cars: [
+                    { name: "Bugatti Chiron", price: 22000, image: "assets/cars/black.png", color: "black" },
+                    { name: "Bugatti Veyron", price: 20000, image: "assets/cars/black.png", color: "black" },
+                    { name: "Bugatti Bolide", price: 25000, image: "assets/cars/black.png", color: "blue" },
+                    { name: "Bugatti La Voiture Noire", price: 24000, image: "assets/cars/black.png", color: "black" },
+                    { name: "Bugatti Centodieci", price: 23000, image: "assets/cars/black.png", color: "black" },
+                    { name: "Bugatti Super Sport", price: 21000, image: "assets/cars/black.png", color: "white" },
+                    { name: "Bugatti Veyron Grand Sport", price: 19500, image: "assets/cars/black.png", color: "blue" },
+                    { name: "Bugatti Mistral", price: 22500, image: "assets/cars/black.png", color: "blue" },
+                    { name: "Bugatti Purblood", price: 24500, image: "assets/cars/black.png", color: "red" },
+                    { name: "Bugatti Bölide", price: 23500, image: "assets/cars/black.png", color: "yellow" },
+                    { name: "Bugatti Galibier", price: 21500, image: "assets/cars/black.png", color: "black" },
+                    { name: "Bugatti Atlantic", price: 22000, image: "assets/cars/black.png", color: "black" }
+                ]
+            },
+            maserati: {
+                title: "Maserati",
+                displayName: "Maserati Cars Rental Dubai",
+                description: "Embrace Italian sophistication with Maserati. Where luxury meets performance in vehicles that deliver pure driving pleasure with stunning aesthetics.",
+                sectionTitle: "Premium Maserati Rental in Dubai",
+                logo: "assets/img/brand/mas2.png",
+                heroImage: "assets/cars/blue.png",
+                cars: [
+                    { name: "Maserati MC20", price: 16000, image: "assets/cars/blue.png", color: "yellow" },
+                    { name: "Maserati Quattroporte", price: 11000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Maserati Levante", price: 9500, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Maserati GranCabrio", price: 12000, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Maserati GranTurismo", price: 11500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Maserati Ghibli", price: 10500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "Maserati Kyalami", price: 13000, image: "assets/cars/blue.png", color: "red" },
+                    { name: "Maserati Alfieri", price: 14500, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "Maserati 3200 GT", price: 10000, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Maserati Bora", price: 12500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Maserati Merak", price: 11000, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Maserati Spyder", price: 11500, image: "assets/cars/blue.png", color: "red" }
+                ]
+            },
+            "range-rover": {
+                title: "Range Rover",
+                displayName: "Range Rover Cars Rental Dubai",
+                description: "Command the road with our Range Rover collection. These premium SUVs combine luxury, capability, and sophisticated design for the ultimate driving experience.",
+                sectionTitle: "Premium Range Rover Rental in Dubai",
+                logo: "assets/img/brand/land.png",
+                heroImage: "assets/cars/gw01.png",
+                cars: [
+                    { name: "Range Rover Sport SVR", price: 8500, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Range Rover Velar", price: 7500, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Range Rover Evoque", price: 6500, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Range Rover HSE", price: 9000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Range Rover Sport Dynamic", price: 8000, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Range Rover Autobiography", price: 10000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Range Rover P400", price: 8500, image: "assets/cars/gw01.png", color: "white" },
+                    { name: "Range Rover Defender", price: 7000, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Range Rover Discovery", price: 8000, image: "assets/cars/gw01.png", color: "gray" },
+                    { name: "Range Rover Sport Hybrid", price: 9500, image: "assets/cars/gw01.png", color: "blue" },
+                    { name: "Range Rover First Edition", price: 9800, image: "assets/cars/gw01.png", color: "black" },
+                    { name: "Range Rover SV Autobiography", price: 11000, image: "assets/cars/gw01.png", color: "white" }
+                ]
+            },
+            cadillac: {
+                title: "Cadillac",
+                displayName: "Cadillac Cars Rental Dubai",
+                description: "Experience American luxury at its finest with Cadillac. Premium vehicles that deliver smooth driving, cutting-edge technology, and timeless style.",
+                sectionTitle: "Premium Cadillac Rental in Dubai",
+                logo: "assets/img/brand/cad.png",
+                heroImage: "assets/cars/blue.png",
+                cars: [
+                    { name: "Cadillac Escalade", price: 9500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Cadillac CT6", price: 8500, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Cadillac Lyriq", price: 9000, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Cadillac XT6", price: 8000, image: "assets/cars/blue.png", color: "blue" },
+                    { name: "Cadillac XT5", price: 7500, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Cadillac SRX", price: 7000, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Cadillac CTS", price: 7800, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Cadillac ATS", price: 6800, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Cadillac Escalade Sport", price: 10000, image: "assets/cars/blue.png", color: "black" },
+                    { name: "Cadillac CT5", price: 8200, image: "assets/cars/blue.png", color: "gray" },
+                    { name: "Cadillac DTS", price: 7500, image: "assets/cars/blue.png", color: "white" },
+                    { name: "Cadillac XLR", price: 9200, image: "assets/cars/blue.png", color: "red" }
+                ]
+            }
+        };
+
+        // ============ GET BRAND FROM URL ============
+        function getBrandFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const brand = urlParams.get('brand') || 'lamborghini';
+            return brand.toLowerCase();
+        }
+
+        // ============ UPDATE PAGE CONTENT ============
+        function updatePageContent(brand) {
+            const data = brandData[brand];
+            if (!data) return;
+
+            // Update breadcrumb
+            document.getElementById('breadcrumbBrand').textContent = data.title + ' Cars';
+            document.getElementById('breadcrumbTitle').textContent = data.displayName;
+
+            // Update hero background
+            const breadcrumbWrapper = document.getElementById('breadcrumbSection');
+            breadcrumbWrapper.style.backgroundImage = `linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.8) 100%), url('${data.heroImage}')`;
+            breadcrumbWrapper.style.backgroundSize = 'cover';
+            breadcrumbWrapper.style.backgroundPosition = 'center';
+            breadcrumbWrapper.style.backgroundRepeat = 'no-repeat';
+
+            // Update section title and description
+            document.getElementById('sectionTitle').textContent = data.sectionTitle;
+            document.getElementById('sectionDescription').textContent = data.description;
+
+            // Update brand name display
+            document.getElementById('brandNameDisplay').textContent = data.title.toUpperCase();
+            
+            // Update brand logo with fallback
+            const brandLogoImg = document.getElementById('brandLogo');
+            brandLogoImg.src = data.logo;
+            brandLogoImg.onerror = function() {
+                this.src = 'assets/img/brand/bmw.png'; // Fallback
+            };
+
+            // Update page title
+            document.title = `${data.displayName} | Apex Performance`;
+
+            // Update booking title
+            document.getElementById('bookingTitle').textContent = `Book Your ${data.title} Now!`;
+
+            // Render cars
+            renderCars(data.cars);
+        }
+
+        // ============ RENDER CARS DYNAMICALLY ============
+        function renderCars(cars) {
+            const container = document.getElementById('carsContainer');
+            if (!container) {
+                console.error('Container not found');
+                return;
+            }
+            
+            container.innerHTML = '';
+
+            cars.forEach((car, index) => {
+                const isHidden = index >= 8;
+                const hiddenClass = isHidden ? 'car-card-hidden' : '';
+                const brandName = getBrandFromURL().charAt(0).toUpperCase() + getBrandFromURL().slice(1).replace('-', ' ');
+                
+                const carHTML = `
+                    <div class="col-lg-3 col-md-6 col-sm-12 ${hiddenClass}">
+                        <div class="carousel-car-card">
+                            <div class="car-image-container">
+                                <img src="${car.image}" alt="${car.name}" class="car-image" onerror="this.src='assets/cars/gw01.png'">
+                                <div class="car-overlay"></div>
+                            </div>
+                            <div class="car-info-container">
+                                <h3 class="car-title">${car.name}</h3>
+                                <p class="car-category">Supercar <span class="separator">|</span> ${brandName}</p>
+                                <div class="car-price-display">
+                                    <span class="price-value">${car.price.toLocaleString()} AED</span>
+                                    <span class="price-label">/ Per Day</span>
+                                </div>
+                                <div class="car-action-buttons">
+                                    <a href="tel:+971544923609" class="btn-action btn-call">
+                                        <i class="fas fa-phone"></i>
+                                    </a>
+                                    <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                container.innerHTML += carHTML;
+            });
+
+            // Initialize load more functionality
+            initializeLoadMore();
+        }
+
+        // ============ LOAD MORE FUNCTIONALITY ============
+        function initializeLoadMore() {
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (!loadMoreBtn) {
+                console.error('Load More button not found');
+                return;
+            }
+
+            const hiddenCards = document.querySelectorAll('.car-card-hidden');
+            let cardsToShow = 4;
+            let currentShown = 8;
+
+            loadMoreBtn.classList.remove('hidden');
+
+            // Remove previous listeners
+            loadMoreBtn.onclick = null;
+
+            loadMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                let revealed = 0;
+                
+                for (let i = 0; i < hiddenCards.length && revealed < cardsToShow; i++) {
+                    const card = hiddenCards[i];
+                    if (!card.classList.contains('revealed')) {
+                        card.classList.add('revealed');
+                        revealed++;
+                        currentShown++;
+                    }
+                }
+                
+                if (currentShown >= hiddenCards.length + 8) {
+                    loadMoreBtn.classList.add('hidden');
+                }
+                
+                setTimeout(() => {
+                    const visibleCards = document.querySelectorAll('.carousel-car-card:not(.car-card-hidden), .carousel-car-card.car-card-hidden.revealed');
+                    if (visibleCards.length > 0) {
+                        visibleCards[visibleCards.length - cardsToShow].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 100);
+            });
+            
+            if (hiddenCards.length === 0) {
+                loadMoreBtn.classList.add('hidden');
+            }
+        }
+
+        // ============ FILTER SYSTEM ============
+        function setupFilters() {
+            const filterToggleBtn = document.getElementById('filterToggleBtn');
+            const filterBox = document.getElementById('filterBox');
+
+            filterToggleBtn.addEventListener('click', function() {
+                filterBox.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!filterBox.contains(e.target) && !filterToggleBtn.contains(e.target)) {
+                    filterBox.classList.remove('active');
+                }
+            });
+
+            const priceMin = document.getElementById('priceMin');
+            const priceMax = document.getElementById('priceMax');
+            const priceDisplay = document.getElementById('priceDisplay');
+
+            function updatePriceDisplay() {
+                const min = parseInt(priceMin.value);
+                const max = parseInt(priceMax.value);
+                
+                if (max < min) {
+                    priceMin.value = max;
+                }
+                
+                priceDisplay.textContent = `AED ${min.toLocaleString()} - AED ${max.toLocaleString()}`;
+                applyFilters();
+            }
+
+            priceMin.addEventListener('input', updatePriceDisplay);
+            priceMax.addEventListener('input', updatePriceDisplay);
+
+            function applyFilters() {
+                const minPrice = parseInt(priceMin.value);
+                const maxPrice = parseInt(priceMax.value);
+                
+                const selectedSeats = Array.from(document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked'))
+                    .filter(cb => cb.id.startsWith('seats'))
+                    .map(cb => parseInt(cb.value));
+                    
+                const selectedColors = Array.from(document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked'))
+                    .filter(cb => cb.id.startsWith('color'))
+                    .map(cb => cb.value);
+
+                const cars = document.querySelectorAll('.carousel-car-card');
+                let visibleCount = 0;
+
+                cars.forEach(car => {
+                    const priceText = car.querySelector('.price-value').textContent;
+                    const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+                    
+                    let show = price >= minPrice && price <= maxPrice;
+
+                    if (selectedSeats.length > 0 || selectedColors.length > 0) {
+                        show = show && true;
+                    }
+
+                    car.parentElement.style.display = show ? 'block' : 'none';
+                    if (show) visibleCount++;
+                });
+
+                const carsGrid = document.getElementById('carsContainer');
+                let noResultsMsg = document.querySelector('.no-results-msg');
+                
+                if (visibleCount === 0 && !noResultsMsg) {
+                    noResultsMsg = document.createElement('div');
+                    noResultsMsg.className = 'no-results-msg';
+                    noResultsMsg.style.cssText = 'grid-column: 1/-1; text-align: center; padding: 40px; color: rgba(255,255,255,0.6); font-size: 16px;';
+                    noResultsMsg.textContent = 'No cars match your filters';
+                    carsGrid.appendChild(noResultsMsg);
+                } else if (visibleCount > 0 && noResultsMsg) {
+                    noResultsMsg.remove();
+                }
+            }
+
+            document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', applyFilters);
+            });
+
+            document.getElementById('filterResetBtn').addEventListener('click', function() {
+                priceMin.value = 5000;
+                priceMax.value = 25000;
+                updatePriceDisplay();
+                
+                document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                
+                applyFilters();
+            });
+        }
+
+        // ============ INITIALIZE ON PAGE LOAD ============
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const brand = getBrandFromURL();
+                updatePageContent(brand);
+                setupFilters();
+            }, 100);
+        });
+
+        // Update on URL change (for back button)
+        window.addEventListener('popstate', function() {
+            const brand = getBrandFromURL();
+            updatePageContent(brand);
+        });
+    </script>
+
+    <!-- Mobile Menu & Navbar Script -->
+    <script>
+        // Premium Navbar Hide on Scroll
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.th-header');
+        const scrollThreshold = 50;
+
+        window.addEventListener('scroll', function() {
+            if (!navbar) return;
+            let currentScroll = window.scrollY || document.documentElement.scrollTop;
+            
+            if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+                navbar.classList.add('header-hidden');
+                navbar.classList.remove('header-visible');
+            } else if (currentScroll < lastScrollTop) {
+                navbar.classList.remove('header-hidden');
+                navbar.classList.add('header-visible');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+
+        // Mobile Menu Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggles = document.querySelectorAll('.th-menu-toggle');
+            const mobileMenu = document.querySelector('.th-menu-wrapper');
+            
+            if (menuToggles.length > 0 && mobileMenu) {
+                menuToggles.forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        mobileMenu.classList.toggle('active');
+                    });
+                });
+
+                const submenuOpeners = mobileMenu.querySelectorAll('.menu-item-has-children > a');
+                submenuOpeners.forEach(opener => {
+                    opener.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        const submenu = parent.querySelector('.sub-menu');
+                        if (submenu) {
+                            const isOpen = submenu.style.display === 'block';
+                            submenu.style.display = isOpen ? 'none' : 'block';
+                            parent.classList.toggle('active', !isOpen);
+                        }
+                    });
+                });
+
+                const regularLinks = mobileMenu.querySelectorAll('a:not(.menu-item-has-children > a)');
+                regularLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    let isToggle = false;
+                    menuToggles.forEach(toggle => {
+                        if (toggle.contains(e.target)) isToggle = true;
+                    });
+                    if (!mobileMenu.contains(e.target) && !isToggle) {
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Mobile enhancements -->
+    <script src="assets/js/mobile-enhancements.js"></script>
+</body>
+
+</html>
