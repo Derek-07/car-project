@@ -30561,98 +30561,10 @@ button, a, .th-btn {
     max-width: 340px;
     min-height: 480px;
     margin: 0 auto;
-    border-radius: 15px;
   }
 
   .sports-carousel-wrapper .car-image-container {
     height: 250px;
-  }
-
-  .car-info-container {
-    padding: 20px 18px;
-  }
-
-  .car-title {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-
-  .car-category {
-    font-size: 12px;
-    margin-bottom: 15px;
-  }
-
-  .price-value {
-    font-size: 22px;
-  }
-
-  .swiper-slide-active .price-value {
-    font-size: 24px;
-  }
-
-  .price-label {
-    font-size: 12px;
-  }
-
-  .car-action-buttons {
-    gap: 10px;
-  }
-
-  .btn-action {
-    padding: 12px 0;
-    font-size: 14px;
-  }
-
-  .sports-carousel-wrapper .carousel-nav-buttons {
-    gap: 12px;
-    margin-top: 30px;
-  }
-
-  .sports-carousel-wrapper .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-  }
-
-  .swiper-slide-prev .carousel-car-card,
-  .swiper-slide-next .carousel-car-card {
-    opacity: 0.3;
-    transform: scale(0.75);
-  }
-
-  .swiper-slide-active .carousel-car-card {
-    transform: scale(1);
-  }
-}
-
-/* Extra Small Mobile */
-@media (max-width: 480px) {
-  .premium-carousel-section {
-    padding: 40px 0;
-  }
-
-  .sports-carousel-wrapper .carousel-car-card {
-    border-radius: 12px;
-  }
-
-  .sports-carousel-wrapper .car-image-container {
-    height: 200px;
-  }
-
-  .car-info-container {
-    padding: 15px 15px;
-  }
-
-  .car-title {
-    font-size: 15px;
-  }
-
-  .car-category {
-    font-size: 11px;
-  }
-
-  .price-value {
-    font-size: 20px;
   }
 
   .car-action-buttons {
@@ -31324,23 +31236,6 @@ button, a, .th-btn {
     height: 360px;
   }
 
-  .car-info-container {
-    padding: 25px 20px;
-  }
-
-  .car-title {
-    font-size: 18px;
-    margin-bottom: 6px;
-  }
-
-  .price-value {
-    font-size: 24px;
-  }
-
-  .swiper-slide-active .price-value {
-    font-size: 26px;
-  }
-
   .luxury-carousel-wrapper .carousel-nav-buttons {
     gap: 15px;
   }
@@ -31362,46 +31257,10 @@ button, a, .th-btn {
     max-width: 340px;
     min-height: 480px;
     margin: 0 auto;
-    border-radius: 15px;
   }
 
   .luxury-carousel-wrapper .car-image-container {
     height: 250px;
-  }
-
-  .car-info-container {
-    padding: 20px 18px;
-  }
-
-  .car-title {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-
-  .car-category {
-    font-size: 12px;
-    margin-bottom: 15px;
-  }
-
-  .price-value {
-    font-size: 22px;
-  }
-
-  .swiper-slide-active .price-value {
-    font-size: 24px;
-  }
-
-  .price-label {
-    font-size: 12px;
-  }
-
-  .car-action-buttons {
-    gap: 10px;
-  }
-
-  .btn-action {
-    padding: 12px 0;
-    font-size: 14px;
   }
 
   .luxury-carousel-wrapper .carousel-nav-buttons {
@@ -31413,58 +31272,6 @@ button, a, .th-btn {
     width: 40px;
     height: 40px;
     font-size: 14px;
-  }
-
-  .swiper-slide-prev .carousel-car-card,
-  .swiper-slide-next .carousel-car-card {
-    opacity: 0.3;
-    transform: scale(0.75);
-  }
-
-  .swiper-slide-active .carousel-car-card {
-    transform: scale(1);
-  }
-}
-
-/* Extra Small Mobile */
-@media (max-width: 480px) {
-  .luxury-carousel-wrapper .carousel-car-card {
-    border-radius: 12px;
-  }
-
-  .luxury-carousel-wrapper .car-image-container {
-    height: 200px;
-  }
-
-  .car-info-container {
-    padding: 15px 15px;
-  }
-
-  .car-title {
-    font-size: 15px;
-  }
-
-  .car-category {
-    font-size: 11px;
-  }
-
-  .price-value {
-    font-size: 20px;
-  }
-
-  .car-action-buttons {
-    flex-direction: column;
-  }
-
-  .btn-action {
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  .luxury-carousel-wrapper .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 12px;
   }
 }
 
@@ -31590,23 +31397,6 @@ button, a, .th-btn {
     height: 360px;
   }
 
-  .car-info-container {
-    padding: 25px 20px;
-  }
-
-  .car-title {
-    font-size: 18px;
-    margin-bottom: 6px;
-  }
-
-  .price-value {
-    font-size: 24px;
-  }
-
-  .swiper-slide-active .price-value {
-    font-size: 26px;
-  }
-
   .suv-carousel-wrapper .carousel-nav-buttons {
     gap: 15px;
   }
@@ -31628,46 +31418,10 @@ button, a, .th-btn {
     max-width: 340px;
     min-height: 480px;
     margin: 0 auto;
-    border-radius: 15px;
   }
 
   .suv-carousel-wrapper .car-image-container {
     height: 250px;
-  }
-
-  .car-info-container {
-    padding: 20px 18px;
-  }
-
-  .car-title {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-
-  .car-category {
-    font-size: 12px;
-    margin-bottom: 15px;
-  }
-
-  .price-value {
-    font-size: 22px;
-  }
-
-  .swiper-slide-active .price-value {
-    font-size: 24px;
-  }
-
-  .price-label {
-    font-size: 12px;
-  }
-
-  .car-action-buttons {
-    gap: 10px;
-  }
-
-  .btn-action {
-    padding: 12px 0;
-    font-size: 14px;
   }
 
   .suv-carousel-wrapper .carousel-nav-buttons {
@@ -31679,58 +31433,6 @@ button, a, .th-btn {
     width: 40px;
     height: 40px;
     font-size: 14px;
-  }
-
-  .swiper-slide-prev .carousel-car-card,
-  .swiper-slide-next .carousel-car-card {
-    opacity: 0.3;
-    transform: scale(0.75);
-  }
-
-  .swiper-slide-active .carousel-car-card {
-    transform: scale(1);
-  }
-}
-
-/* Extra Small Mobile */
-@media (max-width: 480px) {
-  .suv-carousel-wrapper .carousel-car-card {
-    border-radius: 12px;
-  }
-
-  .suv-carousel-wrapper .car-image-container {
-    height: 200px;
-  }
-
-  .car-info-container {
-    padding: 15px 15px;
-  }
-
-  .car-title {
-    font-size: 15px;
-  }
-
-  .car-category {
-    font-size: 11px;
-  }
-
-  .price-value {
-    font-size: 20px;
-  }
-
-  .car-action-buttons {
-    flex-direction: column;
-  }
-
-  .btn-action {
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  .suv-carousel-wrapper .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 12px;
   }
 }
 
