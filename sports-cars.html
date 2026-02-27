@@ -7,74 +7,477 @@
     <title>Apex Performance Car Rental</title>
     <meta name="author" content="Apex Performance Car Rental">
     <meta name="description" content="Apex Performance Car Rental - Premium Car Rental Services in Dubai">
-    <meta name="keywords" content="Apex Performance Car Rental, Dubai, Car Rental, Luxury Cars, Premium Cars, Rent a Car, Exotic Cars, Sports Cars, Car Hire, Car Rental Services">
+    <meta name="keywords"
+        content="Apex Performance Car Rental, Dubai, Car Rental, Luxury Cars, Premium Cars, Rent a Car, Exotic Cars, Sports Cars, Car Hire, Car Rental Services">
     <meta name="robots" content="INDEX,FOLLOW">
+
+    <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <!--==============================
+	  Google Fonts
+	============================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!--==============================
+	    All CSS File
+	============================== -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Fontawesome Icon -->
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- Magnific Popup -->
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <!-- Swiper Js -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- custom -->
+
+
+    <!-- 3d moving  -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <style>
-        :root { --primary-color: #D4AF37; }
-        .map-section { height: 500px; border-bottom: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; margin: 60px 20px; }
-        .map-section iframe { width: 100%; height: 100%; border: none; }
-        .breadcumb-wrapper { background-size: cover !important; background-position: center !important; display: flex; align-items: center; justify-content: center; min-height: 500px; }
-        .breadcumb-trail { list-style: none; padding: 0; margin: 0 0 15px 0; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .breadcumb-trail li { color: rgba(255, 255, 255, 0.8); font-size: 14px; }
-        .breadcumb-trail li a { color: var(--primary-color); text-decoration: none; transition: color 0.3s; }
-        .breadcumb-trail li a:hover { color: #fff; }
-        .breadcumb-trail li:not(:last-child)::after { content: " / "; color: rgba(255, 255, 255, 0.6); margin-left: 15px; }
-        .breadcumb-title { color: #fff; font-size: 5.5rem; font-weight: 700; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); margin: 0; text-align: center; text-transform: capitalize; letter-spacing: 3px; }
-        .filter-toggle-btn { position: fixed; left: 20px; top: 120px; z-index: 50; padding: 12px 20px; background: var(--primary-color); color: #000; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 14px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px; }
-        .filter-toggle-btn:hover { background: #e5bf2e; transform: translateY(-2px); }
-        .filter-box { position: fixed; left: 0; top: 180px; width: 280px; background: linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(30, 30, 30, 0.98) 100%); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 0 12px 12px 0; padding: 25px; z-index: 40; max-height: calc(100vh - 200px); overflow-y: auto; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.35, 0, 0.65, 1); }
-        .filter-box.active { transform: translateX(0); }
-        .filter-box h3 { font-size: 16px; color: var(--primary-color); margin-bottom: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid rgba(212, 175, 55, 0.3); padding-bottom: 10px; }
-        .filter-group { margin-bottom: 25px; }
-        .filter-label { display: block; font-size: 12px; color: var(--primary-color); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .price-slider-wrapper { margin: 15px 0; }
-        .price-slider-wrapper input[type="range"] { width: 100%; height: 4px; background: rgba(212, 175, 55, 0.2); border-radius: 2px; outline: none; -webkit-appearance: none; margin-bottom: 8px; }
-        .price-slider-wrapper input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: var(--primary-color); border-radius: 50%; cursor: pointer; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
-        .price-slider-wrapper input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; background: var(--primary-color); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
-        .price-display { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 10px; border-radius: 6px; text-align: center; font-size: 12px; color: var(--primary-color); font-weight: 600; }
-        .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
-        .checkbox-item { display: flex; align-items: center; gap: 10px; }
-        .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; accent-color: var(--primary-color); }
-        .checkbox-item label { cursor: pointer; color: rgba(255, 255, 255, 0.8); font-size: 13px; margin: 0; transition: color 0.3s; }
-        .checkbox-item input[type="checkbox"]:checked + label { color: var(--primary-color); }
-        .filter-reset-btn { width: 100%; padding: 10px; background: transparent; border: 2px solid rgba(212, 175, 55, 0.3); color: var(--primary-color); border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease; margin-top: 15px; }
-        .filter-reset-btn:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--primary-color); }
-        .carousel-car-card { transition: all 0.5s cubic-bezier(0.35, 0, 0.65, 1); position: relative; overflow: hidden; }
-        .carousel-car-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%); opacity: 0; transition: opacity 0.6s ease; pointer-events: none; }
-        .carousel-car-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.2), inset 0 0 20px rgba(212, 175, 55, 0.1); border: 2px solid rgba(212, 175, 55, 0.5); }
-        .carousel-car-card:hover::before { opacity: 1; animation: glow-pulse 1.5s ease-in-out infinite; }
-        @keyframes glow-pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.6; } 100% { transform: scale(1); opacity: 1; } }
-        .car-image { transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1); }
-        .carousel-car-card:hover .car-image { transform: scale(1.15) rotate(2deg); filter: brightness(1.1) saturate(1.2); }
-        .carousel-car-card:hover .car-title { color: #d4af37; text-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
-        .load-more-wrapper { text-align: center; margin: 120px 0; padding: 60px 20px; }
-        .load-more-btn { padding: 18px 70px; background: transparent; border: 2px solid var(--primary-color); border-radius: 50px; color: var(--primary-color); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); }
-        .load-more-btn:hover { background: var(--primary-color); color: #000; transform: scale(1.05); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4); }
-        .load-more-btn.hidden { display: none; }
-        .car-card-hidden { opacity: 0; visibility: hidden; height: 0; margin: 0; padding: 0; overflow: hidden; }
-        .car-card-hidden.revealed { opacity: 1; visibility: visible; height: auto; margin: 15px 0; padding: 15px; animation: slideInUp 0.6s ease-out; }
-        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 992px) { .filter-toggle-btn { left: 15px; top: 100px; padding: 10px 15px; font-size: 12px; } .filter-box { top: 150px; width: 250px; } .breadcumb-title { font-size: 2rem; } }
-        @media (max-width: 576px) { .filter-toggle-btn { left: 10px; top: 85px; padding: 8px 12px; font-size: 11px; } .filter-box { top: 130px; width: 100%; border-radius: 0; max-width: none; } .breadcumb-wrapper { min-height: 250px; } .breadcumb-title { font-size: 1.5rem; } }
+
+        /* ======== MAP SECTION ======== */
+        .map-section {
+            height: 500px;
+            border-bottom: 2px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 60px 20px;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+        /* ======== SUV PAGE CUSTOM STYLES ======== */
+        :root {
+            --primary-color: #D4AF37;
+        }
+
+        /* Breadcrumb Fix */
+        .breadcumb-wrapper {
+            background-size: cover !important;
+            background-position: center !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .breadcumb-trail {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .breadcumb-trail li {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .breadcumb-trail li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcumb-trail li a:hover {
+            color: #fff;
+        }
+
+        .breadcumb-trail li:not(:last-child)::after {
+            content: " / ";
+            color: rgba(255, 255, 255, 0.6);
+            margin-left: 15px;
+        }
+
+        .breadcumb-title {
+            color: #fff;
+            font-size: 5.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            text-align: center;
+            text-transform: capitalize;
+            letter-spacing: 3px;
+        }
+
+        /* ======== FILTER SECTION ======== */
+        .filter-toggle-btn {
+            position: fixed;
+            left: 20px;
+            top: 120px;
+            z-index: 50;
+            padding: 12px 20px;
+            background: var(--primary-color);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-toggle-btn:hover {
+            background: #e5bf2e;
+            transform: translateY(-2px);
+        }
+
+        .filter-toggle-btn i {
+            font-size: 16px;
+        }
+
+        .filter-box {
+            position: fixed;
+            left: 0;
+            top: 180px;
+            width: 280px;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(30, 30, 30, 0.98) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 0 12px 12px 0;
+            padding: 25px;
+            z-index: 40;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.35, 0, 0.65, 1);
+        }
+
+        .filter-box.active {
+            transform: translateX(0);
+        }
+
+        .filter-box h3 {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+        }
+
+        .filter-label {
+            display: block;
+            font-size: 12px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Price Range Slider */
+        .price-slider-wrapper {
+            margin: 15px 0;
+        }
+
+        .price-slider-wrapper input[type="range"] {
+            width: 100%;
+            height: 4px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+            margin-bottom: 8px;
+        }
+
+        .price-slider-wrapper input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-slider-wrapper input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-display {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Checkboxes */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            margin: 0;
+            transition: color 0.3s;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + label {
+            color: var(--primary-color);
+        }
+
+        .filter-reset-btn {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            color: var(--primary-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .filter-reset-btn:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        /* ======== PREMIUM HOVER EFFECT ======== */
+        .carousel-car-card {
+            transition: all 0.5s cubic-bezier(0.35, 0, 0.65, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-car-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .carousel-car-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 
+                        0 0 40px rgba(212, 175, 55, 0.2),
+                        inset 0 0 20px rgba(212, 175, 55, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .carousel-car-card:hover::before {
+            opacity: 1;
+            animation: glow-pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .car-image {
+            transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1);
+        }
+
+        .carousel-car-card:hover .car-image {
+            transform: scale(1.15) rotate(2deg);
+            filter: brightness(1.1) saturate(1.2);
+        }
+
+        .carousel-car-card:hover .car-title {
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* ======== LOAD MORE BUTTON ======== */
+        .load-more-wrapper {
+            text-align: center;
+            margin: 120px 0;
+            padding: 60px 20px;
+        }
+
+        .load-more-btn {
+            padding: 18px 70px;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .load-more-btn:hover {
+            background: var(--primary-color);
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .load-more-btn:active {
+            transform: scale(0.98);
+        }
+
+        .load-more-btn.hidden {
+            display: none;
+        }
+
+        .car-card-hidden {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .car-card-hidden.revealed {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            margin: 15px 0;
+            padding: 15px;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .filter-toggle-btn {
+                left: 15px;
+                top: 100px;
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .filter-box {
+                top: 150px;
+                width: 250px;
+            }
+
+            .breadcumb-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .filter-toggle-btn {
+                left: 10px;
+                top: 85px;
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+
+            .filter-box {
+                top: 130px;
+                width: 100%;
+                border-radius: 0;
+                max-width: none;
+            }
+
+            .breadcumb-wrapper {
+                min-height: 250px;
+            }
+
+            .breadcumb-title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
+
+
 </head>
 
 <body class="body">
+
+    <!--[if lte IE 9]>
+    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  	<![endif]-->
+
+
+    <!--********************************
+   		Code Start From Here 
+	******************************** -->
+    <!-- slider drag cursor -->
     <div class="slider-drag-cursor"> &lt;DRAG&gt; </div>
+
+    <!--==============================
+     Preloader
+  ==============================-->
     <div class="preloader ">
         <button class="th-btn preloaderCls">Cancel Preloader </button>
         <div class="preloader-inner">
@@ -87,8 +490,10 @@
             <input type="text" placeholder="What are you looking for?">
             <button type="submit"><i class="fal fa-search"></i></button>
         </form>
-    </div>
-    <div class="th-menu-wrapper">
+    </div><!--==============================
+    Mobile Menu
+  ============================== -->
+   <div class="th-menu-wrapper">
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
@@ -96,20 +501,85 @@
             </div>
             <div class="th-mobile-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li class="menu-item-has-children"><a href="#">Inventory</a><ul class="sub-menu"><li><a href="inventory-grid.html">Inventory Grid</a></li><li><a href="inventory-sold.html">Sold Inventory</a></li><li><a href="inventory-comparison.html">Inventory Comparison</a></li></ul></li>
-                    <li class="menu-item-has-children"><a href="#">Pages</a><li><a href="team.html">Our Team</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="error.html">Error Page</a></li></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li class="#">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li class="#">
+                        <a href="service.html">Services</a>
+                    </li>
+                    <li class="#">
+                        <a href="our-fleet.html">Our fleet</a>
+                    </li>
+                    <li class="#">
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </div>
+    </div><!--==============================
+	Header Area
+==============================-->
     <header class="th-header header-default">
+        <!-- <div class="header-top">
+            <div class="th-container">
+                <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
+                    <div class="col-auto d-none d-lg-block">
+                        <div class="header-links">
+                            <ul>
+                                <li><i class="fal fa-location-dot"></i> <a href="https://www.google.com/maps">ONTARIO
+                                        TOWER C 1801, BUSINESS BAY, DUBAI, UAE</a></li>
+                                <li><i class="fa-regular fa-phone"></i> <a href="tel:+971544923609">+971 54 492
+                                        3609</a></li>
+                                <li><i class="fa-sharp fa-regular fa-envelope"></i> <a
+                                        href="mailto:info.apexperformancecarrental@gmail.com">info.apexperformancecarrental@gmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <div class="header-links">
+                            <ul>
+                                <li class="d-none d-md-inline-block lang-wrapper">
+                                    <div class="dropdown-link">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-regular fa-globe"></i>
+                                            English
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1"
+                                            style="margin: 0px;">
+                                            <li>
+                                                <a href="#">English</a>
+                                                <a href="#">German</a>
+                                                <a href="#">French</a>
+                                                <a href="#">Italian</a>
+                                                <a href="#">Latvian</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="social-links">
+                                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://www.instagram.com/apexcarsdubai/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
         <div class="sticky-wrapper">
+            <!-- Main Menu Area -->
             <div class="menu-area">
                 <div class="th-container">
                     <div class="row align-items-center justify-content-between">
@@ -133,87 +603,87 @@
                                             <a href="suv-cars.html" class="grid-item"><img src="assets/img/type/04.png" alt="SUV Cars"><span>SUV Cars</span></a>
                                         </div>
                                     </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Car Brands</a>
-                                        <div class="sub-menu premium-dropdown dropdown-brands-grid">
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/austin-martin.png" alt="Aston Martin"><span>Aston Martin</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/audi.png" alt="Audi"><span>Audi</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bent.png" alt="Bentley"><span>Bentley</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/rr.png" alt="Rolls Royce"><span>Rolls Royce</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mac.png" alt="Mclaren"><span>Mclaren</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bmw.png" alt="BMW"><span>BMW</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/land.png" alt="Range Rover"><span>Range Rover</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mar.png" alt="Mercedes"><span>Mercedes</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/cad.png" alt="Cadillac"><span>Cadillac</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/far.png" alt="Ferrari"><span>Ferrari</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/lambologo.png" alt="Lamborghini"><span>Lamborghini</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mas2.png" alt="Maserati"><span>Maserati</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/porsche.png" alt="Porsche"><span>Porsche</span></a>
-                                        </div>
-                                    </li>
-                                    <li><a href="blog.html">Our Fleet</a></li>
-                                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-                                </ul>
-                            </nav>
-                            <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="th-menu-wrapper">
-            <div class="th-menu-area">
-                <button class="th-menu-toggle"><i class="far fa-times"></i></button>
-                <div class="mobile-logo">
-                    <a href="index.html"><img src="assets/img/apc high.png" alt="apexlogo"></a>
-                </div>
-                <nav class="mobile-menu">
-                    <ul class="th-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="service.html">Services</a></li>
-                        <li class="menu-item-has-children">
-                            <a href="#">Car Types</a>
-                            <ul class="th-submenu mobile-dropdown-grid">
-                                <li><a href="luxury-cars.html"><img src="assets/img/type/01.png" alt="Luxury Cars"><span>Luxury Cars</span></a></li>
-                                <li><a href="convertible-cars.html"><img src="assets/img/type/02.png" alt="Convertible Cars"><span>Convertible Cars</span></a></li>
-                                <li><a href="sports-cars.html"><img src="assets/img/type/03.png" alt="Sports Cars"><span>Sports Cars</span></a></li>
-                                <li><a href="suv-cars.html"><img src="assets/img/type/04.png" alt="SUV Cars"><span>SUV Cars</span></a></li>
-                            </ul>
-                        </li>
                         <li class="menu-item-has-children">
                             <a href="#">Car Brands</a>
-                            <ul class="th-submenu mobile-dropdown-brands">
-                                <li><a href="inventory-grid.html">Aston Martin</a></li>
-                                <li><a href="inventory-grid.html">Audi</a></li>
-                                <li><a href="inventory-grid.html">Bentley</a></li>
-                                <li><a href="inventory-grid.html">Rolls Royce</a></li>
-                                <li><a href="inventory-grid.html">Mclaren</a></li>
-                                <li><a href="inventory-grid.html">BMW</a></li>
-                                <li><a href="inventory-grid.html">Range Rover</a></li>
-                                <li><a href="inventory-grid.html">Mercedes</a></li>
-                                <li><a href="inventory-grid.html">Cadillac</a></li>
-                                <li><a href="inventory-grid.html">Ferrari</a></li>
-                                <li><a href="inventory-grid.html">Lamborghini</a></li>
-                                <li><a href="inventory-grid.html">Maserati</a></li>
-                                <li><a href="inventory-grid.html">Porsche</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="#">Pages</a>
-                            <ul class="th-submenu">
-                                <li><a href="team.html">Our Team</a></li>
-                                <li><a href="testimonials.html">Testimonials</a></li>
-                                <li><a href="error.html">Error Page</a></li>
-                            </ul>
+                            <div class="sub-menu premium-dropdown dropdown-brands-grid">
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/austin-martin.png" alt="Aston Martin"><span>Aston
+                                        Martin</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/audi.png"
+                                        alt="Audi"><span>Audi</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bent.png"
+                                        alt="Bentley"><span>Bentley</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/rr.png" alt="Rolls Royce"><span>Rolls
+                                        Royce</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mac.png"
+                                        alt="Mclaren"><span>Mclaren</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bmw.png"
+                                        alt="BMW"><span>BMW</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/land.png" alt="Range Rover"><span>Range
+                                        Rover</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/mar.png" alt="Mercedes"><span>Mercedes</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/cad.png" alt="Cadillac"><span>Cadillac</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/far.png"
+                                        alt="Ferrari"><span>Ferrari</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/lambologo.png"
+                                        alt="Lamborghini"><span>Lamborghini</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img
+                                        src="assets/img/brand/mas2.png" alt="Maserati"><span>Maserati</span></a>
+                                <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/porsche.png"
+                                        alt="Porsche"><span>Porsche</span></a>
+                            </div>
                         </li>
                         <li><a href="blog.html">Our Fleet</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </nav>
+                        <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                        </ul>
+                        </nav>
+                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i
+                                class="far fa-bars"></i></button>
+                    </div>
+
+                </div>
             </div>
         </div>
+        </div>
+
+        <!-- Mobile Menu Wrapper -->
+   <div class="th-menu-wrapper">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="assets/img/apc high.png" alt="Apex"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul>
+                    <li class="#">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li class="#">
+                        <a href="service.html">Services</a>
+                    </li>
+                    <li class="#">
+                        <a href="our-fleet.html">Our fleet</a>
+                    </li>
+                    <li class="#">
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     </header>
+    <!--  breadcum -->
     <div class="breadcumb-wrapper" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/cars/red.png') center/cover; padding: 140px 20px; position: relative;">
         <div class="container">
             <ul class="breadcumb-trail">
