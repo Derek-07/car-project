@@ -31784,3 +31784,29 @@ button, a, .th-btn {
 }
 
 
+/* ===== Side Cards Aur Peeche ===== */
+
+@media (min-width: 1200px) {
+
+  /* Sab slides default */
+  .sports-carousel .swiper-slide,
+  .convertible-carousel .swiper-slide,
+  .luxury-carousel .swiper-slide,
+  .suv-carousel .swiper-slide {
+      transform: scale(0.75) translateY(25px);
+      opacity: 0.4;
+      z-index: 1;
+      transition: all 0.4s ease;
+  }
+
+  /* Sirf center active slide upar */
+  .sports-carousel .swiper-slide-active,
+  .convertible-carousel .swiper-slide-active,
+  .luxury-carousel .swiper-slide-active,
+  .suv-carousel .swiper-slide-active {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      z-index: 20;
+  }
+
+}
