@@ -1,0 +1,29 @@
+    <!-- Navbar Scroll Hide Script -->
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.th-header');
+        const scrollThreshold = 50;
+        let scrollDirection = 'up';
+
+        window.addEventListener('scroll', function () {
+            if (!navbar) return;
+
+            let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                scrollDirection = 'down';
+            } else {
+                scrollDirection = 'up';
+            }
+
+            if (scrollDirection === 'down' && currentScroll > scrollThreshold) {
+                navbar.classList.add('header-hidden');
+                navbar.classList.remove('header-visible');
+            } else if (scrollDirection === 'up' || currentScroll <= scrollThreshold) {
+                navbar.classList.remove('header-hidden');
+                navbar.classList.add('header-visible');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+    </script>

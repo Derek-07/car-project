@@ -2906,19 +2906,28 @@ textarea.is-invalid {
           transform: rotate(0deg);
 }
 
-/* View All Button - Black with Golden Hover */
+/* View All Button - Black with Golden Border and 3D Button Effect */
 .th-btn.style2 {
   background-color: #000000 !important;
   color: #ffffff !important;
-  border: 2px solid #000000 !important;
+  border: 3px solid #D4AF37 !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  position: relative;
+  transform: translateY(0);
 }
 
 .th-btn.style2:hover {
   background-color: #D4AF37 !important;
   color: #000000 !important;
   border-color: #D4AF37 !important;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+.th-btn.style2:active {
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(0);
 }
 
 .th-btn.style2:hover:before, .th-btn.style2:hover:after {
