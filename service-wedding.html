@@ -573,12 +573,106 @@ Brand Area
             </div>
         </div>
     </footer>
+        <!--********************************
+			Code End  Here 
+	******************************** -->
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact-buttons">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/971544923609" target="_blank" class="fab-btn whatsapp-fab" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <!-- Phone Button -->
+        <a href="tel:+971544923609" class="fab-btn phone-fab" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
 
     <!-- SCRIPTS -->
     <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
+         <!-- Navbar Scroll Hide Script -->
+    <script>
+        // Premium Navbar Hide on Scroll Down with Smooth Effect
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.th-header');
+        const scrollThreshold = 50;
+
+        window.addEventListener('scroll', function () {
+            if (!navbar) return;
+
+            let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+            // Hide navbar when scrolling down more than threshold
+            if (currentScroll > scrollThreshold) {
+                navbar.classList.add('header-hidden');
+                navbar.classList.remove('header-visible');
+            }
+            // Show navbar ONLY when at the top
+            else if (currentScroll <= scrollThreshold) {
+                navbar.classList.remove('header-hidden');
+                navbar.classList.add('header-visible');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+
+        // Mobile Menu Toggle Handler
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggles = document.querySelectorAll('.th-menu-toggle');
+            const mobileMenu = document.querySelector('.th-menu-wrapper');
+
+            if (menuToggles.length > 0 && mobileMenu) {
+                // Toggle menu on button click
+                menuToggles.forEach(toggle => {
+                    toggle.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        mobileMenu.classList.toggle('active');
+                    });
+                });
+
+                // Handle submenu expand/collapse in mobile menu
+                const submenuOpeners = mobileMenu.querySelectorAll('.menu-item-has-children > a');
+                submenuOpeners.forEach(opener => {
+                    opener.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        const submenu = parent.querySelector('.sub-menu');
+
+                        if (submenu) {
+                            const isOpen = submenu.style.display === 'block';
+                            submenu.style.display = isOpen ? 'none' : 'block';
+                            parent.classList.toggle('active', !isOpen);
+                        }
+                    });
+                });
+
+                // Close menu when clicking on regular links
+                const regularLinks = mobileMenu.querySelectorAll('a:not(.menu-item-has-children > a)');
+                regularLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function (e) {
+                    let isToggle = false;
+                    menuToggles.forEach(toggle => {
+                        if (toggle.contains(e.target)) {
+                            isToggle = true;
+                        }
+                    });
+                    if (!mobileMenu.contains(e.target) && !isToggle) {
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
     
 </body>
 
