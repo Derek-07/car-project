@@ -1,0 +1,104 @@
+{
+  "ford-explorer": {
+    "title": "Ford Explorer XLT",
+    "brand": "Ford",
+    "category": "SUV",
+    "price": "12,000 AED",
+    "deposit": "5,000 AED",
+    "year": "2025",
+    "engine": "6.2L V8",
+    "transmission": "Manual",
+    "fuel": "Petrol",
+    "description": "The Ford Explorer XLT represents the perfect balance of performance, comfort, and luxury for Dubai adventures.",
+    "hero_image": "assets/img/cars/ford-explorer-main.webp",
+    "gallery": [
+      "assets/img/cars/ford1.webp",
+      "assets/img/cars/ford2.webp",
+      "assets/img/cars/ford3.webp"
+    ],
+    "overview": {
+      "body": "SUV",
+      "drive_type": "RWD",
+      "mileage": "25000 mi",
+      "doors": "4",
+      "color": "Black",
+      "engine_size": "6.2L V8",
+      "transmission": "Manual",
+      "fuel": "Petrol"
+    },
+    "features": {
+      "interior": ["Leather Seats", "Panoramic Roof", "Digital Dashboard"],
+      "safety": ["ABS", "Brake Assist", "Driver Airbag"],
+      "exterior": ["Fog Lights", "Rain Sensing Wipers", "Alloy Wheels"],
+      "technology": ["Apple CarPlay", "Bluetooth", "Parking Sensors"]
+    }
+  },
+  "lamborghini-huracan": {
+    "title": "Lamborghini Huracan EVO",
+    "brand": "Lamborghini",
+    "category": "Sports",
+    "price": "5,800 AED",
+    "deposit": "8,000 AED",
+    "year": "2024",
+    "engine": "5.2L V10",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "description": "Experience raw performance with the Huracan EVO, a true track-capable supercar.",
+    "hero_image": "assets/img/cars/lamborghini-huracan-main.webp",
+    "gallery": [
+      "assets/img/cars/blue.webp",
+      "assets/img/cars/red.webp",
+      "assets/img/cars/oragne.webp"
+    ],
+    "overview": {
+      "body": "Coupe",
+      "drive_type": "AWD",
+      "mileage": "1200 mi",
+      "doors": "2",
+      "color": "Blue",
+      "engine_size": "5.2L V10",
+      "transmission": "Automatic",
+      "fuel": "Petrol"
+    },
+    "features": {
+      "interior": ["Sport Seats", "Carbon Trim", "Digital Cockpit"],
+      "safety": ["ABS", "Traction Control", "Rear Camera"],
+      "exterior": ["LED Headlights", "Rear Diffuser"],
+      "technology": ["Apple CarPlay", "Bluetooth"]
+    }
+  },
+  "rolls-royce-cullinan": {
+    "title": "Rolls-Royce Cullinan",
+    "brand": "Rolls-Royce",
+    "category": "Luxury",
+    "price": "12,500 AED",
+    "deposit": "10,000 AED",
+    "year": "2025",
+    "engine": "6.7L V12",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "description": "The Cullinan blends off-road capability with Rolls-Royce refinement and luxury.",
+    "hero_image": "assets/img/cars/rr-cullinan-main.webp",
+    "gallery": [
+      "assets/img/cars/rr1.webp",
+      "assets/img/cars/rr2.webp",
+      "assets/img/cars/rr3.webp"
+    ],
+    "overview": {
+      "body": "SUV",
+      "drive_type": "AWD",
+      "mileage": "500 mi",
+      "doors": "4",
+      "color": "Black",
+      "engine_size": "6.7L V12",
+      "transmission": "Automatic",
+      "fuel": "Petrol"
+    },
+    "features": {
+      "interior": ["Starlight Headliner", "Rear Seat Entertainment", "Massaging Seats"],
+      "safety": ["Adaptive Cruise", "Lane Assist"],
+      "exterior": ["Suicide Doors", "Adaptive Headlights"],
+      "technology": ["Surround View", "Wireless Charging"]
+    }
+  }
+}

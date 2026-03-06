@@ -330,10 +330,10 @@ color:#d4af37;
     Breadcumb
 ============================== -->
 
-  <div class="breadcumb-wrapper premium-breadcrumb" data-bg-src="assets/img/type/contact01.png" data-overlay="black" data-opacity="5">
+    <div id="car-hero-image" class="breadcumb-wrapper premium-breadcrumb" data-bg-src="assets/img/type/contact01.png" data-overlay="black" data-opacity="5">
     <div class="container">
         <div class="breadcumb-content text-center">
-            <h1 class="breadcumb-title">Ford Explorer XLT</h1>
+            <h1 id="car-breadcrumb-title" class="breadcumb-title">Ford Explorer XLT</h1>
 
             <ul class="breadcumb-menu">
                 <li><a href="index.html">Home</a></li>
@@ -348,7 +348,7 @@ color:#d4af37;
     ==============================-->
     <section class="th-inventory-wrapper inventory-details space-extra-bottom">
         <div class="th-container">
-            <div class="single-inventory-wrapper">
+            <div id="car-gallery" class="single-inventory-wrapper">
                 <div class="single-inventory-item " data-bg-src="assets/img/featured/single-inventory-gal-1.jpg">
                     <div class="single-inventory-img">
                         <div class="single-inventory-item-content">
@@ -406,7 +406,7 @@ color:#d4af37;
                             <div class="th-inventory inventory-single">
                                 <div class="inventory-single-top text-center">
                                     <div class="media-body">
-                                        <h2 class="box-title">Ford Explorer XLT</h2>
+                                        <h2 id="car-title" class="box-title">Ford Explorer XLT</h2>
                                     </div>
 
                                     <ul class="car-feature">
@@ -434,7 +434,7 @@ color:#d4af37;
                             </div>
 
                             <!-- Description Section -->
-                            <div class="single-inventory-content" style="text-align: left; margin-top: 30px;">
+                            <div id="car-description" class="single-inventory-content" style="text-align: left; margin-top: 30px;">
                                 <h5 class="title">Description</h5>
                                 <p>The Ford Explorer XLT represents the perfect balance of performance, comfort, and luxury for your Dubai adventure. This stunning 2025 SUV combines cutting-edge technology with premium comfort features, making it an ideal choice for both business travels and leisure getaways. With its aggressive styling and spacious interior, the Explorer XLT accommodates up to 7 passengers while maintaining an elegant and sophisticated appearance.</p>
 
@@ -450,13 +450,13 @@ color:#d4af37;
                                 <div class="inventory-price-wrap">
                                     <h5 class="box-title">Price Details</h5>
                                     <div class="inventory-price-top">
-                                        <h6 class="box-title">12,000 <span style="display: block; font-size: 14px; color: #d4af37; margin-top: 5px;">AED Daily</span></h6>
+                                        <h6 id="car-price" class="box-title">12,000 <span style="display: block; font-size: 14px; color: #d4af37; margin-top: 5px;">AED Daily</span></h6>
                                         <div style="margin: 15px 0; font-size: 14px; color: #fff; line-height: 1.8;">
                                             <p style="margin: 8px 0;"><i class="fas fa-check-circle" style="color: #d4af37; margin-right: 8px;"></i>Insurance included</p>
                                             <p style="margin: 8px 0;"><i class="fas fa-check-circle" style="color: #d4af37; margin-right: 8px;"></i>Crypto is accepted</p>
                                         </div>
                                         <hr style="border-color: #d4af37; opacity: 0.3;">
-                                        <p style="margin: 12px 0; color: #d4af37; font-weight: 700;"><span style="color: #888;">Deposit:</span> AED 5,000</p>
+                                        <p id="car-deposit" style="margin: 12px 0; color: #d4af37; font-weight: 700;"><span style="color: #888;">Deposit:</span> AED 5,000</p>
                                         <p style="margin: 8px 0; font-size: 13px; color: #888;">Included mileage limit: 250 Km/Day</p>
                                         <p style="margin: 8px 0; font-size: 13px; color: #888;">Additional mileage charge: AED 20/Km</p>
                                     </div>
@@ -469,7 +469,7 @@ color:#d4af37;
                         </div>
                     </div>
                 </div>
-                <div class="vehicle-overview-wrap">
+                <div id="car-overview" class="vehicle-overview-wrap">
                     <h5 class="title">Vehicle Overview</h5>
                     <div class="vehicle-overview-body">
                         <div class="overview-item">
@@ -605,7 +605,7 @@ color:#d4af37;
                         </div>
                     </div>
                 </div>
-                <div class="vehicle-features-wrap">
+                <div id="car-features" class="vehicle-features-wrap">
                     <h5 class="title">Vehicle Features</h5>
                     <div class="sing-invent-features-body">
                         <div class="sing-invent-features-item">
@@ -1144,6 +1144,8 @@ Faq Area
 
     <!-- Mobile enhancements (menu sync + perf hints) -->
     <script src="assets/js/mobile-enhancements.js"></script>
+    <script src="assets/js/car-loader.js"></script>
+    <script src="assets/js/linkify-cards.js"></script>
     <!-- Carousel Initialization -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
