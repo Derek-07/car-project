@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Car - Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/admin-style-premium.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar Navigation -->
+        <div class="admin-sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-crown"></i>
+                <span>Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Car Management</div>
+                    <a href="manage-cars.html" class="nav-link active">
+                        <i class="fas fa-car"></i>
+                        <span>Manage Cars</span>
+                    </a>
+                    <a href="add-car.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add Car</span>
+                    </a>
+                    <a href="manage-categories.html" class="nav-link">
+                        <i class="fas fa-th-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Website Content</div>
+                    <a href="section-manager.html" class="nav-link">
+                        <i class="fas fa-th"></i>
+                        <span>Homepage Sections</span>
+                    </a>
+                    <a href="breadcrumb-manager.html" class="nav-link">
+                        <i class="fas fa-link"></i>
+                        <span>Breadcrumbs</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Media</div>
+                    <a href="image-manager.html" class="nav-link">
+                        <i class="fas fa-image"></i>
+                        <span>Image Manager</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="AdminPanel.logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Top Navbar -->
+            <div class="admin-navbar">
+                <div class="navbar-left">
+                    <h1 class="page-title">Edit Car</h1>
+                </div>
+                <div class="navbar-right">
+                    <div class="navbar-user">
+                        <img src="https://via.placeholder.com/40" alt="Admin Avatar" class="avatar">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="content-area">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="manage-cars.html">Cars</a></li>
+                            <li class="breadcrumb-item active">Edit Car</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+                    <!-- Left: Form -->
+                    <div>
+                        <div class="form-card">
+                            <form id="editCarForm">
+                                <h3 style="color: #ffffff; margin-bottom: 20px;">Car Details</h3>
+
+                                <div class="form-group">
+                                    <label>Car Name *</label>
+                                    <input type="text" name="carName" value="Ferrari F8 Tributo" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Category *</label>
+                                    <select name="category" required>
+                                        <option value="sports" selected>Sports Cars</option>
+                                        <option value="luxury">Luxury Cars</option>
+                                        <option value="suv">SUVs</option>
+                                        <option value="convertible">Convertibles</option>
+                                        <option value="sedan">Sedans</option>
+                                        <option value="hatchback">Hatchbacks</option>
+                                    </select>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div class="form-group">
+                                        <label>Brand *</label>
+                                        <input type="text" name="brand" value="Ferrari" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Model *</label>
+                                        <input type="text" name="model" value="F8 Tributo" required>
+                                    </div>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div class="form-group">
+                                        <label>Year *</label>
+                                        <input type="number" name="year" value="2024" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Price/Day *</label>
+                                        <input type="number" name="pricePerDay" value="500" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea name="description" rows="4">Stunning V12-powered supercar with exceptional performance and luxury. The F8 Tributo delivers pure driving excitement.</textarea>
+                                </div>
+
+                                <h3 style="color: #ffffff; margin-top: 25px; margin-bottom: 20px;">Specifications</h3>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div class="form-group">
+                                        <label>Engine Type</label>
+                                        <input type="text" name="engineType" value="V12 Twin-Turbo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Horsepower</label>
+                                        <input type="number" name="horsepower" value="720">
+                                    </div>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div class="form-group">
+                                        <label>0-60 mph (seconds)</label>
+                                        <input type="number" name="acceleration" value="2.9" step="0.1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Top Speed (mph)</label>
+                                        <input type="number" name="topSpeed" value="211">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Features (comma-separated)</label>
+                                    <textarea name="features" rows="3">Leather Seats, Carbon Fiber, Navigation System, Bluetooth, Dual Climate Control, Panoramic Roof</textarea>
+                                </div>
+
+                                <div style="display: flex; gap: 10px; margin-top: 30px;">
+                                    <button type="submit" class="btn-primary">
+                                        <i class="fas fa-save"></i> Save Changes
+                                    </button>
+                                    <button type="button" class="btn-secondary" onclick="window.location.href='manage-cars.html'">
+                                        <i class="fas fa-times"></i> Cancel
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Right: Image Management & Preview -->
+                    <div>
+                        <div class="form-card">
+                            <h3 style="color: #ffffff; margin-bottom: 20px;">Car Images</h3>
+
+                            <div class="image-upload-area" id="imageUploadArea">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & drop images here or click to browse</p>
+                                <small>Supported formats: JPG, PNG, WebP (Max 5MB each)</small>
+                                <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                            </div>
+
+                            <!-- Current Images -->
+                            <div style="margin-top: 20px;">
+                                <h4 style="color: #bdbdbd; font-size: 14px; margin-bottom: 15px;">Current Images</h4>
+                                <div id="currentImagesContainer" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 15px;">
+                                    <div style="position: relative; border-radius: 8px; overflow: hidden;">
+                                        <img src="https://via.placeholder.com/400x300?text=Ferrari+1" style="width: 100%; height: 150px; object-fit: cover;">
+                                        <button type="button" class="btn-sm btn-danger" style="position: absolute; top: 5px; right: 5px;" onclick="removeImage(this)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                    <div style="position: relative; border-radius: 8px; overflow: hidden;">
+                                        <img src="https://via.placeholder.com/400x300?text=Ferrari+2" style="width: 100%; height: 150px; object-fit: cover;">
+                                        <button type="button" class="btn-sm btn-danger" style="position: absolute; top: 5px; right: 5px;" onclick="removeImage(this)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="imagePreviewContainer"></div>
+                        </div>
+
+                        <!-- Car Preview Card -->
+                        <div class="form-card" style="margin-top: 20px;">
+                            <h3 style="color: #ffffff; margin-bottom: 20px;">Preview</h3>
+                            <div id="carPreview" style="background: #1a1a1a; border-radius: 8px; padding: 15px; text-align: center;">
+                                <div style="background: #2a2a2a; height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; overflow: hidden;">
+                                    <img src="https://via.placeholder.com/400x300?text=Ferrari" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="color: #bdbdbd; text-align: left;">
+                                    <div style="margin-bottom: 10px;">
+                                        <span style="color: #d4af37; font-weight: 600;" id="previewCarName">Ferrari F8 Tributo</span>
+                                    </div>
+                                    <div style="font-size: 13px; color: #888888; margin-bottom: 10px;">
+                                        Year: <span id="previewYear">2024</span> | Category: <span id="previewCategory">Sports</span>
+                                    </div>
+                                    <div style="font-size: 24px; font-weight: 700; color: #d4af37;">
+                                        $<span id="previewPrice">500</span>/day
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/admin-script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AdminPanel.setupSidebar();
+            AdminPanel.setupForms();
+            setupEditCarPage();
+        });
+
+        function setupEditCarPage() {
+            const form = document.getElementById('editCarForm');
+            const imageUploadArea = document.getElementById('imageUploadArea');
+            const imageInput = document.getElementById('imageInput');
+            const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+
+            // Image upload click
+            imageUploadArea.addEventListener('click', () => imageInput.click());
+
+            // Drag and drop
+            imageUploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                imageUploadArea.style.borderColor = '#d4af37';
+                imageUploadArea.style.background = '#d4af3710';
+            });
+
+            imageUploadArea.addEventListener('dragleave', () => {
+                imageUploadArea.style.borderColor = '#2a2a2a';
+                imageUploadArea.style.background = 'transparent';
+            });
+
+            imageUploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                imageUploadArea.style.borderColor = '#2a2a2a';
+                imageUploadArea.style.background = 'transparent';
+                imageInput.files = e.dataTransfer.files;
+                handleImageSelect();
+            });
+
+            // Image file input change
+            imageInput.addEventListener('change', handleImageSelect);
+
+            function handleImageSelect() {
+                const files = imageInput.files;
+                imagePreviewContainer.innerHTML = '';
+
+                if (files.length === 0) return;
+
+                Array.from(files).forEach((file, index) => {
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const imgDiv = document.createElement('div');
+                            imgDiv.style.cssText = 'position: relative; margin-bottom: 10px; border-radius: 8px; overflow: hidden;';
+                            imgDiv.innerHTML = `
+                                <img src="${e.target.result}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                                <button type="button" class="btn-sm btn-danger" style="position: absolute; top: 5px; right: 5px;" onclick="this.parentElement.remove()">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            `;
+                            imagePreviewContainer.appendChild(imgDiv);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+            // Update preview when form values change
+            form.querySelectorAll('input, select').forEach(input => {
+                input.addEventListener('change', updatePreview);
+                input.addEventListener('keyup', updatePreview);
+            });
+
+            function updatePreview() {
+                const carName = form.querySelector('input[name="brand"]').value + ' ' + form.querySelector('input[name="model"]').value;
+                const year = form.querySelector('input[name="year"]').value || '2024';
+                const category = form.querySelector('select[name="category"]').value || 'N/A';
+                const price = form.querySelector('input[name="pricePerDay"]').value || '0';
+
+                document.getElementById('previewCarName').textContent = carName || 'Brand Model';
+                document.getElementById('previewYear').textContent = year;
+                document.getElementById('previewCategory').textContent = category;
+                document.getElementById('previewPrice').textContent = price;
+            }
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                if (!AdminPanel.validateForm(form)) {
+                    AdminPanel.showAlert('Please fill in all required fields', 'error');
+                    return;
+                }
+
+                const carId = AdminPanel.getUrlParam('id') || '1';
+                const formData = new FormData(form);
+                
+                console.log('Updating car:', carId, {
+                    carName: formData.get('carName'),
+                    category: formData.get('category'),
+                    brand: formData.get('brand'),
+                    model: formData.get('model'),
+                    year: formData.get('year'),
+                    pricePerDay: formData.get('pricePerDay'),
+                    description: formData.get('description'),
+                    specifications: {
+                        engineType: formData.get('engineType'),
+                        horsepower: formData.get('horsepower'),
+                        acceleration: formData.get('acceleration'),
+                        topSpeed: formData.get('topSpeed')
+                    }
+                });
+
+                AdminPanel.showAlert('Car updated successfully! Redirecting...', 'success');
+                setTimeout(() => {
+                    window.location.href = 'manage-cars.html';
+                }, 2000);
+            });
+        }
+
+        function removeImage(button) {
+            button.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

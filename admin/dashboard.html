@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/admin-style-premium.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar Navigation -->
+        <div class="admin-sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-crown"></i>
+                <span>Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="dashboard.html" class="nav-link active">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Car Management</div>
+                    <a href="manage-cars.html" class="nav-link">
+                        <i class="fas fa-car"></i>
+                        <span>Manage Cars</span>
+                    </a>
+                    <a href="add-car.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add Car</span>
+                    </a>
+                    <a href="manage-categories.html" class="nav-link">
+                        <i class="fas fa-th-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Website Content</div>
+                    <a href="section-manager.html" class="nav-link">
+                        <i class="fas fa-th"></i>
+                        <span>Homepage Sections</span>
+                    </a>
+                    <a href="breadcrumb-manager.html" class="nav-link">
+                        <i class="fas fa-link"></i>
+                        <span>Breadcrumbs</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Media</div>
+                    <a href="image-manager.html" class="nav-link">
+                        <i class="fas fa-image"></i>
+                        <span>Image Manager</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="AdminPanel.logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Top Navbar -->
+            <div class="admin-navbar">
+                <div class="navbar-left">
+                    <h1 class="page-title">Dashboard</h1>
+                </div>
+                <div class="navbar-right">
+                    <div class="navbar-user">
+                        <img src="https://via.placeholder.com/40" alt="Admin Avatar" class="avatar">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="content-area">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">Home</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Welcome Section -->
+                <div class="welcome-section" style="margin-bottom: 30px;">
+                    <h2 style="color: #d4af37; margin-bottom: 10px;">Welcome Back!</h2>
+                    <p style="color: #bdbdbd;">Here's what's happening with your car rental business today.</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #ff6b6b66;">
+                            <i class="fas fa-car" style="color: #ff6b6b;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-label">Total Cars</div>
+                            <div class="stat-value">24</div>
+                            <div class="stat-change positive">+2 this month</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #51cf6666;">
+                            <i class="fas fa-bookmark" style="color: #51cf66;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-label">Categories</div>
+                            <div class="stat-value">6</div>
+                            <div class="stat-change neutral">No changes</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #4dabf766;">
+                            <i class="fas fa-image" style="color: #4dabf7;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-label">Images</div>
+                            <div class="stat-value">156</div>
+                            <div class="stat-change positive">+32 uploaded</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #ffd43b66;">
+                            <i class="fas fa-link" style="color: #ffd43b;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-label">Breadcrumbs</div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-change neutral">All configured</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div style="margin-top: 40px; margin-bottom: 30px;">
+                    <h3 style="color: #ffffff; margin-bottom: 20px;">Quick Actions</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <a href="add-car.html" class="quick-action-card">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Add New Car</span>
+                        </a>
+                        <a href="manage-cars.html" class="quick-action-card">
+                            <i class="fas fa-list"></i>
+                            <span>View All Cars</span>
+                        </a>
+                        <a href="image-manager.html" class="quick-action-card">
+                            <i class="fas fa-upload"></i>
+                            <span>Upload Images</span>
+                        </a>
+                        <a href="manage-categories.html" class="quick-action-card">
+                            <i class="fas fa-cogs"></i>
+                            <span>Manage Categories</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recent Cars Table -->
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #ffffff; margin-bottom: 20px;">Recently Added Cars</h3>
+                    <div class="table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Car Name</th>
+                                    <th>Category</th>
+                                    <th>Price/Day</th>
+                                    <th>Added Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ferrari F8 Tributo</td>
+                                    <td><span class="badge" style="background: #d4af37; color: #000;">Sports</span></td>
+                                    <td>$500</td>
+                                    <td>2024-01-15</td>
+                                    <td>
+                                        <button class="btn-sm btn-primary">Edit</button>
+                                        <button class="btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mercedes-Benz S-Class</td>
+                                    <td><span class="badge" style="background: #4dabf7; color: #000;">Luxury</span></td>
+                                    <td>$400</td>
+                                    <td>2024-01-14</td>
+                                    <td>
+                                        <button class="btn-sm btn-primary">Edit</button>
+                                        <button class="btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>BMW X7</td>
+                                    <td><span class="badge" style="background: #51cf66; color: #000;">SUV</span></td>
+                                    <td>$350</td>
+                                    <td>2024-01-13</td>
+                                    <td>
+                                        <button class="btn-sm btn-primary">Edit</button>
+                                        <button class="btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lamborghini Huracan</td>
+                                    <td><span class="badge" style="background: #ff6b6b; color: #fff;">Sports</span></td>
+                                    <td>$600</td>
+                                    <td>2024-01-12</td>
+                                    <td>
+                                        <button class="btn-sm btn-primary">Edit</button>
+                                        <button class="btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Range Rover Evoque</td>
+                                    <td><span class="badge" style="background: #ffd43b; color: #000;">SUV</span></td>
+                                    <td>$320</td>
+                                    <td>2024-01-11</td>
+                                    <td>
+                                        <button class="btn-sm btn-primary">Edit</button>
+                                        <button class="btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top: 20px; text-align: center;">
+                        <a href="manage-cars.html" style="color: #d4af37; text-decoration: none; font-weight: 600;">
+                            View all cars <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Activity Log -->
+                <div style="margin-top: 40px; margin-bottom: 40px;">
+                    <h3 style="color: #ffffff; margin-bottom: 20px;">Activity Log</h3>
+                    <div style="background: #1a1a1a; border-radius: 12px; padding: 20px; border-left: 4px solid #d4af37;">
+                        <div style="display: flex; gap: 20px; align-items: center; padding: 15px 0; border-bottom: 1px solid #2a2a2a;">
+                            <div style="background: #d4af3733; padding: 10px 12px; border-radius: 8px;">
+                                <i class="fas fa-plus" style="color: #d4af37;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="color: #ffffff; font-weight: 600;">New car added: Ferrari F8 Tributo</div>
+                                <div style="color: #888888; font-size: 13px;">Added by Admin • 2 hours ago</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 20px; align-items: center; padding: 15px 0; border-bottom: 1px solid #2a2a2a;">
+                            <div style="background: #4dabf733; padding: 10px 12px; border-radius: 8px;">
+                                <i class="fas fa-edit" style="color: #4dabf7;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="color: #ffffff; font-weight: 600;">Car updated: Mercedes-Benz S-Class</div>
+                                <div style="color: #888888; font-size: 13px;">Updated by Admin • 5 hours ago</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 20px; align-items: center; padding: 15px 0;">
+                            <div style="background: #51cf6633; padding: 10px 12px; border-radius: 8px;">
+                                <i class="fas fa-image" style="color: #51cf66;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="color: #ffffff; font-weight: 600;">32 images uploaded</div>
+                                <div style="color: #888888; font-size: 13px;">Uploaded by Admin • 1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .quick-action-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            background: #1a1a1a;
+            border: 2px solid #2a2a2a;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #bdbdbd;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .quick-action-card:hover {
+            border-color: #d4af37;
+            background: #2a2a2a;
+            color: #d4af37;
+            transform: translateY(-5px);
+        }
+
+        .quick-action-card i {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .quick-action-card span {
+            font-weight: 600;
+        }
+
+        .stat-change {
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .stat-change.positive {
+            color: #51cf66;
+        }
+
+        .stat-change.neutral {
+            color: #888888;
+        }
+    </style>
+
+    <script src="assets/js/admin-script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup sidebar navigation
+            AdminPanel.setupSidebar();
+            
+            // Setup table actions
+            AdminPanel.setupTableActions();
+
+            // Demo: Show welcome alert on first visit
+            if (!sessionStorage.getItem('dashboardVisited')) {
+                setTimeout(() => {
+                    AdminPanel.showAlert('Welcome to the Admin Panel! Manage your car rental business from here.', 'success');
+                }, 500);
+                sessionStorage.setItem('dashboardVisited', 'true');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Manager - Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/admin-style-premium.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar Navigation -->
+        <div class="admin-sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-crown"></i>
+                <span>Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Car Management</div>
+                    <a href="manage-cars.html" class="nav-link">
+                        <i class="fas fa-car"></i>
+                        <span>Manage Cars</span>
+                    </a>
+                    <a href="add-car.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add Car</span>
+                    </a>
+                    <a href="manage-categories.html" class="nav-link">
+                        <i class="fas fa-th-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Website Content</div>
+                    <a href="section-manager.html" class="nav-link">
+                        <i class="fas fa-th"></i>
+                        <span>Homepage Sections</span>
+                    </a>
+                    <a href="breadcrumb-manager.html" class="nav-link">
+                        <i class="fas fa-link"></i>
+                        <span>Breadcrumbs</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Media</div>
+                    <a href="image-manager.html" class="nav-link active">
+                        <i class="fas fa-image"></i>
+                        <span>Image Manager</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="AdminPanel.logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Top Navbar -->
+            <div class="admin-navbar">
+                <div class="navbar-left">
+                    <h1 class="page-title">Image Manager</h1>
+                </div>
+                <div class="navbar-right">
+                    <div class="navbar-user">
+                        <img src="https://via.placeholder.com/40" alt="Admin Avatar" class="avatar">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="content-area">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Images</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Upload Section -->
+                <div class="form-card" style="margin-top: 30px; margin-bottom: 30px;">
+                    <h3 style="color: #ffffff; margin-bottom: 20px;">Upload Images</h3>
+                    
+                    <div class="image-upload-area" id="imageUploadArea" style="margin-bottom: 20px;">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop images here or click to browse</p>
+                        <small>Supported formats: JPG, PNG, WebP (Max 10MB each)</small>
+                        <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                    </div>
+
+                    <div id="uploadProgress" style="display: none; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="color: #bdbdbd;">Uploading...</span>
+                            <span style="color: #d4af37;"><span id="uploadPercent">0</span>%</span>
+                        </div>
+                        <div style="background: #2a2a2a; height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div id="uploadBar" style="background: linear-gradient(90deg, #d4af37, #b8941f); height: 100%; width: 0%; border-radius: 4px; transition: width 0.3s ease;"></div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button id="uploadBtn" class="btn-primary" style="display: none;">
+                            <i class="fas fa-upload"></i> Upload Images
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="resetUpload()" style="display: none;" id="resetBtn">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters & Search -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 15px;">
+                    <div style="flex: 1; display: flex; gap: 10px;">
+                        <div style="flex: 1; max-width: 300px;">
+                            <input type="search" placeholder="Search images..." 
+                                style="width: 100%; padding: 10px 15px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; color: #bdbdbd;">
+                        </div>
+                        <select style="padding: 10px 15px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; color: #bdbdbd;">
+                            <option>All Categories</option>
+                            <option>Car Images</option>
+                            <option>Hero Images</option>
+                            <option>Breadcrumb Images</option>
+                            <option>Featured Images</option>
+                            <option>Team Images</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button style="padding: 10px 15px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; color: #bdbdbd; cursor: pointer;">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button style="padding: 10px 15px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; color: #d4af37; cursor: pointer;">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Image Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;" id="imageGrid">
+                    <div class="image-card">
+                        <div class="image-card-image">
+                            <img src="https://via.placeholder.com/200x150?text=Ferrari+1" alt="Ferrari">
+                            <div class="image-card-overlay">
+                                <button class="btn-sm btn-primary" title="Preview">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-sm btn-secondary" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-sm btn-danger" title="Delete" onclick="deleteImage(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-card-info">
+                            <div style="color: #ffffff; font-weight: 600; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ferrari-001.jpg</div>
+                            <div style="color: #888888; font-size: 12px;">234 KB • Jan 15, 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="image-card">
+                        <div class="image-card-image">
+                            <img src="https://via.placeholder.com/200x150?text=Mercedes+1" alt="Mercedes">
+                            <div class="image-card-overlay">
+                                <button class="btn-sm btn-primary" title="Preview">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-sm btn-secondary" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-sm btn-danger" title="Delete" onclick="deleteImage(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-card-info">
+                            <div style="color: #ffffff; font-weight: 600; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">mercedes-001.jpg</div>
+                            <div style="color: #888888; font-size: 12px;">256 KB • Jan 14, 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="image-card">
+                        <div class="image-card-image">
+                            <img src="https://via.placeholder.com/200x150?text=BMW+1" alt="BMW">
+                            <div class="image-card-overlay">
+                                <button class="btn-sm btn-primary" title="Preview">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-sm btn-secondary" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-sm btn-danger" title="Delete" onclick="deleteImage(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-card-info">
+                            <div style="color: #ffffff; font-weight: 600; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">bmw-x7-001.jpg</div>
+                            <div style="color: #888888; font-size: 12px;">298 KB • Jan 13, 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="image-card">
+                        <div class="image-card-image">
+                            <img src="https://via.placeholder.com/200x150?text=Porsche+1" alt="Porsche">
+                            <div class="image-card-overlay">
+                                <button class="btn-sm btn-primary" title="Preview">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-sm btn-secondary" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-sm btn-danger" title="Delete" onclick="deleteImage(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-card-info">
+                            <div style="color: #ffffff; font-weight: 600; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">porsche-911-001.jpg</div>
+                            <div style="color: #888888; font-size: 12px;">312 KB • Jan 12, 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="image-card">
+                        <div class="image-card-image">
+                            <img src="https://via.placeholder.com/200x150?text=Tesla+1" alt="Tesla">
+                            <div class="image-card-overlay">
+                                <button class="btn-sm btn-primary" title="Preview">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-sm btn-secondary" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-sm btn-danger" title="Delete" onclick="deleteImage(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-card-info">
+                            <div style="color: #ffffff; font-weight: 600; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">tesla-model-s-001.jpg</div>
+                            <div style="color: #888888; font-size: 12px;">267 KB • Jan 11, 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="image-card">
+                        <div class="image-card-image">
+                            <img src="https://via.placeholder.com/200x150?text=Range+Rover+1" alt="Range Rover">
+                            <div class="image-card-overlay">
+                                <button class="btn-sm btn-primary" title="Preview">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-sm btn-secondary" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-sm btn-danger" title="Delete" onclick="deleteImage(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-card-info">
+                            <div style="color: #ffffff; font-weight: 600; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">range-rover-001.jpg</div>
+                            <div style="color: #888888; font-size: 12px;">289 KB • Jan 10, 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div style="display: flex; justify-content: center; gap: 8px;">
+                    <button class="btn-pagination" style="opacity: 0.5; cursor: not-allowed;">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn-pagination active">1</button>
+                    <button class="btn-pagination">2</button>
+                    <button class="btn-pagination">3</button>
+                    <button class="btn-pagination">4</button>
+                    <button class="btn-pagination">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .image-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+        }
+
+        .image-card-image {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%;
+            overflow: hidden;
+            background: #0f0f0f;
+        }
+
+        .image-card-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-card:hover .image-card-overlay {
+            opacity: 1;
+        }
+
+        .image-card-info {
+            padding: 15px;
+        }
+
+        .btn-pagination {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #2a2a2a;
+            background: #1a1a1a;
+            color: #bdbdbd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pagination:hover:not(:disabled) {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+
+        .btn-pagination.active {
+            background: #d4af37;
+            color: #000;
+            border-color: #d4af37;
+        }
+    </style>
+
+    <script src="assets/js/admin-script.js"></script>
+    <script>
+        const imageUploadArea = document.getElementById('imageUploadArea');
+        const imageInput = document.getElementById('imageInput');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            AdminPanel.setupSidebar();
+            setupImageManager();
+        });
+
+        function setupImageManager() {
+            // Image upload click
+            imageUploadArea.addEventListener('click', () => imageInput.click());
+
+            // Drag and drop
+            imageUploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                imageUploadArea.style.borderColor = '#d4af37';
+                imageUploadArea.style.background = '#d4af3710';
+            });
+
+            imageUploadArea.addEventListener('dragleave', () => {
+                imageUploadArea.style.borderColor = '#2a2a2a';
+                imageUploadArea.style.background = 'transparent';
+            });
+
+            imageUploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                imageUploadArea.style.borderColor = '#2a2a2a';
+                imageUploadArea.style.background = 'transparent';
+                imageInput.files = e.dataTransfer.files;
+                showUploadButtons();
+            });
+
+            imageInput.addEventListener('change', showUploadButtons);
+        }
+
+        function showUploadButtons() {
+            const uploadBtn = document.getElementById('uploadBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            
+            if (imageInput.files.length > 0) {
+                uploadBtn.style.display = 'inline-block';
+                resetBtn.style.display = 'inline-block';
+            } else {
+                uploadBtn.style.display = 'none';
+                resetBtn.style.display = 'none';
+            }
+        }
+
+        function resetUpload() {
+            imageInput.value = '';
+            document.getElementById('uploadBtn').style.display = 'none';
+            document.getElementById('resetBtn').style.display = 'none';
+            document.getElementById('uploadProgress').style.display = 'none';
+        }
+
+        function deleteImage(button) {
+            AdminPanel.showAlert('Image deleted successfully!', 'success');
+            button.closest('.image-card').remove();
+        }
+    </script>
+</body>
+</html>
