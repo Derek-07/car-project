@@ -7744,9 +7744,8 @@ ol.wp-block-rss {
 }
 
 .header-logo {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: -8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .header-links ul {
@@ -29923,14 +29922,14 @@ button, a, .th-btn {
 /* Side Slide Styling */
 .swiper-slide-prev .carousel-car-card,
 .swiper-slide-next .carousel-car-card {
-  opacity: 0.4;
+  opacity: 0.80;
   transform: scale(0.80);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .swiper-slide-prev .carousel-car-card:hover,
 .swiper-slide-next .carousel-car-card:hover {
-  opacity: 0.6;
+  opacity: 0.90;
   transform: scale(0.85);
 }
 
