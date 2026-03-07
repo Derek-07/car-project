@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Manager - Admin Panel</title>
+    <!--==============================
+        Favicon - APB Logo
+    ============================== -->
+    <link rel="icon" type="image/png" href="../assets/img/apc high.png">
+    <link rel="apple-touch-icon" href="../assets/img/apc high.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/admin-style-premium.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar Navigation -->
+        <div class="admin-sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-crown"></i>
+                <span>Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Car Management</div>
+                    <a href="manage-cars.html" class="nav-link">
+                        <i class="fas fa-car"></i>
+                        <span>Manage Cars</span>
+                    </a>
+                    <a href="add-car.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add Car</span>
+                    </a>
+                    <a href="manage-categories.html" class="nav-link">
+                        <i class="fas fa-th-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Brands & More</div>
+                    <a href="brand-manager.html" class="nav-link">
+                        <i class="fas fa-crown"></i>
+                        <span>Brands</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Website Content</div>
+                    <a href="section-manager.html" class="nav-link">
+                        <i class="fas fa-th"></i>
+                        <span>Homepage Sections</span>
+                    </a>
+                    <a href="breadcrumb-manager.html" class="nav-link">
+                        <i class="fas fa-link"></i>
+                        <span>Breadcrumbs</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Media & More</div>
+                    <a href="image-manager.html" class="nav-link">
+                        <i class="fas fa-image"></i>
+                        <span>Media Library</span>
+                    </a>
+                    <a href="footer-manager.html" class="nav-link active">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Footer Manager</span>
+                    </a>
+                    <a href="map-location-manager.html" class="nav-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Locations</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Manage</div>
+                    <a href="seo-manager.html" class="nav-link">
+                        <i class="fas fa-search"></i>
+                        <span>SEO Manager</span>
+                    </a>
+                    <a href="booking-manager.html" class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Bookings</span>
+                    </a>
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="AdminPanel.logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Top Navbar -->
+            <div class="admin-navbar">
+                <div class="navbar-left">
+                    <h1 class="page-title">Footer Manager</h1>
+                </div>
+                <div class="navbar-right">
+                    <div class="navbar-user">
+                        <img src="https://via.placeholder.com/40" alt="Admin Avatar" class="avatar">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="content-area">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Footer Manager</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Tabs -->
+                <div style="margin-bottom: 30px;">
+                    <div class="tab-container">
+                        <button class="tab-button active" onclick="switchTab('footer-content')">Footer Content</button>
+                        <button class="tab-button" onclick="switchTab('about-section')">About Section</button>
+                        <button class="tab-button" onclick="switchTab('social-links')">Social Links</button>
+                    </div>
+                </div>
+
+                <!-- Footer Content Tab -->
+                <div id="footer-content" class="tab-content">
+                    <div class="form-card">
+                        <h3 style="color: #ffffff; margin-bottom: 20px;">
+                            <i class="fas fa-layer-group"></i> Footer Information
+                        </h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div>
+                                <div class="form-group">
+                                    <label>Company Address</label>
+                                    <textarea id="footerAddress" placeholder="Enter company address...">123 Main Street, New York, NY 10001</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact Email</label>
+                                    <input type="email" id="footerEmail" value="info@carrental.com" placeholder="Email address">
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact Phone</label>
+                                    <input type="tel" id="footerPhone" value="+1 (555) 123-4567" placeholder="Phone number">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label>Business Hours</label>
+                                    <textarea id="footerHours" placeholder="Business hours info...">Monday - Friday: 9:00 AM - 6:00 PM
+Saturday: 10:00 AM - 4:00 PM
+Sunday: Closed</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Copyright Text</label>
+                                    <input type="text" id="footerCopyright" value="© 2024 Premium Car Rental. All rights reserved." placeholder="Copyright text">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 25px;">
+                            <button class="btn-primary" onclick="saveFooterContent()">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Footer Links Section -->
+                    <div class="form-card" style="margin-top: 25px;">
+                        <h3 style="color: #ffffff; margin-bottom: 20px;">
+                            <i class="fas fa-link"></i> Footer Links
+                        </h3>
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #d4af37; font-size: 14px; margin-bottom: 15px;">Quick Links</h4>
+                            <div style="background: #252525; border-radius: 10px; padding: 15px; margin-bottom: 12px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <p style="color: #ffffff; font-weight: 600; margin: 0;">About Us</p>
+                                        <p style="color: #888888; font-size: 12px; margin: 5px 0 0 0;">/about/</p>
+                                    </div>
+                                    <button class="btn-sm btn-primary" onclick="editLink('about')">Edit</button>
+                                </div>
+                            </div>
+                            <div style="background: #252525; border-radius: 10px; padding: 15px; margin-bottom: 12px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <p style="color: #ffffff; font-weight: 600; margin: 0;">Contact Us</p>
+                                        <p style="color: #888888; font-size: 12px; margin: 5px 0 0 0;">/contact/</p>
+                                    </div>
+                                    <button class="btn-sm btn-primary" onclick="editLink('contact')">Edit</button>
+                                </div>
+                            </div>
+                            <div style="background: #252525; border-radius: 10px; padding: 15px; margin-bottom: 12px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <p style="color: #ffffff; font-weight: 600; margin: 0;">Privacy Policy</p>
+                                        <p style="color: #888888; font-size: 12px; margin: 5px 0 0 0;">/privacy-policy/</p>
+                                    </div>
+                                    <button class="btn-sm btn-danger" onclick="deleteLink('privacy')">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-secondary" onclick="openLinkModal()">
+                            <i class="fas fa-plus"></i> Add New Link
+                        </button>
+                    </div>
+                </div>
+
+                <!-- About Section Tab -->
+                <div id="about-section" class="tab-content" style="display: none;">
+                    <div class="form-card">
+                        <h3 style="color: #ffffff; margin-bottom: 20px;">
+                            <i class="fas fa-info-circle"></i> About Section
+                        </h3>
+                        <div class="form-group">
+                            <label>About Title</label>
+                            <input type="text" id="aboutTitle" value="About Premium Car Rental" placeholder="About section title">
+                        </div>
+                        <div class="form-group">
+                            <label>About Description</label>
+                            <textarea id="aboutDescription" placeholder="About section description..." style="min-height: 150px;">Premium Car Rental is your trusted partner for luxury car rentals. With a fleet of premium vehicles and exceptional customer service, we provide unforgettable driving experiences.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>About Logo/Image</label>
+                            <div class="image-upload-area" onclick="document.getElementById('aboutImageUpload').click()">
+                                <i class="fas fa-upload"></i>
+                                <p>Click to upload image</p>
+                                <small>PNG or JPG (Max 2MB)</small>
+                            </div>
+                            <input type="file" id="aboutImageUpload" style="display: none;" accept="image/*">
+                        </div>
+                        <button class="btn-primary" onclick="saveAboutSection()">
+                            <i class="fas fa-save"></i> Save About Section
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Social Links Tab -->
+                <div id="social-links" class="tab-content" style="display: none;">
+                    <div class="form-card">
+                        <h3 style="color: #ffffff; margin-bottom: 20px;">
+                            <i class="fas fa-share-alt"></i> Social Media Links
+                        </h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label><i class="fab fa-facebook"></i> Facebook</label>
+                                <input type="url" placeholder="https://facebook.com/..." value="https://facebook.com/premiumcarrental">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-twitter"></i> Twitter</label>
+                                <input type="url" placeholder="https://twitter.com/..." value="https://twitter.com/premiumcarrental">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-instagram"></i> Instagram</label>
+                                <input type="url" placeholder="https://instagram.com/..." value="https://instagram.com/premiumcarrental">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-linkedin"></i> LinkedIn</label>
+                                <input type="url" placeholder="https://linkedin.com/..." value="https://linkedin.com/company/premiumcarrental">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-youtube"></i> YouTube</label>
+                                <input type="url" placeholder="https://youtube.com/..." value="https://youtube.com/premiumcarrental">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-tiktok"></i> TikTok</label>
+                                <input type="url" placeholder="https://tiktok.com/..." value="https://tiktok.com/@premiumcarrental">
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="saveSocialLinks()">
+                            <i class="fas fa-save"></i> Save Social Links
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link Modal -->
+    <div class="modal-overlay" id="linkModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Footer Link</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Link Title</label>
+                    <input type="text" id="linkTitle" placeholder="e.g., Terms & Conditions">
+                </div>
+                <div class="form-group">
+                    <label>Link URL</label>
+                    <input type="url" id="linkUrl" placeholder="e.g., /terms/">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeLinkModal()">Cancel</button>
+                <button class="btn-primary" onclick="saveLink()">Add Link</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Show selected tab and mark button as active
+            document.getElementById(tabName).style.display = 'block';
+            event.target.classList.add('active');
+        }
+
+        function saveFooterContent() {
+            alert('Footer content saved successfully (this would connect to backend API)');
+        }
+
+        function saveAboutSection() {
+            alert('About section saved successfully (this would connect to backend API)');
+        }
+
+        function saveSocialLinks() {
+            alert('Social links saved successfully (this would connect to backend API)');
+        }
+
+        function openLinkModal() {
+            document.getElementById('linkTitle').value = '';
+            document.getElementById('linkUrl').value = '';
+            document.getElementById('linkModal').classList.add('active');
+        }
+
+        function closeLinkModal() {
+            document.getElementById('linkModal').classList.remove('active');
+        }
+
+        function saveLink() {
+            const title = document.getElementById('linkTitle').value;
+            const url = document.getElementById('linkUrl').value;
+            if (!title || !url) {
+                alert('Please fill in all fields');
+                return;
+            }
+            alert('Footer link added successfully (this would connect to backend API)');
+            closeLinkModal();
+        }
+
+        function editLink(linkId) {
+            alert('Edit link functionality (this would connect to backend API)');
+        }
+
+        function deleteLink(linkId) {
+            if (confirm('Are you sure you want to remove this link?')) {
+                alert('Link removed successfully (this would connect to backend API)');
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('linkModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

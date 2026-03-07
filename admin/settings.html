@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Admin Panel</title>
+    <!--==============================
+        Favicon - APB Logo
+    ============================== -->
+    <link rel="icon" type="image/png" href="../assets/img/apc high.png">
+    <link rel="apple-touch-icon" href="../assets/img/apc high.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/admin-style-premium.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar Navigation -->
+        <div class="admin-sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-crown"></i>
+                <span>Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Car Management</div>
+                    <a href="manage-cars.html" class="nav-link">
+                        <i class="fas fa-car"></i>
+                        <span>Manage Cars</span>
+                    </a>
+                    <a href="add-car.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add Car</span>
+                    </a>
+                    <a href="manage-categories.html" class="nav-link">
+                        <i class="fas fa-th-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Brands & More</div>
+                    <a href="brand-manager.html" class="nav-link">
+                        <i class="fas fa-crown"></i>
+                        <span>Brands</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Website Content</div>
+                    <a href="section-manager.html" class="nav-link">
+                        <i class="fas fa-th"></i>
+                        <span>Homepage Sections</span>
+                    </a>
+                    <a href="breadcrumb-manager.html" class="nav-link">
+                        <i class="fas fa-link"></i>
+                        <span>Breadcrumbs</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Media & More</div>
+                    <a href="image-manager.html" class="nav-link">
+                        <i class="fas fa-image"></i>
+                        <span>Media Library</span>
+                    </a>
+                    <a href="footer-manager.html" class="nav-link">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Footer Manager</span>
+                    </a>
+                    <a href="map-location-manager.html" class="nav-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Locations</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Manage</div>
+                    <a href="seo-manager.html" class="nav-link">
+                        <i class="fas fa-search"></i>
+                        <span>SEO Manager</span>
+                    </a>
+                    <a href="booking-manager.html" class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Bookings</span>
+                    </a>
+                    <a href="settings.html" class="nav-link active">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="AdminPanel.logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Top Navbar -->
+            <div class="admin-navbar">
+                <div class="navbar-left">
+                    <h1 class="page-title">Settings</h1>
+                </div>
+                <div class="navbar-right">
+                    <div class="navbar-user">
+                        <img src="https://via.placeholder.com/40" alt="Admin Avatar" class="avatar">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="content-area">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Settings</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Settings Tabs -->
+                <div style="margin-bottom: 30px;">
+                    <div class="tab-container">
+                        <button class="tab-button active" onclick="switchSettingsTab('website')">Website</button>
+                        <button class="tab-button" onclick="switchSettingsTab('profile')">Admin Profile</button>
+                        <button class="tab-button" onclick="switchSettingsTab('security')">Security</button>
+                    </div>
+                </div>
+
+                <!-- Website Settings Tab -->
+                <div id="website" class="settings-tab">
+                    <div class="form-card">
+                        <h3 style="color: #ffffff; margin-bottom: 20px;">
+                            <i class="fas fa-globe"></i> Website Settings
+                        </h3>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div>
+                                <div class="form-group">
+                                    <label>Website Name</label>
+                                    <input type="text" value="Premium Car Rental" placeholder="Website name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact Email</label>
+                                    <input type="email" value="admin@premiumcarrental.com" placeholder="Admin email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact Phone</label>
+                                    <input type="tel" value="+1 (555) 123-4567" placeholder="Phone number">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label>Website URL</label>
+                                    <input type="url" value="https://premiumcarrental.com" placeholder="Website URL">
+                                </div>
+                                <div class="form-group">
+                                    <label>Support Email</label>
+                                    <input type="email" value="support@premiumcarrental.com" placeholder="Support email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Support Phone</label>
+                                    <input type="tel" value="+1 (555) 987-6543" placeholder="Support phone">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr style="border-color: #333333; margin: 25px 0;">
+
+                        <h4 style="color: #d4af37; margin-bottom: 20px;">Branding</h4>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div>
+                                <div class="form-group">
+                                    <label>Website Logo</label>
+                                    <div class="image-upload-area" onclick="document.getElementById('logoUpload').click()">
+                                        <i class="fas fa-upload"></i>
+                                        <p>Click to upload logo</p>
+                                        <small>PNG or SVG (Max 2MB)</small>
+                                    </div>
+                                    <input type="file" id="logoUpload" style="display: none;" accept="image/*">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label>Website Favicon</label>
+                                    <div class="image-upload-area" onclick="document.getElementById('faviconUpload').click()">
+                                        <i class="fas fa-upload"></i>
+                                        <p>Click to upload favicon</p>
+                                        <small>ICO or PNG (Max 1MB)</small>
+                                    </div>
+                                    <input type="file" id="faviconUpload" style="display: none;" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 25px;">
+                            <button class="btn-primary" onclick="saveWebsiteSettings()">
+                                <i class="fas fa-save"></i> Save Website Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Profile Tab -->
+                <div id="profile" class="settings-tab" style="display: none;">
+                    <div class="form-card">
+                        <h3 style="color: #ffffff; margin-bottom: 20px;">
+                            <i class="fas fa-user"></i> Admin Profile
+                        </h3>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div>
+                                <div style="text-align: center; margin-bottom: 25px;">
+                                    <img src="https://via.placeholder.com/120" alt="Admin Avatar" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #d4af37; margin-bottom: 15px;">
+                                    <button class="btn-secondary" onclick="changeAvatar()">
+                                        <i class="fas fa-camera"></i> Change Avatar
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" value="John Administrator" placeholder="Full name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" value="john@premiumcarrental.com" placeholder="Email address">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" value="+1 (555) 123-4567" placeholder="Phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label>Position/Role</label>
+                                    <input type="text" value="System Administrator" placeholder="Position">
+                                </div>
+                                <div class="form-group">
+                                    <label>Department</label>
+                                    <input type="text" value="Management" placeholder="Department">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 25px;">
+                            <button class="btn-primary" onclick="saveProfileSettings()">
+                                <i class="fas fa-save"></i> Save Profile Changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Tab -->
+                <div id="security" class="settings-tab" style="display: none;">
+                    <div class="form-card">
+                        <h3 style="color: #ffffff; margin-bottom: 20px;">
+                            <i class="fas fa-lock"></i> Security Settings
+                        </h3>
+
+                        <div style="background: rgba(72, 187, 120, 0.1); border: 1px solid #48bb78; border-radius: 10px; padding: 15px; margin-bottom: 25px;">
+                            <div style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-shield-alt" style="color: #48bb78; margin-top: 3px;"></i>
+                                <div>
+                                    <p style="color: #ffffff; font-weight: 600; margin: 0;">Your account is secure</p>
+                                    <p style="color: #888888; font-size: 13px; margin: 5px 0 0 0;">Two-factor authentication is enabled</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #d4af37; margin-bottom: 20px;">Change Password</h4>
+                            <div class="form-group">
+                                <label>Current Password</label>
+                                <input type="password" placeholder="Enter your current password">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label>New Password</label>
+                                    <input type="password" placeholder="Enter new password">
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" placeholder="Confirm new password">
+                                </div>
+                            </div>
+                            <button class="btn-primary" onclick="changePassword()">
+                                <i class="fas fa-key"></i> Update Password
+                            </button>
+                        </div>
+
+                        <hr style="border-color: #333333; margin: 25px 0;">
+
+                        <h4 style="color: #d4af37; margin-bottom: 20px;">Two-Factor Authentication</h4>
+                        <div style="background: #252525; border-radius: 10px; padding: 15px; margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <p style="color: #ffffff; font-weight: 600; margin: 0;">2FA Status</p>
+                                    <p style="color: #888888; font-size: 13px; margin: 5px 0 0 0;">Authenticator app enabled</p>
+                                </div>
+                                <span class="table-badge success">Enabled</span>
+                            </div>
+                        </div>
+
+                        <hr style="border-color: #333333; margin: 25px 0;">
+
+                        <h4 style="color: #d4af37; margin-bottom: 20px;">Login Sessions</h4>
+                        <div class="table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Device</th>
+                                        <th>Location</th>
+                                        <th>IP Address</th>
+                                        <th>Last Active</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Windows PC</td>
+                                        <td>New York, USA</td>
+                                        <td>192.168.1.1</td>
+                                        <td>Current</td>
+                                        <td>
+                                            <span class="table-badge success" style="background: rgba(72, 187, 120, 0.1); color: #48bb78;">Active</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>MacBook Pro</td>
+                                        <td>New York, USA</td>
+                                        <td>192.168.1.5</td>
+                                        <td>2 hours ago</td>
+                                        <td>
+                                            <button class="btn-danger btn-sm" onclick="logoutDevice()">Logout</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchSettingsTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.settings-tab').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Show selected tab and mark button as active
+            document.getElementById(tabName).style.display = 'block';
+            event.target.classList.add('active');
+        }
+
+        function saveWebsiteSettings() {
+            alert('Website settings saved successfully (this would connect to backend API)');
+        }
+
+        function changeAvatar() {
+            alert('Change avatar functionality (this would open file upload)');
+        }
+
+        function saveProfileSettings() {
+            alert('Profile settings saved successfully (this would connect to backend API)');
+        }
+
+        function changePassword() {
+            alert('Password changed successfully (this would connect to backend API)');
+        }
+
+        function logoutDevice() {
+            if (confirm('Are you sure you want to logout this device?')) {
+                alert('Device logged out successfully (this would connect to backend API)');
+            }
+        }
+    </script>
+</body>
+</html>
