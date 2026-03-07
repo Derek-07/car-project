@@ -3230,6 +3230,14 @@ a.th-btn.sm.style3:hover {
   color: #ffffff;
 }
 
+.whatsapp-fab i {
+  font-size: 32px !important;
+}
+
+.phone-fab i {
+  font-size: 28px;
+}
+
 .fab-btn::before {
   content: '';
   position: absolute;
@@ -3263,6 +3271,7 @@ a.th-btn.sm.style3:hover {
 .phone-fab {
   background: linear-gradient(135deg, #D4AF37 0%, #C99A2C 100%);
   color: #ffffff;
+  border: none;
 }
 
 .phone-fab:hover {
@@ -3280,6 +3289,14 @@ a.th-btn.sm.style3:hover {
   .fab-btn {
     width: 50px;
     height: 50px;
+    font-size: 20px;
+  }
+
+  .whatsapp-fab i {
+    font-size: 24px !important;
+  }
+
+  .phone-fab i {
     font-size: 20px;
   }
 
@@ -7727,8 +7744,9 @@ ol.wp-block-rss {
 }
 
 .header-logo {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: -8px;
 }
 
 .header-links ul {
@@ -23836,7 +23854,7 @@ input {
   text-align: center;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
-  border-radius: 100px 100px 0 0;
+  border-radius: 100px 100px 100px 100px;
 }
 .category-card .box-icon {
   width: 140px;
@@ -23884,7 +23902,7 @@ input {
 
 @media (max-width: 400px) {
   .category-card {
-    border-radius: 30px 30px 0 0;
+    border-radius: 30px 30px 30px 30px;
   }
 }
 /* Category Card style-2  -------------------------------------*/
