@@ -42,17 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const href = `single-inventory.html?${params.toString()}`;
 
     // Add a 'view' button to action buttons (prepend)
-    const actionWrap = card.querySelector('.car-action-buttons');
-    if (actionWrap) {
-      const existing = actionWrap.querySelector('a.btn-view');
-      if (!existing) {
-        const a = document.createElement('a');
-        a.href = href;
-        a.className = 'btn-action btn-view';
-        a.innerHTML = '<i class="fas fa-eye"></i>';
-        actionWrap.insertBefore(a, actionWrap.firstChild);
-      }
-    }
 
     // Make the title clickable
     if (titleEl) {
