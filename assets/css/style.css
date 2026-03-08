@@ -3231,11 +3231,11 @@ a.th-btn.sm.style3:hover {
 }
 
 .whatsapp-fab i {
-  font-size: 22px !important;
+  font-size: 26px !important;
 }
 
 .phone-fab i {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .fab-btn::before {
