@@ -2817,8 +2817,8 @@ Feedback Section / Contact Section
                 ];
 
                 const baseSwipeConfig = {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
+                    slidesPerView: 3,
+                    spaceBetween: 25,
                     centeredSlides: true,
                     loop: true,
                     autoplay: {
@@ -2831,13 +2831,38 @@ Feedback Section / Contact Section
                     touchRatio: 1,
                     touchAngle: 45,
                     breakpoints: {
-                        320: { slidesPerView: 1, spaceBetween: 15 },
-                        480: { slidesPerView: 1, spaceBetween: 20 },
-                        768: { slidesPerView: 2, spaceBetween: 25 },
-                        1024: { slidesPerView: 3, spaceBetween: 30 },
-                        1200: { slidesPerView: 3, spaceBetween: 40 }
+                        320: { slidesPerView: 1, spaceBetween: 12, centeredSlides: true },
+                        480: { slidesPerView: 1, spaceBetween: 15, centeredSlides: true },
+                        768: { slidesPerView: 2, spaceBetween: 20, centeredSlides: true },
+                        1024: { slidesPerView: 3, spaceBetween: 25, centeredSlides: true },
+                        1200: { slidesPerView: 3, spaceBetween: 30, centeredSlides: true }
                     }
                 };
+
+                // Update carousel card styles for premium effect
+                function updateCarouselCardStyles(swiper) {
+                    swiper.slides.forEach((slide) => {
+                        const cardElement = slide.querySelector('.carousel-car-card');
+                        if (!cardElement) return;
+                        
+                        // Check if this slide is centered
+                        const activeClass = swiper.activeIndex === swiper.slides.indexOf(slide);
+                        
+                        if (activeClass || slide.classList.contains('swiper-slide-active')) {
+                            cardElement.classList.add('carousel-card-active');
+                            cardElement.classList.remove('carousel-card-side');
+                            cardElement.style.transform = 'scale(1.08)';
+                            cardElement.style.opacity = '1';
+                            cardElement.style.zIndex = '10';
+                        } else {
+                            cardElement.classList.add('carousel-card-side');
+                            cardElement.classList.remove('carousel-card-active');
+                            cardElement.style.transform = 'scale(0.95)';
+                            cardElement.style.opacity = '0.7';
+                            cardElement.style.zIndex = '5';
+                        }
+                    });
+                }
 
                 carouselConfigs.forEach(config => {
                     const swiperInstance = new Swiper(config.class, {
@@ -2846,6 +2871,15 @@ Feedback Section / Contact Section
                             nextEl: config.nextBtn,
                             prevEl: config.prevBtn
                         }
+                    });
+
+                    // Update card styles on init and after each slide change
+                    updateCarouselCardStyles(swiperInstance);
+                    swiperInstance.on('slideChange', () => {
+                        updateCarouselCardStyles(swiperInstance);
+                    });
+                    swiperInstance.on('setTranslate', () => {
+                        updateCarouselCardStyles(swiperInstance);
                     });
 
                     const wrapper = document.querySelector(config.wrapper);

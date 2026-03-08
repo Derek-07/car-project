@@ -29888,12 +29888,12 @@ button, a, .th-btn {
 
 .carousel-wrapper .swiper-wrapper {
   align-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
   justify-content: center;
 }
 
 .carousel-wrapper .swiper {
-  padding: 20px 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30206,13 +30206,15 @@ button, a, .th-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
 }
 
 .carousel-wrapper .swiper {
-  padding: 40px 0;
+  padding: 0;
   display: flex;
   align-items: center;
   margin: 0 auto;
+  width: 100%;
 }
 
 .carousel-wrapper .swiper-wrapper {
@@ -30220,6 +30222,81 @@ button, a, .th-btn {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+/* ========== PREMIUM MODERN CAROUSEL EFFECT ========== */
+/* Carousel wrapper - allow overflow to show side cards */
+.sports-carousel-wrapper,
+.convertible-carousel-wrapper,
+.luxury-carousel-wrapper,
+.suv-carousel-wrapper {
+  overflow: visible !important;
+  padding: 40px 0;
+  margin: 0 -20px;
+  width: calc(100% + 40px);
+}
+
+/* Swiper container - allow overflow */
+.sports-carousel,
+.convertible-carousel,
+.luxury-carousel,
+.suv-carousel {
+  overflow: visible !important;
+  padding: 20px 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Swiper slide - ensure proper display */
+.sports-carousel .swiper-slide,
+.convertible-carousel .swiper-slide,
+.luxury-carousel .swiper-slide,
+.suv-carousel .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s cubic-bezier(0.35, 0, 0.65, 1);
+}
+
+/* Active carousel card - center, slightly larger, full opacity */
+.carousel-card-active {
+  transform: scale(1.05) !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  filter: brightness(1.08);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.15) !important;
+  border-color: rgba(212, 175, 55, 0.5) !important;
+}
+
+.carousel-card-active::before {
+  opacity: 1 !important;
+  animation: premium-glow 1.5s ease-in-out infinite;
+}
+
+/* Side carousel cards - slightly smaller, better visibility */
+.carousel-card-side {
+  transform: scale(0.98) !important;
+  opacity: 0.8 !important;
+  z-index: 5 !important;
+  filter: brightness(0.98);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.8s cubic-bezier(0.35, 0, 0.65, 1);
+}
+
+.carousel-card-side:hover {
+  transform: scale(1.0) !important;
+  opacity: 0.9 !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Smooth animation for active cards */
+@keyframes premium-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
 }
 
 /* Desktop - 3 Cards - BIGGER SQUARE */
