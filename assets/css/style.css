@@ -3231,11 +3231,11 @@ a.th-btn.sm.style3:hover {
 }
 
 .whatsapp-fab i {
-  font-size: 32px !important;
+  font-size: 22px !important;
 }
 
 .phone-fab i {
-  font-size: 28px;
+  font-size: 22px;
 }
 
 .fab-btn::before {
@@ -3260,11 +3260,23 @@ a.th-btn.sm.style3:hover {
 .whatsapp-fab {
   background: linear-gradient(135deg, #25D366 0%, #20BA58 100%);
   color: #ffffff;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.8), 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .whatsapp-fab:hover {
   transform: scale(1.15) rotate(-15deg);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.8), 0 8px 24px rgba(37, 211, 102, 0.4);
+  animation: none;
 }
 
 /* Phone Button */
