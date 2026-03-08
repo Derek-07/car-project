@@ -129,27 +129,30 @@
         }
 
         /* ======== FILTER SECTION ======== */
+        /* Filter Button */
         .filter-toggle-btn {
-            position: fixed; right: 20px; top: 320px;
-            z-index: 50;
-            padding: 12px 20px;
-            background: var(--primary-color);
+            position: absolute;
+            right: 60px;
+            top: 80%;
+            transform: translateY(-50%);
+            z-index: 10;
+
+            padding: 12px 22px;
+            background: #D4AF37;
             color: #000;
             border: none;
             border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
+
             font-size: 14px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            font-weight: 700;
+            cursor: pointer;
+
             display: flex;
             align-items: center;
             gap: 8px;
-        }
 
-        .filter-toggle-btn:hover {
-            background: #e5bf2e;
-            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+            transition: all 0.3s ease;
         }
 
         .filter-toggle-btn i {
@@ -1054,15 +1057,15 @@ border-radius:6px;
         </div>
     </section>
 
-       <!--==============================
-Brand Area  
-==============================-->
+    <!--==============================
+                        Brand Area  
+                        ==============================-->
     <div class="brand-area-1 space overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="swiper th-slider" id="brand-slider-1"
-                        data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}'>
+                        data-slider-options='{"loop":true,"speed":1800,"autoplay":{"delay":0,"disableOnInteraction":false},"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":2},"768":{"slidesPerView":3},"992":{"slidesPerView":4},"1200":{"slidesPerView":5},"1400":{"slidesPerView":6}}}'>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="brand-box">
@@ -1155,13 +1158,7 @@ Brand Area
                                     </a>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=cadillac">
-                                        <img src="assets/img/brand/cad.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
-                            </div>
+
                         </div>
 
                     </div>
@@ -1357,189 +1354,310 @@ Testimonial Area - Google Reviews
         </div>
     </section>
 
-    <!--==============================
-    Contact Section
-    ==============================-->
-    <section class="contact-section space" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/bgofcc.webp') center/cover no-repeat;">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-5">
-                    <div class="contact-info-group">
-                        <div class="contact-info-item">
-                            <div class="info-icon"><i class="fas fa-phone"></i></div>
-                            <div class="info-content">
-                                <h4 class="info-title">Phone</h4>
-                                <p class="info-text">+971 54 492 3609</p>
+        <!--==============================
+Feedback Section / Contact Section
+==============================-->
+        <!-- CONTACT SECTION -->
+        <section class="contact-section space"
+            style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/bgofcc.webp') center/cover no-repeat;">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <!-- Left Side - Contact Information -->
+                    <div class="col-lg-5">
+                        <div class="contact-info-group">
+                            <!-- Phone Info -->
+                            <div class="contact-info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4 class="info-title">Phone</h4>
+                                    <p class="info-text">+971 54 492 3609
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="info-content">
-                                <h4 class="info-title">Email</h4>
-                                <p class="info-text">info.apexperformancecarrental@gmail.com</p>
+
+                            <!-- whatsapp -->
+                            <div class="contact-info-item">
+                                <div class="info-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4 class="info-title">WhatsApp</h4>
+                                    <p class="info-text">
+                                        <a href="https://wa.me/971544923609" target="_blank">
+                                            +971 54 492 3609
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="info-content">
-                                <h4 class="info-title">Address</h4>
-                                <p class="info-text">Dubai, UAE</p>
+
+                            <!-- Email Info -->
+                            <div class="contact-info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4 class="info-title">Email</h4>
+                                    <p class="info-text">info.apexperformancecarrental@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <!-- Address Info -->
+                            <div class="contact-info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4 class="info-title">Address</h4>
+                                    <p class="info-text">ONTARIO TOWER C 1801, BUSINESS BAY, DUBAI, UAE</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="contact-form-wrapper">
-                        <p class="form-subtitle">Contact</p>
-                        <h2 class="form-title">Book Your SUV Now!</h2>
-                        <form action="mail.php" method="POST" class="contact-form">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+
+                    <!-- Right Side - Contact Form -->
+                    <div class="col-lg-7">
+                        <div class="contact-form-wrapper">
+                            <p class="form-subtitle">Contact</p>
+                            <h2 class="form-title">How Can We Help You?</h2>
+
+                            <form action="mail.php" method="POST" class="contact-form">
+                                <div class="row g-3">
+                                    <!-- Full Name -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Full Name"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control"
+                                                placeholder="E-mail Address" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Phone with UAE Flag -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="tel" name="phone" class="form-control"
+                                                placeholder="971 xxx xxxx" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Select Brand -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="brand" class="form-control"
+                                                placeholder="e.g. BMW, Mercedes, Porsche" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Message -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea name="message" rows="6" class="form-control" placeholder="Message"
+                                                required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <div class="col-12">
+                                        <button type="submit" class="submit-btn">Submit</button>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" placeholder="E-mail Address" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="car" class="form-control" placeholder="Car Model" required>
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" rows="4" class="form-control" placeholder="Message" required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="submit-btn">Send Inquiry</button>
-                                </div>
+                            </form>
+
+                            <!-- Success Message -->
+                            <div class="contact-success mt-3"
+                                style="display: none; color: #D4AF37; text-align: center;">
+                                Thank you for your message! We'll be in touch soon.
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-                <!-- ======== MAP ======== -->
-    <div class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.6743839261647!2d55.36201767621622!3d25.218395872042587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d8c8c8c8c8d%3A0x1234567890!2sLuxury%20Supercars%20Rental!5e0!3m2!1sen!2sae!4v1234567890"></iframe>
-    </div>
-
-    <!--==============================
+        </section>
+        <!--==============================
 	Footer Area
 ==============================-->
-    <footer class="footer-wrapper premium-footer" style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
-        <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
-            <div class="container-fluid">
-                <div class="row gy-5 align-items-start">
-                    <!-- Left Column - Logo & Description -->
-                    <div class="col-lg-3">
-                        <div class="footer-brand">
-                            <div class="footer-logo mb-4">
-                                <a href="index.html"><img src="assets/img/apc high.webp" alt="Apex Logo" style="max-width: 180px;"></a>
+        <footer class="footer-wrapper premium-footer"
+            style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
+            <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
+                <div class="container-fluid">
+                    <div class="row gy-5 align-items-start">
+                        <!-- Left Column - Logo & Description -->
+                        <div class="col-lg-3">
+                            <div class="footer-brand">
+
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="assets/img/apc high.png" alt="Apex Logo">
+                                    </a>
+                                </div>
+
+                                <p class="footer-desc">
+                                    If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com
+                                    is a one-stop destination for all. You can avail the widest range of the most exotic
+                                    luxury cars, including everything from the latest Sports Cars, Convertible Cars,
+                                    SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a
+                                    fascinating experience.
+                                </p>
+
                             </div>
-                            <p class="footer-desc" style="font-size: 14px; line-height: 1.7; color: #bdbdbd;">
-                                If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a fascinating experience.
-                            </p>
                         </div>
-                    </div>
 
-                    <!-- Car Brands Column -->
-                    <div class="col-lg-2">
-                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Car Brands</h4>
-                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
-                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
-                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
-                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
-                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
-                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
-                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
-                            <li><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
-                        </ul>
-                    </div>
+                        <!-- Car Brands Column -->
+                        <div class="col-lg-2">
+                            <h4 class="footer-title"
+                                style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
+                                Car Brands</h4>
+                            <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
+                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
+                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
+                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
+                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
+                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
+                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
+                                <li><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
+                            </ul>
+                        </div>
 
-                    <!-- Useful Links Column -->
-                    <div class="col-lg-2">
-                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Useful Links</h4>
-                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #bdbdbd; text-decoration: none;">Home</a></li>
-                            <li style="margin-bottom: 10px;"><a href="about.html" style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
-                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
-                            <li style="margin-bottom: 10px;"><a href="service.html" style="color: #bdbdbd; text-decoration: none;">Services</a></li>
-                            <li style="margin-bottom: 10px;"><a href="blog.html" style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
-                            <li style="margin-bottom: 10px;"><a href="team.html" style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
-                            <li style="margin-bottom: 10px;"><a href="#" style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
-                            <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a></li>
-                        </ul>
-                    </div>
+                        <!-- Useful Links Column -->
+                        <div class="col-lg-2">
+                            <h4 class="footer-title"
+                                style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
+                                Useful Links</h4>
+                            <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;"><a href="index.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Home</a></li>
+                                <li style="margin-bottom: 10px;"><a href="about.html"
+                                        style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
+                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
+                                <li style="margin-bottom: 10px;"><a href="service.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Services</a></li>
+                                <li style="margin-bottom: 10px;"><a href="blog.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
+                                <li style="margin-bottom: 10px;"><a href="team.html"
+                                        style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
+                                <li style="margin-bottom: 10px;"><a href="faq.html"
+                                        style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
+                                <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a>
+                                </li>
 
-                    <!-- Contact Us Column -->
-                    <div class="col-lg-3">
-                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Contact Us</h4>
-                        <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
-                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
-                                <i class="fas fa-phone" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
-                                <div style="display: flex; flex-direction: column; gap: 5px;">
-                                    <a href="tel:+971544923609" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Us Column -->
+                        <div class="col-lg-3">
+                            <h4 class="footer-title"
+                                style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
+                                Contact Us</h4>
+                            <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
+                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fas fa-phone"
+                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                                        <a href="tel:+971544923609"
+                                            style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492
+                                            3609</a>
+                                    </div>
+                                </div>
+                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fab fa-whatsapp"
+                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                    <a href="https://wa.me/971544923609"
+                                        style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
+                                </div>
+                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fas fa-envelope"
+                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                    <a href="mailto:info.apexperformancecarrental@gmail.com"
+                                        style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info.apexperformancecarrental@gmail.com</a>
+                                </div>
+                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fas fa-map-marker-alt"
+                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                    <p style="margin: 0; color: #bdbdbd; font-size: 14px;">ONTARIO TOWER C 1801,
+                                        BUSINESS BAY, DUBAI, UAE</p>
                                 </div>
                             </div>
-                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
-                                <i class="fas fa-envelope" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info.apexperformancecarrental@gmail.com</a>
-                            </div>
-                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
-                                <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
-                                <p style="margin: 0; color: #bdbdbd; font-size: 14px;">ONTARIO TOWER C 1801, BUSINESS BAY, DUBAI, UAE</p>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
-            <div class="container-fluid">
-                <div class="row gy-3 align-items-center">
-                    <!-- 24/7 Service -->
-                    <div class="col-lg-6">
-                        <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
-                            <img src="assets/img/type/24x7 foot.webp" alt="24/7 Service" style="height: 80px; width: auto;">
+            <!-- Footer Bottom -->
+            <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
+                <div class="container-fluid">
+                    <div class="row gy-3 align-items-center">
+                        <!-- 24/7 Service -->
+                        <div class="col-lg-6">
+                            <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
+                                <img src="assets/img/type/24x7 foot.webp" alt="24/7 Service"
+                                    style="height: 80px; width: auto;">
+                            </div>
+                        </div>
+
+                        <!-- Payment Methods on Right -->
+                        <div class="col-lg-6 text-end">
+                            <!-- Payment Image -->
+                            <div class="payment-methods"
+                                style="display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; padding: 0; margin: 0;">
+                                <img src="assets/img/type/pay.webp" alt="PayPal" style="height: 50px; margin: 0;">
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Payment Methods on Right -->
-                    <div class="col-lg-6 text-end">
-                        <!-- Payment Image -->
-                        <div class="payment-methods" style="display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; padding: 0; margin: 0;">
-                            <img src="assets/img/type/pay.webp" alt="PayPal" style="height: 50px; margin: 0;">
+                    <!-- Copyright Section -->
+                    <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px;">
+                        <div
+                            style="display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
+                            <!-- Links on Left -->
+                            <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                                <a href="booking-terms.html"
+                                    style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
+                                <span style="color: #d4af37;">|</span>
+                                <a href="privacy-policy.html"
+                                    style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Privacy Policy</a>
+                            </div>
+
+                            <!-- Social Icons on Right -->
+                            <div class="footer-social"
+                                style="display: flex; align-items: center; justify-content: flex-end; gap: 15px;">
+                                <a href="https://www.facebook.com/" target="_blank"
+                                    style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/apexcarsdubai/" target="_blank"
+                                    style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/" target="_blank"
+                                    style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
+                                        class="fab fa-youtube"></i></a>
+                                <a href="https://www.tiktok.com/" target="_blank"
+                                    style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
+                                        class="fab fa-tiktok"></i></a>
+                            </div>
                         </div>
+                        <p style="margin: 0; color: #bdbdbd; font-size: 13px; text-align: center;"> 2026 apex
+                            performance car rental. All rights reserved.</p>
                     </div>
-                </div>
-                
-                <!-- Copyright Section -->
-                <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
-                        <!-- Links on Left -->
-                        <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
-                            <a href="booking-toc.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
-                            <span style="color: #d4af37;">|</span>
-                            <a href="privacy-policy.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Privacy Policy</a>
-                        </div>
-                        
-                        <!-- Social Icons on Right -->
-                        <div class="footer-social" style="display: flex; align-items: center; justify-content: flex-end; gap: 15px;">
-                            <a href="https://www.facebook.com/" target="_blank" style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/apexcarsdubai/" target="_blank" style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/" target="_blank" style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.tiktok.com/" target="_blank" style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i class="fab fa-tiktok"></i></a>
-                        </div>
-                    </div>
-                    <p style="margin: 0; color: #bdbdbd; font-size: 13px; text-align: center;"> 2025 Luxury Super Car Rentals. All rights reserved.</p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact-buttons">

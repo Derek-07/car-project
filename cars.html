@@ -127,30 +127,32 @@
 
         /* ======== FILTER SECTION ======== */
         .filter-toggle-btn {
-            position: fixed; right: 20px; top: 320px;
-            z-index: 50;
-            padding: 12px 20px;
-            background: var(--primary-color);
+            position: absolute;
+            right: 60px;
+            top: 80%;
+            transform: translateY(-50%);
+            z-index: 10;
+
+            padding: 12px 22px;
+            background: #D4AF37;
             color: #000;
             border: none;
             border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
+
             font-size: 14px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            font-weight: 700;
+            cursor: pointer;
+
             display: flex;
             align-items: center;
             gap: 8px;
-        }
 
-        .filter-toggle-btn:hover {
-            background: #e5bf2e;
-            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+            transition: all 0.3s ease;
         }
 
         .filter-toggle-btn i {
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .filter-box {
@@ -785,6 +787,8 @@ border-radius:6px;
         </div>
     </div>
 
+    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
+
     <!-- Filter Box -->
     <div class="filter-box" id="filterBox">
         <h3>Filter Cars</h3>
@@ -883,105 +887,63 @@ Brand Area
             <div class="row">
                 <div class="col-12">
                     <div class="swiper th-slider" id="brand-slider-1"
-                        data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}'>
+                        data-slider-options='{"speed":500,"autoplay":{"delay":3000,"disableOnInteraction":false},"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}'>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=mclaren">
-                                        <img src="assets/img/brand/mac.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=mclaren"><img
+                                            src="assets/img/brand/mac.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=audi">
-                                        <img src="assets/img/brand/audi.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=audi"><img
+                                            src="assets/img/brand/audi.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=aston-martin">
-                                        <img src="assets/img/brand/austin-martin.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=aston-martin"><img
+                                            src="assets/img/brand/austin-martin.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=lamborghini">
-                                        <img src="assets/img/brand/lambologo.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=lamborghini"><img
+                                            src="assets/img/brand/lambologo.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=ferrari">
-                                        <img src="assets/img/brand/far.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=ferrari"><img
+                                            src="assets/img/brand/far.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=bmw">
-                                        <img src="assets/img/brand/bmw.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=bmw"><img
+                                            src="assets/img/brand/bmw.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=mercedes">
-                                        <img src="assets/img/brand/mas2.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=range-rover"><img
+                                            src="assets/img/brand/land.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=porsche">
-                                        <img src="assets/img/brand/porsche.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=mercedes"><img
+                                            src="assets/img/brand/mar.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=bentley">
-                                        <img src="assets/img/brand/bent.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=cadillac"><img
+                                            src="assets/img/brand/cad.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=rolls-royce">
-                                        <img src="assets/img/brand/rr.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=ferrari"><img
+                                            src="assets/img/brand/far.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=bugatti">
-                                        <img src="assets/img/brand/buga.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=lamborghini"><img
+                                            src="assets/img/brand/lambologo.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=maserati">
-                                        <img src="assets/img/brand/mar.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=maserati"><img
+                                            src="assets/img/brand/mas2.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=range-rover">
-                                        <img src="assets/img/brand/land.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=porsche"><img
+                                            src="assets/img/brand/porsche.webp" alt="Brand Logo"></a></div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="brand-box">
-                                    <a href="cars.html?brand=cadillac">
-                                        <img src="assets/img/brand/cad.webp" alt="Brand Logo">
-                                    </a>
-                                </div>
+                                <div class="brand-box"><a href="cars.html?brand=bentley"><img
+                                            src="assets/img/brand/bent.webp" alt="Brand Logo"></a></div>
                             </div>
                         </div>
                     </div>
@@ -1219,8 +1181,10 @@ Testimonial Area - Google Reviews
                     <!-- Left Column - Logo & Description -->
                     <div class="col-lg-3">
                         <div class="footer-brand">
-                            <div class="footer-logo mb-4">
-                                <a href="index.html"><img src="assets/img/apc high.webp" alt="Apex Logo" style="max-width: 180px;"></a>
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="assets/img/apc high.png" alt="Apex Logo">
+                                </a>
                             </div>
                             <p class="footer-desc" style="font-size: 14px; line-height: 1.7; color: #bdbdbd;">
                                 If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a fascinating experience.
@@ -1267,6 +1231,12 @@ Testimonial Area - Google Reviews
                                 <div style="display: flex; flex-direction: column; gap: 5px;">
                                     <a href="tel:+971544923609" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
                                 </div>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fab fa-whatsapp"
+                                    style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <a href="https://wa.me/971544923609"
+                                    style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
                             </div>
                             <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
                                 <i class="fas fa-envelope" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
