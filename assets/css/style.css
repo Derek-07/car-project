@@ -28450,12 +28450,15 @@ button, a, .th-btn {
 }
 
 .footer-logo {
+  margin: 0;
+  padding: 0;
   max-width: 200px;
 }
 
 .footer-logo img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 .footer-desc {
@@ -28463,6 +28466,7 @@ button, a, .th-btn {
   line-height: 1.8;
   color: #aaaaaa;
   margin: 0;
+  padding: 0;
   hyphens: auto;
 }
 
@@ -28471,7 +28475,8 @@ button, a, .th-btn {
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 24px;
+  margin: 0 0 20px 0;
+  padding: 0;
   font-family: var(--title-font);
   letter-spacing: 0.5px;
 }
@@ -28711,16 +28716,21 @@ button, a, .th-btn {
 
 @media (max-width: 575px) {
   .footer-logo {
+    margin: 0;
+    padding: 0;
     max-width: 150px;
   }
 
   .footer-desc {
     font-size: 13px;
+    margin: 0;
+    padding: 0;
   }
 
   .footer-title {
     font-size: 14px;
-    margin-bottom: 12px;
+    margin: 0 0 12px 0;
+    padding: 0;
   }
 
   .footer-menu li {
@@ -31886,3 +31896,70 @@ button, a, .th-btn {
 
 
 
+
+/* ====================================
+   CAR CARD ACTION BUTTONS STYLES
+   ==================================== */
+
+.btn-email {
+  border-color: rgba(212, 175, 55, 0.4) !important;
+  color: #d4af37 !important;
+  background: rgba(212, 175, 55, 0.08) !important;
+}
+
+.btn-email:hover {
+  border-color: #d4af37 !important;
+  background: rgba(212, 175, 55, 0.2) !important;
+}
+
+/* ====================================
+   INVENTORY SECTION HEADER STYLES
+   ==================================== */
+
+.inventory-section-header {
+  position: relative;
+  padding-left: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.inventory-filter-btn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inventory-filter-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.inventory-filter-btn i {
+  font-size: 16px;
+}
+
+/* Responsive - Remove filter button on mobile */
+@media (max-width: 768px) {
+  .inventory-section-header {
+    padding-left: 0;
+  }
+
+  .inventory-filter-btn {
+    display: none;
+  }
+}

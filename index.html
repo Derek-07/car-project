@@ -47,6 +47,11 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+
+
+
+
+
         /* Mobile Menu Background */
         .th-menu-wrapper {
             background: #000 !important;
@@ -255,6 +260,180 @@
                 transform: scale(1.55) !important;
             }
         }
+    </style>
+    <style>
+        .info-text a {
+            color: inherit;
+            text-decoration: none;
+            transition: none;
+        }
+
+        .info-text a:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+    <style>
+        .docs-how-section {
+            background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
+                url("assets/img/bg/doc01bg.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 100px 0;
+            color: #fff;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .premium-glass-card {
+
+            height: 230px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            border: 1.5px solid rgba(212, 175, 55, 0.75);
+
+            /* LESS BLACK */
+            background: rgba(0, 0, 0, 0.35px);
+
+            /* MORE GLASS BLUR */
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            box-shadow:
+                0 0 25px rgba(212, 175, 55, 0.25),
+                inset 0 0 25px rgba(255, 255, 255, 0.08);
+
+            transition: all .35s ease;
+
+        }
+
+        /* ICON */
+
+        .premium-glass-card i {
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 14px;
+        }
+
+        /* TITLE */
+
+        .premium-glass-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        /* TEXT */
+
+        .premium-glass-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #d6d6d6;
+            max-width: 320px;
+        }
+
+        /* HOVER EFFECT */
+
+        .premium-glass-card:hover {
+
+            transform: translateY(-10px);
+
+            border-color: #ffd700;
+
+            box-shadow:
+                0 0 40px rgba(212, 175, 55, 0.65),
+                0 0 80px rgba(212, 175, 55, 0.25);
+
+            background: rgba(0, 0, 0, 0.45);
+
+        }
+
+        /* ONLY 4 SIMPLE STEPS CARDS */
+
+        .steps-cards .premium-glass-card {
+
+            height: 280px;
+
+            padding: 45px 35px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* ICON SIZE */
+
+        .steps-cards .premium-glass-card i {
+
+            font-size: 46px;
+
+            margin-bottom: 20px;
+
+        }
+
+        /* TITLE SIZE */
+
+        .steps-cards .premium-glass-card h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 12px;
+
+        }
+    </style>
+    <style>
+        /* FOOTER BRAND COLUMN */
+
+.footer-brand{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+margin:0;
+padding:0;
+}
+
+/* LOGO */
+
+.footer-logo{
+margin:0 0 15px 0;
+padding:0;
+}
+
+.footer-logo img{
+max-width:170px;
+height:auto;
+display:block;
+}
+
+/* DESCRIPTION */
+
+.footer-desc{
+font-size:14px;
+line-height:1.7;
+color:#bdbdbd;
+max-width:280px;
+margin:0;
+padding:0;
+}
     </style>
 
 
@@ -566,8 +745,8 @@ Browse by Type Section
 
                         <div class="car-card">
 
-                            <model-viewer src="assets/models/fixed-lamborghini.glb" camera-orbit="0deg 85deg 4m" auto-rotate
-                                rotation-per-second="20deg" disable-zoom interaction-prompt="none">
+                            <model-viewer src="assets/models/fixed-lamborghini.glb" camera-orbit="0deg 85deg 4m"
+                                auto-rotate rotation-per-second="20deg" disable-zoom interaction-prompt="none">
                             </model-viewer>
 
                             <h5>Sports</h5>
@@ -1263,15 +1442,99 @@ Browse by Type Section
     </section>
 
 
+
+    <section class="docs-how-section">
+
+        <div class="container">
+
+            <!-- DOCUMENTS SECTION -->
+
+            <div class="section-title text-center">
+                <h2>What Documents Are Needed To Rent A Car in Dubai</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="premium-glass-card">
+                        <h3>AGE</h3>
+                        <p>You should be at least 21 years old.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="premium-glass-card">
+                        <h3>DRIVING LICENSE</h3>
+                        <p>You should have a valid UAE driving license if you are UAE resident or you should have an
+                            international driving license.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="premium-glass-card">
+                        <h3>FREE DELIVERY</h3>
+                        <p>We offer a free delivery to our customers to their desired location.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- HOW IT WORKS SECTION -->
+
+            <div class="section-title text-center mt-5">
+                <h2>4 SIMPLE STEPS TO RENT YOUR VEHICLE</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center steps-cards">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="premium-glass-card">
+                        <i class="fas fa-car"></i>
+                        <h3>CHOOSE YOUR RIDE</h3>
+                        <p>Handpick from Dubai's finest lineup of supercars and luxury vehicles.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="premium-glass-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>BOOK YOUR RENTAL</h3>
+                        <p>Reserve instantly through WhatsApp or a quick phone call.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="premium-glass-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>PICKUP OR DELIVERY</h3>
+                        <p>Pick up your car or enjoy free delivery anywhere in Dubai.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="premium-glass-card">
+                        <i class="fas fa-road"></i>
+                        <h3>DRIVE & ENJOY</h3>
+                        <p>Experience the thrill of driving a luxury vehicle.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <!--==============================
-Brand Area  
-==============================-->
+                        Brand Area  
+                        ==============================-->
     <div class="brand-area-1 space overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="swiper th-slider" id="brand-slider-1"
-                        data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}'>
+                        data-slider-options='{"loop":true,"speed":1800,"autoplay":{"delay":0,"disableOnInteraction":false},"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":2},"768":{"slidesPerView":3},"992":{"slidesPerView":4},"1200":{"slidesPerView":5},"1400":{"slidesPerView":6}}}'>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="brand-box">
@@ -1378,101 +1641,9 @@ Brand Area
             </div>
         </div>
     </div>
-    <!--==============================
-Documents Required Section
-==============================-->
-    <section class="documents-required-section"
-        style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/bg/doc01bg.webp') center/cover no-repeat; min-height: 500px; display: flex; align-items: center;">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-12">
-                    <h2 class="docs-title">What documents Are Needed To Rent A Car in Dubai</h2>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Age Requirement -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="docs-card">
-                        <h3 class="docs-card-title">AGE</h3>
-                        <p class="docs-card-text">You should be at least 21 years old.</p>
-                    </div>
-                </div>
-
-                <!-- Driving License -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="docs-card">
-                        <h3 class="docs-card-title">DRIVING LICENSE</h3>
-                        <p class="docs-card-text">You should have a valid UAE driving license if you are UAE resident or
-                            You should have an International driving license.</p>
-                    </div>
-                </div>
-
-                <!-- Free Delivery -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="docs-card">
-                        <h3 class="docs-card-title">FREE DELIVERY</h3>
-                        <p class="docs-card-text">We offer a free delivery to our customers to their desired location.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- HOW IT WORKS -->
-    <section class="how-it-works">
-        <div class="container">
-
-            <div class="how-header text-center">
-                <span class="how-subtitle">HOW IT WORKS</span>
-                <h2 class="how-title">
-                    <span class="line"></span>
-                    4 SIMPLE STEPS TO RENT YOUR VEHICLE
-                    <span class="line"></span>
-                </h2>
-            </div>
-
-            <div class="row how-steps">
-
-                <div class="col-lg-3 col-md-6 how-card">
-                    <div class="how-icon"><i class="fas fa-car"></i></div>
-                    <h4>CHOOSE YOUR RIDE</h4>
-                    <p>Handpick from Dubai?s finest lineup of supercars, SUVs, and exotic drives.</p>
-                    <span class="how-divider"></span>
-                </div>
-
-                <div class="col-lg-3 col-md-6 how-card">
-                    <div class="how-icon"><i class="fab fa-whatsapp"></i></div>
-                    <h4>BOOK YOUR RENTAL</h4>
-                    <p>Lock it in with a quick call or WhatsApp?no waiting, no hassle.</p>
-                    <span class="how-divider"></span>
-                </div>
-
-                <div class="col-lg-3 col-md-6 how-card">
-                    <div class="how-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h4>PICK UP OR WELL DELIVER</h4>
-                    <p>Swing by or let us bring it straight to your door, free across Dubai.</p>
-                    <span class="how-divider"></span>
-                </div>
-
-                <div class="col-lg-3 col-md-6 how-card">
-                    <div class="how-icon"><i class="fas fa-road"></i></div>
-                    <h4>DRIVE AND ENJOY</h4>
-                    <p>Slide into the driver?s seat and own every second of the ride.</p>
-                    <span class="how-divider"></span>
-                </div>
-
-            </div>
-
-            <div class="how-buttons text-center">
-                <a href="tel:+971544923609" class="th-btn how-btn-outline">CALL NOW</a>
-                <a href="contact.html" class="th-btn how-btn-gold">REQUEST BOOKING</a>
-            </div>
-
-        </div>
-    </section>
 
     <!--==============================
-Why Choose Us Section
+    Why Choose Us Section
 ==============================-->
     <section class="why-choose-us-section space"
         style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/wycu.webp') center/cover no-repeat; background-attachment: fixed;">
@@ -1617,6 +1788,7 @@ Testimonial Area - Google Reviews
                 <div class="col-xxl-8 col-xl-8">
                     <div class="title-area text-center">
                         <h2 class="sec-title">What Our Customers Are Saying</h2>
+
                         <p>Real reviews from verified Google customers. See why Luxury Supercars Rental is trusted by
                             thousands.</p>
                     </div>
@@ -2019,6 +2191,21 @@ Feedback Section / Contact Section
                                 </div>
                             </div>
 
+                            <!-- whatsapp -->
+                            <div class="contact-info-item">
+                                <div class="info-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4 class="info-title">WhatsApp</h4>
+                                    <p class="info-text">
+                                        <a href="https://wa.me/971544923609" target="_blank">
+                                            +971 54 492 3609
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
                             <!-- Email Info -->
                             <div class="contact-info-item">
                                 <div class="info-icon">
@@ -2385,17 +2572,21 @@ Feedback Section / Contact Section
                         <!-- Left Column - Logo & Description -->
                         <div class="col-lg-3">
                             <div class="footer-brand">
-                                <div class="footer-logo mb-4">
-                                    <a href="index.html"><img src="assets/img/apc high.webp" alt="Apex Logo"
-                                            style="max-width: 180px;"></a>
+
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="assets/img/apc high.png" alt="Apex Logo">
+                                    </a>
                                 </div>
-                                <p class="footer-desc" style="font-size: 14px; line-height: 1.7; color: #bdbdbd;">
+
+                                <p class="footer-desc">
                                     If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com
                                     is a one-stop destination for all. You can avail the widest range of the most exotic
                                     luxury cars, including everything from the latest Sports Cars, Convertible Cars,
                                     SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a
                                     fascinating experience.
                                 </p>
+
                             </div>
                         </div>
 
@@ -2464,6 +2655,12 @@ Feedback Section / Contact Section
                                             style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492
                                             3609</a>
                                     </div>
+                                </div>
+                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fab fa-whatsapp"
+                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                    <a href="https://wa.me/971544923609"
+                                        style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
                                 </div>
                                 <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
                                     <i class="fas fa-envelope"
