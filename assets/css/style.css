@@ -23854,6 +23854,7 @@ input {
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
   border-radius: 100px 100px 100px 100px;
+  overflow: hidden;
 }
 .category-card .box-icon {
   width: 140px;
@@ -29922,15 +29923,20 @@ button, a, .th-btn {
 /* Side Slide Styling */
 .swiper-slide-prev .carousel-car-card,
 .swiper-slide-next .carousel-car-card {
-  opacity: 0.80;
-  transform: scale(0.80);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  opacity: 1.0;
+  transform: scale(0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.0);
+  z-index: 10;
+  position: relative;
 }
 
 .swiper-slide-prev .carousel-car-card:hover,
 .swiper-slide-next .carousel-car-card:hover {
-  opacity: 0.90;
-  transform: scale(0.85);
+  opacity: 1.0;
+  transform: scale(1.0);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  z-index: 15;
 }
 
 /* Center/Active Slide Styling */
