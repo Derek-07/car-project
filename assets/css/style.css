@@ -32052,3 +32052,39 @@ button, a, .th-btn {
     display: none;
   }
 }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+#fluid-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+#fluid {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+
+
+
+
+
+.demo-controls {
+  text-align: center;
+  margin-top: 3rem;
+}
+
