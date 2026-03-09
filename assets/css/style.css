@@ -32088,3 +32088,43 @@ button, a, .th-btn {
   margin-top: 3rem;
 }
 
+
+/* ========== RESPONSIVE 3D MODEL VIEWER ========== */
+/* Global responsive styling for all model-viewer elements */
+
+model-viewer {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive model-viewer in cards */
+.car-card model-viewer,
+.carousel-car-card model-viewer,
+.category-card model-viewer,
+.product-card model-viewer {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  pointer-events: none;
+}
+
+/* Ensure proper scaling on all screen sizes */
+@media (max-width: 1200px) {
+  model-viewer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  model-viewer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  model-viewer {
+    width: 100%;
+  }
+}
