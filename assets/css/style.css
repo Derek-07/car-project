@@ -30097,7 +30097,7 @@ button, a, .th-btn {
   overflow: hidden;
 }
 
-.btn-action::before {
+.btn-action i {\n  font-size: 24px;\n}\n\n.btn-action::before {
   content: '';
   position: absolute;
   top: 0;
@@ -30917,7 +30917,7 @@ button, a, .th-btn {
   overflow: hidden;
 }
 
-.btn-action::before {
+.btn-action i {\n  font-size: 24px;\n}\n\n.btn-action::before {
   content: '';
   position: absolute;
   top: 0;
@@ -32128,3 +32128,5 @@ model-viewer {
     width: 100%;
   }
 }
+
+
