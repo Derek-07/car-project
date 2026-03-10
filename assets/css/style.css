@@ -3013,6 +3013,44 @@ a.th-btn.sm.style3:hover {
   border-radius: 35px;
 }
 
+/* Load More Button - Remove margins for brand area alignment */
+.load-more-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 20px calc((100vw - 100%) / 2);
+  display: flex;
+  justify-content: center;
+  background: #000;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.load-more-btn {
+  display: inline-block;
+  padding: 16px 50px;
+  background-color: var(--theme-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.load-more-btn:hover {
+  background-color: #d4af37;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
 .icon-btn {
   display: inline-block;
   width: var(--btn-size, 56px);
@@ -6784,6 +6822,24 @@ ol.wp-block-rss {
   padding-right: 60px;
   margin-right: 40px;
   margin-top: -0.5em;
+}
+
+/* Smooth gradient transition from Why Choose to FAQ */
+.th-blog-wrapper {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, #0a0a0a 100%);
+}
+
+.th-blog-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.85) 100%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Make faq widget and headers golden where appropriate */
@@ -19421,9 +19477,62 @@ input {
   }
 }
 /* Why 2 ---------------------------------- */
+.why-sec-2-bg-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Background video for Why Choose */
+.why-sec-2-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Dark overlay for readability */
+.why-sec-2-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 2;
+}
+
 .why-sec-2 {
   z-index: 3;
   position: relative;
+  padding: 0;
+}
+
+/* Smooth gradient transition from About Us to Why Choose */
+.about-me-section {
+  position: relative;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+.about-me-section::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(180deg, #0f0f0f 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Why Choose Overlay on Video */
+.why-sec-2-overlay {
+  display: none;
 }
 
 .why-card-2 {
@@ -19498,6 +19607,27 @@ input {
 }
 .why-card-2 .box-content .box-text {
   margin-bottom: 15px;
+}
+
+/* Responsive styles for Why Choose with video background */
+@media (max-width: 991px) {
+  .why-sec-2-bg-wrapper {
+    padding: 60px 0;
+  }
+  
+  .why-sec-2-overlay-dark {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.75) 100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .why-sec-2-bg-wrapper {
+    padding: 40px 0;
+  }
+  
+  .why-sec-2-overlay-dark {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.8) 100%);
+  }
 }
 
 /* Extra small devices */
@@ -29409,9 +29539,12 @@ button, a, .th-btn {
 }
 
 .btn-whatsapp i {
-  font-size: 14px;
+  font-size: 21px;
 }
 
+.call-btn {
+  font-size: 21px;
+}
 .call-btn {
   background: linear-gradient(135deg, #888888 0%, #666666 100%);
   color: #ffffff;
@@ -32130,3 +32263,21 @@ model-viewer {
 }
 
 
+
+
+.whatsapp-fab{
+    background: #25D366;
+    animation: whatsapp-pulse 1.5s infinite;
+}
+
+@keyframes whatsapp-pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(37,211,102,0.7);
+    }
+    70%{
+        box-shadow: 0 0 0 15px rgba(37,211,102,0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(37,211,102,0);
+    }
+}

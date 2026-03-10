@@ -207,7 +207,7 @@ border-radius:6px;
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
                             <div class="header-logo">
-                                <a href="index.html"><img src="assets/img/apc high.png" alt="Apex Performance" style="max-width: 140px; height: auto;"></a>
+                                <a href="index.html"><img src="assets/img/apc high.png" alt="Apex Performance" style="max-width: 140px; height: auto;margin-left:40px; margin-top:25px;"></a>
                             </div>
                         </div>
                         <div class="col-auto col-md-auto">
@@ -274,15 +274,15 @@ About Me Area
 ==============================-->
     <div class="about-me-section" style="background: #1a1a1a; padding: 60px 0; position: relative;">
         <div class="container">
-            <div class="row align-items-center gy-40">
+          <div class="row gy-40">
                 <!-- Left Side - Quote and Text -->
                 <div class="col-lg-6">
                     <div class="about-me-content">
-                        <div class="quote-mark-wrapper" style="position: relative; margin-bottom: 30px;">
-                            <h2 style="font-size: 48px; color: #fff; font-weight: 700; margin: 0 0 20px 0; font-family: 'Play', sans-serif;">About me</h2>
+                        <div class="quote-mark-wrapper" style="position: relative; margin-bottom: 60px; margin-top: -40px;">
+                            <h2 style="font-size: 48px; color: #fff; font-weight: 700; margin: 0 0 20px 0; font-family: 'Play', sans-serif;">About Us</h2>
                         </div>
                         
-                        <div class="about-text-box" style="background: rgba(255, 255, 255, 0.03); border-left: 4px solid #D4A574; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+                        <div class="about-text-box" style="background: rgba(255, 255, 255, 0.03); border-left: 4px solid #D4A574; padding: 30px; border-radius: 8px; margin-bottom: 30px; margin-top: 80px;">
                             <p style="font-size: 16px; color: #999; line-height: 1.8; margin: 0;">
                                 I'm Ahmed Amwell, the proud owner of Luxury Supercar Rentals. Dubai's superior destination for the most luxury and exclusive cars available. Join us as we showcase the latest supercars, share expert insights into the world of luxury automobiles, and take you behind the scenes of our iconic showroom.
                             </p>
@@ -384,10 +384,7 @@ About Me Area
                                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
                             border: 2px solid rgba(212, 165, 116, 0.3);
                             transition: all 0.3s ease;
-                            animation: videoFloat 3s ease-in-out infinite;
-                        "
-                        onmouseover="this.style.boxShadow='0 30px 80px rgba(212, 165, 116, 0.4), 0 0 60px rgba(212, 165, 116, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-10px) scale(1.02)';"
-                        onmouseout="this.style.boxShadow='0 20px 60px rgba(212, 165, 116, 0.3), 0 0 40px rgba(212, 165, 116, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0) scale(1)';">
+                        ">>
                             
                             <!-- Glow Effect Background -->
                             <div style="
@@ -397,7 +394,7 @@ About Me Area
                                 width: 200%;
                                 height: 200%;
                                 background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
-                                animation: glowRotate 8s linear infinite;
+                                animation:none;
                                 pointer-events: none;
                             "></div>
 
@@ -460,159 +457,97 @@ About Me Area
                             border-radius: 50%;
                             bottom: 20%;
                             right: -30px;
-                            animation: float 5s ease-in-out infinite reverse;
+                            animation:none;
                         "></div>
                     </div>
                 </div>
 
-                <style>
-                    @keyframes videoFloat {
-                        0%, 100% {
-                            transform: translateY(0px);
-                        }
-                        50% {
-                            transform: translateY(-15px);
-                        }
-                    }
-
-                    @keyframes glowRotate {
-                        0% {
-                            transform: rotate(0deg);
-                        }
-                        100% {
-                            transform: rotate(360deg);
-                        }
-                    }
-
-                    @keyframes float {
-                        0%, 100% {
-                            transform: translateY(0px);
-                            opacity: 0.3;
-                        }
-                        50% {
-                            transform: translateY(-30px);
-                            opacity: 0.6;
-                        }
-                    }
-
-                    @media (max-width: 768px) {
-                        .about-me-video-wrapper {
-                            max-width: 320px !important;
-                            aspect-ratio: 9 / 16 !important;
-                        }
-                    }
-
-                    @media (max-width: 480px) {
-                        .about-me-video-wrapper {
-                            max-width: 280px !important;
-                            aspect-ratio: 9 / 16 !important;
-                        }
-                    }
-                </style>
+              
             </div>
         </div>
     </div>
     <!--==============================
-Why choose Area  
+Why choose Area with Video Background
 ==============================-->
-    <div class="why-sec-2 " id="why-sec">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xxl-6 col-xl-7 col-lg-9">
-                    <div class="title-area text-center">
-                        <h2 class="sec-title">Why Choose Us</h2>
-                        <p>We care about the environment and implement eco-friendly practices in our shop. From
-                            recycling used oil and parts to using energy-efficient equipment</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row gy-30 align-items-center">
-                <div class="col-lg-6 col-xl-3">
-                    <div class="why-card-2">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/why_card_2_1.svg" alt="Icon">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title">Extensive Selection of Vehicles</h3>
-                            <p class="box-text">At Apex Performance Car Rental, we offer a wide range of vehicles across
-                                multiple brands, body
-                                types, and price points.</p>
+    <div class="why-sec-2-bg-wrapper" id="why-sec">
+        <!-- Background Video -->
+        <video class="why-sec-2-bg-video" autoplay muted loop playsinline>
+            <source src="assets/video/VN20260207_001641.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Dark Overlay -->
+        <div class="why-sec-2-overlay-dark"></div>
+        
+        <!-- Content -->
+        <div class="why-sec-2" style="position: relative; z-index: 5;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-6 col-xl-7 col-lg-9">
+                        <div class="title-area text-center">
+                            <h2 class="sec-title">Why Choose Us</h2>
+                            <p>We care about the environment and implement eco-friendly practices in our shop. From
+                                recycling used oil and parts to using energy-efficient equipment</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-3">
-                    <div class="why-card-2">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/why_card_2_2.svg" alt="Icon">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title">Competitive Pricing Across Brands</h3>
-                            <p class="box-text">At Apex Performance Car Rental, we offer a wide range of vehicles across
-                                multiple brands, body
-                                types, and price points.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-3">
-                    <div class="why-card-2">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/why_card_2_3.svg" alt="Icon">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title">Flexible Financing & Leasing Options</h3>
-                            <p class="box-text">At Apex Performance Car Rental, we offer a wide range of vehicles across
-                                multiple brands, body
-                                types, and price points.</p>
+                <div class="row gy-30 align-items-center">
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="why-card-2">
+                            <div class="box-icon">
+                                <img src="assets/img/icon/why_card_2_1.svg" alt="Icon">
+                            </div>
+                            <div class="box-content">
+                                <h3 class="box-title">Extensive Selection of Vehicles</h3>
+                                <p class="box-text">At Apex Performance Car Rental, we offer a wide range of vehicles across
+                                    multiple brands, body
+                                    types, and price points.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-xl-3">
-                    <div class="why-card-2">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/why_card_2_4.svg" alt="Icon">
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="why-card-2">
+                            <div class="box-icon">
+                                <img src="assets/img/icon/why_card_2_2.svg" alt="Icon">
+                            </div>
+                            <div class="box-content">
+                                <h3 class="box-title">Competitive Pricing Across Brands</h3>
+                                <p class="box-text">At Apex Performance Car Rental, we offer a wide range of vehicles across
+                                    multiple brands, body
+                                    types, and price points.</p>
+                            </div>
                         </div>
-                        <div class="box-content">
-                            <h3 class="box-title">Car Service and Maintenance</h3>
-                            <p class="box-text">At Apex Performance Car Rental, we offer a wide range of vehicles across
-                                multiple brands, body
-                                types, and price points.</p>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="why-card-2">
+                            <div class="box-icon">
+                                <img src="assets/img/icon/why_card_2_3.svg" alt="Icon">
+                            </div>
+                            <div class="box-content">
+                                <h3 class="box-title">Flexible Financing & Leasing Options</h3>
+                                <p class="box-text">At Apex Performance Car Rental, we offer a wide range of vehicles across
+                                    multiple brands, body
+                                    types, and price points.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="why-card-2">
+                            <div class="box-icon">
+                                <img src="assets/img/icon/why_card_2_4.svg" alt="Icon">
+                            </div>
+                            <div class="box-content">
+                                <h3 class="box-title">Car Service and Maintenance</h3>
+                                <p class="box-text">At Apex Performance Car Rental, we offer a wide range of vehicles across
+                                    multiple brands, body
+                                    types, and price points.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div><!--==============================
-Video Area  
-==============================-->
-    <div class="vide-sec-2 position-relative">
-        <div class="video-bg-wrapper">
-
-            <!-- BACKGROUND VIDEO -->
-
-            <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
-                <source src="assets/video/VN20260207_001641.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-
-
-            <!-- DARK OVERLAY -->
-            <div class="video-overlay"></div>
-
-            <!-- CONTENT -->
-            <div class="video-content">
-                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn popup-video">
-                    <i class="fa-sharp fa-solid fa-play"></i>
-                </a>
-
-                <div class="vide-text-wrap">
-                    <span class="logo-animation"></span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!--==============================
 Faq Area
 ==============================-->
     <section class="th-blog-wrapper blog-details space">
@@ -655,12 +590,12 @@ Faq Area
                         <div class="accordion mb-4" id="faqAccordion1">
                             <div class="accordion-card stye-2">
                                 <div class="accordion-header" id="collapse-item-1-1">
-                                    <button class="accordion-button " type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse-1-1" aria-expanded="true"
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse-1-1" aria-expanded="false"
                                         aria-controls="collapse-1-1">
                                         1. What types of vehicles do you offer? </button>
                                 </div>
-                                <div id="collapse-1-1" class="accordion-collapse collapse show"
+                                <div id="collapse-1-1" class="accordion-collapse collapse"
                                     aria-labelledby="collapse-item-1-1" data-bs-parent="#faqAccordion1">
                                     <div class="accordion-body">
                                         <p class="faq-text">
@@ -716,12 +651,12 @@ Faq Area
                         <div class="accordion" id="faqAccordion2">
                             <div class="accordion-card stye-2">
                                 <div class="accordion-header" id="collapse-item-2-1">
-                                    <button class="accordion-button " type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse-2-1" aria-expanded="true"
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse-2-1" aria-expanded="false"
                                         aria-controls="collapse-2-1">
                                         What payment methods do you accept? </button>
                                 </div>
-                                <div id="collapse-2-1" class="accordion-collapse collapse show"
+                                <div id="collapse-2-1" class="accordion-collapse collapse"
                                     aria-labelledby="collapse-item-2-1" data-bs-parent="#faqAccordion2">
                                     <div class="accordion-body">
                                         <p class="faq-text">
