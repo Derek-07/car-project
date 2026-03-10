@@ -39,6 +39,137 @@ let pointers = [pointerPrototype()];
 let dye, velocity, divergence, curlFBO, pressureFBO;
 let lastUpdateTime = Date.now();
 let colorUpdateTimer = 0.0;
+let isWebGLActive = false;
+let ctx2D = null;
+let particleSystem = null;
+
+// Canvas 2D Fallback Animation (when WebGL not available)
+class ParticleSystem {
+  constructor(canvasElement) {
+    this.canvas = canvasElement;
+    this.ctx = canvasElement.getContext("2d");
+    this.particles = [];
+    this.time = 0;
+    this.mouseX = 0;
+    this.mouseY = 0;
+    this.colors = [
+      "rgba(255, 100, 100, ",
+      "rgba(255, 150, 100, ",
+      "rgba(255, 200, 100, ",
+      "rgba(255, 100, 200, "
+    ];
+    
+    this.initializeParticles();
+    this.setupEventListeners();
+    this.animate();
+  }
+
+  initializeParticles() {
+    const particleCount = 50;
+    for (let i = 0; i < particleCount; i++) {
+      this.particles.push({
+        x: Math.random() * this.canvas.width,
+        y: Math.random() * this.canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 100 + 50,
+        colorIdx: Math.floor(Math.random() * this.colors.length),
+        opacity: Math.random() * 0.3 + 0.1,
+        life: 1
+      });
+    }
+  }
+
+  setupEventListeners() {
+    this.canvas.addEventListener("mousemove", (e) => {
+      this.mouseX = e.clientX - this.canvas.getBoundingClientRect().left;
+      this.mouseY = e.clientY - this.canvas.getBoundingClientRect().top;
+      this.createParticlesAtMouse();
+    });
+
+    this.canvas.addEventListener("touchmove", (e) => {
+      const touch = e.touches[0];
+      this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
+      this.mouseY = touch.clientY - this.canvas.getBoundingClientRect().top;
+      this.createParticlesAtMouse();
+    });
+  }
+
+  createParticlesAtMouse() {
+    for (let i = 0; i < 3; i++) {
+      this.particles.push({
+        x: this.mouseX + (Math.random() - 0.5) * 50,
+        y: this.mouseY + (Math.random() - 0.5) * 50,
+        vx: (Math.random() - 0.5) * 3,
+        vy: (Math.random() - 0.5) * 3,
+        size: Math.random() * 80 + 40,
+        colorIdx: Math.floor(Math.random() * this.colors.length),
+        opacity: Math.random() * 0.4 + 0.2,
+        life: 1
+      });
+    }
+  }
+
+  update() {
+    this.time += 0.016;
+    
+    for (let i = this.particles.length - 1; i >= 0; i--) {
+      const p = this.particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.05; // gravity
+      p.vx *= 0.98; // friction
+      p.vy *= 0.98;
+      p.life -= 0.005;
+      p.opacity *= 0.99;
+
+      if (p.life <= 0) {
+        this.particles.splice(i, 1);
+      }
+    }
+  }
+
+  draw() {
+    // Create gradient background
+    const gradient = this.ctx.createLinearGradient(
+      0, 0,
+      this.canvas.width, this.canvas.height
+    );
+    gradient.addColorStop(0, "rgba(80, 0, 0, 0.3)");
+    gradient.addColorStop(0.5, "rgba(120, 0, 0, 0.2)");
+    gradient.addColorStop(1, "rgba(80, 0, 0, 0.3)");
+    
+    this.ctx.fillStyle = gradient;
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+    // Draw particles
+    for (const p of this.particles) {
+      const colorStr = this.colors[p.colorIdx] + (p.opacity * p.life) + ")";
+      const gradient = this.ctx.createRadialGradient(
+        p.x, p.y, 0,
+        p.x, p.y, p.size
+      );
+      gradient.addColorStop(0, colorStr);
+      gradient.addColorStop(1, colorStr.replace(/[\d.]+\)/, "0)"));
+      
+      this.ctx.fillStyle = gradient;
+      this.ctx.beginPath();
+      this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      this.ctx.fill();
+    }
+  }
+
+  animate() {
+    this.update();
+    this.draw();
+    requestAnimationFrame(() => this.animate());
+  }
+
+  resize() {
+    this.canvas.width = this.canvas.clientWidth;
+    this.canvas.height = this.canvas.clientHeight;
+  }
+}
 
 // Programs
 let copyProgram, clearProgram, splatProgram, advectionProgram;
@@ -47,22 +178,31 @@ let gradienSubtractProgram, displayMaterial;
 
 function initializeWebGL() {
   canvas = document.getElementById("fluid");
+  
+  if (!canvas) {
+    throw new Error("Canvas element 'fluid' not found");
+  }
 
   const params = {
     alpha: true,
     depth: false,
     stencil: false,
     antialias: false,
-    preserveDrawingBuffer: false
+    preserveDrawingBuffer: false,
+    failIfMajorPerformanceCaveat: false
   };
 
-  gl =
-    canvas.getContext("webgl2", params) ||
-    canvas.getContext("webgl", params) ||
-    canvas.getContext("experimental-webgl", params);
+  try {
+    gl =
+      canvas.getContext("webgl2", params) ||
+      canvas.getContext("webgl", params) ||
+      canvas.getContext("experimental-webgl", params);
+  } catch (e) {
+    gl = null;
+  }
 
   if (!gl) {
-    throw new Error("Unable to initialize WebGL.");
+    throw new Error("Unable to initialize WebGL - this is OK, page will work without animation.");
   }
 
   const isWebGL2 = "drawBuffers" in gl;
@@ -70,7 +210,11 @@ function initializeWebGL() {
   let halfFloat = null;
 
   if (isWebGL2) {
-    gl.getExtension("EXT_color_buffer_float");
+    try {
+      gl.getExtension("EXT_color_buffer_float");
+    } catch (e) {
+      // Extension not available
+    }
     supportLinearFiltering = !!gl.getExtension("OES_texture_float_linear");
   } else {
     halfFloat = gl.getExtension("OES_texture_half_float");
@@ -815,12 +959,21 @@ function wrap(value, min, max) {
 
 // Simulation functions
 function updateFrame() {
-  const dt = calcDeltaTime();
-  if (resizeCanvas()) initFramebuffers();
-  updateColors(dt);
-  applyInputs();
-  step(dt);
-  render(null);
+  if (!isWebGLActive || !gl) {
+    return; // Skip if using 2D fallback
+  }
+  
+  try {
+    const dt = calcDeltaTime();
+    if (resizeCanvas()) initFramebuffers();
+    updateColors(dt);
+    applyInputs();
+    step(dt);
+    render(null);
+  } catch (error) {
+    // Silently catch errors and continue animation loop
+    console.debug("Animation frame error (non-critical):", error.message);
+  }
   requestAnimationFrame(updateFrame);
 }
 
@@ -1221,7 +1374,14 @@ function decreaseDensity() {
 // Initialize everything
 function init() {
   try {
+    const canvasEl = document.getElementById("fluid");
+    if (!canvasEl) {
+      console.warn("Canvas element not found");
+      return;
+    }
+
     initializeWebGL();
+    isWebGLActive = true;
     initializeShaders();
     initializeBlit();
     updateKeywords();
@@ -1229,9 +1389,23 @@ function init() {
     setupEventListeners();
     updateFrame();
   } catch (error) {
-    console.error("Failed to initialize fluid simulation:", error);
-    document.body.innerHTML =
-      "<h1>WebGL not supported</h1><p>Your browser does not support WebGL.</p>";
+    console.debug("WebGL not available, using Canvas 2D fallback:", error.message);
+    isWebGLActive = false;
+    
+    // Initialize 2D Canvas Fallback
+    const canvasEl = document.getElementById("fluid");
+    if (canvasEl) {
+      canvasEl.width = canvasEl.clientWidth;
+      canvasEl.height = canvasEl.clientHeight;
+      particleSystem = new ParticleSystem(canvasEl);
+      
+      // Handle window resize for 2D canvas
+      window.addEventListener("resize", () => {
+        if (particleSystem) {
+          particleSystem.resize();
+        }
+      });
+    }
   }
 }
 
