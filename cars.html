@@ -51,6 +51,9 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
     <style>
+        #brandLogoSection{
+display:none !important;
+}
 
         /* ======== MAP SECTION ======== */
         .map-section {
@@ -353,11 +356,21 @@
         }
 
         /* ======== LOAD MORE BUTTON ======== */
-        .load-more-wrapper {
-            text-align: center;
-            margin: 120px 0;
-            padding: 60px 20px;
-        }
+
+        .load-more-wrapper{
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+margin:120px auto;
+padding:60px 0;
+}
+
+.load-more-btn{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+}
 
         .load-more-btn {
             padding: 18px 70px;
@@ -660,6 +673,7 @@ border-radius:6px;
                         <li class="menu-item-has-children">
                             <a href="#">Car Brands</a>
                             <div class="sub-menu premium-dropdown dropdown-brands-grid">
+                                <a href="cars.html?brand=aston-martin" class="brand-item"><img src="assets/img/brand/austin-martin.png" alt="auston-martin"><span>Aston Martin</span></a>
                                 <a href="cars.html?brand=bmw" class="brand-item"><img src="assets/img/brand/bmw.webp" alt="BMW"><span>BMW</span></a>
                                 <a href="cars.html?brand=mercedes" class="brand-item"><img src="assets/img/brand/mar.webp" alt="Mercedes"><span>Mercedes</span></a>
                                 <a href="cars.html?brand=ferrari" class="brand-item"><img src="assets/img/brand/far.webp" alt="Ferrari"><span>Ferrari</span></a>
@@ -671,38 +685,6 @@ border-radius:6px;
                                 <a href="cars.html?brand=maserati" class="brand-item"><img src="assets/img/brand/mas2.webp" alt="Maserati"><span>Maserati</span></a>
                                 <a href="cars.html?brand=range-rover" class="brand-item"><img src="assets/img/brand/land.webp" alt="Range Rover"><span>Range Rover</span></a>
                                 <a href="cars.html?brand=cadillac" class="brand-item"><img src="assets/img/brand/cad.webp" alt="Cadillac"><span>Cadillac</span></a>
-
-                                <a href="cars.html?brand=aston-martin" class="brand-item"><img
-                                        src="assets/img/brand/austin-martin.png" alt="Aston Martin"><span>Aston
-                                        Martin</span></a>
-                                <a href="cars.html?brand=audi" class="brand-item"><img src="assets/img/brand/audi.png"
-                                        alt="Audi"><span>Audi</span></a>
-                                <a href="cars.html?brand=bentley" class="brand-item"><img src="assets/img/brand/bent.png"
-                                        alt="Bentley"><span>Bentley</span></a>
-                                <a href="cars.html?brand=rolls-royce" class="brand-item"><img
-                                        src="assets/img/brand/rr.png" alt="Rolls Royce"><span>Rolls
-                                        Royce</span></a>
-                                <a href="cars.html?brand=mclaren" class="brand-item"><img src="assets/img/brand/mac.png"
-                                        alt="Mclaren"><span>Mclaren</span></a>
-                                <a href="cars.html?brand=bmw" class="brand-item"><img src="assets/img/brand/bmw.png"
-                                        alt="BMW"><span>BMW</span></a>
-                                <a href="cars.html?brand=range-rover" class="brand-item"><img
-                                        src="assets/img/brand/land.png" alt="Range Rover"><span>Range
-                                        Rover</span></a>
-                                <a href="cars.html?brand=mercedes" class="brand-item"><img
-                                        src="assets/img/brand/mar.png" alt="Mercedes"><span>Mercedes</span></a>
-                                <a href="cars.html?brand=cadillac" class="brand-item"><img
-                                        src="assets/img/brand/cad.png" alt="Cadillac"><span>Cadillac</span></a>
-                                <a href="cars.html?brand=ferrari" class="brand-item"><img src="assets/img/brand/far.png"
-                                        alt="Ferrari"><span>Ferrari</span></a>
-                                <a href="cars.html?brand=lamborghini" class="brand-item"><img
-                                        src="assets/img/brand/lambologo.png"
-                                        alt="Lamborghini"><span>Lamborghini</span></a>
-                                <a href="cars.html?brand=maserati" class="brand-item"><img
-                                        src="assets/img/brand/mas2.png" alt="Maserati"><span>Maserati</span></a>
-                                <a href="cars.html?brand=porsche" class="brand-item"><img src="assets/img/brand/porsche.png"
-                                        alt="Porsche"><span>Porsche</span></a>
-                            </div>
                         </li>
                         <li><a href="our-fleet.html">Our Fleet</a></li>
                         <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
@@ -871,9 +853,12 @@ border-radius:6px;
             </div>
 
             <!-- Load More Button -->
-            <div class="load-more-wrapper">
-                <button class="load-more-btn" id="loadMoreBtn">Load More Vehicles</button>
-            </div>
+    <div class="col-12 text-center">
+        <div class="load-more-wrapper">
+            <button class="load-more-btn" id="loadMoreBtn">Load More Vehicles</button>
+        </div>
+    </div>
+</div>
         </div>
     </section>
 
