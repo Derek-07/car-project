@@ -130,12 +130,7 @@ display:none !important;
 
         /* ======== FILTER SECTION ======== */
         .filter-toggle-btn {
-            position: absolute;
-            right: 60px;
-            top: 80%;
-            transform: translateY(-50%);
-            z-index: 10;
-
+            position: static;
             padding: 12px 22px;
             background: #D4AF37;
             color: #000;
@@ -146,12 +141,14 @@ display:none !important;
             font-weight: 700;
             cursor: pointer;
 
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
 
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
             transition: all 0.3s ease;
+            margin-bottom: 20px;
+            white-space: nowrap;
         }
 
         .filter-toggle-btn i {
@@ -322,37 +319,13 @@ display:none !important;
             pointer-events: none;
         }
 
-        .carousel-car-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 
-                        0 0 40px rgba(212, 175, 55, 0.2),
-                        inset 0 0 20px rgba(212, 175, 55, 0.1);
-            border: 2px solid rgba(212, 175, 55, 0.5);
-        }
-
-        .carousel-car-card:hover::before {
-            opacity: 1;
-            animation: glow-pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes glow-pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.6; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
         .car-image {
             transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1);
         }
 
-        .carousel-car-card:hover .car-image {
-            transform: scale(1.15) rotate(2deg);
-            filter: brightness(1.1) saturate(1.2);
-        }
-
-        .carousel-car-card:hover .car-title {
-            color: #d4af37;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        .carousel-car-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2), 0 0 20px rgba(212, 175, 55, 0.1);
         }
 
         /* ======== LOAD MORE BUTTON ======== */
@@ -450,11 +423,9 @@ display:none !important;
         }
 
         /* Mobile Responsive */
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             .filter-toggle-btn {
-                left: 15px;
-                top: 100px;
-                padding: 10px 15px;
+                padding: 10px 16px;
                 font-size: 12px;
             }
 
@@ -464,31 +435,83 @@ display:none !important;
             }
 
             .breadcumb-title {
-                font-size: 2rem;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .filter-toggle-btn {
+                padding: 9px 14px;
+                font-size: 11px;
+            }
+
+            .filter-box {
+                width: 100%;
+                max-width: 100%;
+                top: 160px;
+                border-radius: 0;
+                left: 0;
+            }
+
+            .breadcumb-title {
+                font-size: 2.2rem;
+            }
+
+            .breadcumb-wrapper {
+                min-height: 280px;
+                padding: 60px 15px !important;
             }
         }
 
         @media (max-width: 576px) {
             .filter-toggle-btn {
-                left: 10px;
-                top: 85px;
                 padding: 8px 12px;
-                font-size: 11px;
+                font-size: 10px;
             }
 
             .filter-box {
-                top: 130px;
+                top: 140px;
                 width: 100%;
                 border-radius: 0;
-                max-width: none;
+                max-width: 100%;
+                padding: 15px;
             }
 
             .breadcumb-wrapper {
-                min-height: 250px;
+                min-height: 200px;
+                padding: 40px 10px !important;
             }
 
             .breadcumb-title {
                 font-size: 1.5rem;
+                letter-spacing: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filter-toggle-btn {
+                padding: 6px 10px;
+                font-size: 9px;
+            }
+
+            .breadcumb-wrapper {
+                min-height: 150px;
+                padding: 30px 10px !important;
+            }
+
+            .breadcumb-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .breadcumb-wrapper {
+                min-height: 120px;
+                padding: 20px 8px !important;
+            }
+
+            .breadcumb-title {
+                font-size: 1rem;
             }
         }
     </style>
@@ -762,11 +785,12 @@ border-radius:6px;
         </div>
     </div>
 
-    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
-
     <!-- Filter Box -->
     <div class="filter-box" id="filterBox">
-        <h3>Filter Cars</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="margin: 0;">Filter Cars</h3>
+            <button id="filterCloseBtn" style="background: none; border: none; color: #d4af37; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;" title="Close filter">&times;</button>
+        </div>
 
         <!-- Price Filter -->
         <div class="filter-group">
@@ -839,6 +863,7 @@ border-radius:6px;
 
             <div class="row mb-5">
                 <div class="col-lg-12 text-center">
+                    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
                     <h2 class="sec-title mb-3" id="sectionTitle">Premium BMW Rental in Dubai</h2>
                     <p class="sec-text" id="sectionDescription">Experience luxury and performance with our premium BMW rental service. Perfect for those seeking sophisticated design, cutting-edge technology, and unmatched driving dynamics.</p>
                 </div>
@@ -1730,7 +1755,7 @@ Testimonial Area - Google Reviews
             }
 
             const hiddenCards = document.querySelectorAll('.car-card-hidden');
-            let cardsToShow = 4;
+            let cardsToShow = 8;
             let currentShown = 8;
 
             loadMoreBtn.classList.remove('hidden');
@@ -1772,13 +1797,27 @@ Testimonial Area - Google Reviews
         function setupFilters() {
             const filterToggleBtn = document.getElementById('filterToggleBtn');
             const filterBox = document.getElementById('filterBox');
+            const filterCloseBtn = document.getElementById('filterCloseBtn');
 
             filterToggleBtn.addEventListener('click', function() {
                 filterBox.classList.toggle('active');
             });
+            
+            if (filterCloseBtn) {
+                filterCloseBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    filterBox.classList.remove('active');
+                });
+            }
 
             document.addEventListener('click', function(e) {
                 if (!filterBox.contains(e.target) && !filterToggleBtn.contains(e.target)) {
+                    filterBox.classList.remove('active');
+                }
+            });
+            
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && filterBox.classList.contains('active')) {
                     filterBox.classList.remove('active');
                 }
             });

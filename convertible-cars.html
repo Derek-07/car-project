@@ -39,7 +39,7 @@
         .breadcumb-trail li a:hover { color: #fff; }
         .breadcumb-trail li:not(:last-child)::after { content: " / "; color: rgba(255, 255, 255, 0.6); margin-left: 15px; }
         .breadcumb-title { color: #fff; font-size: 5.5rem; font-weight: 700; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); margin: 0; text-align: center; text-transform: capitalize; letter-spacing: 3px; }
-        .filter-toggle-btn { position: absolute; right: 60px; top: 80%; transform: translateY(-50%); z-index: 10; padding: 12px 22px; background: #D4AF37; color: #000; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); transition: all 0.3s ease; }
+        .filter-toggle-btn { position: static; padding: 12px 22px; background: #D4AF37; color: #000; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); transition: all 0.3s ease; margin-bottom: 20px; white-space: nowrap; }
         .filter-toggle-btn i { font-size: 16px; }
         .filter-box { position: fixed; left: 0; top: 180px; width: 280px; background: linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(30, 30, 30, 0.98) 100%); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 0 12px 12px 0; padding: 25px; z-index: 40; max-height: calc(100vh - 200px); overflow-y: auto; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.35, 0, 0.65, 1); }
         .filter-box.active { transform: translateX(0); }
@@ -60,12 +60,8 @@
         .filter-reset-btn:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--primary-color); }
         .carousel-car-card { transition: all 0.5s cubic-bezier(0.35, 0, 0.65, 1); position: relative; overflow: hidden; }
         .carousel-car-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%); opacity: 0; transition: opacity 0.6s ease; pointer-events: none; }
-        .carousel-car-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.2), inset 0 0 20px rgba(212, 175, 55, 0.1); border: 2px solid rgba(212, 175, 55, 0.5); }
-        .carousel-car-card:hover::before { opacity: 1; animation: glow-pulse 1.5s ease-in-out infinite; }
-        @keyframes glow-pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.6; } 100% { transform: scale(1); opacity: 1; } }
         .car-image { transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1); }
-        .carousel-car-card:hover .car-image { transform: scale(1.15) rotate(2deg); filter: brightness(1.1) saturate(1.2); }
-        .carousel-car-card:hover .car-title { color: #d4af37; text-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+        .carousel-car-card:hover { transform: scale(1.03); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2), 0 0 20px rgba(212, 175, 55, 0.1); }
         .load-more-wrapper { text-align: center; margin: 120px 0; padding: 60px 20px; }
         .load-more-btn { padding: 18px 70px; background: transparent; border: 2px solid var(--primary-color); border-radius: 50px; color: var(--primary-color); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); }
         .load-more-btn:hover { background: var(--primary-color); color: #000; transform: scale(1.05); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4); }
@@ -73,8 +69,11 @@
         .car-card-hidden { opacity: 0; visibility: hidden; height: 0; margin: 0; padding: 0; overflow: hidden; }
         .car-card-hidden.revealed { opacity: 1; visibility: visible; height: auto; margin: 15px 0; padding: 15px; animation: slideInUp 0.6s ease-out; }
         @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 992px) { .filter-toggle-btn { left: 15px; top: 100px; padding: 10px 15px; font-size: 12px; } .filter-box { top: 150px; width: 250px; } .breadcumb-title { font-size: 2rem; } }
-        @media (max-width: 576px) { .filter-toggle-btn { left: 10px; top: 85px; padding: 8px 12px; font-size: 11px; } .filter-box { top: 130px; width: 100%; border-radius: 0; max-width: none; } .breadcumb-wrapper { min-height: 250px; } .breadcumb-title { font-size: 1.5rem; } }
+        @media (max-width: 1024px) { .filter-toggle-btn { padding: 10px 16px; font-size: 12px; } .filter-box { top: 150px; width: 250px; } .breadcumb-title { font-size: 3rem; } }
+        @media (max-width: 768px) { .filter-toggle-btn { padding: 9px 14px; font-size: 11px; } .filter-box { width: 100%; max-width: 100%; top: 160px; border-radius: 0; left: 0; } .breadcumb-title { font-size: 2.2rem; } .breadcumb-wrapper { min-height: 280px; padding: 60px 15px !important; } }
+        @media (max-width: 576px) { .filter-toggle-btn { padding: 8px 12px; font-size: 10px; } .filter-box { top: 140px; width: 100%; border-radius: 0; max-width: 100%; padding: 15px; } .breadcumb-wrapper { min-height: 200px; padding: 40px 10px !important; } .breadcumb-title { font-size: 1.5rem; letter-spacing: 0; } }
+        @media (max-width: 480px) { .filter-toggle-btn { padding: 6px 10px; font-size: 9px; } .breadcumb-wrapper { min-height: 150px; padding: 30px 10px !important; } .breadcumb-title { font-size: 1.2rem; } }
+        @media (max-width: 375px) { .breadcumb-wrapper { min-height: 120px; padding: 20px 8px !important; } .breadcumb-title { font-size: 1rem; } }
         .sec-title {
             text-align: center;
         }
@@ -275,9 +274,11 @@ border-radius:6px;
             <h1 class="breadcumb-title">Convertible Cars Rental Dubai</h1>
         </div>
     </div>
-    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
     <div class="filter-box" id="filterBox">
-        <h3>Filter Cars</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="margin: 0;">Filter Cars</h3>
+            <button id="filterCloseBtn" style="background: none; border: none; color: #d4af37; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;" title="Close filter">&times;</button>
+        </div>
         <div class="filter-group">
             <label class="filter-label">Price Range</label>
             <div class="price-slider-wrapper">
@@ -309,6 +310,7 @@ border-radius:6px;
         <div class="container-fluid">
             <div class="row mb-5">
                 <div class="col-lg-12 text-center">
+                    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
                     <h2 class="sec-title mb-3">Premium Convertible Cars in Dubai</h2>
                     <p class="sec-text">Feel the wind in your hair with our exclusive convertible collection. Perfect for memorable coastline drives, these open-top luxury vehicles combine elegance with pure driving pleasure for unforgettable experiences.</p>
                 </div>
@@ -523,6 +525,132 @@ border-radius:6px;
                             <p class="car-category">Convertible <span class="separator">|</span> Rolls Royce</p>
                             <div class="car-price-display">
                                 <span class="price-value">16,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 11. Porsche 911 Cabriolet (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/red.webp" alt="Porsche 911 Cabriolet" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Porsche 911 Cabriolet</h3>
+                            <p class="car-category">Convertible <span class="separator">|</span> Porsche</p>
+                            <div class="car-price-display">
+                                <span class="price-value">14,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12. BMW M440i xDrive (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.webp" alt="BMW M440i xDrive" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">BMW M440i xDrive</h3>
+                            <p class="car-category">Convertible <span class="separator">|</span> BMW</p>
+                            <div class="car-price-display">
+                                <span class="price-value">11,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 13. Mercedes-AMG C63 Cabriolet (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/gw01.webp" alt="Mercedes-AMG C63 Cabriolet" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Mercedes-AMG C63 Cabriolet</h3>
+                            <p class="car-category">Convertible <span class="separator">|</span> Mercedes</p>
+                            <div class="car-price-display">
+                                <span class="price-value">13,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 14. Audi A5 Cabriolet (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/black.webp" alt="Audi A5 Cabriolet" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Audi A5 Cabriolet</h3>
+                            <p class="car-category">Convertible <span class="separator">|</span> Audi</p>
+                            <div class="car-price-display">
+                                <span class="price-value">12,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 15. Jaguar F-Type Convertible (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/red.webp" alt="Jaguar F-Type Convertible" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Jaguar F-Type Convertible</h3>
+                            <p class="car-category">Convertible <span class="separator">|</span> Jaguar</p>
+                            <div class="car-price-display">
+                                <span class="price-value">14,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 16. Range Rover Evoque Convertible (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.webp" alt="Range Rover Evoque Convertible" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Range Rover Convertible</h3>
+                            <p class="car-category">Convertible <span class="separator">|</span> Range Rover</p>
+                            <div class="car-price-display">
+                                <span class="price-value">13,500 AED</span>
                                 <span class="price-label">/ Per Day</span>
                             </div>
                             <div class="car-action-buttons">
@@ -1025,8 +1153,31 @@ Feedback Section / Contact Section
         });
         const filterToggleBtn = document.getElementById('filterToggleBtn');
         const filterBox = document.getElementById('filterBox');
+        const filterCloseBtn = document.getElementById('filterCloseBtn');
+        
         filterToggleBtn.addEventListener('click', function() {
             filterBox.classList.toggle('active');
+        });
+        
+        if (filterCloseBtn) {
+            filterCloseBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                filterBox.classList.remove('active');
+            });
+        }
+        
+        document.addEventListener('click', function(event) {
+            if (filterBox.classList.contains('active')) {
+                if (!filterBox.contains(event.target) && !filterToggleBtn.contains(event.target)) {
+                    filterBox.classList.remove('active');
+                }
+            }
+        });
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && filterBox.classList.contains('active')) {
+                filterBox.classList.remove('active');
+            }
         });
         document.addEventListener('click', function(e) {
             if (!filterBox.contains(e.target) && !filterToggleBtn.contains(e.target)) {
@@ -1074,7 +1225,7 @@ Feedback Section / Contact Section
         });
         const loadMoreBtn = document.getElementById('loadMoreBtn');
         const hiddenCards = document.querySelectorAll('.car-card-hidden');
-        let cardsToShow = 2;
+        let cardsToShow = 8;
         let currentShown = 8;
         loadMoreBtn.addEventListener('click', function() {
             let revealed = 0;

@@ -102,11 +102,7 @@
         }
 
         .filter-toggle-btn {
-            position: absolute;
-            right: 60px;
-            top: 80%;
-            transform: translateY(-50%);
-            z-index: 10;
+            position: static;
             padding: 12px 22px;
             background: var(--primary-color);
             color: #000;
@@ -117,9 +113,11 @@
             font-size: 14px;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
             transition: all .3s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
+            margin-bottom: 20px;
+            white-space: nowrap;
         }
 
         .filter-box {
@@ -283,46 +281,13 @@
             pointer-events: none;
         }
 
-        .carousel-car-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.2), inset 0 0 20px rgba(212, 175, 55, 0.1);
-            border: 2px solid rgba(212, 175, 55, 0.5);
-        }
-
-        .carousel-car-card:hover::before {
-            opacity: 1;
-            animation: glow-pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes glow-pulse {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scale(1.2);
-                opacity: 0.6;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
         .car-image {
             transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1);
         }
 
-        .carousel-car-card:hover .car-image {
-            transform: scale(1.15) rotate(2deg);
-            filter: brightness(1.1) saturate(1.2);
-        }
-
-        .carousel-car-card:hover .car-title {
-            color: #d4af37;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        .carousel-car-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2), 0 0 20px rgba(212, 175, 55, 0.1);
         }
 
        .load-more-wrapper{
@@ -389,11 +354,9 @@
             }
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             .filter-toggle-btn {
-                left: 15px;
-                top: 100px;
-                padding: 10px 15px;
+                padding: 10px 16px;
                 font-size: 12px;
             }
 
@@ -403,31 +366,83 @@
             }
 
             .breadcumb-title {
-                font-size: 2rem;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .filter-toggle-btn {
+                padding: 9px 14px;
+                font-size: 11px;
+            }
+
+            .filter-box {
+                width: 100%;
+                max-width: 100%;
+                top: 160px;
+                border-radius: 0;
+                left: 0;
+            }
+
+            .breadcumb-title {
+                font-size: 2.2rem;
+            }
+
+            .breadcumb-wrapper {
+                min-height: 280px;
+                padding: 60px 15px !important;
             }
         }
 
         @media (max-width: 576px) {
             .filter-toggle-btn {
-                left: 10px;
-                top: 85px;
                 padding: 8px 12px;
-                font-size: 11px;
+                font-size: 10px;
             }
 
             .filter-box {
-                top: 130px;
+                top: 140px;
                 width: 100%;
                 border-radius: 0;
-                max-width: none;
+                max-width: 100%;
+                padding: 15px;
             }
 
             .breadcumb-wrapper {
-                min-height: 250px;
+                min-height: 200px;
+                padding: 40px 10px !important;
             }
 
             .breadcumb-title {
                 font-size: 1.5rem;
+                letter-spacing: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filter-toggle-btn {
+                padding: 6px 10px;
+                font-size: 9px;
+            }
+
+            .breadcumb-wrapper {
+                min-height: 150px;
+                padding: 30px 10px !important;
+            }
+
+            .breadcumb-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .breadcumb-wrapper {
+                min-height: 120px;
+                padding: 20px 8px !important;
+            }
+
+            .breadcumb-title {
+                font-size: 1rem;
             }
         }
     </style>
@@ -660,9 +675,11 @@
             <h1 class="breadcumb-title">Our Premium Fleet in Dubai</h1>
         </div>
     </div>
-    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
     <div class="filter-box" id="filterBox">
-        <h3>Filter Cars</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="margin: 0;">Filter Cars</h3>
+            <button id="filterCloseBtn" style="background: none; border: none; color: #d4af37; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;" title="Close filter">&times;</button>
+        </div>
         <div class="filter-group">
             <label class="filter-label">Price Range</label>
             <div class="price-slider-wrapper">
@@ -701,6 +718,7 @@
         <div class="container-fluid">
             <div class="row mb-5">
                 <div class="col-lg-12 text-center">
+                    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
                     <h2 class="sec-title mb-3">Complete Luxury Vehicle Fleet</h2>
                     <p class="sec-text">Experience the ultimate collection of premium vehicles. Choose from Sports Cars,
                         Convertibles, Luxury Sedans, and Performance SUVs. Every vehicle in our fleet is meticulously
@@ -1405,6 +1423,153 @@
                         </div>
                     </div>
                 </div>
+                <!-- 10. Maserati Levante (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.webp" alt="Maserati Levante" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Maserati Levante</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Maserati</p>
+                            <div class="car-price-display">
+                                <span class="price-value">15,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 11. Porsche Cayenne (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/red.webp" alt="Porsche Cayenne" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Porsche Cayenne</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Porsche</p>
+                            <div class="car-price-display">
+                                <span class="price-value">11,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12. Lamborghini Huracan (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/gw01.webp" alt="Lamborghini Huracan" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Lamborghini Huracan</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Lamborghini</p>
+                            <div class="car-price-display">
+                                <span class="price-value">12,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 13. Ferrari 488 (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/red.webp" alt="Ferrari 488" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Ferrari 488</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Ferrari</p>
+                            <div class="car-price-display">
+                                <span class="price-value">14,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 14. BMW M5 (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/black.webp" alt="BMW M5" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">BMW M5</h3>
+                            <p class="car-category">Luxury <span class="separator">|</span> BMW</p>
+                            <div class="car-price-display">
+                                <span class="price-value">10,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 15. Aston Martin Vantage (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/gw01.webp" alt="Aston Martin Vantage" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Aston Martin Vantage</h3>
+                            <p class="car-category">Sports <span class="separator">|</span> Aston Martin</p>
+                            <div class="car-price-display">
+                                <span class="price-value">13,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 16. Lexus RX 500h (Hidden - Load More) -->
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.webp" alt="Lexus RX 500h" class="car-image">
+                            <div class="car-overlay"></div>
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Lexus RX 500h</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Lexus</p>
+                            <div class="car-price-display">
+                                <span class="price-value">9,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="load-more-wrapper">
                 <button class="load-more-btn" id="loadMoreBtn">Load More Vehicles</button>
@@ -1886,8 +2051,31 @@
         });
         const filterToggleBtn = document.getElementById('filterToggleBtn');
         const filterBox = document.getElementById('filterBox');
+        const filterCloseBtn = document.getElementById('filterCloseBtn');
+        
         filterToggleBtn.addEventListener('click', function () {
             filterBox.classList.toggle('active');
+        });
+        
+        if (filterCloseBtn) {
+            filterCloseBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                filterBox.classList.remove('active');
+            });
+        }
+        
+        document.addEventListener('click', function(event) {
+            if (filterBox.classList.contains('active')) {
+                if (!filterBox.contains(event.target) && !filterToggleBtn.contains(event.target)) {
+                    filterBox.classList.remove('active');
+                }
+            }
+        });
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && filterBox.classList.contains('active')) {
+                filterBox.classList.remove('active');
+            }
         });
         const priceMin = document.getElementById('priceMin');
         const priceMax = document.getElementById('priceMax');
