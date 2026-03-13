@@ -357,49 +357,44 @@ display:none !important;
 
         /* ======== LOAD MORE BUTTON ======== */
 
-        .load-more-wrapper{
-display:flex;
-justify-content:center;
-align-items:center;
-width:100%;
-margin:120px auto;
-padding:60px 0;
-}
-
-.load-more-btn{
-display:inline-flex;
-justify-content:center;
-align-items:center;
-}
+        /* ========== LOAD MORE BUTTON ========== */
+        .load-more-wrapper {
+            width: 100%;
+            text-align: center;
+            margin: 80px auto;
+            padding: 50px 20px;
+            display: block;
+        }
 
         .load-more-btn {
-            padding: 18px 70px;
+            display: inline-block;
+            padding: 16px 65px;
             background: transparent;
             border: 2px solid var(--primary-color);
             border-radius: 50px;
             color: var(--primary-color);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all 0.35s cubic-bezier(0.35, 0, 0.65, 1);
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
         }
 
         .load-more-btn:hover {
             background: var(--primary-color);
             color: #000;
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.35);
         }
 
         .load-more-btn:active {
-            transform: scale(0.98);
+            transform: translateY(-1px);
         }
 
         .load-more-btn.hidden {
-            display: none;
+            display: none !important;
         }
 
         .car-card-hidden {
@@ -853,12 +848,9 @@ border-radius:6px;
             </div>
 
             <!-- Load More Button -->
-    <div class="col-12 text-center">
-        <div class="load-more-wrapper">
-            <button class="load-more-btn" id="loadMoreBtn">Load More Vehicles</button>
-        </div>
-    </div>
-</div>
+            <div class="load-more-wrapper">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Vehicles</button>
+            </div>
         </div>
     </section>
 
