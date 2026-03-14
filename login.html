@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js " lang="zxx">
 
 <head>
@@ -48,6 +48,84 @@
 
     <!-- Mobile responsive overrides (load after main stylesheet) -->
     <link rel="stylesheet" href="assets/css/mobile-responsive.css">
+    <style>
+        /* Mobile Menu Background */
+        .th-menu-wrapper {
+            background: #000 !important;
+        }
+
+        /* Logo */
+        .mobile-logo {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .mobile-logo img {
+            max-width: 170px;
+        }
+
+        /* Remove bullets */
+        .th-mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Menu Item */
+        .th-mobile-menu ul li {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 18px 0;
+            position: relative;
+        }
+
+        /* Menu Links */
+        .th-mobile-menu ul li a {
+            color: #ffffff !important;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: block;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        /* GOLD HOVER TEXT */
+        .th-mobile-menu ul li a:hover {
+            color: #d4af37 !important;
+        }
+
+        /* Golden hover line animation */
+        .th-mobile-menu ul li::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0%;
+            height: 2px;
+            background: #d4af37;
+            transition: 0.35s ease;
+            transform: translateX(-50%);
+        }
+
+        .th-mobile-menu ul li:hover::after {
+            width: 60%;
+        }
+
+        /* Slight background hover */
+        .th-mobile-menu ul li:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* Close Button */
+        .th-menu-toggle {
+            background: #d4af37;
+            color: #000;
+            width: 45px;
+            height: 45px;
+            border-radius: 6px;
+        }
+    </style>
 
 </head>
 
@@ -90,7 +168,7 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="assets/img/apc high.png" alt="Apex Performance" style="max-width: 120px; height: auto;"></a>
+                <a href="index.html"><img src="assets/img/apc high.png" alt="Apex Performance" style="max-width: 170px; height: auto;"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -109,7 +187,7 @@
                     <li class="menu-item-has-children">
                         <a href="#">Inventory</a>
                         <ul class="sub-menu">
-                            <li><a href="cars.html">Inventory Grid</a></li>
+                            <li><a href="inventory-grid.html">Inventory Grid</a></li>
                             <li><a href="inventory-sold.html">Sold Inventory</a></li>
                             <li><a href="inventory-comparison.html">Inventory Comparison</a></li>
                         </ul>
@@ -209,7 +287,7 @@
                                     <li class="menu-item-has-children">
                                         <a href="#">Inventory</a>
                                         <ul class="sub-menu">
-                                            <li><a href="cars.html">Inventory Grid</a></li>
+                                            <li><a href="inventory-grid.html">Inventory Grid</a></li>
                                             <li><a href="inventory-sold.html">Sold Inventory</a></li>
                                             <li><a href="inventory-comparison.html">Inventory Comparison</a></li>
                                         </ul>
@@ -271,7 +349,7 @@
                 <button class="gold-btn w-100">Login</button>
 
                 <p class="switch-text">
-                    Donâ€™t have an account?
+                    Don’t have an account?
                     <span onclick="toggleAuth()">Register</span>
                 </p>
             </div>
@@ -322,7 +400,7 @@
                     <div class="col-lg-2">
                         <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Car Brands</h4>
                         <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 10px;"><a href="cars.html" style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
                                     <h6>Our Easy And simple payment methods with cards</h6>
                                 </div>
                                 <div class="card-thumb-card">
@@ -484,3 +562,5 @@
 </body>
 
 </html>
+
+

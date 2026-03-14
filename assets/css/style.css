@@ -4202,7 +4202,7 @@ html, body {
 
 /* Make default text readable on dark */
 body, p, .text-body, .font-body {
-  color: var(--body-color) !important;
+  color: #bdbdbd) !important;
 }
 
 /* Default headings color on dark */
@@ -32788,4 +32788,11 @@ model-viewer {
   .price-value {
     font-size: 12px;
   }
+}
+
+
+
+.footer-logo img{
+  margin-top: -50px;
+  margin-left: 20px;
 }
