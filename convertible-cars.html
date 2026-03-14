@@ -58,10 +58,6 @@
         .checkbox-item input[type="checkbox"]:checked + label { color: var(--primary-color); }
         .filter-reset-btn { width: 100%; padding: 10px; background: transparent; border: 2px solid rgba(212, 175, 55, 0.3); color: var(--primary-color); border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease; margin-top: 15px; }
         .filter-reset-btn:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--primary-color); }
-        .carousel-car-card { transition: all 0.5s cubic-bezier(0.35, 0, 0.65, 1); position: relative; overflow: hidden; }
-        .carousel-car-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%); opacity: 0; transition: opacity 0.6s ease; pointer-events: none; }
-        .car-image { transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1); }
-        .carousel-car-card:hover { transform: scale(1.03); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2), 0 0 20px rgba(212, 175, 55, 0.1); }
         .load-more-wrapper { text-align: center; margin: 120px 0 -30px 0; padding: 60px 20px 20px 20px; }
         .load-more-btn { padding: 18px 70px; background: transparent; border: 2px solid var(--primary-color); border-radius: 50px; color: var(--primary-color); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); }
         .load-more-btn:hover { background: var(--primary-color); color: #000; transform: scale(1.05); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4); }
@@ -308,12 +304,10 @@ border-radius:6px;
     </div>
     <section class="car-rental-section space">
         <div class="container-fluid">
-            <div class="row mb-5">
-                <div class="col-lg-12 text-center">
-                    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
-                    <h2 class="sec-title mb-3">Premium Convertible Cars in Dubai</h2>
-                    <p class="sec-text">Feel the wind in your hair with our exclusive convertible collection. Perfect for memorable coastline drives, these open-top luxury vehicles combine elegance with pure driving pleasure for unforgettable experiences.</p>
-                </div>
+            <div style="text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; max-width: 100%;">
+                <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
+                <h2 class="sec-title mb-3">Premium Convertible Cars in Dubai</h2>
+                <p class="sec-text">Feel the wind in your hair with our exclusive convertible collection. Perfect for memorable coastline drives, these open-top luxury vehicles combine elegance with pure driving pleasure for unforgettable experiences.</p>
             </div>
             <div class="row g-4">
                 <!-- 1. Ferrari Portofino -->
