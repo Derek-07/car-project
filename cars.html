@@ -51,9 +51,9 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
     <style>
-        #brandLogoSection{
-display:none !important;
-}
+        #brandLogoSection {
+            display: none !important;
+        }
 
         /* ======== MAP SECTION ======== */
         .map-section {
@@ -275,7 +275,7 @@ display:none !important;
             transition: color 0.3s;
         }
 
-        .checkbox-item input[type="checkbox"]:checked + label {
+        .checkbox-item input[type="checkbox"]:checked+label {
             color: var(--primary-color);
         }
 
@@ -394,6 +394,7 @@ display:none !important;
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -516,85 +517,84 @@ display:none !important;
             }
         }
     </style>
-      <style>
-    /* Mobile Menu Background */
-.th-menu-wrapper{
-background:#000 !important;
-}
+    <style>
+        /* Mobile Menu Background */
+        .th-menu-wrapper {
+            background: #000 !important;
+        }
 
-/* Logo */
-.mobile-logo{
-text-align:center;
-margin-bottom:35px;
-}
+        /* Logo */
+        .mobile-logo {
+            text-align: center;
+            margin-bottom: 35px;
+        }
 
-.mobile-logo img{
-max-width:170px;
-}
+        .mobile-logo img {
+            max-width: 170px;
+        }
 
-/* Remove bullets */
-.th-mobile-menu ul{
-list-style:none;
-padding:0;
-margin:0;
-}
+        /* Remove bullets */
+        .th-mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-/* Menu Item */
-.th-mobile-menu ul li{
-text-align:center;
-border-bottom:1px solid rgba(255,255,255,0.07);
-padding:18px 0;
-position:relative;
-}
+        /* Menu Item */
+        .th-mobile-menu ul li {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 18px 0;
+            position: relative;
+        }
 
-/* Menu Links */
-.th-mobile-menu ul li a{
-color:#ffffff !important;
-font-size:20px;
-font-weight:600;
-letter-spacing:0.5px;
-display:block;
-width:100%;
-transition:all 0.3s ease;
-}
+        /* Menu Links */
+        .th-mobile-menu ul li a {
+            color: #ffffff !important;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: block;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
 
-/* GOLD HOVER TEXT */
-.th-mobile-menu ul li a:hover{
-color:#d4af37 !important;
-}
+        /* GOLD HOVER TEXT */
+        .th-mobile-menu ul li a:hover {
+            color: #d4af37 !important;
+        }
 
-/* Golden hover line animation */
-.th-mobile-menu ul li::after{
-content:"";
-position:absolute;
-bottom:0;
-left:50%;
-width:0%;
-height:2px;
-background:#d4af37;
-transition:0.35s ease;
-transform:translateX(-50%);
-}
+        /* Golden hover line animation */
+        .th-mobile-menu ul li::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0%;
+            height: 2px;
+            background: #d4af37;
+            transition: 0.35s ease;
+            transform: translateX(-50%);
+        }
 
-.th-mobile-menu ul li:hover::after{
-width:60%;
-}
+        .th-mobile-menu ul li:hover::after {
+            width: 60%;
+        }
 
-/* Slight background hover */
-.th-mobile-menu ul li:hover{
-background:rgba(212,175,55,0.05);
-}
+        /* Slight background hover */
+        .th-mobile-menu ul li:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
 
-/* Close Button */
-.th-menu-toggle{
-background:#d4af37;
-color:#000;
-width:45px;
-height:45px;
-border-radius:6px;
-}
-
-</style>
+        /* Close Button */
+        .th-menu-toggle {
+            background: #d4af37;
+            color: #000;
+            width: 45px;
+            height: 45px;
+            border-radius: 6px;
+        }
+    </style>
 
 
 
@@ -683,41 +683,71 @@ border-radius:6px;
                                     <li class="menu-item-has-children">
                                         <a href="#">Car Types</a>
                                         <div class="sub-menu premium-dropdown dropdown-grid">
-                                            <a href="luxury-cars.html" class="grid-item"><img src="assets/img/type/01.webp" alt="Luxury Cars"><span>Luxury Cars</span></a>
-                                            <a href="convertible-cars.html" class="grid-item"><img src="assets/img/type/02.webp" alt="Convertible Cars"><span>Convertible Cars</span></a>
-                                            <a href="sports-cars.html" class="grid-item"><img src="assets/img/type/03.webp" alt="Sports Cars"><span>Sports Cars</span></a>
-                                            <a href="suv-cars.html" class="grid-item"><img src="assets/img/type/04.webp" alt="SUV Cars"><span>SUV Cars</span></a>
+                                            <a href="luxury-cars.html" class="grid-item"><img
+                                                    src="assets/img/type/01.webp" alt="Luxury Cars"><span>Luxury
+                                                    Cars</span></a>
+                                            <a href="convertible-cars.html" class="grid-item"><img
+                                                    src="assets/img/type/02.webp"
+                                                    alt="Convertible Cars"><span>Convertible Cars</span></a>
+                                            <a href="sports-cars.html" class="grid-item"><img
+                                                    src="assets/img/type/03.webp" alt="Sports Cars"><span>Sports
+                                                    Cars</span></a>
+                                            <a href="suv-cars.html" class="grid-item"><img src="assets/img/type/04.webp"
+                                                    alt="SUV Cars"><span>SUV Cars</span></a>
                                         </div>
                                     </li>
-                        <li class="menu-item-has-children">
-                            <a href="#">Car Brands</a>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Car Brands</a>
                                         <div class="sub-menu premium-dropdown dropdown-brands-grid">
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/austin-martin.webp" alt="Aston Martin"><span>Aston Martin</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/audi.webp" alt="Audi"><span>Audi</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bent.webp" alt="Bentley"><span>Bentley</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/rr.webp" alt="Rolls Royce"><span>Rolls Royce</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mac.webp" alt="Mclaren"><span>Mclaren</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/bmw.webp" alt="BMW"><span>BMW</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/land.webp" alt="Range Rover"><span>Range Rover</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mar.webp" alt="Mercedes"><span>Mercedes</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/cad.webp" alt="Cadillac"><span>Cadillac</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/far.webp" alt="Ferrari"><span>Ferrari</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/lambologo.webp" alt="Lamborghini"><span>Lamborghini</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/mas2.webp" alt="Maserati"><span>Maserati</span></a>
-                                            <a href="inventory-grid.html" class="brand-item"><img src="assets/img/brand/porsche.webp" alt="Porsche"><span>Porsche</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/austin-martin.webp"
+                                                    alt="Aston Martin"><span>Aston Martin</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/audi.webp" alt="Audi"><span>Audi</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/bent.webp"
+                                                    alt="Bentley"><span>Bentley</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/rr.webp" alt="Rolls Royce"><span>Rolls
+                                                    Royce</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/mac.webp"
+                                                    alt="Mclaren"><span>Mclaren</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/bmw.webp" alt="BMW"><span>BMW</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/land.webp" alt="Range Rover"><span>Range
+                                                    Rover</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/mar.webp"
+                                                    alt="Mercedes"><span>Mercedes</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/cad.webp"
+                                                    alt="Cadillac"><span>Cadillac</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/far.webp"
+                                                    alt="Ferrari"><span>Ferrari</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/lambologo.webp"
+                                                    alt="Lamborghini"><span>Lamborghini</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/mas2.webp"
+                                                    alt="Maserati"><span>Maserati</span></a>
+                                            <a href="inventory-grid.html" class="brand-item"><img
+                                                    src="assets/img/brand/porsche.webp"
+                                                    alt="Porsche"><span>Porsche</span></a>
+                                    </li>
+                                    <li><a href="our-fleet.html">Our Fleet</a></li>
+                                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="th-menu-toggle d-block d-lg-none"><i
+                                    class="far fa-bars"></i></button>
+                        </div>
 
-                        </li>
-                        <li><a href="our-fleet.html">Our Fleet</a></li>
-                        <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-                        </ul>
-                        </nav>
-                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i
-                                class="far fa-bars"></i></button>
                     </div>
-
                 </div>
             </div>
-        </div>
         </div>
 
 
@@ -736,10 +766,14 @@ border-radius:6px;
                         <li class="menu-item-has-children">
                             <a href="#">Car Types</a>
                             <ul class="th-submenu mobile-dropdown-grid">
-                                <li><a href="luxury-cars.html"><img src="assets/img/type/01.webp" alt="Luxury Cars"><span>Luxury Cars</span></a></li>
-                                <li><a href="convertible-cars.html"><img src="assets/img/type/02.webp" alt="Convertible Cars"><span>Convertible Cars</span></a></li>
-                                <li><a href="sports-cars.html"><img src="assets/img/type/03.webp" alt="Sports Cars"><span>Sports Cars</span></a></li>
-                                <li><a href="suv-cars.html"><img src="assets/img/type/04.webp" alt="SUV Cars"><span>SUV Cars</span></a></li>
+                                <li><a href="luxury-cars.html"><img src="assets/img/type/01.webp"
+                                            alt="Luxury Cars"><span>Luxury Cars</span></a></li>
+                                <li><a href="convertible-cars.html"><img src="assets/img/type/02.webp"
+                                            alt="Convertible Cars"><span>Convertible Cars</span></a></li>
+                                <li><a href="sports-cars.html"><img src="assets/img/type/03.webp"
+                                            alt="Sports Cars"><span>Sports Cars</span></a></li>
+                                <li><a href="suv-cars.html"><img src="assets/img/type/04.webp" alt="SUV Cars"><span>SUV
+                                            Cars</span></a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
@@ -778,7 +812,9 @@ border-radius:6px;
     <!--==============================
     Breadcrumb
     ==============================-->
-    <div class="breadcumb-wrapper" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.8) 100%), url('assets/cars/yellow.webp') center/cover no-repeat; padding: 140px 20px; position: relative; min-height: 500px;" id="breadcrumbSection">
+    <div class="breadcumb-wrapper"
+        style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.8) 100%), url('assets/cars/yellow.webp') center/cover no-repeat; padding: 140px 20px; position: relative; min-height: 500px;"
+        id="breadcrumbSection">
         <div class="container">
             <ul class="breadcumb-trail">
                 <li><a href="index.html">Home</a></li>
@@ -792,7 +828,9 @@ border-radius:6px;
     <div class="filter-box" id="filterBox">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <h3 style="margin: 0;">Filter Cars</h3>
-            <button id="filterCloseBtn" style="background: none; border: none; color: #d4af37; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;" title="Close filter">&times;</button>
+            <button id="filterCloseBtn"
+                style="background: none; border: none; color: #d4af37; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;"
+                title="Close filter">&times;</button>
         </div>
 
         <!-- Price Filter -->
@@ -859,16 +897,22 @@ border-radius:6px;
         <div class="container-fluid">
             <!-- Brand Logo -->
             <div class="brand-logo-section" id="brandLogoSection">
-                <h3 style="color: #d4af37; font-size: 18px; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;" id="brandNameDisplay">BMW</h3>
-                <img id="brandLogo" src="assets/img/brand/bmw.webp" alt="Brand Logo" style="max-height: 120px; max-width: 280px;">
-                <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 15px; font-style: italic;" id="brandTagline">Premium Performance Vehicles</p>
+                <h3 style="color: #d4af37; font-size: 18px; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;"
+                    id="brandNameDisplay">BMW</h3>
+                <img id="brandLogo" src="assets/img/brand/bmw.webp" alt="Brand Logo"
+                    style="max-height: 120px; max-width: 280px;">
+                <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 15px; font-style: italic;"
+                    id="brandTagline">Premium Performance Vehicles</p>
             </div>
 
             <div class="row mb-5">
                 <div class="col-lg-12 text-center">
-                    <button class="filter-toggle-btn" id="filterToggleBtn"><i class="fas fa-sliders-h"></i><span>Filters</span></button>
+                    <button class="filter-toggle-btn" id="filterToggleBtn"><i
+                            class="fas fa-sliders-h"></i><span>Filters</span></button>
                     <h2 class="sec-title mb-3" id="sectionTitle">Premium BMW Rental in Dubai</h2>
-                    <p class="sec-text" id="sectionDescription">Experience luxury and performance with our premium BMW rental service. Perfect for those seeking sophisticated design, cutting-edge technology, and unmatched driving dynamics.</p>
+                    <p class="sec-text" id="sectionDescription">Experience luxury and performance with our premium BMW
+                        rental service. Perfect for those seeking sophisticated design, cutting-edge technology, and
+                        unmatched driving dynamics.</p>
                 </div>
             </div>
             <div class="row g-4" id="carsContainer">
@@ -952,7 +996,7 @@ border-radius:6px;
         </div>
     </div>
 
-     <!--==============================
+    <!--==============================
 Testimonial Area - Google Reviews
 ==============================-->
     <section class="testi-card-area-1 space overflow-hidden" id="testi-sec">
@@ -961,7 +1005,8 @@ Testimonial Area - Google Reviews
                 <div class="col-xxl-8 col-xl-8">
                     <div class="title-area text-center">
                         <h2 class="sec-title">What Our Customers Are Saying</h2>
-                        <p>Real reviews from verified Google customers. See why Luxury Supercars Rental is trusted by thousands.</p>
+                        <p>Real reviews from verified Google customers. See why Luxury Supercars Rental is trusted by
+                            thousands.</p>
                     </div>
                 </div>
             </div>
@@ -972,10 +1017,12 @@ Testimonial Area - Google Reviews
                         <div class="swiper-wrapper">
                             <!-- Google Review Card 1 -->
                             <div class="swiper-slide">
-                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                <div class="google-review-card"
+                                    style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
                                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
                                         <span style="font-size: 18px; color: #4285f4;">G</span>
-                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google
+                                            Review</span>
                                         <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
                                     </div>
                                     <div style="display: flex; gap: 3px; margin-bottom: 12px;">
@@ -985,9 +1032,14 @@ Testimonial Area - Google Reviews
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                     </div>
-                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Amazing 10/10 service, hassle free and straightforward. Special thanks to Claire & Jay for making this the best experience. Truly professional team!</p>
+                                    <p
+                                        style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">
+                                        Amazing 10/10 service, hassle free and straightforward. Special thanks to Claire
+                                        & Jay for making this the best experience. Truly professional team!</p>
                                     <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
-                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Louis Kent</h4>
+                                        <h4
+                                            style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">
+                                            Louis Kent</h4>
                                         <p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p>
                                     </div>
                                 </div>
@@ -995,10 +1047,12 @@ Testimonial Area - Google Reviews
 
                             <!-- Google Review Card 2 -->
                             <div class="swiper-slide">
-                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                <div class="google-review-card"
+                                    style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
                                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
                                         <span style="font-size: 18px; color: #4285f4;">G</span>
-                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google
+                                            Review</span>
                                         <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
                                     </div>
                                     <div style="display: flex; gap: 3px; margin-bottom: 12px;">
@@ -1008,9 +1062,15 @@ Testimonial Area - Google Reviews
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                     </div>
-                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">I'm absolutely thrilled with my experience at Luxury Supercars Dubai! From the very first contact to the return of the vehicle, everything was smooth, professional, and hassle-free. Highly recommended!</p>
+                                    <p
+                                        style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">
+                                        I'm absolutely thrilled with my experience at Luxury Supercars Dubai! From the
+                                        very first contact to the return of the vehicle, everything was smooth,
+                                        professional, and hassle-free. Highly recommended!</p>
                                     <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
-                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Kaan</h4>
+                                        <h4
+                                            style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">
+                                            Kaan</h4>
                                         <p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p>
                                     </div>
                                 </div>
@@ -1018,10 +1078,12 @@ Testimonial Area - Google Reviews
 
                             <!-- Google Review Card 3 -->
                             <div class="swiper-slide">
-                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                <div class="google-review-card"
+                                    style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
                                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
                                         <span style="font-size: 18px; color: #4285f4;">G</span>
-                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google
+                                            Review</span>
                                         <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
                                     </div>
                                     <div style="display: flex; gap: 3px; margin-bottom: 12px;">
@@ -1031,9 +1093,15 @@ Testimonial Area - Google Reviews
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                     </div>
-                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Amazing customer service, making it flawless and hassle free to drive any car you want. They really go above and beyond for customers. This is the kind of service you deserve!</p>
+                                    <p
+                                        style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">
+                                        Amazing customer service, making it flawless and hassle free to drive any car
+                                        you want. They really go above and beyond for customers. This is the kind of
+                                        service you deserve!</p>
                                     <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
-                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Mihai Alexandru</h4>
+                                        <h4
+                                            style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">
+                                            Mihai Alexandru</h4>
                                         <p style="color: #9aa0a6; font-size: 13px; margin: 0;">9 months ago</p>
                                     </div>
                                 </div>
@@ -1041,10 +1109,12 @@ Testimonial Area - Google Reviews
 
                             <!-- Google Review Card 4 -->
                             <div class="swiper-slide">
-                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                <div class="google-review-card"
+                                    style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
                                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
                                         <span style="font-size: 18px; color: #4285f4;">G</span>
-                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google
+                                            Review</span>
                                         <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
                                     </div>
                                     <div style="display: flex; gap: 3px; margin-bottom: 12px;">
@@ -1054,9 +1124,14 @@ Testimonial Area - Google Reviews
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                     </div>
-                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Professional service with excellent vehicle selection. The team was responsive and accommodating to all my needs. Will definitely rent again!</p>
+                                    <p
+                                        style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">
+                                        Professional service with excellent vehicle selection. The team was responsive
+                                        and accommodating to all my needs. Will definitely rent again!</p>
                                     <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
-                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Sarah Johnson</h4>
+                                        <h4
+                                            style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">
+                                            Sarah Johnson</h4>
                                         <p style="color: #9aa0a6; font-size: 13px; margin: 0;">8 months ago</p>
                                     </div>
                                 </div>
@@ -1064,10 +1139,12 @@ Testimonial Area - Google Reviews
 
                             <!-- Google Review Card 5 -->
                             <div class="swiper-slide">
-                                <div class="google-review-card" style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                                <div class="google-review-card"
+                                    style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
                                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
                                         <span style="font-size: 18px; color: #4285f4;">G</span>
-                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google Review</span>
+                                        <span style="font-weight: 600; color: #202124; font-size: 14px;">Google
+                                            Review</span>
                                         <i class="fas fa-google" style="color: #4285f4; font-size: 16px;"></i>
                                     </div>
                                     <div style="display: flex; gap: 3px; margin-bottom: 12px;">
@@ -1077,9 +1154,14 @@ Testimonial Area - Google Reviews
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                         <i class="fas fa-star" style="color: #fbbc04; font-size: 16px;"></i>
                                     </div>
-                                    <p style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">Fantastic experience renting a luxury car. The vehicles are immaculate, staff is friendly and knowledgeable. Best car rental in Dubai!</p>
+                                    <p
+                                        style="color: #5f6368; font-size: 15px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">
+                                        Fantastic experience renting a luxury car. The vehicles are immaculate, staff is
+                                        friendly and knowledgeable. Best car rental in Dubai!</p>
                                     <div style="border-top: 1px solid #e8eaed; padding-top: 15px;">
-                                        <h4 style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">Ahmed Hassan</h4>
+                                        <h4
+                                            style="color: #202124; font-weight: 600; font-size: 14px; margin: 0 0 5px 0;">
+                                            Ahmed Hassan</h4>
                                         <p style="color: #9aa0a6; font-size: 13px; margin: 0;">7 months ago</p>
                                     </div>
                                 </div>
@@ -1096,7 +1178,9 @@ Testimonial Area - Google Reviews
             <!-- View All Reviews Button -->
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="https://www.google.com/search?q=Luxury+Supercars+Rental+Dubai" target="_blank" class="th-btn" style="background: #4285f4; color: #ffffff; padding: 12px 35px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;">
+                    <a href="https://www.google.com/search?q=Luxury+Supercars+Rental+Dubai" target="_blank"
+                        class="th-btn"
+                        style="background: #4285f4; color: #ffffff; padding: 12px 35px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;">
                         <i class="fab fa-google" style="margin-right: 8px;"></i> View All Google Reviews
                     </a>
                 </div>
@@ -1107,7 +1191,8 @@ Testimonial Area - Google Reviews
     <!--==============================
     Contact Section
     ==============================-->
-    <section class="contact-section space" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/bgofcc.webp') center/cover no-repeat;">
+    <section class="contact-section space"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/bgofcc.webp') center/cover no-repeat;">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-5">
@@ -1153,19 +1238,23 @@ Testimonial Area - Google Reviews
                         <form action="mail.php" method="POST" class="contact-form">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Full Name"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" placeholder="E-mail Address" required>
+                                    <input type="email" name="email" class="form-control" placeholder="E-mail Address"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
                                     <input type="text" name="car" class="form-control" placeholder="Car Model" required>
                                 </div>
                                 <div class="col-12">
-                                    <textarea name="message" rows="4" class="form-control" placeholder="Message" required></textarea>
+                                    <textarea name="message" rows="4" class="form-control" placeholder="Message"
+                                        required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="submit-btn">Send Inquiry</button>
@@ -1177,187 +1266,189 @@ Testimonial Area - Google Reviews
             </div>
         </div>
     </section>
-                <!-- ======== MAP ======== -->
+    <!-- ======== MAP ======== -->
     <div class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.6743839261647!2d55.36201767621622!3d25.218395872042587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d8c8c8c8c8d%3A0x1234567890!2sLuxury%20Supercars%20Rental!5e0!3m2!1sen!2sae!4v1234567890"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.6743839261647!2d55.36201767621622!3d25.218395872042587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d8c8c8c8c8d%3A0x1234567890!2sLuxury%20Supercars%20Rental!5e0!3m2!1sen!2sae!4v1234567890"></iframe>
     </div>
 
-<!--==============================
+    <!--==============================
             Footer Area
 ==============================-->
-        <footer class="footer-wrapper premium-footer"
-            style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
-            <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
-                <div class="container-fluid">
-                    <div class="row gy-5 align-items-start">
-                        <!-- Left Column - Logo & Description -->
-                        <div class="col-lg-3">
-                            <div class="footer-brand">
+    <footer class="footer-wrapper premium-footer"
+        style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
+        <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-start">
+                    <!-- Left Column - Logo & Description -->
+                    <div class="col-lg-3">
+                        <div class="footer-brand">
 
-                                <div class="footer-logo">
-                                    <a href="index.html">
-                                        <img src="assets/img/apc high.png" alt="Apex Logo">
-                                    </a>
-                                </div>
-
-                                <p class="footer-desc" style="color: #e4dcdc !important; margin: 0; font-size: 14px; line-height: 1.7; max-width: 280px;">
-                                    If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com
-                                    is a one-stop destination for all. You can avail the widest range of the most exotic
-                                    luxury cars, including everything from the latest Sports Cars, Convertible Cars,
-                                    SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a
-                                    fascinating experience.
-                                </p>
-
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="assets/img/apc high.png" alt="Apex Logo">
+                                </a>
                             </div>
+
+                            <p class="footer-desc"
+                                style="color: #e4dcdc !important; margin: 0; font-size: 14px; line-height: 1.7; max-width: 280px;">
+                                If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com
+                                is a one-stop destination for all. You can avail the widest range of the most exotic
+                                luxury cars, including everything from the latest Sports Cars, Convertible Cars,
+                                SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a
+                                fascinating experience.
+                            </p>
+
                         </div>
+                    </div>
 
-                        <!-- Car Brands Column -->
-                        <div class="col-lg-2">
-                            <h4 class="footer-title"
-                                style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
-                                Car Brands</h4>
-                            <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
-                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
-                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
-                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
-                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
-                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
-                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
-                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
-                                <li><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
-                            </ul>
-                        </div>
+                    <!-- Car Brands Column -->
+                    <div class="col-lg-2">
+                        <h4 class="footer-title"
+                            style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
+                            Car Brands</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                    style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
+                            <li><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Porsche</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                        <!-- Useful Links Column -->
-                        <div class="col-lg-2">
-                            <h4 class="footer-title"
-                                style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
-                                Useful Links</h4>
-                            <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
-                                <li style="margin-bottom: 10px;"><a href="index.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Home</a></li>
-                                <li style="margin-bottom: 10px;"><a href="about.html"
-                                        style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
-                                <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
-                                <li style="margin-bottom: 10px;"><a href="service.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Services</a></li>
-                                <li style="margin-bottom: 10px;"><a href="blog.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
-                                <li style="margin-bottom: 10px;"><a href="team.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
-                                <li style="margin-bottom: 10px;"><a href="faq.html"
-                                        style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
-                                <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a>
-                                </li>
+                    <!-- Useful Links Column -->
+                    <div class="col-lg-2">
+                        <h4 class="footer-title"
+                            style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
+                            Useful Links</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="index.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Home</a></li>
+                            <li style="margin-bottom: 10px;"><a href="about.html"
+                                    style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
+                            <li style="margin-bottom: 10px;"><a href="service.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Services</a></li>
+                            <li style="margin-bottom: 10px;"><a href="blog.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
+                            <li style="margin-bottom: 10px;"><a href="team.html"
+                                    style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
+                            <li style="margin-bottom: 10px;"><a href="faq.html"
+                                    style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
+                            <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a>
+                            </li>
 
-                            </ul>
-                        </div>
+                        </ul>
+                    </div>
 
-                        <!-- Contact Us Column -->
-                        <div class="col-lg-3">
-                            <h4 class="footer-title"
-                                style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
-                                Contact Us</h4>
-                            <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
-                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
-                                    <i class="fas fa-phone"
-                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
-                                    <div style="display: flex; flex-direction: column; gap: 5px;">
-                                        <a href="tel:+971544923609"
-                                            style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492
-                                            3609</a>
-                                    </div>
+                    <!-- Contact Us Column -->
+                    <div class="col-lg-3">
+                        <h4 class="footer-title"
+                            style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
+                            Contact Us</h4>
+                        <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-phone" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <a href="tel:+971544923609"
+                                        style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492
+                                        3609</a>
                                 </div>
-                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
-                                    <i class="fab fa-whatsapp"
-                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
-                                    <a href="https://wa.me/971544923609"
-                                        style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
-                                </div>
-                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
-                                    <i class="fas fa-envelope"
-                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
-                                    <a href="mailto:info.apexperformancecarrental@gmail.com"
-                                        style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info.apexperformancecarrental@gmail.com</a>
-                                </div>
-                                <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
-                                    <i class="fas fa-map-marker-alt"
-                                        style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
-                                    <p style="margin: 0; color: #e4dcdc !important; font-size: 14px;">ONTARIO TOWER C 1801,
-                                        BUSINESS BAY, DUBAI, UAE</p>
-                                </div>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fab fa-whatsapp"
+                                    style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <a href="https://wa.me/971544923609"
+                                    style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-envelope"
+                                    style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com"
+                                    style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info.apexperformancecarrental@gmail.com</a>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-map-marker-alt"
+                                    style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <p style="margin: 0; color: #e4dcdc !important; font-size: 14px;">ONTARIO TOWER C 1801,
+                                    BUSINESS BAY, DUBAI, UAE</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Footer Bottom -->
-            <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
-                <div class="container-fluid">
-                    <div class="row gy-3 align-items-center">
-                        <!-- 24/7 Service -->
-                        <div class="col-lg-6">
-                            <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
-                                <img src="assets/img/type/24x7 foot.webp" alt="24/7 Service"
-                                    style="height: 80px; width: auto;">
-                            </div>
-                        </div>
-
-                        <!-- Payment Methods on Right -->
-                        <div class="col-lg-6 text-end">
-                            <!-- Payment Image -->
-                            <div class="payment-methods"
-                                style="display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; padding: 0; margin: 0;">
-                                <img src="assets/img/type/payment.png" alt="PayPal" style="height: 50px; margin: 0;">
-                            </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
+            <div class="container-fluid">
+                <div class="row gy-3 align-items-center">
+                    <!-- 24/7 Service -->
+                    <div class="col-lg-6">
+                        <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
+                            <img src="assets/img/type/24x7 foot.webp" alt="24/7 Service"
+                                style="height: 80px; width: auto;">
                         </div>
                     </div>
 
-                    <!-- Copyright Section -->
-                    <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px;">
-                        <div
-                            style="display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <!-- Links on Left -->
-                            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                                <a href="booking-terms.html"
-                                    style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
-                                <span style="color: #d4af37;">|</span>
-                                <a href="privacy-policy.html"
-                                    style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Privacy Policy</a>
-                            </div>
-
-                            <!-- Social Icons on Right -->
-                            <div class="footer-social"
-                                style="display: flex; align-items: center; justify-content: flex-end; gap: 15px;">
-                                <a href="https://www.facebook.com/" target="_blank"
-                                    style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com/apexcarsdubai/" target="_blank"
-                                    style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
-                                        class="fab fa-instagram"></i></a>
-                                <a href="https://www.youtube.com/" target="_blank"
-                                    style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
-                                        class="fab fa-youtube"></i></a>
-                                <a href="https://www.tiktok.com/" target="_blank"
-                                    style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
-                                        class="fab fa-tiktok"></i></a>
-                            </div>
+                    <!-- Payment Methods on Right -->
+                    <div class="col-lg-6 text-end">
+                        <!-- Payment Image -->
+                        <div class="payment-methods"
+                            style="display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; padding: 0; margin: 0;">
+                            <img src="assets/img/type/payment.png" alt="PayPal" style="height: 50px; margin: 0;">
                         </div>
-                        <p style="margin: 0; color: #bdbdbd; font-size: 13px; text-align: center;"> 2026 apex performance car rental. All rights reserved.</p>
                     </div>
                 </div>
+
+                <!-- Copyright Section -->
+                <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px;">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <!-- Links on Left -->
+                        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                            <a href="booking-terms.html"
+                                style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
+                            <span style="color: #d4af37;">|</span>
+                            <a href="privacy-policy.html"
+                                style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Privacy Policy</a>
+                        </div>
+
+                        <!-- Social Icons on Right -->
+                        <div class="footer-social"
+                            style="display: flex; align-items: center; justify-content: flex-end; gap: 15px;">
+                            <a href="https://www.facebook.com/" target="_blank"
+                                style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/apexcarsdubai/" target="_blank"
+                                style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank"
+                                style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/" target="_blank"
+                                style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i
+                                    class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <p style="margin: 0; color: #bdbdbd; font-size: 13px; text-align: center;"> 2026 apex performance
+                        car rental. All rights reserved.</p>
+                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     <!--================================
 			Code End  Here 
@@ -1728,11 +1819,11 @@ Testimonial Area - Google Reviews
 
             // Update brand name display
             document.getElementById('brandNameDisplay').textContent = data.title.toUpperCase();
-            
+
             // Update brand logo with fallback
             const brandLogoImg = document.getElementById('brandLogo');
             brandLogoImg.src = data.logo;
-            brandLogoImg.onerror = function() {
+            brandLogoImg.onerror = function () {
                 this.src = 'assets/img/brand/bmw.webp'; // Fallback
             };
 
@@ -1753,14 +1844,14 @@ Testimonial Area - Google Reviews
                 console.error('Container not found');
                 return;
             }
-            
+
             container.innerHTML = '';
 
             cars.forEach((car, index) => {
                 const isHidden = index >= 8;
                 const hiddenClass = isHidden ? 'car-card-hidden' : '';
                 const brandName = getBrandFromURL().charAt(0).toUpperCase() + getBrandFromURL().slice(1).replace('-', ' ');
-                
+
                 const carHTML = `
                     <div class="col-lg-3 col-md-6 col-sm-12 ${hiddenClass}">
                         <div class="carousel-car-card">
@@ -1790,7 +1881,7 @@ Testimonial Area - Google Reviews
                         </div>
                     </div>
                 `;
-                
+
                 container.innerHTML += carHTML;
             });
 
@@ -1815,10 +1906,10 @@ Testimonial Area - Google Reviews
             // Remove previous listeners
             loadMoreBtn.onclick = null;
 
-            loadMoreBtn.addEventListener('click', function(e) {
+            loadMoreBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 let revealed = 0;
-                
+
                 for (let i = 0; i < hiddenCards.length && revealed < cardsToShow; i++) {
                     const card = hiddenCards[i];
                     if (!card.classList.contains('revealed')) {
@@ -1827,11 +1918,11 @@ Testimonial Area - Google Reviews
                         currentShown++;
                     }
                 }
-                
+
                 if (currentShown >= hiddenCards.length + 8) {
                     loadMoreBtn.classList.add('hidden');
                 }
-                
+
                 setTimeout(() => {
                     const visibleCards = document.querySelectorAll('.carousel-car-card:not(.car-card-hidden), .carousel-car-card.car-card-hidden.revealed');
                     if (visibleCards.length > 0) {
@@ -1839,7 +1930,7 @@ Testimonial Area - Google Reviews
                     }
                 }, 100);
             });
-            
+
             if (hiddenCards.length === 0) {
                 loadMoreBtn.classList.add('hidden');
             }
@@ -1851,10 +1942,10 @@ Testimonial Area - Google Reviews
             const filterBox = document.getElementById('filterBox');
             const filterCloseBtn = document.getElementById('filterCloseBtn');
 
-            filterToggleBtn.addEventListener('click', function() {
+            filterToggleBtn.addEventListener('click', function () {
                 filterBox.classList.toggle('active');
             });
-            
+
             if (filterCloseBtn) {
                 filterCloseBtn.addEventListener('click', function (e) {
                     e.stopPropagation();
@@ -1862,13 +1953,13 @@ Testimonial Area - Google Reviews
                 });
             }
 
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 if (!filterBox.contains(e.target) && !filterToggleBtn.contains(e.target)) {
                     filterBox.classList.remove('active');
                 }
             });
-            
-            document.addEventListener('keydown', function(event) {
+
+            document.addEventListener('keydown', function (event) {
                 if (event.key === 'Escape' && filterBox.classList.contains('active')) {
                     filterBox.classList.remove('active');
                 }
@@ -1881,11 +1972,11 @@ Testimonial Area - Google Reviews
             function updatePriceDisplay() {
                 const min = parseInt(priceMin.value);
                 const max = parseInt(priceMax.value);
-                
+
                 if (max < min) {
                     priceMin.value = max;
                 }
-                
+
                 priceDisplay.textContent = `AED ${min.toLocaleString()} - AED ${max.toLocaleString()}`;
                 applyFilters();
             }
@@ -1896,11 +1987,11 @@ Testimonial Area - Google Reviews
             function applyFilters() {
                 const minPrice = parseInt(priceMin.value);
                 const maxPrice = parseInt(priceMax.value);
-                
+
                 const selectedSeats = Array.from(document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked'))
                     .filter(cb => cb.id.startsWith('seats'))
                     .map(cb => parseInt(cb.value));
-                    
+
                 const selectedColors = Array.from(document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked'))
                     .filter(cb => cb.id.startsWith('color'))
                     .map(cb => cb.value);
@@ -1911,7 +2002,7 @@ Testimonial Area - Google Reviews
                 cars.forEach(car => {
                     const priceText = car.querySelector('.price-value').textContent;
                     const price = parseInt(priceText.replace(/[^0-9]/g, ''));
-                    
+
                     let show = price >= minPrice && price <= maxPrice;
 
                     if (selectedSeats.length > 0 || selectedColors.length > 0) {
@@ -1924,7 +2015,7 @@ Testimonial Area - Google Reviews
 
                 const carsGrid = document.getElementById('carsContainer');
                 let noResultsMsg = document.querySelector('.no-results-msg');
-                
+
                 if (visibleCount === 0 && !noResultsMsg) {
                     noResultsMsg = document.createElement('div');
                     noResultsMsg.className = 'no-results-msg';
@@ -1940,22 +2031,22 @@ Testimonial Area - Google Reviews
                 checkbox.addEventListener('change', applyFilters);
             });
 
-            document.getElementById('filterResetBtn').addEventListener('click', function() {
+            document.getElementById('filterResetBtn').addEventListener('click', function () {
                 priceMin.value = 5000;
                 priceMax.value = 25000;
                 updatePriceDisplay();
-                
+
                 document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
                     checkbox.checked = false;
                 });
-                
+
                 applyFilters();
             });
         }
 
         // ============ INITIALIZE ON PAGE LOAD ============
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
                 window.scrollTo(0, 0);
                 const brand = getBrandFromURL();
                 updatePageContent(brand);
@@ -1964,7 +2055,7 @@ Testimonial Area - Google Reviews
         });
 
         // Update on URL change (for back button)
-        window.addEventListener('popstate', function() {
+        window.addEventListener('popstate', function () {
             window.scrollTo(0, 0);
             const brand = getBrandFromURL();
             updatePageContent(brand);
@@ -1978,10 +2069,10 @@ Testimonial Area - Google Reviews
         const navbar = document.querySelector('.th-header');
         const scrollThreshold = 50;
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             if (!navbar) return;
             let currentScroll = window.scrollY || document.documentElement.scrollTop;
-            
+
             if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
                 navbar.classList.add('header-hidden');
                 navbar.classList.remove('header-visible');
@@ -1993,13 +2084,13 @@ Testimonial Area - Google Reviews
         }, false);
 
         // Mobile Menu Handler
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const menuToggles = document.querySelectorAll('.th-menu-toggle');
             const mobileMenu = document.querySelector('.th-menu-wrapper');
-            
+
             if (menuToggles.length > 0 && mobileMenu) {
                 menuToggles.forEach(toggle => {
-                    toggle.addEventListener('click', function(e) {
+                    toggle.addEventListener('click', function (e) {
                         e.preventDefault();
                         mobileMenu.classList.toggle('active');
                     });
@@ -2007,7 +2098,7 @@ Testimonial Area - Google Reviews
 
                 const submenuOpeners = mobileMenu.querySelectorAll('.menu-item-has-children > a');
                 submenuOpeners.forEach(opener => {
-                    opener.addEventListener('click', function(e) {
+                    opener.addEventListener('click', function (e) {
                         e.preventDefault();
                         const parent = this.parentElement;
                         const submenu = parent.querySelector('.sub-menu');
@@ -2021,12 +2112,12 @@ Testimonial Area - Google Reviews
 
                 const regularLinks = mobileMenu.querySelectorAll('a:not(.menu-item-has-children > a)');
                 regularLinks.forEach(link => {
-                    link.addEventListener('click', function() {
+                    link.addEventListener('click', function () {
                         mobileMenu.classList.remove('active');
                     });
                 });
 
-                document.addEventListener('click', function(e) {
+                document.addEventListener('click', function (e) {
                     let isToggle = false;
                     menuToggles.forEach(toggle => {
                         if (toggle.contains(e.target)) isToggle = true;
@@ -2049,11 +2140,3 @@ Testimonial Area - Google Reviews
 
 
 </html>
-
-
-
-
-
-
-
-
