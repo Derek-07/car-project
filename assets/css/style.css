@@ -27040,6 +27040,334 @@ input {
 }
 /*# sourceMappingURL=style.css.map */
 
+/* =========================================================
+   Shared responsive hardening for all public pages
+   ========================================================= */
+
+:root {
+  --apex-fluid-gap: clamp(14px, 2.2vw, 28px);
+  --apex-fluid-section: clamp(56px, 7vw, 120px);
+  --apex-fluid-title: clamp(2rem, 6vw, 5.5rem);
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  text-wrap: pretty;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+iframe {
+  display: block;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  width: 100%;
+}
+
+.row {
+  --bs-gutter-x: clamp(1rem, 2vw, 1.5rem);
+}
+
+.space,
+.space-top {
+  padding-top: var(--apex-fluid-section) !important;
+}
+
+.space,
+.space-bottom {
+  padding-bottom: var(--apex-fluid-section) !important;
+}
+
+.breadcumb-wrapper {
+  min-height: clamp(220px, 42vw, 500px) !important;
+  padding: clamp(72px, 12vw, 140px) 16px !important;
+}
+
+.breadcumb-title {
+  font-size: var(--apex-fluid-title) !important;
+  line-height: 1.05;
+  letter-spacing: clamp(0.5px, 0.5vw, 3px) !important;
+  word-break: break-word;
+}
+
+.breadcumb-trail {
+  gap: 8px 12px !important;
+}
+
+.breadcumb-trail li {
+  font-size: clamp(12px, 1.8vw, 14px);
+}
+
+.map-section {
+  height: clamp(280px, 50vw, 500px) !important;
+  margin: clamp(24px, 5vw, 60px) clamp(12px, 3vw, 20px) !important;
+}
+
+.premium-footer {
+  margin: clamp(20px, 4vw, 40px) clamp(12px, 3vw, 20px) !important;
+}
+
+.feature-list-1,
+.luxury-car-card,
+.category-card,
+.carousel-car-card,
+.blog-card,
+.contact-feature,
+.service-card {
+  height: 100%;
+}
+
+.feature-list-1,
+.luxury-car-card,
+.category-card {
+  overflow: hidden;
+}
+
+.feature-list-1 .box-img img,
+.feature-list-1 .box-icon img,
+.luxury-car-card .car-image img,
+.category-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.th-btn,
+.btn,
+button[type=submit] {
+  white-space: normal;
+}
+
+.filter-box {
+  width: min(320px, calc(100vw - 20px)) !important;
+}
+
+.inventory-top-filer-wrap,
+.inventory-top-filter-wrap,
+.filter-search,
+.search-form,
+.contact-form,
+.comment-form {
+  max-width: 100%;
+}
+
+.widget-area,
+.footer-top,
+.copyright-wrap {
+  padding-left: clamp(12px, 2vw, 20px) !important;
+  padding-right: clamp(12px, 2vw, 20px) !important;
+}
+
+@media (min-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .th-header .menu-area,
+  .th-header .sticky-wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .th-header .header-logo img,
+  .header-logo img {
+    max-width: 132px;
+  }
+
+  .header-button {
+    gap: 10px;
+  }
+
+  .main-menu .premium-dropdown.dropdown-brands-grid {
+    width: min(100%, 520px) !important;
+    min-width: 0 !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 20px !important;
+  }
+
+  .feature-list-1 .car-content,
+  .luxury-car-card {
+    padding: 14px;
+  }
+
+  .inventory-sidebar,
+  .widget-area .widget,
+  .footer-wrapper .widget {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  p,
+  li,
+  span,
+  label,
+  input,
+  select,
+  textarea {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  h1,
+  .h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  h2,
+  .h2 {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
+  }
+
+  h3,
+  .h3 {
+    font-size: clamp(1.35rem, 5.8vw, 1.9rem);
+  }
+
+  .breadcumb-title {
+    font-size: clamp(1.7rem, 8vw, 2.6rem) !important;
+  }
+
+  .filter-toggle-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal !important;
+  }
+
+  .filter-box {
+    top: auto !important;
+    bottom: 0;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: min(72vh, 560px) !important;
+    border-radius: 18px 18px 0 0 !important;
+    padding: 18px !important;
+  }
+
+  .filter-box.active {
+    transform: translateY(0) !important;
+  }
+
+  .filter-box:not(.active) {
+    transform: translateY(105%) !important;
+  }
+
+  .map-section {
+    border-radius: 16px;
+  }
+
+  .premium-footer {
+    border-width: 2px !important;
+    border-radius: 16px !important;
+  }
+
+  .premium-footer .widget-area .row > [class*=col-],
+  .footer-wrapper .row > [class*=col-] {
+    margin-bottom: 20px;
+  }
+
+  .footer-wrapper .copyright-wrap .row {
+    row-gap: 12px;
+  }
+
+  .feature-list-1,
+  .luxury-car-card,
+  .category-card,
+  .carousel-car-card {
+    border-radius: 16px;
+  }
+
+  .feature-list-1 .box-title a,
+  .luxury-car-card .car-title,
+  .blog-title {
+    white-space: normal !important;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .browse-by-type .category-card {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .browse-by-type .category-img {
+    min-height: 96px !important;
+    width: min(130px, 35vw) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .browse-by-type .category-img img,
+  .browse-by-type .category-img model-viewer {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .car-rental-section .row.g-4,
+  .browse-by-type .row.g-4 {
+    row-gap: 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container,
+  .container-fluid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .feature-list-1 {
+    margin: 0;
+  }
+
+  .feature-list-1 .box-icon {
+    height: auto;
+    min-height: 160px;
+  }
+
+  .feature-list-1 .box-icon img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .premium-footer {
+    margin: 20px 12px !important;
+  }
+}
+
 
 
 
@@ -33272,5 +33600,129 @@ model-viewer {
 
   .carousel-car-card:hover .price-value {
     font-size: 28px;
+  }
+}
+
+/* Final responsive overrides */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.breadcumb-wrapper {
+  min-height: clamp(220px, 42vw, 500px) !important;
+  padding: clamp(72px, 12vw, 140px) 16px !important;
+}
+
+.breadcumb-title {
+  font-size: clamp(2rem, 6vw, 5.5rem) !important;
+  line-height: 1.05;
+  letter-spacing: clamp(0.5px, 0.5vw, 3px) !important;
+  word-break: break-word;
+}
+
+.map-section {
+  height: clamp(280px, 50vw, 500px) !important;
+  margin: clamp(24px, 5vw, 60px) clamp(12px, 3vw, 20px) !important;
+}
+
+.premium-footer {
+  margin: clamp(20px, 4vw, 40px) clamp(12px, 3vw, 20px) !important;
+}
+
+.filter-box {
+  width: min(320px, calc(100vw - 20px)) !important;
+}
+
+@media (min-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .main-menu .premium-dropdown.dropdown-brands-grid {
+    width: min(100%, 520px) !important;
+    min-width: 0 !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .breadcumb-title {
+    font-size: clamp(1.7rem, 8vw, 2.6rem) !important;
+  }
+
+  .filter-toggle-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal !important;
+  }
+
+  .filter-box {
+    top: auto !important;
+    bottom: 0;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: min(72vh, 560px) !important;
+    border-radius: 18px 18px 0 0 !important;
+    padding: 18px !important;
+  }
+
+  .filter-box.active {
+    transform: translateY(0) !important;
+  }
+
+  .filter-box:not(.active) {
+    transform: translateY(105%) !important;
+  }
+
+  .premium-footer {
+    border-width: 2px !important;
+    border-radius: 16px !important;
+  }
+
+  .feature-list-1 .box-title a,
+  .luxury-car-card .car-title,
+  .blog-title {
+    white-space: normal !important;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .browse-by-type .category-img {
+    min-height: 96px !important;
+    width: min(130px, 35vw) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .browse-by-type .category-img img,
+  .browse-by-type .category-img model-viewer {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container,
+  .container-fluid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .premium-footer {
+    margin: 20px 12px !important;
   }
 }
