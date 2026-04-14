@@ -47,6 +47,32 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+        html.lenis,
+        html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis-enhanced {
+            overscroll-behavior-y: none;
+        }
+
+        .th-header {
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+        }
+
+        #fluid,
+        model-viewer {
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+        }
+    </style>
+    <style>
 
 
 
@@ -2768,9 +2794,11 @@ Feedback Section / Contact Section
         <script src="assets/js/jquery-ui.min.js"></script>
         <!-- nice select -->
         <script src="assets/js/nice-select.min.js"></script>
+        <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
 
         <!-- Main Js File -->
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/smooth-scroll.js"></script>
 
         <!-- Car Card Linker - Wraps cards with dynamic links -->
         <script src="assets/js/car-card-linker.js"></script>
@@ -2902,38 +2930,6 @@ Feedback Section / Contact Section
 
         <!-- Navbar Scroll Hide Script -->
         <script>
-            // Premium Navbar Hide on Scroll Down with Smooth Effect
-            let lastScrollTop = 0;
-            const navbar = document.querySelector('.th-header');
-            const scrollThreshold = 50;
-            let scrollDirection = 'up';
-
-            window.addEventListener('scroll', function () {
-                if (!navbar) return;
-
-                let currentScroll = window.scrollY || document.documentElement.scrollTop;
-
-                // Determine scroll direction
-                if (currentScroll > lastScrollTop) {
-                    scrollDirection = 'down';
-                } else {
-                    scrollDirection = 'up';
-                }
-
-                // Hide navbar when scrolling down more than threshold
-                if (scrollDirection === 'down' && currentScroll > scrollThreshold) {
-                    navbar.classList.add('header-hidden');
-                    navbar.classList.remove('header-visible');
-                }
-                // Show navbar when scrolling up or at top
-                else if (scrollDirection === 'up' || currentScroll <= scrollThreshold) {
-                    navbar.classList.remove('header-hidden');
-                    navbar.classList.add('header-visible');
-                }
-
-                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-            }, false);
-
             // Mobile Menu Toggle Handler
             document.addEventListener('DOMContentLoaded', function () {
                 const menuToggles = document.querySelectorAll('.th-menu-toggle');

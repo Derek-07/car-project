@@ -42,6 +42,11 @@ let colorUpdateTimer = 0.0;
 let isWebGLActive = false;
 let ctx2D = null;
 let particleSystem = null;
+let fluidLoopCleanup = null;
+let fluidVisibilityObserver = null;
+let canRenderFluid = true;
+let fluidInViewport = true;
+const MAX_RENDER_PIXEL_RATIO = 1.5;
 
 // Canvas 2D Fallback Animation (when WebGL not available)
 class ParticleSystem {
@@ -58,10 +63,13 @@ class ParticleSystem {
       "rgba(255, 200, 100, ",
       "rgba(255, 100, 200, "
     ];
+    this.frameId = 0;
+    this.isRunning = false;
+    this.externalCleanup = null;
     
     this.initializeParticles();
     this.setupEventListeners();
-    this.animate();
+    this.start();
   }
 
   initializeParticles() {
@@ -160,14 +168,48 @@ class ParticleSystem {
   }
 
   animate() {
+    if (!this.isRunning || !canRenderFluid) {
+      return;
+    }
+
     this.update();
     this.draw();
-    requestAnimationFrame(() => this.animate());
+
+    if (!this.externalCleanup) {
+      this.frameId = requestAnimationFrame(() => this.animate());
+    }
   }
 
   resize() {
     this.canvas.width = this.canvas.clientWidth;
     this.canvas.height = this.canvas.clientHeight;
+  }
+
+  start() {
+    if (this.isRunning) {
+      return;
+    }
+
+    this.isRunning = true;
+    const sharedTicker = window.__APEX_SCROLL_ENGINE__;
+    if (sharedTicker && typeof sharedTicker.addRafTask === "function") {
+      this.externalCleanup = sharedTicker.addRafTask(() => this.animate());
+      return;
+    }
+
+    this.animate();
+  }
+
+  stop() {
+    this.isRunning = false;
+    if (this.frameId) {
+      cancelAnimationFrame(this.frameId);
+      this.frameId = 0;
+    }
+    if (this.externalCleanup) {
+      this.externalCleanup();
+      this.externalCleanup = null;
+    }
   }
 }
 
@@ -828,7 +870,8 @@ function getResolution(resolution) {
 }
 
 function scaleByPixelRatio(input) {
-  const pixelRatio = window.devicePixelRatio || 1;
+  // Clamp DPR so mid-range devices avoid oversized WebGL framebuffers.
+  const pixelRatio = Math.min(window.devicePixelRatio || 1, MAX_RENDER_PIXEL_RATIO);
   return Math.floor(input * pixelRatio);
 }
 
@@ -959,8 +1002,8 @@ function wrap(value, min, max) {
 
 // Simulation functions
 function updateFrame() {
-  if (!isWebGLActive || !gl) {
-    return; // Skip if using 2D fallback
+  if (!isWebGLActive || !gl || !canRenderFluid) {
+    return; // Skip if using 2D fallback or the canvas is currently paused
   }
   
   try {
@@ -974,7 +1017,6 @@ function updateFrame() {
     // Silently catch errors and continue animation loop
     console.debug("Animation frame error (non-critical):", error.message);
   }
-  requestAnimationFrame(updateFrame);
 }
 
 function calcDeltaTime() {
@@ -1309,7 +1351,7 @@ function setupEventListeners() {
     const posY = scaleByPixelRatio(e.clientY);
     updatePointerDownData(pointer, -1, posX, posY);
     clickSplat(pointer);
-  });
+  }, { passive: true });
 
   window.addEventListener("mousemove", (e) => {
     const pointer = pointers[0];
@@ -1317,7 +1359,7 @@ function setupEventListeners() {
     const posY = scaleByPixelRatio(e.clientY);
     const color = pointer.color;
     updatePointerMoveData(pointer, posX, posY, color);
-  });
+  }, { passive: true });
 
   window.addEventListener(
     "touchstart",
@@ -1330,7 +1372,7 @@ function setupEventListeners() {
         updatePointerDownData(pointer, touches[i].identifier, posX, posY);
       }
     },
-    false
+    { passive: true }
   );
 
   window.addEventListener(
@@ -1344,13 +1386,73 @@ function setupEventListeners() {
         updatePointerMoveData(pointer, posX, posY, pointer.color);
       }
     },
-    false
+    { passive: true }
   );
 
   window.addEventListener("touchend", (e) => {
     const pointer = pointers[0];
     pointer.down = false;
-  });
+  }, { passive: true });
+}
+
+function bindFluidVisibility(canvasEl) {
+  const setRenderState = () => {
+    canRenderFluid = fluidInViewport && !document.hidden;
+
+    if (particleSystem) {
+      if (canRenderFluid) {
+        particleSystem.start();
+      } else {
+        particleSystem.stop();
+      }
+    }
+  };
+
+  document.addEventListener(
+    "visibilitychange",
+    () => {
+      setRenderState();
+    },
+    { passive: true }
+  );
+
+  if (!("IntersectionObserver" in window) || !canvasEl) {
+    return;
+  }
+
+  fluidVisibilityObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        fluidInViewport = entry.isIntersecting;
+        setRenderState();
+      });
+    },
+    {
+      rootMargin: "200px 0px"
+    }
+  );
+
+  fluidVisibilityObserver.observe(canvasEl);
+}
+
+function startFluidLoop() {
+  if (fluidLoopCleanup) {
+    return;
+  }
+
+  // Reuse the smooth-scroll ticker when available so scrolling and WebGL share one clock.
+  const sharedTicker = window.__APEX_SCROLL_ENGINE__;
+  if (sharedTicker && typeof sharedTicker.addRafTask === "function") {
+    fluidLoopCleanup = sharedTicker.addRafTask(() => updateFrame());
+    return;
+  }
+
+  const fallbackLoop = () => {
+    updateFrame();
+    fluidLoopCleanup = requestAnimationFrame(fallbackLoop);
+  };
+
+  fluidLoopCleanup = requestAnimationFrame(fallbackLoop);
 }
 
 // Control functions
@@ -1380,6 +1482,8 @@ function init() {
       return;
     }
 
+    bindFluidVisibility(canvasEl);
+
     initializeWebGL();
     isWebGLActive = true;
     initializeShaders();
@@ -1387,7 +1491,7 @@ function init() {
     updateKeywords();
     initFramebuffers();
     setupEventListeners();
-    updateFrame();
+    startFluidLoop();
   } catch (error) {
     console.debug("WebGL not available, using Canvas 2D fallback:", error.message);
     isWebGLActive = false;
@@ -1397,6 +1501,7 @@ function init() {
     if (canvasEl) {
       canvasEl.width = canvasEl.clientWidth;
       canvasEl.height = canvasEl.clientHeight;
+      bindFluidVisibility(canvasEl);
       particleSystem = new ParticleSystem(canvasEl);
       
       // Handle window resize for 2D canvas
@@ -1404,7 +1509,7 @@ function init() {
         if (particleSystem) {
           particleSystem.resize();
         }
-      });
+      }, { passive: true });
     }
   }
 }
