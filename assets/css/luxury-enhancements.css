@@ -1,0 +1,778 @@
+/* ============================================
+   APEX LUXURY ENHANCEMENTS - 120FPS ULTRA SMOOTH
+   GPU-Accelerated Premium Animations
+   ============================================ */
+
+/* === GLOBAL PERFORMANCE === */
+*, *::before, *::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+html {
+    scroll-behavior: auto !important; /* Lenis handles this */
+}
+
+body {
+    overflow-x: hidden;
+    background: #0a0a0a;
+}
+
+/* === CUSTOM CURSOR GLOW (Desktop) === */
+@media (hover: hover) and (pointer: fine) {
+    .cursor-glow {
+        position: fixed;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate3d(-50%, -50%, 0);
+        will-change: transform;
+        transition: opacity 0.4s ease;
+        mix-blend-mode: screen;
+    }
+}
+
+/* === PREMIUM PRELOADER === */
+.preloader {
+    background: #0a0a0a !important;
+}
+
+.preloader .loader {
+    border-color: rgba(212, 175, 55, 0.15) !important;
+    border-top-color: #d4af37 !important;
+}
+
+/* === HEADER ULTRA-SMOOTH === */
+.th-header {
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.4s ease,
+                box-shadow 0.4s ease !important;
+}
+
+.th-header.header-hidden {
+    transform: translate3d(0, -100%, 0) !important;
+}
+
+.th-header.header-visible {
+    transform: translate3d(0, 0, 0) !important;
+}
+
+.sticky-wrapper.sticked {
+    background: rgba(10, 10, 10, 0.85) !important;
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* === NAV LINKS LUXURY HOVER === */
+.main-menu > ul > li > a {
+    position: relative;
+    transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* Gold underline ONLY on non-dropdown nav links */
+.main-menu > ul > li:not(.menu-item-has-children) > a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.main-menu > ul > li:not(.menu-item-has-children) > a:hover::after,
+.main-menu > ul > li:not(.menu-item-has-children).active > a::after {
+    width: 80%;
+}
+
+/* REMOVE dropdown arrow (::after) from Car Types / Car Brands */
+.main-menu > ul > li.menu-item-has-children > a::after {
+    display: none !important;
+    content: none !important;
+}
+
+.main-menu ul li a:hover {
+    color: #d4af37 !important;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* === HERO SECTION LUXURY === */
+.th-hero-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    will-change: transform;
+    transform: translate3d(0, 0, 0) scale(1.02);
+    transition: transform 8s ease-out;
+}
+
+.hero-1-content {
+    opacity: 0;
+    transform: translate3d(0, 60px, 0);
+    animation: luxuryFadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+@keyframes luxuryFadeUp {
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.hero-title {
+    background: linear-gradient(135deg, #ffffff 0%, #e8e8e8 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: luxuryGradientShift 6s ease infinite;
+}
+
+@keyframes luxuryGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-text {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    animation: luxuryFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+.btn-group {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    animation: luxuryFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+
+/* === BUTTONS PREMIUM GLOW === */
+.th-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+.th-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.6s ease;
+}
+
+.th-btn:hover::before {
+    left: 100%;
+}
+
+.th-btn:hover {
+    transform: translate3d(0, -3px, 0) !important;
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
+}
+
+.th-btn:active {
+    transform: translate3d(0, -1px, 0) scale(0.98) !important;
+}
+
+.th-btn.style2 {
+    border: 2px solid #d4af37 !important;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.th-btn.style2:hover {
+    background: #d4af37 !important;
+    color: #000 !important;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* === SCROLL REVEAL ANIMATIONS === */
+.luxury-reveal {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    will-change: transform, opacity;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.luxury-reveal.revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.luxury-reveal-left {
+    opacity: 0;
+    transform: translate3d(-60px, 0, 0);
+    will-change: transform, opacity;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.luxury-reveal-left.revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.luxury-reveal-right {
+    opacity: 0;
+    transform: translate3d(60px, 0, 0);
+    will-change: transform, opacity;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.luxury-reveal-right.revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.luxury-reveal-scale {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.9);
+    will-change: transform, opacity;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.luxury-reveal-scale.revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* === SECTION TITLES GOLD SHIMMER === */
+.sec-title,
+.section-title h2,
+h2.fw-bold {
+    position: relative;
+    display: inline-block;
+}
+
+.sec-title::after,
+.section-title h2::after,
+h2.fw-bold::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    border-radius: 2px;
+}
+
+/* === CAR CARDS 3D LUXURY HOVER === */
+.car-card {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.car-card:hover {
+    transform: translate3d(0, -12px, 0) !important;
+}
+
+.car-card:hover model-viewer {
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5))
+            drop-shadow(0 0 30px rgba(212, 175, 55, 0.25)) !important;
+}
+
+.car-card h5 {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.car-card:hover h5 {
+    color: #d4af37 !important;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* === CAROUSEL CARDS PREMIUM === */
+.carousel-car-card {
+    border-radius: 16px !important;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+    will-change: transform, opacity;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.carousel-car-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.car-image-container {
+    overflow: hidden;
+}
+
+.car-image {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    will-change: transform;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.carousel-car-card:hover .car-image {
+    transform: translate3d(0, 0, 0) scale(1.08) !important;
+}
+
+/* === PREMIUM GLASS CARDS (Documents/Steps) === */
+.premium-glass-card {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.premium-glass-card:hover {
+    transform: translate3d(0, -12px, 0) !important;
+}
+
+.premium-glass-card i {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                text-shadow 0.5s ease;
+}
+
+.premium-glass-card:hover i {
+    transform: scale(1.15);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* === WHY CHOOSE US CARDS === */
+.why-card {
+    transform: translate3d(0, 0, 0) !important;
+    will-change: transform;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.why-card:hover {
+    transform: translate3d(0, -12px, 0) !important;
+}
+
+/* === BRAND LOGOS === */
+.brand-box {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translate3d(0, 0, 0);
+}
+
+.brand-box:hover {
+    transform: translate3d(0, -5px, 0) scale(1.1);
+}
+
+.brand-box img {
+    transition: filter 0.4s ease;
+    filter: grayscale(30%) brightness(0.9);
+}
+
+.brand-box:hover img {
+    filter: grayscale(0%) brightness(1.1) drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
+}
+
+/* === GOOGLE REVIEW CARDS === */
+.google-review-card {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.google-review-card:hover {
+    transform: translate3d(0, -8px, 0);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* === BLOG CARDS === */
+.blog-card {
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.blog-card:hover {
+    transform: translate3d(0, -10px, 0);
+}
+
+.blog-img img {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    will-change: transform;
+}
+
+.blog-card:hover .blog-img img {
+    transform: scale(1.06);
+}
+
+/* === CONTACT SECTION === */
+.contact-info-item {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translate3d(0, 0, 0);
+}
+
+.contact-info-item:hover {
+    transform: translate3d(8px, 0, 0);
+}
+
+.contact-info-item:hover .info-icon {
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.form-control {
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+}
+
+.form-control:focus {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15),
+                0 0 20px rgba(212, 175, 55, 0.1) !important;
+}
+
+.submit-btn {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+}
+
+.submit-btn:hover {
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+}
+
+/* === INSTAGRAM SECTION === */
+.instagram-post-vertical {
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.instagram-post-vertical:hover {
+    transform: translate3d(0, -10px, 0) !important;
+}
+
+/* === FOOTER LUXURY === */
+.premium-footer {
+    position: relative;
+    overflow: hidden !important;
+}
+
+.premium-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.footer-menu li a {
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+    display: inline-block;
+}
+
+.footer-menu li a:hover {
+    color: #d4af37 !important;
+    transform: translate3d(5px, 0, 0);
+}
+
+.footer-social a {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+}
+
+.footer-social a:hover {
+    background: #d4af37 !important;
+    color: #000 !important;
+    transform: translate3d(0, -4px, 0);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* === FLOATING BUTTONS === */
+.floating-contact-buttons {
+    z-index: 9998;
+}
+
+.fab-btn {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.fab-btn:hover {
+    transform: translate3d(0, -5px, 0) scale(1.1) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* === GOLD PARTICLE LINE DIVIDERS === */
+.luxury-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+    margin: 0;
+    border: none;
+}
+
+/* === PARALLAX LAYERS === */
+[data-parallax] {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+/* === STAGGER CHILDREN ANIMATION === */
+.stagger-children > * {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-children.revealed > *:nth-child(1) { transition-delay: 0s; }
+.stagger-children.revealed > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children.revealed > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children.revealed > *:nth-child(4) { transition-delay: 0.3s; }
+.stagger-children.revealed > *:nth-child(5) { transition-delay: 0.4s; }
+.stagger-children.revealed > *:nth-child(6) { transition-delay: 0.5s; }
+
+.stagger-children.revealed > * {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* === SCROLL-BASED PROGRESS BAR === */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #d4af37, #f5d76e, #d4af37);
+    z-index: 99999;
+    transform-origin: left;
+    will-change: width;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    transition: width 0.1s linear;
+}
+
+/* === SMOOTH SWIPER OVERRIDES === */
+.swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* === CAROUSEL NAV BUTTONS === */
+.carousel-btn,
+.slider-arrow {
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transform: translate3d(0, 0, 0);
+}
+
+.carousel-btn:hover,
+.slider-arrow:hover {
+    transform: translate3d(0, 0, 0) scale(1.15);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* === DROPDOWN - NO POPUP EFFECT, INSTANT SHOW === */
+.premium-dropdown {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+    animation: none !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+.menu-item-has-children:hover > .premium-dropdown {
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* Remove any slide/fade sub-menu transitions */
+.sub-menu,
+.main-menu .sub-menu {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Remove the dropdown arrow globally (main CSS may add it) */
+.menu-item-has-children > a::after,
+.menu-item-has-children > a::before,
+li.menu-item-has-children > a::after {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    background: none !important;
+}
+
+/* === SELECTION COLOR === */
+::selection {
+    background: rgba(212, 175, 55, 0.3);
+    color: #fff;
+}
+
+::-moz-selection {
+    background: rgba(212, 175, 55, 0.3);
+    color: #fff;
+}
+
+/* === SCROLLBAR LUXURY === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4af37, #b8942d);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #f5d76e, #d4af37);
+}
+
+/* === CAR CARD ACTION BUTTONS FIX (Mobile) === */
+/* Desktop - always row */
+.car-action-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-action {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 0 !important;
+    border-radius: 10px !important;
+    font-size: 16px !important;
+    min-height: 48px !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-action i {
+    font-size: 20px !important;
+}
+
+.btn-call {
+    border: 2px solid rgba(52, 152, 219, 0.35) !important;
+    color: #3498db !important;
+    background: rgba(52, 152, 219, 0.08) !important;
+}
+
+.btn-call:hover,
+.btn-call:active {
+    background: rgba(52, 152, 219, 0.2) !important;
+    border-color: #3498db !important;
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    border: 2px solid rgba(37, 211, 102, 0.35) !important;
+    color: #25D366 !important;
+    background: rgba(37, 211, 102, 0.08) !important;
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:active {
+    background: rgba(37, 211, 102, 0.2) !important;
+    border-color: #25D366 !important;
+    transform: translateY(-2px);
+}
+
+.btn-email {
+    border: 2px solid rgba(212, 175, 55, 0.35) !important;
+    color: #d4af37 !important;
+    background: rgba(212, 175, 55, 0.08) !important;
+}
+
+.btn-email:hover,
+.btn-email:active {
+    background: rgba(212, 175, 55, 0.2) !important;
+    border-color: #d4af37 !important;
+    transform: translateY(-2px);
+}
+
+/* Mobile specific - KEEP SIDE BY SIDE, not stacked */
+@media (max-width: 768px) {
+    .car-action-buttons {
+        flex-direction: row !important;
+        gap: 8px !important;
+        padding-top: 12px;
+        margin-top: 12px;
+    }
+
+    .btn-action {
+        flex: 1 !important;
+        padding: 10px 0 !important;
+        min-height: 44px !important;
+        border-radius: 10px !important;
+        width: auto !important;
+    }
+
+    .btn-action i {
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-action-buttons {
+        gap: 6px !important;
+        flex-direction: row !important;
+    }
+
+    .btn-action {
+        padding: 10px 0 !important;
+        min-height: 42px !important;
+        border-radius: 8px !important;
+        border-width: 1.5px !important;
+    }
+
+    .btn-action i {
+        font-size: 16px !important;
+    }
+}
+
+/* === REDUCED MOTION RESPECT === */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .luxury-reveal,
+    .luxury-reveal-left,
+    .luxury-reveal-right,
+    .luxury-reveal-scale,
+    .stagger-children > * {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
