@@ -339,6 +339,52 @@
     }
 
     /* ==========================================
+       9. HERO VIDEO CONTINUOUS PLAY
+    ========================================== */
+    function initHeroVideo() {
+        var video = document.querySelector('.hero-video');
+        if (!video) return;
+
+        // Force attributes
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.autoplay = true;
+
+        // Force play on load
+        function forcePlay() {
+            if (video.paused) {
+                video.play().catch(function() {});
+            }
+        }
+
+        // Re-play when video ends (belt + suspenders with loop attr)
+        video.addEventListener('ended', function() {
+            video.currentTime = 0;
+            video.play().catch(function() {});
+        });
+
+        // Prevent any external pause
+        video.addEventListener('pause', function() {
+            // Small delay to not fight with browser autoplay policies
+            setTimeout(forcePlay, 100);
+        });
+
+        // Resume when tab becomes visible again
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                forcePlay();
+            }
+        });
+
+        // Initial play attempt
+        forcePlay();
+
+        // Periodic check every 3 seconds to ensure video is playing
+        setInterval(forcePlay, 3000);
+    }
+
+    /* ==========================================
        INIT ALL
     ========================================== */
     function init() {
@@ -349,6 +395,7 @@
         initParallax();
         initCounters();
         initCardTilt();
+        initHeroVideo();
     }
 
     // Page transition runs immediately

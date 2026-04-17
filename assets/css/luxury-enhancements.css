@@ -72,6 +72,37 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* === LOGO RESPONSIVE SIZING === */
+.header-logo img {
+    max-width: 140px;
+    height: auto;
+    transition: max-width 0.3s ease;
+}
+
+@media (max-width: 991px) {
+    .header-logo img {
+        max-width: 110px !important;
+        margin-left: 10px !important;
+        margin-top: 10px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-logo img {
+        max-width: 95px !important;
+        margin-left: 5px !important;
+        margin-top: 8px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo img {
+        max-width: 80px !important;
+        margin-left: 0 !important;
+        margin-top: 5px !important;
+    }
+}
+
 /* === NAV LINKS LUXURY HOVER === */
 .main-menu > ul > li > a {
     position: relative;
@@ -117,6 +148,10 @@ body {
     will-change: transform;
     transform: translate3d(0, 0, 0) scale(1.02);
     transition: transform 8s ease-out;
+    /* Ensure video plays continuously */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .hero-1-content {
@@ -585,28 +620,32 @@ h2.fw-bold::after {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
-/* === DROPDOWN - NO POPUP EFFECT, INSTANT SHOW === */
-.premium-dropdown {
-    transform: none !important;
-    opacity: 1 !important;
-    transition: none !important;
-    animation: none !important;
+/* === DROPDOWN - SMOOTH PREMIUM TRANSITION === */
+.main-menu .sub-menu,
+.main-menu .sub-menu.premium-dropdown {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transform: translateY(12px) scaleY(0.96) !important;
+    transform-origin: top center !important;
+    transition: opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0s linear 0.25s !important;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    pointer-events: none;
 }
 
-.menu-item-has-children:hover > .premium-dropdown {
-    transform: none !important;
+/* On hover - smooth fade+slide IN */
+.main-menu > ul > li.menu-item-has-children:hover > .sub-menu,
+.main-menu > ul > li.menu-item-has-children:hover > .premium-dropdown {
+    visibility: visible !important;
     opacity: 1 !important;
-    animation: none !important;
-}
-
-/* Remove any slide/fade sub-menu transitions */
-.sub-menu,
-.main-menu .sub-menu {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
+    transform: translateY(0) scaleY(1) !important;
+    transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0s linear 0s !important;
+    pointer-events: auto;
+    z-index: 9999 !important;
 }
 
 /* Remove the dropdown arrow globally (main CSS may add it) */
