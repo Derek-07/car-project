@@ -815,3 +815,191 @@ li.menu-item-has-children > a::after {
         transform: none !important;
     }
 }
+
+/* === LANGUAGE SWITCHER - FIXED LEFT SIDE FLOATING === */
+
+/* Fixed position container - LEFT side, opposite to WhatsApp/Phone */
+.apex-lang-fixed {
+    position: fixed !important;
+    left: 20px;
+    bottom: 110px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.apex-lang-switcher {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    z-index: 99999;
+}
+
+/* Globe Button - matches WhatsApp/Phone button size */
+.apex-lang-btn {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(180, 145, 25, 0.95));
+    border: none;
+    color: #0a0a0a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35),
+                0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.apex-lang-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 1), rgba(212, 175, 55, 1));
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5),
+                0 0 0 5px rgba(212, 175, 55, 0.15);
+}
+
+.apex-lang-btn i {
+    font-size: 20px;
+    color: #0a0a0a;
+    transition: transform 0.3s ease;
+}
+
+.apex-lang-switcher.open .apex-lang-btn {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 1), rgba(212, 175, 55, 1));
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+}
+
+.apex-lang-switcher.open .apex-lang-btn i {
+    transform: rotate(20deg);
+}
+
+/* Dropdown panel - opens UPWARD from the globe */
+.apex-lang-dropdown {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(25px) saturate(1.5);
+    -webkit-backdrop-filter: blur(25px) saturate(1.5);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 14px;
+    padding: 8px;
+    min-width: 180px;
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(212, 175, 55, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.97);
+    transition: opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0s linear 0.25s;
+    pointer-events: none;
+}
+
+.apex-lang-switcher.open .apex-lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0s linear 0s;
+    pointer-events: auto;
+}
+
+/* Language items */
+.apex-lang-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 9px 14px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    color: #ccc;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.apex-lang-item:hover {
+    background: rgba(212, 175, 55, 0.12);
+    color: #fff;
+}
+
+.apex-lang-item.active {
+    background: rgba(212, 175, 55, 0.18);
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.apex-lang-item .lang-flag {
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.apex-lang-item .lang-name {
+    flex: 1;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .apex-lang-fixed {
+        left: 15px;
+        bottom: 95px;
+    }
+
+    .apex-lang-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .apex-lang-btn i {
+        font-size: 18px;
+    }
+
+    .apex-lang-dropdown {
+        min-width: 160px;
+        border-radius: 12px;
+    }
+
+    .apex-lang-item {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Prevent Google Translate from breaking layout */
+body {
+    top: 0 !important;
+}
+
+.skiptranslate {
+    display: none !important;
+}
+
+#goog-gt-tt,
+.goog-te-banner-frame,
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* Fix Google Translate font changes */
+font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
