@@ -1,0 +1,207 @@
+#!/usr/bin/env python3
+import os
+import re
+from pathlib import Path
+
+# Define the project directory
+project_dir = Path(r"c:\Users\acer\Downloads\car pro 2\car-project")
+
+# New footer HTML
+new_footer = '''    <!--==============================
+	Footer Area
+==============================-->
+    <footer class="footer-wrapper premium-footer" style="margin: 40px 20px; border: 3px solid #d4af37; border-radius: 20px; overflow: hidden;">
+        <div class="footer-top" style="padding: 60px 40px; border-bottom: 2px solid #d4af37;">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-start">
+                    <!-- Left Column - Logo & Description -->
+                    <div class="col-lg-3">
+                        <div class="footer-brand">
+                            <div class="footer-logo mb-4">
+                                <a href="index.html"><img src="assets/img/apc high.png" alt="Apex Logo" style="max-width: 180px;"></a>
+                            </div>
+                            <p class="footer-desc" style="font-size: 14px; line-height: 1.7; color: #bdbdbd;">
+                                If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a fascinating experience.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Car Brands Column -->
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Car Brands</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
+                            <li><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Useful Links Column -->
+                    <div class="col-lg-2">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Useful Links</h4>
+                        <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #bdbdbd; text-decoration: none;">Home</a></li>
+                            <li style="margin-bottom: 10px;"><a href="about.html" style="color: #bdbdbd; text-decoration: none;">About Us</a></li>
+                            <li style="margin-bottom: 10px;"><a href="inventory-grid.html" style="color: #bdbdbd; text-decoration: none;">Our Fleet</a></li>
+                            <li style="margin-bottom: 10px;"><a href="service.html" style="color: #bdbdbd; text-decoration: none;">Services</a></li>
+                            <li style="margin-bottom: 10px;"><a href="blog.html" style="color: #bdbdbd; text-decoration: none;">Blogs</a></li>
+                            <li style="margin-bottom: 10px;"><a href="team.html" style="color: #bdbdbd; text-decoration: none;">Careers</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #bdbdbd; text-decoration: none;">FAQs</a></li>
+                            <li><a href="contact.html" style="color: #bdbdbd; text-decoration: none;">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Us Column -->
+                    <div class="col-lg-3">
+                        <h4 class="footer-title" style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">Contact Us</h4>
+                        <div class="footer-contact-items" style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-phone" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <a href="tel:+971544923609" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">+971 54 492 3609</a>
+                                </div>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-envelope" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <a href="mailto:info.apexperformancecarrental@gmail.com" style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info.apexperformancecarrental@gmail.com</a>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
+                                <p style="margin: 0; color: #bdbdbd; font-size: 14px;">ONTARIO TOWER C 1801, BUSINESS BAY, DUBAI, UAE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom" style="padding: 30px 40px; background: transparent;">
+            <div class="container-fluid">
+                <div class="row gy-3 align-items-center">
+                    <!-- 24/7 Service -->
+                    <div class="col-lg-6">
+                        <div class="service-badge" style="display: flex; align-items: center; gap: 12px;">
+                            <img src="assets/img/type/24x7 foot.png" alt="24/7 Service" style="height: 80px; width: auto;">
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods on Right -->
+                    <div class="col-lg-6 text-end">
+                        <!-- Payment Image -->
+                        <div class="payment-methods" style="display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; padding: 0; margin: 0;">
+                            <img src="assets/img/type/pay.png" alt="PayPal" style="height: 50px; margin: 0;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Copyright Section -->
+                <div style="border-top: 2px solid #d4af37; margin-top: 30px; padding-top: 20px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <!-- Links on Left -->
+                        <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                            <a href="booking-toc.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Booking T&C's</a>
+                            <span style="color: #d4af37;">|</span>
+                            <a href="privacy-policy.html" style="color: #bdbdbd; text-decoration: none; font-size: 13px;">Privacy Policy</a>
+                        </div>
+                        
+                        <!-- Social Icons on Right -->
+                        <div class="footer-social" style="display: flex; align-items: center; justify-content: flex-end; gap: 15px;">
+                            <a href="https://www.facebook.com/" target="_blank" style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/apexcarsdubai/" target="_blank" style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank" style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/" target="_blank" style="width: 35px; height: 35px; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s; font-size: 14px;"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <p style="margin: 0; color: #bdbdbd; font-size: 13px; text-align: center;"> 2025 Luxury Super Car Rentals. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>'''
+
+# Navbar script HTML
+navbar_script = '''    <!-- Navbar Scroll Hide Script -->
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.th-header');
+        const scrollThreshold = 50;
+        let scrollDirection = 'up';
+
+        window.addEventListener('scroll', function () {
+            if (!navbar) return;
+
+            let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                scrollDirection = 'down';
+            } else {
+                scrollDirection = 'up';
+            }
+
+            if (scrollDirection === 'down' && currentScroll > scrollThreshold) {
+                navbar.classList.add('header-hidden');
+                navbar.classList.remove('header-visible');
+            } else if (scrollDirection === 'up' || currentScroll <= scrollThreshold) {
+                navbar.classList.remove('header-hidden');
+                navbar.classList.add('header-visible');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+    </script>'''
+
+def update_file(file_path):
+    """Update a single file with new footer and navbar script if needed."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        original_content = content
+        
+        # Replace old footer-default footers with new premium-footer
+        # Pattern to find old footer
+        old_footer_pattern = r'    <!--==============================\s*\n\s*Footer Area\s*\n\s*==============================-->\s*\n\s*<footer class="footer-wrapper footer-default bg-footer-color">.*?</footer>'
+        
+        if re.search(old_footer_pattern, content, re.DOTALL):
+            content = re.sub(old_footer_pattern, new_footer, content, flags=re.DOTALL)
+            print(f"✓ Updated footer in {file_path.name}")
+        
+        # Add navbar script if it's missing (but not index.html which already has it)
+        if 'Navbar Scroll Hide Script' not in content and file_path.name != 'index.html':
+            # Find the closing </body> tag
+            if '</body>' in content:
+                content = content.replace('</body>', navbar_script + '\n</body>')
+                print(f"✓ Added navbar script to {file_path.name}")
+        
+        # Write back if changes were made
+        if content != original_content:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            return True
+        return False
+        
+    except Exception as e:
+        print(f"✗ Error processing {file_path.name}: {e}")
+        return False
+
+# Process all HTML files
+html_files = sorted(project_dir.glob('*.html'))
+updated_count = 0
+skipped_count = 0
+
+print(f"Processing {len(html_files)} HTML files...\n")
+
+for html_file in html_files:
+    if update_file(html_file):
+        updated_count += 1
+    else:
+        skipped_count += 1
+
+print(f"\n{'='*50}")
+print(f"Summary: {updated_count} files updated, {len(html_files) - updated_count} files unchanged/skipped")
+print(f"{'='*50}")
