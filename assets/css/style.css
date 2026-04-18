@@ -33726,3 +33726,136 @@ body {
     margin: 20px 12px !important;
   }
 }
+
+
+/* ============================================================
+   MOBILE BACKGROUND IMAGE FIX
+   - Fixes cropping, parallax glitches, and text readability
+   ============================================================ */
+
+/* --- TABLET (1024px and below) --- */
+@media (max-width: 1024px) {
+
+  /* Kill parallax/fixed attachment - causes glitches on touch devices */
+  .breadcumb-wrapper,
+  [data-bg-src],
+  .background-image,
+  .cta-area,
+  .counter-area,
+  .testi-area {
+    background-attachment: scroll !important;
+  }
+
+  /* Breadcrumb hero: reduce height so image isn't overly zoomed */
+  .breadcumb-wrapper {
+    min-height: 280px !important;
+  }
+}
+
+/* --- MOBILE (768px and below) --- */
+@media (max-width: 768px) {
+
+  /* All data-bg-src elements: optimize for portrait screens */
+  [data-bg-src] {
+    background-position: center top !important;
+    background-size: cover !important;
+    background-attachment: scroll !important;
+  }
+
+  /* Breadcrumb hero sections */
+  .breadcumb-wrapper {
+    min-height: 220px !important;
+    padding: 80px 0 60px !important;
+  }
+
+  /* Better dark overlay for text readability on mobile */
+  .breadcumb-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.55) 100%
+    ) !important;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Breadcrumb content above overlay */
+  .breadcumb-wrapper .breadcumb-content,
+  .breadcumb-wrapper .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Breadcrumb background image element */
+  .breadcumb-wrapper .bread-img {
+    object-position: center 30% !important;
+  }
+
+  /* Breadcrumb title sizing */
+  .breadcumb-wrapper .breadcumb-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  .breadcumb-wrapper .breadcumb-menu li,
+  .breadcumb-wrapper .breadcumb-menu a,
+  .breadcumb-wrapper .breadcumb-menu span {
+    font-size: 13px !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* CTA / Banner sections with BG */
+  .cta-area,
+  .counter-area,
+  .testi-area {
+    background-position: center center !important;
+    background-size: cover !important;
+    background-attachment: scroll !important;
+  }
+
+  /* How it works and similar section BGs */
+  section[data-bg-src],
+  div[data-bg-src]:not(.breadcumb-wrapper) {
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+}
+
+/* --- SMALL MOBILE (480px and below) --- */
+@media (max-width: 480px) {
+
+  /* Breadcrumb even more compact */
+  .breadcumb-wrapper {
+    min-height: 180px !important;
+    padding: 70px 0 50px !important;
+  }
+
+  .breadcumb-wrapper .breadcumb-title {
+    font-size: 22px !important;
+    letter-spacing: -0.5px;
+  }
+
+  .breadcumb-wrapper .breadcumb-menu li,
+  .breadcumb-wrapper .breadcumb-menu a {
+    font-size: 11px !important;
+  }
+
+  /* BG images: prefer showing top portion (usually has subject) */
+  [data-bg-src] {
+    background-position: center 25% !important;
+  }
+}
+
+/* --- iOS SAFARI SPECIFIC FIX --- */
+@supports (-webkit-touch-callout: none) {
+  .breadcumb-wrapper,
+  [data-bg-src],
+  .background-image {
+    background-attachment: scroll !important;
+  }
+}
