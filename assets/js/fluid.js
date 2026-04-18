@@ -1,16 +1,21 @@
 
+// === MOBILE / DEVICE DETECTION ===
+const IS_MOBILE = /Mobi|Android|iPhone|iPad|iPod|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent)
+  || (window.innerWidth <= 768);
+const IS_LOW_END = (navigator.hardwareConcurrency || 4) <= 2 || (navigator.deviceMemory || 4) < 2;
+
 const config = {
-  SIM_RESOLUTION: 128,
-  DYE_RESOLUTION: 1440,
+  SIM_RESOLUTION: IS_MOBILE ? 64 : 128,
+  DYE_RESOLUTION: IS_MOBILE ? 512 : 1440,
   CAPTURE_RESOLUTION: 512,
-  DENSITY_DISSIPATION: 7,
-  VELOCITY_DISSIPATION: 4,
+  DENSITY_DISSIPATION: IS_MOBILE ? 12 : 7,
+  VELOCITY_DISSIPATION: IS_MOBILE ? 8 : 4,
   PRESSURE: 0.1,
-  PRESSURE_ITERATIONS: 20,
-  CURL: 3,
-  SPLAT_RADIUS: 0.05,
-  SPLAT_FORCE: 6000,
-  SHADING: true,
+  PRESSURE_ITERATIONS: IS_MOBILE ? 10 : 20,
+  CURL: IS_MOBILE ? 2 : 3,
+  SPLAT_RADIUS: IS_MOBILE ? 0.02 : 0.05,
+  SPLAT_FORCE: IS_MOBILE ? 2000 : 6000,
+  SHADING: !IS_MOBILE,
   COLOR_UPDATE_SPEED: 10,
   PAUSED: false,
   BACK_COLOR: { r: 0.5, g: 0, b: 0 },
@@ -1473,10 +1478,32 @@ function decreaseDensity() {
   config.DENSITY_DISSIPATION = Math.min(10, config.DENSITY_DISSIPATION + 0.5);
 }
 
+// Auto-inject canvas if not present (makes fluid work on ALL pages)
+function ensureFluidCanvas() {
+  let container = document.getElementById("fluid-container");
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "fluid-container";
+    container.style.cssText = "position:fixed;top:0;left:0;z-index:50;pointer-events:none;width:100vw;height:100vh;";
+    const canvasEl = document.createElement("canvas");
+    canvasEl.id = "fluid";
+    canvasEl.style.cssText = "width:100vw;height:100vh;display:block;";
+    container.appendChild(canvasEl);
+    document.body.insertBefore(container, document.body.firstChild);
+  }
+  return document.getElementById("fluid");
+}
+
 // Initialize everything
 function init() {
+  // Skip entirely on very low-end devices to save battery
+  if (IS_LOW_END && IS_MOBILE) {
+    console.debug("Fluid: skipped on low-end mobile device");
+    return;
+  }
+
   try {
-    const canvasEl = document.getElementById("fluid");
+    const canvasEl = ensureFluidCanvas();
     if (!canvasEl) {
       console.warn("Canvas element not found");
       return;
@@ -1495,7 +1522,7 @@ function init() {
   } catch (error) {
     console.debug("WebGL not available, using Canvas 2D fallback:", error.message);
     isWebGLActive = false;
-    
+
     // Initialize 2D Canvas Fallback
     const canvasEl = document.getElementById("fluid");
     if (canvasEl) {
@@ -1503,7 +1530,7 @@ function init() {
       canvasEl.height = canvasEl.clientHeight;
       bindFluidVisibility(canvasEl);
       particleSystem = new ParticleSystem(canvasEl);
-      
+
       // Handle window resize for 2D canvas
       window.addEventListener("resize", () => {
         if (particleSystem) {
