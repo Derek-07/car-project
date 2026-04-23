@@ -1,14 +1,32 @@
 ﻿<!Doctype html>
-<html class="no-js " lang="zxx">
+<html class="no-js " lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Apex Performance Car Rental</title>
+    <title>Rent SUVs in Dubai | Mercedes G-Wagon, Range Rover | Apex Performance</title>
+
+    <!-- SEO: Open Graph (Facebook/WhatsApp Sharing) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Apex Performance Car Rental">
+    <meta property="og:title" content="Rent SUVs in Dubai | Mercedes G-Wagon, Range Rover | Apex Performance">
+    <meta property="og:description" content="Rent luxury SUVs in Dubai including Mercedes G-Wagon, Range Rover, Lamborghini Urus and more. Perfect for families, desert trips and VIP travel.">
+    <meta property="og:url" content="https://www.apexperformancecarrental.com/suv-cars.html">
+    <meta property="og:image" content="https://www.apexperformancecarrental.com/assets/img/apc high.png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- SEO: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rent SUVs in Dubai | Mercedes G-Wagon, Range Rover | Apex Performance">
+    <meta name="twitter:description" content="Rent luxury SUVs in Dubai including Mercedes G-Wagon, Range Rover, Lamborghini Urus and more. Perfect for families, desert trips and VIP travel.">
+    <meta name="twitter:image" content="https://www.apexperformancecarrental.com/assets/img/apc high.png">
+
+    <!-- SEO: Canonical URL -->
+    <link rel="canonical" href="https://www.apexperformancecarrental.com/suv-cars.html">
     <meta name="author" content="Apex Performance Car Rental">
-    <meta name="description" content="Apex Performance Car Rental - Premium Car Rental Services in Dubai">
+    <meta name="description" content="Rent luxury SUVs in Dubai including Mercedes G-Wagon, Range Rover, Lamborghini Urus and more. Perfect for families, desert trips and VIP travel.">
     <meta name="keywords"
-        content="Apex Performance Car Rental, Dubai, Car Rental, Luxury Cars, Premium Cars, Rent a Car, Exotic Cars, Sports Cars, Car Hire, Car Rental Services">
+        content="SUV rental Dubai, rent G-Wagon Dubai, Range Rover hire, Lamborghini Urus rental, luxury SUV UAE">
     <meta name="robots" content="INDEX,FOLLOW">
 
     <!-- Mobile Specific Metas -->
@@ -46,14 +64,16 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Luxury Premium Enhancements -->
+    <link rel="stylesheet" href="assets/css/luxury-enhancements.css">
+    <!-- Mobile Overflow Fix - Remove horizontal scroll on mobile -->
+    <link rel="stylesheet" href="assets/css/mobile-overflow-fix.css">
 
     <!-- custom -->
 
 
     <!-- 3d moving  -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-    <style>
+<style>
 
         /* ======== MAP SECTION ======== */
         .map-section {
@@ -323,37 +343,13 @@
             pointer-events: none;
         }
 
-        .carousel-car-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3), 
-                        0 0 40px rgba(212, 175, 55, 0.2),
-                        inset 0 0 20px rgba(212, 175, 55, 0.1);
-            border: 2px solid rgba(212, 175, 55, 0.5);
-        }
-
-        .carousel-car-card:hover::before {
-            opacity: 1;
-            animation: glow-pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes glow-pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.6; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
         .car-image {
             transition: transform 0.8s cubic-bezier(0.35, 0, 0.65, 1);
         }
 
-        .carousel-car-card:hover .car-image {
-            transform: scale(1.15) rotate(2deg);
-            filter: brightness(1.1) saturate(1.2);
-        }
-
-        .carousel-car-card:hover .car-title {
-            color: #d4af37;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        .carousel-car-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2), 0 0 20px rgba(212, 175, 55, 0.1);
         }
 
         /* ======== LOAD MORE BUTTON ======== */
@@ -423,7 +419,7 @@
         }
 
         /* Mobile Responsive */
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             .filter-toggle-btn {
                 left: 15px;
                 top: 100px;
@@ -437,31 +433,127 @@
             }
 
             .breadcumb-title {
-                font-size: 2rem;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .filter-toggle-btn {
+                position: fixed;
+                right: 15px;
+                left: auto;
+                top: 90px;
+                padding: 10px 14px;
+                font-size: 11px;
+            }
+
+            .filter-box {
+                width: 100%;
+                max-width: 100%;
+                top: 160px;
+                border-radius: 0;
+                left: 0;
+            }
+
+            .breadcumb-title {
+                font-size: 2.2rem;
+            }
+
+            .breadcumb-wrapper {
+                min-height: 280px;
+                padding: 60px 15px !important;
             }
         }
 
         @media (max-width: 576px) {
             .filter-toggle-btn {
-                left: 10px;
-                top: 85px;
+                position: fixed;
+                right: 10px;
+                left: auto;
+                top: 75px;
                 padding: 8px 12px;
-                font-size: 11px;
+                font-size: 10px;
             }
 
             .filter-box {
-                top: 130px;
+                top: 140px;
                 width: 100%;
                 border-radius: 0;
-                max-width: none;
+                max-width: 100%;
+                padding: 20px;
             }
 
             .breadcumb-wrapper {
-                min-height: 250px;
+                min-height: 200px;
+                padding: 40px 10px !important;
             }
 
             .breadcumb-title {
                 font-size: 1.5rem;
+                letter-spacing: 0;
+            }
+            
+            .filter-box h3 {
+                font-size: 15px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            }
+            
+            .filter-group {
+                margin-bottom: 18px;
+            }
+            
+            .filter-label {
+                font-size: 13px;
+                margin-bottom: 12px;
+            }
+            
+            .checkbox-item {
+                padding: 8px 0;
+            }
+            
+            .checkbox-item label {
+                font-size: 14px;
+            }
+            
+            .checkbox-item input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                cursor: pointer;
+            }
+            
+            .filter-reset-btn {
+                width: 100%;
+                padding: 12px;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filter-toggle-btn {
+                top: 65px;
+                padding: 6px 10px;
+                font-size: 9px;
+            }
+
+            .breadcumb-wrapper {
+                min-height: 150px;
+                padding: 30px 10px !important;
+            }
+
+            .breadcumb-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .breadcumb-wrapper {
+                min-height: 120px;
+                padding: 20px 8px !important;
+            }
+
+            .breadcumb-title {
+                font-size: 1rem;
             }
         }
     </style>
@@ -546,6 +638,8 @@ border-radius:6px;
 </style>
 
 
+    <!-- SEO Schema Helper -->
+    <script src="assets/js/seo-schema.js" defer></script>
 </head>
 
 <body class="body">
@@ -680,15 +774,12 @@ border-radius:6px;
         </div>
     </div>
 
-    <!-- Filter Toggle Button -->
-    <button class="filter-toggle-btn" id="filterToggleBtn">
-        <i class="fas fa-sliders-h"></i>
-        <span>Filters</span>
-    </button>
-
     <!-- Filter Box -->
     <div class="filter-box" id="filterBox">
-        <h3>Filter Cars</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="margin: 0;">Filter Cars</h3>
+            <button id="filterCloseBtn" style="background: none; border: none; color: #d4af37; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;" title="Close filter">&times;</button>
+        </div>
 
         <!-- Price Filter -->
         <div class="filter-group">
@@ -752,11 +843,13 @@ border-radius:6px;
     ==============================-->
     <section class="car-rental-section space">
         <div class="container-fluid">
-            <div class="row mb-5">
-                <div class="col-lg-12 text-center">
-                    <h2 class="sec-title mb-3">Premium SUV Rental in Dubai</h2>
-                    <p class="sec-text">Discover unmatched comfort and versatility with our premium SUV rental service. Perfect for family trips, group outings, or exploring Dubai in style with sophisticated design and powerful performance.</p>
-                </div>
+            <div style="text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; max-width: 100%;">
+                <button class="filter-toggle-btn" id="filterToggleBtn">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Filters</span>
+                </button>
+                <h2 class="sec-title mb-3">Premium SUV Rental in Dubai</h2>
+                <p class="sec-text">Discover unmatched comfort and versatility with our premium SUV rental service. Perfect for family trips, group outings, or exploring Dubai in style with sophisticated design and powerful performance.</p>
             </div>
             <div class="row g-4">
                 <!-- Mercedes Brabus G63 800 Widestar -->
@@ -780,7 +873,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -809,7 +902,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -838,7 +931,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -867,7 +960,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -896,7 +989,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -925,7 +1018,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -954,7 +1047,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -983,7 +1076,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -991,8 +1084,8 @@ border-radius:6px;
                     </div>
                 </div>
 
-                <!-- Bentley Bentayga (Hidden - Load More) -->
-                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                <!-- Bentley Bentayga -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="carousel-car-card">
                         <div class="car-image-container">
                             <img src="assets/cars/gw01.webp" alt="Bentley Bentayga" class="car-image">
@@ -1012,7 +1105,7 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -1020,8 +1113,8 @@ border-radius:6px;
                     </div>
                 </div>
 
-                <!-- Maserati Levante (Hidden - Load More) -->
-                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                <!-- Maserati Levante -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="carousel-car-card">
                         <div class="car-image-container">
                             <img src="assets/cars/blue.webp" alt="Maserati Levante" class="car-image">
@@ -1041,9 +1134,129 @@ border-radius:6px;
                                 <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="mailto:info.apexperformancecarrental@gmail.com" class="btn-action btn-email">
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/gw01.webp" alt="Genesis GV70" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Genesis GV70</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Genesis</p>
+                            <div class="car-price-display">
+                                <span class="price-value">7,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.webp" alt="Lexus LX600" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Lexus LX600</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Lexus</p>
+                            <div class="car-price-display">
+                                <span class="price-value">8,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/red.webp" alt="Jeep Grand Cherokee" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Jeep Grand Cherokee</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Jeep</p>
+                            <div class="car-price-display">
+                                <span class="price-value">6,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/black.webp" alt="Volvo XC90" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Volvo XC90</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Volvo</p>
+                            <div class="car-price-display">
+                                <span class="price-value">7,500 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/white.webp" alt="Cadillac Escalade" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Cadillac Escalade</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Cadillac</p>
+                            <div class="car-price-display">
+                                <span class="price-value">9,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 car-card-hidden">
+                    <div class="carousel-car-card">
+                        <div class="car-image-container">
+                            <img src="assets/cars/blue.webp" alt="Infiniti QX80" class="car-image">
+                        </div>
+                        <div class="car-info-container">
+                            <h3 class="car-title">Infiniti QX80</h3>
+                            <p class="car-category">SUV <span class="separator">|</span> Infiniti</p>
+                            <div class="car-price-display">
+                                <span class="price-value">8,000 AED</span>
+                                <span class="price-label">/ Per Day</span>
+                            </div>
+                            <div class="car-action-buttons">
+                                <a href="tel:+971544923609" class="btn-action btn-call"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/971544923609" target="_blank" class="btn-action btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info@apexcarsdubai.com" class="btn-action btn-email"><i class="fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1069,91 +1282,91 @@ border-radius:6px;
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=mclaren">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/mac.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=audi">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/audi.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=aston-martin">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/austin-martin.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=lamborghini">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/lambologo.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=ferrari">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/far.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=bmw">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/bmw.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=maserati">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/mas2.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=porsche">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/porsche.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=bentley">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/bent.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=rolls-royce">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/rr.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=bugatti">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/buga.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=mercedes">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/mar.webp" alt="Brand Logo">
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-box">
-                                    <a href="cars.html?brand=range-rover">
+                                    <a href="cars.html">
                                         <img src="assets/img/brand/land.webp" alt="Brand Logo">
                                     </a>
                                 </div>
@@ -1361,7 +1574,7 @@ Feedback Section / Contact Section
         <section class="contact-section space"
             style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/bg/bgofcc.webp') center/cover no-repeat;">
             <div class="container">
-                <div class="row g-4 align-items-center">
+                <div class="row g-2 align-items-center">
                     <!-- Left Side - Contact Information -->
                     <div class="col-lg-5">
                         <div class="contact-info-group">
@@ -1399,7 +1612,7 @@ Feedback Section / Contact Section
                                 </div>
                                 <div class="info-content">
                                     <h4 class="info-title">Email</h4>
-                                    <p class="info-text">info.apexperformancecarrental@gmail.com</p>
+                                    <p class="info-text">info@apexcarsdubai.com</p>
                                 </div>
                             </div>
 
@@ -1516,22 +1729,14 @@ Feedback Section / Contact Section
                                 style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: 1px;">
                                 Car Brands</h4>
                             <ul class="footer-menu" style="list-style: none; padding: 0; margin: 0;">
-                                <li style="margin-bottom: 10px;"><a href="cars.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
-                                <li style="margin-bottom: 10px;"><a href="cars.html"
-                                        style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
-                                <li style="margin-bottom: 10px;"><a href="cars.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
-                                <li style="margin-bottom: 10px;"><a href="cars.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
-                                <li style="margin-bottom: 10px;"><a href="cars.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
-                                <li style="margin-bottom: 10px;"><a href="cars.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
-                                <li style="margin-bottom: 10px;"><a href="cars.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
-                                <li><a href="cars.html"
-                                        style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
+                                <li style="margin-bottom: 10px;"><a href="cars.html?brand=audi" style="color: #bdbdbd; text-decoration: none;">Audi</a></li>
+                                <li style="margin-bottom: 10px;"><a href="cars.html?brand=bmw" style="color: #bdbdbd; text-decoration: none;">BMW</a></li>
+                                <li style="margin-bottom: 10px;"><a href="cars.html?brand=mercedes" style="color: #bdbdbd; text-decoration: none;">Mercedes Benz</a></li>
+                                <li style="margin-bottom: 10px;"><a href="cars.html?brand=lamborghini" style="color: #bdbdbd; text-decoration: none;">Lamborghini</a></li>
+                                <li style="margin-bottom: 10px;"><a href="cars.html?brand=rolls-royce" style="color: #bdbdbd; text-decoration: none;">Rolls Royce</a></li>
+                                <li style="margin-bottom: 10px;"><a href="cars.html?brand=bentley" style="color: #bdbdbd; text-decoration: none;">Bentley</a></li>
+                                <li style="margin-bottom: 10px;"><a href="cars.html?brand=ferrari" style="color: #bdbdbd; text-decoration: none;">Ferrari</a></li>
+                                <li><a href="cars.html?brand=porsche" style="color: #bdbdbd; text-decoration: none;">Porsche</a></li>
                             </ul>
                         </div>
 
@@ -1585,8 +1790,8 @@ Feedback Section / Contact Section
                                 <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
                                     <i class="fas fa-envelope"
                                         style="color: #d4af37; font-size: 18px; margin-top: 2px;"></i>
-                                    <a href="mailto:info.apexperformancecarrental@gmail.com"
-                                        style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info.apexperformancecarrental@gmail.com</a>
+                                    <a href="mailto:info@apexcarsdubai.com"
+                                        style="color: #bdbdbd; text-decoration: none; font-size: 14px;">info@apexcarsdubai.com</a>
                                 </div>
                                 <div class="contact-item" style="display: flex; align-items: flex-start; gap: 12px;">
                                     <i class="fas fa-map-marker-alt"
@@ -1617,7 +1822,7 @@ Feedback Section / Contact Section
                             <!-- Payment Image -->
                             <div class="payment-methods"
                                 style="display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; padding: 0; margin: 0;">
-                                <img src="assets/img/type/pay.webp" alt="PayPal" style="height: 50px; margin: 0;">
+                                <img src="assets/img/type/payment.png" alt="PayPal" style="height: 50px; margin: 0;">
                             </div>
                         </div>
                     </div>
@@ -1675,6 +1880,7 @@ Feedback Section / Contact Section
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/nice-select.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/fluid.js"></script>
 
     <!-- Mobile Menu & Navbar Script -->
@@ -1757,14 +1963,30 @@ Feedback Section / Contact Section
         // Filter Toggle
         const filterToggleBtn = document.getElementById('filterToggleBtn');
         const filterBox = document.getElementById('filterBox');
+        const filterCloseBtn = document.getElementById('filterCloseBtn');
 
         filterToggleBtn.addEventListener('click', function() {
             filterBox.classList.toggle('active');
         });
+        
+        // Close filter when clicking X button
+        if (filterCloseBtn) {
+            filterCloseBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                filterBox.classList.remove('active');
+            });
+        }
 
         // Close filter when clicking outside
         document.addEventListener('click', function(e) {
             if (!filterBox.contains(e.target) && !filterToggleBtn.contains(e.target)) {
+                filterBox.classList.remove('active');
+            }
+        });
+        
+        // Close filter on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && filterBox.classList.contains('active')) {
                 filterBox.classList.remove('active');
             }
         });
@@ -1862,7 +2084,7 @@ Feedback Section / Contact Section
         // ========== LOAD MORE BUTTON FUNCTIONALITY ==========
         const loadMoreBtn = document.getElementById('loadMoreBtn');
         const hiddenCards = document.querySelectorAll('.car-card-hidden');
-        let cardsToShow = 2;
+        let cardsToShow = 8;
         let currentShown = 8;
 
         loadMoreBtn.addEventListener('click', function() {
@@ -1896,9 +2118,19 @@ Feedback Section / Contact Section
 
     <!-- Car Card Linker - Wraps cards with dynamic links -->
     <script src="assets/js/car-card-linker.js"></script>
+    <!-- Luxury 120fps Animations Engine -->
+    <script src="assets/js/luxury-animations.js"></script>
+    <!-- Language Switcher -->
+    <!-- Auto Currency Converter -->
+    <script src="assets/js/auto-currency.js"></script>
+    <script src="assets/js/language-switcher.js"></script>
 </body>
 
 </html>
+
+
+
+
 
 
 

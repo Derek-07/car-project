@@ -1165,3 +1165,217 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background: #555555;
 }
+
+/* ===================== RESPONSIVE HARDENING ===================== */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+svg,
+canvas,
+iframe {
+    max-width: 100%;
+}
+
+.content-area,
+.table-wrapper,
+.form-card,
+.admin-card,
+.modal-content {
+    min-width: 0;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+}
+
+.admin-table {
+    width: 100%;
+    min-width: 720px;
+}
+
+.admin-table th,
+.admin-table td {
+    vertical-align: middle;
+}
+
+.stats-grid {
+    gap: clamp(16px, 2vw, 24px);
+}
+
+.page-title {
+    word-break: break-word;
+}
+
+.btn,
+button {
+    white-space: normal;
+}
+
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+.modal-content {
+    width: min(100%, 720px);
+    max-height: min(85vh, 900px);
+    overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+    .admin-sidebar {
+        width: 220px;
+    }
+
+    .admin-content {
+        margin-left: 220px;
+    }
+
+    .content-area {
+        padding: 24px 20px;
+    }
+
+    .admin-navbar {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-wrapper {
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .admin-sidebar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 0 14px;
+        overflow: visible;
+        z-index: 1001;
+    }
+
+    .sidebar-logo {
+        min-width: max-content;
+    }
+
+    .sidebar-nav {
+        gap: 10px;
+        padding: 12px 0;
+        scrollbar-width: thin;
+    }
+
+    .nav-section {
+        min-width: max-content;
+    }
+
+    .nav-link {
+        padding: 10px 14px;
+        border-left-width: 0;
+        border-radius: 10px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        padding-left: 14px;
+    }
+
+    .admin-content {
+        height: auto;
+        min-height: 0;
+    }
+
+    .admin-navbar {
+        position: sticky;
+        top: 68px;
+        z-index: 1000;
+        height: auto;
+        min-height: 60px;
+        padding: 14px;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .navbar-left,
+    .navbar-right {
+        width: 100%;
+    }
+
+    .navbar-right {
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-user {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .content-area {
+        padding: 18px 14px 24px;
+    }
+
+    .admin-table {
+        min-width: 640px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    .sidebar-logo {
+        padding-right: 14px;
+        margin-right: 14px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .breadcrumb-item,
+    .navbar-user span,
+    .admin-table td,
+    .admin-table th {
+        font-size: 12px;
+    }
+
+    .content-area {
+        padding: 16px 12px 20px;
+    }
+
+    .form-card,
+    .stat-card,
+    .empty-state,
+    .modal-content {
+        padding: 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: 24px;
+    }
+
+    .admin-table {
+        min-width: 560px;
+    }
+
+    .modal-content {
+        width: calc(100% - 24px);
+    }
+}

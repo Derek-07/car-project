@@ -1,12 +1,4 @@
 @charset "UTF-8";
-/*
-Template Name: Kars
-Template URL: 'https://html.themeholy.com/kars/'
-Description: 'Car Dealership and sell HTML Template'
-Author: themeholy 
-Author URI: https://themeforest.net/user/themeholy 
-Version: 1.0.0
-*/
 /*=================================
     CSS Index Here
 ==================================*/
@@ -3015,8 +3007,6 @@ a.th-btn.sm.style3:hover {
 
 /* Load More Button - Remove margins for brand area alignment */
 .load-more-wrapper {
-  width: 100vw;
-  position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
@@ -4204,7 +4194,7 @@ html, body {
 
 /* Make default text readable on dark */
 body, p, .text-body, .font-body {
-  color: var(--body-color) !important;
+  color: #bdbdbd) !important;
 }
 
 /* Default headings color on dark */
@@ -27042,6 +27032,334 @@ input {
 }
 /*# sourceMappingURL=style.css.map */
 
+/* =========================================================
+   Shared responsive hardening for all public pages
+   ========================================================= */
+
+:root {
+  --apex-fluid-gap: clamp(14px, 2.2vw, 28px);
+  --apex-fluid-section: clamp(56px, 7vw, 120px);
+  --apex-fluid-title: clamp(2rem, 6vw, 5.5rem);
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  text-wrap: pretty;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+iframe {
+  display: block;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  width: 100%;
+}
+
+.row {
+  --bs-gutter-x: clamp(1rem, 2vw, 1.5rem);
+}
+
+.space,
+.space-top {
+  padding-top: var(--apex-fluid-section) !important;
+}
+
+.space,
+.space-bottom {
+  padding-bottom: var(--apex-fluid-section) !important;
+}
+
+.breadcumb-wrapper {
+  min-height: clamp(220px, 42vw, 500px) !important;
+  padding: clamp(72px, 12vw, 140px) 16px !important;
+}
+
+.breadcumb-title {
+  font-size: var(--apex-fluid-title) !important;
+  line-height: 1.05;
+  letter-spacing: clamp(0.5px, 0.5vw, 3px) !important;
+  word-break: break-word;
+}
+
+.breadcumb-trail {
+  gap: 8px 12px !important;
+}
+
+.breadcumb-trail li {
+  font-size: clamp(12px, 1.8vw, 14px);
+}
+
+.map-section {
+  height: clamp(280px, 50vw, 500px) !important;
+  margin: clamp(24px, 5vw, 60px) clamp(12px, 3vw, 20px) !important;
+}
+
+.premium-footer {
+  margin: clamp(20px, 4vw, 40px) clamp(12px, 3vw, 20px) !important;
+}
+
+.feature-list-1,
+.luxury-car-card,
+.category-card,
+.carousel-car-card,
+.blog-card,
+.contact-feature,
+.service-card {
+  height: 100%;
+}
+
+.feature-list-1,
+.luxury-car-card,
+.category-card {
+  overflow: hidden;
+}
+
+.feature-list-1 .box-img img,
+.feature-list-1 .box-icon img,
+.luxury-car-card .car-image img,
+.category-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.th-btn,
+.btn,
+button[type=submit] {
+  white-space: normal;
+}
+
+.filter-box {
+  width: min(320px, calc(100vw - 20px)) !important;
+}
+
+.inventory-top-filer-wrap,
+.inventory-top-filter-wrap,
+.filter-search,
+.search-form,
+.contact-form,
+.comment-form {
+  max-width: 100%;
+}
+
+.widget-area,
+.footer-top,
+.copyright-wrap {
+  padding-left: clamp(12px, 2vw, 20px) !important;
+  padding-right: clamp(12px, 2vw, 20px) !important;
+}
+
+@media (min-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .th-header .menu-area,
+  .th-header .sticky-wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .th-header .header-logo img,
+  .header-logo img {
+    max-width: 132px;
+  }
+
+  .header-button {
+    gap: 10px;
+  }
+
+  .main-menu .premium-dropdown.dropdown-brands-grid {
+    width: min(100%, 520px) !important;
+    min-width: 0 !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 20px !important;
+  }
+
+  .feature-list-1 .car-content,
+  .luxury-car-card {
+    padding: 14px;
+  }
+
+  .inventory-sidebar,
+  .widget-area .widget,
+  .footer-wrapper .widget {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  p,
+  li,
+  span,
+  label,
+  input,
+  select,
+  textarea {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  h1,
+  .h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  h2,
+  .h2 {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
+  }
+
+  h3,
+  .h3 {
+    font-size: clamp(1.35rem, 5.8vw, 1.9rem);
+  }
+
+  .breadcumb-title {
+    font-size: clamp(1.7rem, 8vw, 2.6rem) !important;
+  }
+
+  .filter-toggle-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal !important;
+  }
+
+  .filter-box {
+    top: auto !important;
+    bottom: 0;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: min(72vh, 560px) !important;
+    border-radius: 18px 18px 0 0 !important;
+    padding: 18px !important;
+  }
+
+  .filter-box.active {
+    transform: translateY(0) !important;
+  }
+
+  .filter-box:not(.active) {
+    transform: translateY(105%) !important;
+  }
+
+  .map-section {
+    border-radius: 16px;
+  }
+
+  .premium-footer {
+    border-width: 2px !important;
+    border-radius: 16px !important;
+  }
+
+  .premium-footer .widget-area .row > [class*=col-],
+  .footer-wrapper .row > [class*=col-] {
+    margin-bottom: 20px;
+  }
+
+  .footer-wrapper .copyright-wrap .row {
+    row-gap: 12px;
+  }
+
+  .feature-list-1,
+  .luxury-car-card,
+  .category-card,
+  .carousel-car-card {
+    border-radius: 16px;
+  }
+
+  .feature-list-1 .box-title a,
+  .luxury-car-card .car-title,
+  .blog-title {
+    white-space: normal !important;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .browse-by-type .category-card {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .browse-by-type .category-img {
+    min-height: 96px !important;
+    width: min(130px, 35vw) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .browse-by-type .category-img img,
+  .browse-by-type .category-img model-viewer {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .car-rental-section .row.g-4,
+  .browse-by-type .row.g-4 {
+    row-gap: 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container,
+  .container-fluid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .feature-list-1 {
+    margin: 0;
+  }
+
+  .feature-list-1 .box-icon {
+    height: auto;
+    min-height: 160px;
+  }
+
+  .feature-list-1 .box-icon img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .premium-footer {
+    margin: 20px 12px !important;
+  }
+}
+
 
 
 
@@ -30048,16 +30366,18 @@ button, a, .th-btn {
 .carousel-car-card {
   height: 100%;
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-  border-radius: 20px;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  transition: all 0.7s cubic-bezier(0.35, 0, 0.65, 1);
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(212, 175, 55, 0.1);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(212, 175, 55, 0.15);
   position: relative;
 }
 
@@ -30068,11 +30388,11 @@ button, a, .th-btn {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.2) 0%, transparent 60%);
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   pointer-events: none;
-  border-radius: 20px;
+  border-radius: 24px;
 }
 
 /* Side Slide Styling */
@@ -30563,11 +30883,28 @@ button, a, .th-btn {
 
   .car-action-buttons {
     gap: 10px;
+    flex-direction: column;
   }
 
   .btn-action {
-    padding: 12px 0;
-    font-size: 14px;
+    padding: 12px 10px;
+    font-size: 15px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-action:active {
+    transform: scale(0.96);
+  }
+
+  .btn-action i {
+    font-size: 20px;
   }
 
   .carousel-nav-buttons {
@@ -30603,32 +30940,62 @@ button, a, .th-btn {
   }
 
   .car-image-container {
-    height: 200px;
+    height: 180px;
   }
 
   .car-info-container {
-    padding: 15px 15px;
+    padding: 12px 12px;
   }
 
   .car-title {
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
   }
 
   .car-category {
-    font-size: 11px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .car-price-display {
+    margin-bottom: 15px;
   }
 
   .price-value {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .price-label {
+    font-size: 12px;
   }
 
   .car-action-buttons {
     flex-direction: column;
+    gap: 10px;
+    width: 100%;
   }
 
   .btn-action {
-    padding: 10px;
-    font-size: 12px;
+    padding: 12px 8px;
+    font-size: 14px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-action:active {
+    transform: scale(0.98);
+  }
+
+  .btn-action i {
+    font-size: 20px;
   }
 
   .carousel-btn {
@@ -30833,11 +31200,34 @@ button, a, .th-btn {
 
   .car-action-buttons {
     flex-direction: column;
+    gap: 12px;
+    width: 100%;
   }
 
   .btn-action {
-    padding: 10px;
+    padding: 12px 10px;
+    font-size: 15px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-action i {
+    font-size: 20px;
+  }
+
+  .car-title {
+    font-size: 16px;
+  }
+
+  .car-category {
     font-size: 12px;
+  }
+
+  .price-value {
+    font-size: 18px;
   }
 
   .sports-carousel-wrapper .carousel-btn {
@@ -32280,4 +32670,1184 @@ model-viewer {
     100%{
         box-shadow: 0 0 0 0 rgba(37,211,102,0);
     }
+}
+
+/* ====================================
+   MOBILE RESPONSIVE IMPROVEMENTS
+   ==================================== */
+
+/* ---- Media Query: Tablet (1024px and below) ---- */
+@media (max-width: 1024px) {
+  /* Car Cards Grid - Show 3 columns */
+  .car-rental-section .row.g-4 > div {
+    min-width: 0;
+  }
+  
+  .carousel-car-card {
+    margin: 0;
+  }
+  
+  /* Breadcrumb improvements */
+  .breadcumb-wrapper {
+    min-height: 350px;
+    padding: 80px 20px !important;
+  }
+  
+  .breadcumb-title {
+    font-size: 3rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Filter adjustments */
+  .filter-box {
+    width: 250px;
+  }
+  
+  /* Load more button */
+  .load-more-btn {
+    padding: 14px 40px;
+    font-size: 14px;
+  }
+  
+  /* Section spacing */
+  .load-more-wrapper {
+    padding: 15px calc((100vw - 100%) / 2);
+  }
+}
+
+/* ---- Media Query: Large Mobile (768px and below) ---- */
+@media (max-width: 768px) {
+  /* Car Cards Grid - Show 1 large card centered */
+  .car-rental-section .row.g-4 {
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 20px;
+    justify-content: center;
+  }
+  
+  .car-rental-section .row.g-4 > div {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Large centered card for mobile */
+  .carousel-car-card {
+    margin: 0 auto;
+    max-width: 280px;
+    width: auto;
+  }
+  
+  /* Proportional image height */
+  .car-image-container {
+    height: 240px;
+  }
+  
+  /* Proportional info padding */
+  .car-info-container {
+    padding: 18px 16px;
+  }
+  
+  /* Breadcrumb */
+  .breadcumb-wrapper {
+    min-height: 280px;
+    padding: 60px 15px !important;
+  }
+  
+  .breadcumb-title {
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .breadcumb-trail {
+    gap: 10px;
+  }
+  
+  .breadcumb-trail li {
+    font-size: 12px;
+  }
+  
+  /* Filter box */
+  .filter-box {
+    width: 100%;
+    max-width: 100%;
+    top: 160px;
+    border-radius: 0;
+    left: 0;
+    right: auto;
+  }
+  
+  .filter-toggle-btn {
+    position: fixed;
+    right: 15px;
+    top: 90px;
+    padding: 7px 10px;
+    font-size: 9px;
+    z-index: 35;
+  }
+  
+  .filter-box h3 {
+    font-size: 14px;
+  }
+  
+  .filter-label {
+    font-size: 11px;
+  }
+  
+  /* Load more button */
+  .load-more-wrapper {
+    padding: 15px;
+    margin: 60px 0;
+  }
+  
+  .load-more-btn {
+    padding: 12px 30px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Car info text sizing - Scaled for compact mobile card */
+  .car-title {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  
+  .car-category {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  
+  .price-value {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  .price-label {
+    font-size: 10px;
+  }
+  
+  /* Action buttons */
+  .car-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  
+  .btn-action {
+    width: 100% !important;
+    height: 44px !important;
+    font-size: 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Contact section */
+  .contact-info-item {
+    margin-bottom: 15px;
+  }
+  
+  .info-icon {
+    min-width: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .info-icon i {
+    font-size: 16px !important;
+  }
+}
+
+/* ---- Media Query: Small Mobile (576px and below) ---- */
+@media (max-width: 576px) {
+  /* Car Cards - Show 1 column but with better styling */
+  .car-rental-section .row.g-4 {
+    --bs-gutter-x: 10px;
+    --bs-gutter-y: 10px;
+  }
+  
+  .car-rental-section .row.g-4 > div {
+    max-width: 100%;
+  }
+  
+  .carousel-car-card {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Breadcrumb */
+  .breadcumb-wrapper {
+    min-height: 200px;
+    padding: 40px 10px !important;
+  }
+  
+  .breadcumb-title {
+    font-size: 1.5rem;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+  }
+  
+  .breadcumb-trail {
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .breadcumb-trail li {
+    font-size: 10px;
+  }
+  
+  .breadcumb-trail li:not(:last-child)::after {
+    margin-left: 5px;
+  }
+  
+  /* Filter button positioning */
+  .filter-toggle-btn {
+    position: fixed;
+    right: 10px;
+    top: 75px;
+    padding: 8px 12px;
+    font-size: 10px;
+    z-index: 35;
+    width: auto;
+  }
+  
+  .filter-box {
+    width: 100%;
+    max-width: 100%;
+    top: 140px;
+    border-radius: 0;
+    padding: 15px;
+    left: 0;
+  }
+  
+  .filter-box h3 {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-group {
+    margin-bottom: 15px;
+  }
+  
+  .filter-label {
+    font-size: 10px;
+  }
+  
+  .checkbox-item label {
+    font-size: 12px;
+  }
+  
+  /* Load more button */
+  .load-more-wrapper {
+    margin: 40px 0;
+    padding: 12px;
+  }
+  
+  .load-more-btn {
+    padding: 10px 24px;
+    font-size: 11px;
+    letter-spacing: 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Car card info */
+  .car-image-container {
+    height: 200px;
+  }
+  
+  .car-title {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .car-category {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  
+  .price-value {
+    font-size: 14px;
+  }
+  
+  .price-label {
+    font-size: 10px;
+  }
+  
+  .car-action-buttons {
+    gap: 8px;
+  }
+  
+  .btn-action {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+  }
+  
+  /* Section spacing */
+  .space {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  /* Brand area */
+  .brand-area-1 {
+    padding: 20px 10px;
+  }
+  
+  /* Testimonials */
+  .testi-card-area-1 {
+    padding: 30px 10px;
+  }
+  
+  .google-review-card {
+    padding: 20px !important;
+  }
+  
+  /* Contact section */
+  .contact-section {
+    padding: 30px 15px !important;
+  }
+  
+  .contact-info-item {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form-wrapper {
+    margin-top: 30px;
+  }
+  
+  .form-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  /* Footer */
+  .footer-title {
+    font-size: 14px !important;
+  }
+  
+  .footer-menu {
+    list-style: none !important;
+    padding: 0 !important;
+  }
+  
+  .footer-menu li {
+    margin-bottom: 8px !important;
+  }
+  
+  .footer-menu li a {
+    font-size: 12px !important;
+  }
+}
+
+/* ---- Media Query: Extra Small Mobile (480px and below) ---- */
+@media (max-width: 480px) {
+  /* Breadcrumb */
+  .breadcumb-wrapper {
+    min-height: 150px;
+    padding: 30px 10px !important;
+  }
+  
+  .breadcumb-title {
+    font-size: 1.2rem;
+  }
+  
+  /* Filter button */
+  .filter-toggle-btn {
+    top: 65px;
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+  
+  .filter-toggle-btn i {
+    font-size: 12px;
+  }
+  
+  /* Load more button */
+  .load-more-btn {
+    padding: 8px 20px;
+    font-size: 10px;
+  }
+  
+  /* Car image height */
+  .car-image-container {
+    height: 180px;
+  }
+  
+  .carousel-car-card {
+    border-radius: 6px;
+  }
+}
+
+/* ---- Media Query: Ultra Small (375px and below) ---- */
+@media (max-width: 375px) {
+  .breadcumb-wrapper {
+    min-height: 120px;
+    padding: 20px 8px !important;
+  }
+  
+  .breadcumb-title {
+    font-size: 1rem;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .load-more-wrapper {
+    margin: 30px 0;
+  }
+  
+  .load-more-btn {
+    padding: 8px 16px;
+    font-size: 9px;
+  }
+  
+  .car-title {
+    font-size: 12px;
+  }
+  
+  .price-value {
+    font-size: 12px;
+  }
+}
+
+
+
+.footer-logo img{
+  margin-top: -50px;
+  margin-left: 20px;
+}
+/* ============================================
+   PREMIUM LUXURY CAR CARD STYLING
+   Netflix-Style Design with Luxury Effects
+   ============================================ */
+
+/* ============================================
+   CONTAINER & GRID LAYOUT (4-3-1 Responsive)
+   ============================================ */
+
+.row.g-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.row.g-4 > [class*='col-'] {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ============================================
+   ENHANCED CARD BASE STYLING
+   ============================================ */
+
+/* Override and enhance carousel-car-card */
+.carousel-car-card {
+  max-width: 100%;
+  background: linear-gradient(135deg, #0a0a0a 0%, #161616 50%, #0f0f0f 100%);
+  border-radius: 24px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(212, 175, 55, 0.08),
+    inset 0 1px 0 rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.carousel-car-card::before {
+  background: radial-gradient(circle at 35% 35%, rgba(212, 175, 55, 0.25) 0%, transparent 65%);
+  border-radius: 24px;
+}
+
+.carousel-car-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 
+    0 35px 80px rgba(0, 0, 0, 0.8),
+    0 0 60px rgba(212, 175, 55, 0.15),
+    inset 0 1px 0 rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.carousel-car-card:hover::before {
+  opacity: 1;
+  animation: premium-glow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   ENHANCED IMAGE SECTION
+   ============================================ */
+
+.car-image-container {
+  height: 280px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-image {
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: brightness(0.88) contrast(1.08) saturate(1.05);
+}
+
+.carousel-car-card:hover .car-image {
+  transform: scale(1.1);
+  filter: brightness(1) contrast(1.15) saturate(1.1);
+}
+
+.car-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(212, 175, 55, 0.1) 100%
+  );
+}
+
+/* ============================================
+   ENHANCED INFO SECTION
+   ============================================ */
+
+.car-info-container {
+  background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
+  padding: 28px 26px;
+}
+
+.car-title {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  letter-spacing: 0.5px;
+}
+
+.carousel-car-card:hover .car-title {
+  color: #D4AF37;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.car-category {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
+
+.price-value {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+  letter-spacing: 0.5px;
+}
+
+.carousel-car-card:hover .price-value {
+  font-size: 28px;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* ============================================
+   ENHANCED BUTTONS WITH GLOW & DIVIDER
+   ============================================ */
+
+.car-action-buttons {
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+  padding-top: 18px;
+  margin-top: 18px;
+  gap: 12px;
+}
+
+.btn-action {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(212, 175, 55, 0.1);
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.btn-action i {
+  transition: transform 0.3s ease;
+}
+
+.btn-action::before {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-action:hover {
+  border-color: #D4AF37;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 35px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(212, 175, 55, 0.25);
+}
+
+.btn-action:hover::before {
+  width: 100px;
+  height: 100px;
+}
+
+.btn-action:hover i {
+  transform: scale(1.15);
+}
+
+/* Button Color Variants */
+.btn-call {
+  border-color: rgba(52, 152, 219, 0.4) !important;
+  color: #3498db !important;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(52, 152, 219, 0.02) 100%) !important;
+}
+
+.btn-call::before {
+  background: radial-gradient(circle, rgba(52, 152, 219, 0.5) 0%, transparent 70%) !important;
+}
+
+.btn-call:hover {
+  border-color: #3498db !important;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.2) 0%, rgba(52, 152, 219, 0.1) 100%) !important;
+  box-shadow: 0 12px 35px rgba(52, 152, 219, 0.35) !important;
+}
+
+.btn-whatsapp {
+  border-color: rgba(37, 211, 102, 0.4) !important;
+  color: #25D366 !important;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, rgba(37, 211, 102, 0.02) 100%) !important;
+}
+
+.btn-whatsapp::before {
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.5) 0%, transparent 70%) !important;
+}
+
+.btn-whatsapp:hover {
+  border-color: #25D366 !important;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.2) 0%, rgba(37, 211, 102, 0.1) 100%) !important;
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.35) !important;
+}
+
+.btn-email {
+  border-color: rgba(230, 126, 34, 0.4) !important;
+  color: #E67E22 !important;
+  background: linear-gradient(135deg, rgba(230, 126, 34, 0.08) 0%, rgba(230, 126, 34, 0.02) 100%) !important;
+}
+
+.btn-email::before {
+  background: radial-gradient(circle, rgba(230, 126, 34, 0.5) 0%, transparent 70%) !important;
+}
+
+.btn-email:hover {
+  border-color: #E67E22 !important;
+  background: linear-gradient(135deg, rgba(230, 126, 34, 0.2) 0%, rgba(230, 126, 34, 0.1) 100%) !important;
+  box-shadow: 0 12px 35px rgba(230, 126, 34, 0.35) !important;
+}
+
+/* ============================================
+   PREMIUM ANIMATIONS
+   ============================================ */
+
+@keyframes premium-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ============================================
+   TABLET (768px - 1199px): 3 CARDS PER ROW
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .row.g-4 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .carousel-car-card {
+    border-radius: 22px;
+  }
+
+  .car-image-container {
+    height: 240px;
+  }
+
+  .car-info-container {
+    padding: 24px 22px;
+  }
+
+  .car-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .car-category {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .price-value {
+    font-size: 24px;
+  }
+
+  .carousel-car-card:hover .price-value {
+    font-size: 26px;
+  }
+
+  .price-label {
+    font-size: 11px;
+  }
+
+  .car-action-buttons {
+    gap: 10px;
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+
+  .btn-action {
+    padding: 11px 0;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .btn-action i {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   MOBILE (Below 768px): 1 CARD PER ROW
+   ============================================ */
+
+@media (max-width: 767px) {
+  .row.g-4 {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 0 8px;
+  }
+
+  .carousel-car-card {
+    border-radius: 20px;
+    max-width: 100%;
+  }
+
+  .car-image-container {
+    height: 220px;
+  }
+
+  .car-info-container {
+    padding: 20px 20px;
+  }
+
+  .car-title {
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+
+  .car-category {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .car-price-display {
+    margin-bottom: 15px;
+  }
+
+  .price-value {
+    font-size: 22px;
+  }
+
+  .carousel-car-card:hover .price-value {
+    font-size: 24px;
+  }
+
+  .price-label {
+    font-size: 11px;
+  }
+
+  .car-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 15px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .btn-action {
+    padding: 12px 0;
+    font-size: 13px;
+    height: 42px;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .btn-action i {
+    font-size: 16px;
+  }
+
+  .carousel-car-card:hover {
+    transform: translateY(-8px);
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (Below 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+  .row.g-4 {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    padding: 0 4px;
+  }
+
+  .carousel-car-card {
+    border-radius: 18px;
+  }
+
+  .car-image-container {
+    height: 180px;
+  }
+
+  .car-info-container {
+    padding: 16px 16px;
+  }
+
+  .car-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .car-category {
+    font-size: 11px;
+    margin-bottom: 10px;
+    letter-spacing: 0.8px;
+  }
+
+  .car-price-display {
+    margin-bottom: 12px;
+  }
+
+  .price-value {
+    font-size: 20px;
+  }
+
+  .price-label {
+    font-size: 10px;
+  }
+
+  .car-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .btn-action {
+    padding: 10px 0;
+    font-size: 12px;
+    height: 38px;
+    border-radius: 8px;
+    border-width: 1.5px;
+    width: 100%;
+  }
+
+  .btn-action i {
+    font-size: 14px;
+  }
+
+  .carousel-car-card:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* ============================================
+   DESKTOP (1200px+): 4 CARDS PER ROW
+   ============================================ */
+
+@media (min-width: 1200px) {
+  .row.g-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .carousel-car-card {
+    min-height: 500px;
+  }
+
+  .car-image-container {
+    height: 280px;
+  }
+
+  .car-title {
+    font-size: 20px;
+  }
+
+  .price-value {
+    font-size: 26px;
+  }
+
+  .carousel-car-card:hover .price-value {
+    font-size: 28px;
+  }
+}
+
+/* Final responsive overrides */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.breadcumb-wrapper {
+  min-height: clamp(220px, 42vw, 500px) !important;
+  padding: clamp(72px, 12vw, 140px) 16px !important;
+}
+
+.breadcumb-title {
+  font-size: clamp(2rem, 6vw, 5.5rem) !important;
+  line-height: 1.05;
+  letter-spacing: clamp(0.5px, 0.5vw, 3px) !important;
+  word-break: break-word;
+}
+
+.map-section {
+  height: clamp(280px, 50vw, 500px) !important;
+  margin: clamp(24px, 5vw, 60px) clamp(12px, 3vw, 20px) !important;
+}
+
+.premium-footer {
+  margin: clamp(20px, 4vw, 40px) clamp(12px, 3vw, 20px) !important;
+}
+
+.filter-box {
+  width: min(320px, calc(100vw - 20px)) !important;
+}
+
+@media (min-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .main-menu .premium-dropdown.dropdown-brands-grid {
+    width: min(100%, 520px) !important;
+    min-width: 0 !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .breadcumb-title {
+    font-size: clamp(1.7rem, 8vw, 2.6rem) !important;
+  }
+
+  .filter-toggle-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal !important;
+  }
+
+  .filter-box {
+    top: auto !important;
+    bottom: 0;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: min(72vh, 560px) !important;
+    border-radius: 18px 18px 0 0 !important;
+    padding: 18px !important;
+  }
+
+  .filter-box.active {
+    transform: translateY(0) !important;
+  }
+
+  .filter-box:not(.active) {
+    transform: translateY(105%) !important;
+  }
+
+  .premium-footer {
+    border-width: 2px !important;
+    border-radius: 16px !important;
+  }
+
+  .feature-list-1 .box-title a,
+  .luxury-car-card .car-title,
+  .blog-title {
+    white-space: normal !important;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .browse-by-type .category-img {
+    min-height: 96px !important;
+    width: min(130px, 35vw) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .browse-by-type .category-img img,
+  .browse-by-type .category-img model-viewer {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container,
+  .container-fluid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .premium-footer {
+    margin: 20px 12px !important;
+  }
+}
+
+
+/* ============================================================
+   MOBILE BACKGROUND IMAGE FIX
+   - Fixes cropping, parallax glitches, and text readability
+   ============================================================ */
+
+/* --- TABLET (1024px and below) --- */
+@media (max-width: 1024px) {
+
+  /* Kill parallax/fixed attachment - causes glitches on touch devices */
+  .breadcumb-wrapper,
+  [data-bg-src],
+  .background-image,
+  .cta-area,
+  .counter-area,
+  .testi-area {
+    background-attachment: scroll !important;
+  }
+
+  /* Breadcrumb hero: reduce height so image isn't overly zoomed */
+  .breadcumb-wrapper {
+    min-height: 280px !important;
+  }
+}
+
+/* --- MOBILE (768px and below) --- */
+@media (max-width: 768px) {
+
+  /* All data-bg-src elements: optimize for portrait screens */
+  [data-bg-src] {
+    background-position: center top !important;
+    background-size: cover !important;
+    background-attachment: scroll !important;
+  }
+
+  /* Breadcrumb hero sections */
+  .breadcumb-wrapper {
+    min-height: 220px !important;
+    padding: 80px 0 60px !important;
+  }
+
+  /* Better dark overlay for text readability on mobile */
+  .breadcumb-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.55) 100%
+    ) !important;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Breadcrumb content above overlay */
+  .breadcumb-wrapper .breadcumb-content,
+  .breadcumb-wrapper .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Breadcrumb background image element */
+  .breadcumb-wrapper .bread-img {
+    object-position: center 30% !important;
+  }
+
+  /* Breadcrumb title sizing */
+  .breadcumb-wrapper .breadcumb-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  .breadcumb-wrapper .breadcumb-menu li,
+  .breadcumb-wrapper .breadcumb-menu a,
+  .breadcumb-wrapper .breadcumb-menu span {
+    font-size: 13px !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* CTA / Banner sections with BG */
+  .cta-area,
+  .counter-area,
+  .testi-area {
+    background-position: center center !important;
+    background-size: cover !important;
+    background-attachment: scroll !important;
+  }
+
+  /* How it works and similar section BGs */
+  section[data-bg-src],
+  div[data-bg-src]:not(.breadcumb-wrapper) {
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+}
+
+/* --- SMALL MOBILE (480px and below) --- */
+@media (max-width: 480px) {
+
+  /* Breadcrumb even more compact */
+  .breadcumb-wrapper {
+    min-height: 180px !important;
+    padding: 70px 0 50px !important;
+  }
+
+  .breadcumb-wrapper .breadcumb-title {
+    font-size: 22px !important;
+    letter-spacing: -0.5px;
+  }
+
+  .breadcumb-wrapper .breadcumb-menu li,
+  .breadcumb-wrapper .breadcumb-menu a {
+    font-size: 11px !important;
+  }
+
+  /* BG images: prefer showing top portion (usually has subject) */
+  [data-bg-src] {
+    background-position: center 25% !important;
+  }
+}
+
+/* --- iOS SAFARI SPECIFIC FIX --- */
+@supports (-webkit-touch-callout: none) {
+  .breadcumb-wrapper,
+  [data-bg-src],
+  .background-image {
+    background-attachment: scroll !important;
+  }
 }

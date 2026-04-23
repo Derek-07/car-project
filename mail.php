@@ -20,7 +20,7 @@
 
         // Set the recipient email address.
         // FIXME: Update this to your desired email address.
-        $recipient = "info.apexperformancecarrental@gmail.com";
+        $recipient = "info@apexcarsdubai.com";
 
         // Set the email subject.
         $subject = "New contact from $subject";

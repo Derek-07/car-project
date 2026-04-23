@@ -1,16 +1,21 @@
 
+// === MOBILE / DEVICE DETECTION ===
+const IS_MOBILE = /Mobi|Android|iPhone|iPad|iPod|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent)
+  || (window.innerWidth <= 768);
+const IS_LOW_END = (navigator.hardwareConcurrency || 4) <= 2 || (navigator.deviceMemory || 4) < 2;
+
 const config = {
-  SIM_RESOLUTION: 128,
-  DYE_RESOLUTION: 1440,
+  SIM_RESOLUTION: IS_MOBILE ? 64 : 128,
+  DYE_RESOLUTION: IS_MOBILE ? 512 : 1440,
   CAPTURE_RESOLUTION: 512,
-  DENSITY_DISSIPATION: 7,
-  VELOCITY_DISSIPATION: 4,
+  DENSITY_DISSIPATION: IS_MOBILE ? 12 : 7,
+  VELOCITY_DISSIPATION: IS_MOBILE ? 8 : 4,
   PRESSURE: 0.1,
-  PRESSURE_ITERATIONS: 20,
-  CURL: 3,
-  SPLAT_RADIUS: 0.05,
-  SPLAT_FORCE: 6000,
-  SHADING: true,
+  PRESSURE_ITERATIONS: IS_MOBILE ? 10 : 20,
+  CURL: IS_MOBILE ? 2 : 3,
+  SPLAT_RADIUS: IS_MOBILE ? 0.02 : 0.05,
+  SPLAT_FORCE: IS_MOBILE ? 2000 : 6000,
+  SHADING: !IS_MOBILE,
   COLOR_UPDATE_SPEED: 10,
   PAUSED: false,
   BACK_COLOR: { r: 0.5, g: 0, b: 0 },
@@ -42,6 +47,11 @@ let colorUpdateTimer = 0.0;
 let isWebGLActive = false;
 let ctx2D = null;
 let particleSystem = null;
+let fluidLoopCleanup = null;
+let fluidVisibilityObserver = null;
+let canRenderFluid = true;
+let fluidInViewport = true;
+const MAX_RENDER_PIXEL_RATIO = 1.5;
 
 // Canvas 2D Fallback Animation (when WebGL not available)
 class ParticleSystem {
@@ -58,10 +68,13 @@ class ParticleSystem {
       "rgba(255, 200, 100, ",
       "rgba(255, 100, 200, "
     ];
+    this.frameId = 0;
+    this.isRunning = false;
+    this.externalCleanup = null;
     
     this.initializeParticles();
     this.setupEventListeners();
-    this.animate();
+    this.start();
   }
 
   initializeParticles() {
@@ -160,14 +173,48 @@ class ParticleSystem {
   }
 
   animate() {
+    if (!this.isRunning || !canRenderFluid) {
+      return;
+    }
+
     this.update();
     this.draw();
-    requestAnimationFrame(() => this.animate());
+
+    if (!this.externalCleanup) {
+      this.frameId = requestAnimationFrame(() => this.animate());
+    }
   }
 
   resize() {
     this.canvas.width = this.canvas.clientWidth;
     this.canvas.height = this.canvas.clientHeight;
+  }
+
+  start() {
+    if (this.isRunning) {
+      return;
+    }
+
+    this.isRunning = true;
+    const sharedTicker = window.__APEX_SCROLL_ENGINE__;
+    if (sharedTicker && typeof sharedTicker.addRafTask === "function") {
+      this.externalCleanup = sharedTicker.addRafTask(() => this.animate());
+      return;
+    }
+
+    this.animate();
+  }
+
+  stop() {
+    this.isRunning = false;
+    if (this.frameId) {
+      cancelAnimationFrame(this.frameId);
+      this.frameId = 0;
+    }
+    if (this.externalCleanup) {
+      this.externalCleanup();
+      this.externalCleanup = null;
+    }
   }
 }
 
@@ -828,7 +875,8 @@ function getResolution(resolution) {
 }
 
 function scaleByPixelRatio(input) {
-  const pixelRatio = window.devicePixelRatio || 1;
+  // Clamp DPR so mid-range devices avoid oversized WebGL framebuffers.
+  const pixelRatio = Math.min(window.devicePixelRatio || 1, MAX_RENDER_PIXEL_RATIO);
   return Math.floor(input * pixelRatio);
 }
 
@@ -959,8 +1007,8 @@ function wrap(value, min, max) {
 
 // Simulation functions
 function updateFrame() {
-  if (!isWebGLActive || !gl) {
-    return; // Skip if using 2D fallback
+  if (!isWebGLActive || !gl || !canRenderFluid) {
+    return; // Skip if using 2D fallback or the canvas is currently paused
   }
   
   try {
@@ -974,7 +1022,6 @@ function updateFrame() {
     // Silently catch errors and continue animation loop
     console.debug("Animation frame error (non-critical):", error.message);
   }
-  requestAnimationFrame(updateFrame);
 }
 
 function calcDeltaTime() {
@@ -1309,7 +1356,7 @@ function setupEventListeners() {
     const posY = scaleByPixelRatio(e.clientY);
     updatePointerDownData(pointer, -1, posX, posY);
     clickSplat(pointer);
-  });
+  }, { passive: true });
 
   window.addEventListener("mousemove", (e) => {
     const pointer = pointers[0];
@@ -1317,7 +1364,7 @@ function setupEventListeners() {
     const posY = scaleByPixelRatio(e.clientY);
     const color = pointer.color;
     updatePointerMoveData(pointer, posX, posY, color);
-  });
+  }, { passive: true });
 
   window.addEventListener(
     "touchstart",
@@ -1330,7 +1377,7 @@ function setupEventListeners() {
         updatePointerDownData(pointer, touches[i].identifier, posX, posY);
       }
     },
-    false
+    { passive: true }
   );
 
   window.addEventListener(
@@ -1344,13 +1391,73 @@ function setupEventListeners() {
         updatePointerMoveData(pointer, posX, posY, pointer.color);
       }
     },
-    false
+    { passive: true }
   );
 
   window.addEventListener("touchend", (e) => {
     const pointer = pointers[0];
     pointer.down = false;
-  });
+  }, { passive: true });
+}
+
+function bindFluidVisibility(canvasEl) {
+  const setRenderState = () => {
+    canRenderFluid = fluidInViewport && !document.hidden;
+
+    if (particleSystem) {
+      if (canRenderFluid) {
+        particleSystem.start();
+      } else {
+        particleSystem.stop();
+      }
+    }
+  };
+
+  document.addEventListener(
+    "visibilitychange",
+    () => {
+      setRenderState();
+    },
+    { passive: true }
+  );
+
+  if (!("IntersectionObserver" in window) || !canvasEl) {
+    return;
+  }
+
+  fluidVisibilityObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        fluidInViewport = entry.isIntersecting;
+        setRenderState();
+      });
+    },
+    {
+      rootMargin: "200px 0px"
+    }
+  );
+
+  fluidVisibilityObserver.observe(canvasEl);
+}
+
+function startFluidLoop() {
+  if (fluidLoopCleanup) {
+    return;
+  }
+
+  // Reuse the smooth-scroll ticker when available so scrolling and WebGL share one clock.
+  const sharedTicker = window.__APEX_SCROLL_ENGINE__;
+  if (sharedTicker && typeof sharedTicker.addRafTask === "function") {
+    fluidLoopCleanup = sharedTicker.addRafTask(() => updateFrame());
+    return;
+  }
+
+  const fallbackLoop = () => {
+    updateFrame();
+    fluidLoopCleanup = requestAnimationFrame(fallbackLoop);
+  };
+
+  fluidLoopCleanup = requestAnimationFrame(fallbackLoop);
 }
 
 // Control functions
@@ -1371,14 +1478,38 @@ function decreaseDensity() {
   config.DENSITY_DISSIPATION = Math.min(10, config.DENSITY_DISSIPATION + 0.5);
 }
 
+// Auto-inject canvas if not present (makes fluid work on ALL pages)
+function ensureFluidCanvas() {
+  let container = document.getElementById("fluid-container");
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "fluid-container";
+    container.style.cssText = "position:fixed;top:0;left:0;z-index:50;pointer-events:none;width:100vw;height:100vh;";
+    const canvasEl = document.createElement("canvas");
+    canvasEl.id = "fluid";
+    canvasEl.style.cssText = "width:100vw;height:100vh;display:block;";
+    container.appendChild(canvasEl);
+    document.body.insertBefore(container, document.body.firstChild);
+  }
+  return document.getElementById("fluid");
+}
+
 // Initialize everything
 function init() {
+  // Skip entirely on very low-end devices to save battery
+  if (IS_LOW_END && IS_MOBILE) {
+    console.debug("Fluid: skipped on low-end mobile device");
+    return;
+  }
+
   try {
-    const canvasEl = document.getElementById("fluid");
+    const canvasEl = ensureFluidCanvas();
     if (!canvasEl) {
       console.warn("Canvas element not found");
       return;
     }
+
+    bindFluidVisibility(canvasEl);
 
     initializeWebGL();
     isWebGLActive = true;
@@ -1387,24 +1518,25 @@ function init() {
     updateKeywords();
     initFramebuffers();
     setupEventListeners();
-    updateFrame();
+    startFluidLoop();
   } catch (error) {
     console.debug("WebGL not available, using Canvas 2D fallback:", error.message);
     isWebGLActive = false;
-    
+
     // Initialize 2D Canvas Fallback
     const canvasEl = document.getElementById("fluid");
     if (canvasEl) {
       canvasEl.width = canvasEl.clientWidth;
       canvasEl.height = canvasEl.clientHeight;
+      bindFluidVisibility(canvasEl);
       particleSystem = new ParticleSystem(canvasEl);
-      
+
       // Handle window resize for 2D canvas
       window.addEventListener("resize", () => {
         if (particleSystem) {
           particleSystem.resize();
         }
-      });
+      }, { passive: true });
     }
   }
 }

@@ -1,0 +1,11 @@
+# Apex Performance Car Rental - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.apexperformancecarrental.com/sitemap.xml
+
+# Disallow admin/internal pages
+Disallow: /incoming.html
+Disallow: /login.html
+Disallow: /error.html

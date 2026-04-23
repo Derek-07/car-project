@@ -271,7 +271,7 @@ All styling controlled through CSS custom properties for easy theming:
    - Demo credentials display
 
 ### Dashboard
-1. Login with demo credentials (admin@apexcars.com / admin123)
+1. Login with demo credentials (info@apexcarsdubai.com / admin123)
 2. Navigate to **admin/dashboard.html**
 3. Observe:
    - Light workspace background
